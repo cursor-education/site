@@ -1,0 +1,61 @@
+body#page-course {
+    &.course-ruby {
+        @s: #B24626;
+
+        #header {
+            &:before,
+            &:after {
+                background-color: @s;
+            }
+
+            background-image: url(http://zahidlilani.com/wp-content/uploads/2013/09/Ruby-on-Rails.jpg);
+            background-image: url(http://local.cursor.education/ruby.png);
+            background-size: 30%;
+            background-repeat: repeat;
+        }
+
+        #header-arrow {
+            &:after {
+                border-color: @s;
+                border-top-color: rgba(0, 0, 0, 0);
+            }
+        }
+
+        #course-description {
+            background-color: @s;
+
+            &:after {
+                background-color: @s;
+            }
+        }
+    }
+
+    &.course-php {
+        @s: #7480A8;
+
+        #header {
+            &:before,
+            &:after {
+                background-color: @s;
+            }
+
+            background-image: url(http://phpdes.com/wp-content/uploads/2012/01/10_things_php_developer.jpg);
+            background-size: 30%;
+            background-repeat: repeat;
+        }
+
+        #header-arrow {
+            &:after {
+                border-color: @s;
+            }
+        }
+
+        #course-description {
+            background-color: @s;
+
+            &:after {
+                background-color: @s;
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
 @import 'const.less';
 @import 'base.less';
 @import 'base-layout.less';
-@import 'courses.less';
+@import 'page-landing-courses.less';
 
 @import './sprites/sprites-icons.less';
 
@@ -189,6 +189,8 @@ body {
                 .image img {
                     max-width: 180px;
                     max-height: 180px;
+                    min-height: 100px;
+
                     margin: 0 auto;
 
                     transform: perspective(500px) translateZ(0px);
@@ -383,95 +385,6 @@ body {
             -webkit-transform: skew(0deg, 1.5deg);
 
             box-shadow: @section-REG_FORM-bg 0px 3px 3px -2px;
-        }
-
-        form {
-            position: relative;
-            z-index: @zindex-section + @zindex-animated + 1;
-
-            margin: 50px 0px 10px 0px;
-
-            text-align: center;
-
-            @media screen and (max-width: 650px) {
-                text-align: center;
-            }
-
-            h3 {
-                font: 19px 'Open Sans', Verdana;
-                margin-bottom: 15px;
-            }
-
-            .row {
-                display: inline-block;
-                margin-right: 15px;
-
-                label {
-                    margin-right: 3px;
-                    user-select: none;
-                }
-
-                @media screen and (max-width: 650px) {
-                    margin: 0;
-                    margin-bottom: 10px;
-                    width: 100%;
-                    text-align: center;
-
-                    label {
-                        display: block;
-                        margin-bottom: 5px;
-                    }
-                }
-            }
-
-            input[type="text"] {
-                padding: 15px 12px;
-
-                font-family: Verdana;
-                font-size: 16px;
-
-                border-radius: 2px;
-
-                color: #646B7E;
-                background-color: #EDF0F6;
-                border: 1px #EEF1F8 solid;
-
-                box-shadow: 1px 2px 2px 0 rgba(180, 180, 180, 0.5);
-            }
-
-            input[type="submit"] {
-                padding: 10px 20px;
-                margin: 0;
-                margin-left: 10px;
-
-                font: 14px 'Open Sans', verdana;
-                font-weight: bold;
-
-                cursor: pointer;
-
-                background: #FFC400;
-                color: #2D343E;
-                border: 2px solid #FFC400;
-                border-radius: 4px;
-
-                transition: all 0.3s ease;
-
-                @media screen and (max-width: 650px) {
-                    margin-top: 15px;
-                    font-size: 17px;
-                }
-
-                &:hover {
-                    background: #D3A200;
-                    border-color: #D3A200;
-                }
-
-                &:active {
-                    background: white;
-                    border-color: #2D343E;
-                    color: #2D343E;
-                }
-            }
         }
     }
 

@@ -3,73 +3,46 @@
 
 @import 'base.less';
 @import 'base-layout.less';
+@import 'page-course-courses.less';
 
 @import './sprites/sprites-icons.less';
 
-body {
-    &.course-ruby {
-        @s: #B24626;
-
-        #header {
-            &:before,
-            &:after {
-                background-color: @s;
-            }
-
-            background-image: url(http://zahidlilani.com/wp-content/uploads/2013/09/Ruby-on-Rails.jpg);
-            background-size: 30%;
-            background-repeat: repeat;
-        }
-
-        #header-arrow {
-            &:after {
-                border-color: @s;
-            }
-        }
-
-        #course-description {
-            background-color: @s;
-
-            &:after {
-                background-color: @s;
-            }
-        }
-    }
-
-    &.course-php {
-        @s: #7480A8;
-
-        #header {
-            &:before,
-            &:after {
-                background-color: @s;
-            }
-
-            background-image: url(http://phpdes.com/wp-content/uploads/2012/01/10_things_php_developer.jpg);
-            background-size: 30%;
-            background-repeat: repeat;
-        }
-
-        #header-arrow {
-            &:after {
-                border-color: @s;
-            }
-        }
-
-        #course-description {
-            background-color: @s;
-
-            &:after {
-                background-color: @s;
-            }
-        }
-    }
+body#page-course {
+    #course-description { z-index: @zindex-section + @zindex-animated + 3 }
+    #form { z-index: @zindex-section + @zindex-animated + 2 }
+    #course-footer { z-index: @zindex-section + @zindex-animated + 1 }
 
     #course-description {
-        position: relative;
-        z-index: 3;
+        color: blue;
 
-        &:after {
+        @media screen and (max-width: 650px) {
+            margin-top: -15px;
+        }
+
+        .top-line {
+            margin-bottom: 15px;
+
+            .item {
+                display: inline-block;
+                background: rgba(0, 0, 0, 0.1);
+
+                padding: 8px 10px;
+                margin-right: 5px;
+
+                transition: all .4s ease;
+
+                @media screen and (max-width: 650px) {
+                    margin-bottom: 5px;
+                }
+
+                &:hover {
+                    cursor: default;
+                    background: rgba(0, 0, 0, 0.25);
+                }
+            }
+        }
+
+        &.curve-after:after {
             transform: skew(0deg, -1.5deg);
             -webkit-transform: skew(0deg, -1.5deg);
 
@@ -78,14 +51,31 @@ body {
     }
 
     #form {
-        position: relative;
-        z-index: 3;
-        padding-top: 70px;
+        @s: #D2DBE7;
+
+        padding-top: 50px;
+        color: red;
+        background: @s;
+
+        .wrap {
+            color: #1A3562;
+        }
+
+        form.light-form {
+            margin-bottom: 20px;
+        }
+
+        &.curve-after:after {
+            background: @s;
+
+            transform: skew(0deg, 1.5deg);
+            -webkit-transform: skew(0deg, 1.5deg);
+
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -1px;
+        }
     }
 
     #course-footer {
-        position: relative;
-        z-index: 3;
         padding-top: 70px;
 
         background-color: #303842;

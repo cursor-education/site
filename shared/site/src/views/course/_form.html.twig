@@ -1,9 +1,23 @@
 {% spaceless %}
-<div id="form" class="section curve-after">
-<div class="wrap">
+  <div id="form" class="section curve-after">
+    <div class="wrap">
 
-    111
+    <form class="light-form" method="post" action="#">
+      <h3>Якщо вас зацікавив даний курс, -<br/>залиште свої контактні дані у формі нижче, і ми вам перетелефонуємо.</h3>
 
-</div>
-</div>
+      <div class="row">
+        <label for="name">Ім'я:</label>
+        <input id="name" type="text" placeholder="Тарас Шевченко" />
+      </div>
+
+      <div class="row">
+        <label for="phone">Телефон:</label>
+        <input id="phone" type="text" placeholder="093 123 45 67" />
+      </div>
+
+      <input type="submit" value="Надіслати" />
+    </form>
+
+    </div>
+  </div>
 {% endspaceless %}
