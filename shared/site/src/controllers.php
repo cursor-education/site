@@ -32,7 +32,10 @@ $app->match('/course/{id}', function (Request $request) use ($app) {
     $course = $app['courses.model']->findBy('id', $courseId);
 
     if (!$course) {
-        $app->abort(404);
+        $normalizedCourseId = str_replace('-', ' ', $courseId);
+        $errorMessage = sprintf('requested course with name "%s" has been not found', $normalizedCourseId);
+
+        $app->abort(404, $errorMessage);
     }
 
     return $app['twig']->render('course/index.html.twig', array(
@@ -61,7 +64,8 @@ $app->error(function (\Exception $e, $code) use ($app) {
     // }
 
     return $app['twig']->render('error/index.html.twig', array(
-        'code' => $code
+        'code' => $code,
+        'message' => $e->getMessage(),
     ));
 });
 

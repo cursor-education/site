@@ -3,16 +3,14 @@
 {% set pageName = 'error' %}
 
 {% block content %}
-    {% include '_header_menu.html.twig' %}
-
-    {% include 'landing/_header.html.twig' %}
-    <div id="header-arrow"></div>
+    {% include 'landing/_header_menu.html.twig' with {link:'/'} %}
 
     {% spaceless %}
-    <div class="section">
+    <div id="error" class="section">
     <div class="wrap">
 
-        <h2>{{ code }}</h2>
+        <div class="code">{{ code }}</div>
+        <div class="message">{{ message }}</div>
 
     </div>
     </div>

@@ -16,15 +16,14 @@ $app->register(new Moust\Silex\Provider\CacheServiceProvider(), array(
         'driver' => 'file',
         'cache_dir' => ROOT_DIR . '/cache/app',
     ),
-
 ));
 
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.options'        => array(
-        'cache'            => isset($app['twig.options.cache']) ? $app['twig.options.cache'] : false,
+    'twig.options' => array(
+        'cache' => isset($app['twig.options.cache']) ? $app['twig.options.cache'] : false,
         'strict_variables' => true
     ),
-    'twig.path'           => array(SRC_DIR . '/views')
+    'twig.path' => array(SRC_DIR . '/views')
 ));
 
 return $app;

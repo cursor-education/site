@@ -1,9 +1,37 @@
-@import 'colors.less';
+@import 'const.less';
 @import 'base.less';
 @import 'base-layout.less';
 
 @import './sprites/sprites-icons.less';
 
 body {
-    //
+    background: red;
+
+    #error {
+        padding-top: 20%;
+        padding-bottom: 20px;
+
+        @media screen and (max-width: 650px) {
+            padding-top: 170px;
+        }
+
+        text-align: center;
+
+        .code {
+            font: 50px verdana;
+            font-weight: bold;
+            margin-bottom: 10px;
+
+            color: white;
+        }
+
+        .message {
+            //
+        }
+    }
+
+    #footer {
+        position: fixed;
+        bottom: 0;
+    }
 }

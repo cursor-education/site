@@ -10,10 +10,10 @@
 
     <ul id="menu" class="animated fadeIn">
         <li><a href="/">Головна</a></li>
-        <li><a href="#courses" class="go-to-top" data-top="courses">Курси</a></li>
+        <li><a href="{{ link|default('') }}#courses" class="go-to-top" data-top="courses">Курси</a></li>
         <!-- <li><a href="#teachers" class="hidden go-to-top" data-top="teachers">Викладачі</a></li> -->
-        <li><a href="#partners" class="go-to-top" data-top="partners">Партнери</a></li>
-        <li><a href="#contacts" class="go-to-top" data-top="contacts">Контакти</a></li>
+        <li><a href="{{ link|default('') }}#partners" class="go-to-top" data-top="partners">Партнери</a></li>
+        <li><a href="{{ link|default('') }}#contacts" class="go-to-top" data-top="contacts">Контакти</a></li>
     </ul>
 
 </div>

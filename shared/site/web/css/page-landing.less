@@ -1,26 +1,31 @@
-@import 'colors.less';
+@import 'const.less';
 @import 'base.less';
 @import 'base-layout.less';
+@import 'courses.less';
 
 @import './sprites/sprites-icons.less';
 
 body {
+    #deeper { z-index: @zindex-section + @zindex-animated + 5 }
+    #courses { z-index: @zindex-section + @zindex-animated + 4 }
+    #registration-form { z-index: @zindex-section + @zindex-animated + 3 }
+    #partners { z-index: @zindex-section + @zindex-animated + 2 }
+
     #deeper {
         background: @section-DEEPER-bg;
         margin-top: -5px;
-        z-index: 3;
 
         .icon.icon-large-notebook {
             display: inline-block;
             float: left;
 
             background: url(http://www.e-legion.ru/assets/landing_pages/ios_school/macbook-03f5d0556c04f2f483d561af02029e2e.png);
+            background-color: red;
             background-size: 400px;
             background-repeat: no-repeat;
 
-            height: 496px;
+            height: 300px;
             width: 400px;
-            z-index: 3;
 
             margin-right: 20px;
 
@@ -36,7 +41,7 @@ body {
             line-height: 1.4em;
         }
 
-        &:after {
+        &.curve-after:after {
             background: @section-DEEPER-bg;
 
             transform: skew(0deg, -1.5deg);
@@ -51,9 +56,6 @@ body {
         padding-top: 70px;
         padding-bottom: 50px;
 
-        position: relative;
-        z-index: 2;
-
         .wrap {
             color: @section-COURSES-color;
 
@@ -62,7 +64,7 @@ body {
             }
         }
 
-        &:after {
+        &.curve-after:after {
             background: @section-COURSES-bg;
 
             transform: skew(0deg, 1.5deg);
@@ -73,17 +75,36 @@ body {
 
         .row {
             text-align: center;
-            margin-bottom: 30px;
+
+            @media screen and (max-width: 650px) {
+                margin-bottom: 20px;
+            }
+
+            &:hover {
+                .t {
+                    opacity: 0.4;
+                }
+
+                @media screen and (max-width: 650px) {
+                    .t {
+                        opacity: 1;
+                    }
+                }
+            }
 
             .t {
+                &:hover {
+                    opacity: 1;
+                }
+
                 position: relative;
-                z-index: 5;
+                z-index: @zindex-section + @zindex-animated + 1;
 
                 display: inline-block;
                 vertical-align: top;
 
-                margin-right: 10px;
-                margin-bottom: 30px;
+                margin-right: 20px;
+                margin-bottom: 20px;
 
                 width: 30%;
 
@@ -104,109 +125,8 @@ body {
                 &:hover {
                     background: @course-hover-bg;
 
-                    img.image {
+                    .image img {
                         transform: perspective(500px) translateZ(30px);
-                    }
-                }
-
-                &.course-ruby {
-                    .title {
-                        &:before {
-                            background-image: url(//d1tijy5l7mg5kk.cloudfront.net/assets/paths/bg-ruby-be027051b381dc1cf89b13c9e65941c3.svg);
-                            opacity: 0.7;
-                        }
-                        &:after {
-                            background-color: #B24626;
-                        }
-                    }
-                }
-
-                &.course-java {
-                    .title {
-                        &:before {
-                            background-image: url(http://core0.staticworld.net/images/article/2013/03/java-logo-100027745-large.jpg);
-                        }
-                        &:after {
-                            background-color: #542B05;
-                        }
-                    }
-                }
-
-                &.course-js {
-                    .title {
-                        &:before {
-                            background-image: url(https://d1tijy5l7mg5kk.cloudfront.net/assets/paths/bg-javascript-fe8cec88499673b890c2efe3bec497d7.svg);
-                        }
-                        &:after {
-                            background-color: #D7A627;
-                        }
-                    }
-                }
-
-                &.course-htmlcss {
-                    .title {
-                        &:before {
-                            background-image: url(https://d1tijy5l7mg5kk.cloudfront.net/assets/paths/badge-html-css-2bcd13b6f0e8092b6e4136a448ea3244.svg);
-                        }
-                        &:after {
-                            background-color: #31A480;
-                        }
-                    }
-                }
-
-                &.course-php {
-                    .title {
-                        &:before {
-                            background-image: url(http://blog.mrwebmaster.it/files/2012/07/php.png);
-                            background-position: 5px -10px;
-                        }
-                        &:after {
-                            background-color: #7480A8;
-                        }
-                    }
-                }
-
-                &.course-qa {
-                    .title {
-                        &:before {
-                            background-image: url(http://www.qualityliferesources.com/wp-content/uploads/2013/02/quality-assurance.jpg);
-                        }
-                        &:after {
-                            background-color: #00791E;
-                        }
-                    }
-                }
-
-                &.course-security {
-                    .title {
-                        &:before {
-                            background-image: url(http://assets.nybooks.com/media/events/anonymous_masks_616.jpg);
-                        }
-                        &:after {
-                            background-color: #000;
-                        }
-                    }
-                }
-
-                &.course-android {
-                    .title {
-                        &:before {
-                            background-image: url(http://mejorandroid.com/wp-content/uploads/2014/12/imagen-android.jpg);
-                        }
-                        &:after {
-                            background-color: #536E01;
-                        }
-                    }
-                }
-
-                &.course-english {
-                    .title {
-                        &:before {
-                            background-image: url(http://www.h3dwallpapers.com/wp-content/uploads/2014/08/Uk_union_flag.png);
-                        }
-                        &:after {
-                            background-color: #A30A10;
-                        }
                     }
                 }
 
@@ -266,9 +186,7 @@ body {
                     margin-bottom: 20px;
                 }
 
-                img.image {
-                    display: block;
-
+                .image img {
                     max-width: 180px;
                     max-height: 180px;
                     margin: 0 auto;
@@ -441,7 +359,7 @@ body {
             }
         }
 
-        &:after {
+        &.curve-after:after {
             background: @section-TEACHERS-bg;
 
             transform: skew(0deg, -1.5deg);
@@ -453,15 +371,12 @@ body {
     */
 
     #registration-form {
-        position: relative;
-        z-index: 1;
-
         padding-top: 100px;
         padding-bottom: 30px;
 
         background: @section-REG_FORM-bg;
 
-        &:after {
+        &.curve-after:after {
             background: @section-REG_FORM-bg;
 
             transform: skew(0deg, 1.5deg);
@@ -472,11 +387,10 @@ body {
 
         form {
             position: relative;
-            z-index: 6;
+            z-index: @zindex-section + @zindex-animated + 1;
 
             margin: 50px 0px 10px 0px;
 
-            font-size: 19px;
             text-align: center;
 
             @media screen and (max-width: 650px) {
@@ -484,13 +398,18 @@ body {
             }
 
             h3 {
-                font: 19px 'Open Sans';
+                font: 19px 'Open Sans', Verdana;
                 margin-bottom: 15px;
             }
 
             .row {
                 display: inline-block;
                 margin-right: 15px;
+
+                label {
+                    margin-right: 3px;
+                    user-select: none;
+                }
 
                 @media screen and (max-width: 650px) {
                     margin: 0;
@@ -525,14 +444,16 @@ body {
                 margin: 0;
                 margin-left: 10px;
 
-                font: 13px 'Open Sans';
+                font: 14px 'Open Sans', verdana;
                 font-weight: bold;
 
                 cursor: pointer;
+
                 background: #FFC400;
                 color: #2D343E;
                 border: 2px solid #FFC400;
                 border-radius: 4px;
+
                 transition: all 0.3s ease;
 
                 @media screen and (max-width: 650px) {
@@ -564,7 +485,7 @@ body {
             }
         }
 
-        &:after {
+        &.curve-after:after {
             background: @section-PARTNERS-bg;
 
             transform: skew(0deg, -1.5deg);
@@ -573,7 +494,10 @@ body {
             box-shadow: @section-PARTNERS-bg 0px 3px 2px -2px;
         }
 
+        text-align: center;
+
         div.list {
+            display: inline-block;
             margin-bottom: 50px;
             text-align: center;
 
@@ -709,155 +633,3 @@ body {
         }
     }
 }
-
-// body#page-auth {
-//     overflow-x: hidden;
-
-//     .auth-block {
-//         background-color: #FFF;
-
-//         // @media screen and (max-width: 650px) {
-//         //     width: 90%;
-//         //     margin-top: 15px;
-//         // }
-
-//         width: 680px;
-
-//         margin: 0px auto;
-//         margin-top: 15%;
-//         margin-bottom: 15px;
-
-//         border-radius: 3px;
-//         box-shadow: 0px 1px 2px #C3CDD1;
-
-//         h1.title {
-//             font: 18px tahoma;
-//             text-align: center;
-
-//             background: rgba(233, 238, 242, 0.26);
-
-//             padding: 13px;
-
-//             user-select: none;
-//             -webkit-user-select: none;
-//         }
-
-//         .wrap {
-//             width: 100%;
-//             padding: 50px 0px 50px 0px;
-
-//             // @media screen and (max-width: 650px) {
-//             //     padding: 30px 0px 10px 0px;
-//             // }
-//         }
-
-//         .left {
-//             // @media screen and (max-width: 650px) {
-//             //     display: none;
-//             // }
-
-//             float: left;
-//             display: inline-block;
-
-//             width: 240px;
-
-//             padding: 0px 0px 0px 50px;
-
-//             user-select: none;
-//             -webkit-user-select: none;
-
-//             .wrap2 {
-//                 margin-left: 30px;
-
-//                 h2 {
-//                     font: 13px verdana;
-//                     margin-bottom: 5px;
-//                 }
-
-//                 i {
-//                     display: block;
-//                     width: 100px;
-//                     height: 100px;
-//                     background: red;
-//                     margin-top: 15px;
-//                 }
-//             }
-//         }
-
-//         .right {
-//             display: inline-block;
-
-//             width: 240px;
-//             padding: 0px 0px 0px 50px;
-
-//             border-left: 1px solid #E1E1E1;
-
-//             // @media screen and (max-width: 650px) {
-//             //     width: 90%;
-//             //     padding: 0px 0px 0px 20px;
-//             //     border-left-width: 0px;
-//             // }
-
-//             .auth-block-form {
-//                 input {
-//                     padding: 12px 10px;
-
-//                     font-family: Verdana;
-//                     font-size: 14px;
-
-//                     border-radius: 2px;
-
-//                     color: #646B7E;
-//                     background-color: #EDF0F6;
-//                     border: 1px #EEF1F8 solid;
-
-//                     box-shadow: 1px 2px 2px 0 rgba(180, 180, 180, 0.5);
-//                 }
-
-//                 .row {
-//                     margin-bottom: 15px;
-//                     font: 13px verdana;
-
-//                     label {
-//                         display: block;
-//                         margin-bottom: 5px;
-//                     }
-
-//                     input[type="text"],
-//                     input[type="password"] {
-//                         width: 200px;
-//                     }
-//                 }
-
-//                 .row.form-submit {
-//                     margin-top: 25px;
-//                     margin-bottom: 0px;
-
-//                     input {
-//                         padding: 10px 20px;
-//                         margin: 0;
-
-//                         cursor: pointer;
-//                         font: 14px 'Comfortaa', Verdana;
-//                         background: #28403C;
-//                         color: white;
-//                         border: 2px solid #28403C;
-//                         border-radius: 4px;
-//                         transition: all 0.3s ease;
-
-//                         &:hover {
-//                             background: #66857F;
-//                             border-color: #66857F;
-//                         }
-
-//                         &:active {
-//                             background: white;
-//                             border-color: #28403C;
-//                             color: black;
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
