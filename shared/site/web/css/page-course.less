@@ -5,6 +5,8 @@
 @import 'base-layout.less';
 @import 'page-course-courses.less';
 
+@import 'lectors.less';
+
 @import './sprites/sprites-icons.less';
 
 body#page-course {
@@ -26,6 +28,9 @@ body#page-course {
                 display: inline-block;
                 background: rgba(0, 0, 0, 0.1);
 
+                height: 25px;
+                vertical-align: top;
+
                 padding: 8px 10px;
                 margin-right: 5px;
 
@@ -38,6 +43,17 @@ body#page-course {
                 &:hover {
                     cursor: default;
                     background: rgba(0, 0, 0, 0.25);
+                }
+
+                &.lectors {
+                    span {
+                        float: left;
+                        margin-top: 2px;
+                    }
+
+                    i.icon {
+                        margin-left: 5px;
+                    }
                 }
             }
         }

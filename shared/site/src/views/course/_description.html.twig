@@ -1,30 +1,39 @@
 {% spaceless %}
 <div id="course-description" class="curve-after section">
-<div class="wrap clearfix">
+  <div class="wrap clearfix">
 
     <div class="top-line">
-        <div class="item during">
-            <i></i> Тривалість: 12 годин
-        </div>
+      <div class="item during">
+        <i></i>
+        <span>Тривалість: 12 годин</span>
+      </div>
 
-        <div class="item during">
-            <i></i> Тривалість: 12 годин
-        </div>
+      <div class="item lectors">
+        <i></i>
+        <span>Лектори:</span>
 
-        <div class="item during">
-            <i></i> Тривалість: 12 годин
-        </div>
+        <a class="tooltip" title="Alex Yasha" href="{{ path('lecture', {id: 'alex-yasha'}) }}"><i class="icon lector s25 alex-yasha"></i></a>
 
-        <div class="item during">
-            <i></i> Вартість: 3500 грн
-        </div>
+        <a class="tooltip" title="Max Yasha" href="{{ path('lecture', {id: 'max-xz'}) }}"><i class="icon lector s25 max-xz"></i></a>
+
+        <a class="tooltip" title="Roman Ar" href="{{ path('lecture', {id: 'roman-rodomansky2'}) }}"><i class="icon lector s25 roman-rodomansky2"></i></a>
+
+        <a class="tooltip" title="Alex Okajhs" href="{{ path('lecture', {id: 'yura-oliynuk'}) }}"><i class="icon lector s25 yura-oliynuk"></i></a>
+      </div>
+
+      <div class="item during">
+        <i></i>
+        <span>Тривалість: 12 годин</span>
+      </div>
+
+      <div class="item during">
+        <i></i>
+        <span>Вартість: 3500 грн</span>
+      </div>
     </div>
 
-    <div class="desc">
-        {{ course.desc_full }}
-        Porta id parturient aptent facilisi nullam feugiat et suspendisse sit ridiculus scelerisque risus inceptos posuere purus ad sapien cursus a. Faucibus platea aptent mi turpis ullamcorper duis dapibus auctor eu malesuada congue condimentum a ullamcorper platea in lectus montes ac a ante dignissim a id eu nec mi.
-    </div>
+    <div class="desc">{{ course.desc_full }}</div>
 
-</div>
+  </div>
 </div>
 {% endspaceless %}

@@ -1,6 +1,6 @@
 {% spaceless %}
 <div id="courses" class="section curve-after">
-<div class="wrap">
+  <div class="wrap">
 
     <div class="bg-animated deus deus1 bg1"></div>
     <div class="bg-animated deus deus2 bg2"></div>
@@ -14,31 +14,31 @@
     <h2>Напрямки курсів</h2>
 
     <div class="row clearfix">
-        {% for course in courses %}
+      {% for course in courses %}
 
         <div class="t course-{{ course.style }}">
-            <div class="title">
-                <div class="name">{{ course.title }}</div>
-            </div>
+          <div class="title">
+            <div class="name">{{ course.title }}</div>
+          </div>
 
-            <div class="time">
-                Початок: <b title="07 січня 2015 року">{{ course.start }}</b>
-            </div>
+          <div class="time">
+            Початок: <b title="07 січня 2015 року">{{ course.start }}</b>
+          </div>
 
-            <div class="image">
-                <img src="{{ course.image }}" title="{{ course.title }}" />
-            </div>
+          <div class="image">
+            <img src="{{ course.image }}" title="{{ course.title }}" />
+          </div>
 
-            <div class="desc">{{ course.desc }}</div>
+          <div class="desc">{{ course.desc }}</div>
 
-            <a href="{{ path('course', {id: course.id}) }}" class="more">Детальніше<span>&#65515;</span></a>
+          <a href="{{ path('course', {id: course.id}) }}" class="more">Детальніше<span>&#65515;</span></a>
         </div>
 
-        {% endfor %}
+      {% endfor %}
     </div>
 
     <i class="go-to-top"></i>
 
-</div>
+  </div>
 </div>
 {% endspaceless %}

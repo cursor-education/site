@@ -2,6 +2,7 @@
 app =
     init: ->
         app.initScrollHook()
+        helpers.initTooltip()
         helpers.initScrollToTopEls()
 
     initScrollHook: ->

@@ -44,6 +44,12 @@ $app->match('/course/{id}', function (Request $request) use ($app) {
 })
 ->bind('course');
 
+// @route lecture profile page
+$app->match('/lecture/{id}', function () use ($app) {
+    var_dump(123);die;
+})
+->bind('lecture');
+
 // @route update db changes
 $app->match('/admin/update', function () use ($app) {
     echo time().'<br>';

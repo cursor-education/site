@@ -1,21 +1,25 @@
 {% spaceless %}
-<div id="header-menu" class="animated" data-animate-from="150" data-animate-effect="fadeInDown">
-<div class="wrap">
+  <div id="header-menu" class="animated" data-animate-from="150" data-animate-effect="fadeInDown">
+    <div class="wrap">
 
-    <a href="javascript:;" id="logo">
+      <a href="javascript:;" id="logo">
         <i class="icon-big animated flip"></i>
         <i class="icon-small animated flip"></i>
         <span>CURSOR education</span>
-    </a>
+      </a>
 
-    <ul id="menu" class="animated fadeIn">
+      <ul id="menu" class="animated fadeIn">
         <li><a href="/">Головна</a></li>
-        <li><a href="{{ link|default('') }}#courses" class="go-to-top" data-top="courses">Курси</a></li>
-        <!-- <li><a href="#teachers" class="hidden go-to-top" data-top="teachers">Викладачі</a></li> -->
-        <li><a href="{{ link|default('') }}#partners" class="go-to-top" data-top="partners">Партнери</a></li>
-        <li><a href="{{ link|default('') }}#contacts" class="go-to-top" data-top="contacts">Контакти</a></li>
-    </ul>
 
-</div>
-</div>
+        <li><a href="{{ link|default('') }}#courses" class="go-to-top" data-top="courses">Курси</a></li>
+
+        <!-- <li><a href="#teachers" class="hidden go-to-top" data-top="teachers">Викладачі</a></li> -->
+
+        <li><a href="{{ link|default('') }}#partners" class="go-to-top" data-top="partners">Партнери</a></li>
+
+        <li><a href="{{ link|default('') }}#contacts" class="go-to-top" data-top="contacts">Контакти</a></li>
+      </ul>
+
+    </div>
+  </div>
 {% endspaceless %}

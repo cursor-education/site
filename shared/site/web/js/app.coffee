@@ -40,6 +40,62 @@ window.helpers =
             window.scrollToWorking = false
             done()
 
+    initTooltip: () ->
+        tooltipEl = null
+
+        #
+        init = () =>
+            getElements = -> document.getElementsByClassName 'tooltip'
+
+            unless document.getElementById('tooltip')
+                tooltipEl = document.createElement('div')
+                tooltipEl.id = 'tooltip'
+
+                document.body.appendChild tooltipEl
+
+            for el in getElements()
+                el.addEventListener 'mouseenter', show
+                el.addEventListener 'mouseleave', hide
+                el.addEventListener 'mousemove', setTooltipPos
+
+        #
+        show = ->
+            tip = @getAttribute('title')
+            return unless tip
+
+            document.getElementById('tooltip').innerHTML = tip
+            document.getElementById('tooltip').style.width = tip.length * 7
+            document.getElementById('tooltip').style.display = 'block'
+            null
+
+        #
+        hide = ->
+            document.getElementById('tooltip').style.display = 'none'
+            null
+
+        #
+        setTooltipPos = (e) ->
+            el = document.getElementById('tooltip')
+
+            marginRight = 30
+
+            _left = e.pageX
+            _top = e.pageY
+
+            if _left + el.clientWidth + marginRight > window.innerWidth
+                _left = window.innerWidth - el.clientWidth - marginRight
+
+            _top += 10
+            _left += 5
+
+            el.style.left = _left + 'px'
+            el.style.top = _top + 'px'
+
+            null
+
+        #
+        init()
+
     initScrollToTopEls: () ->
         for el in document.getElementsByClassName('go-to-top')
             do (el) ->
@@ -115,6 +171,8 @@ window.helpers =
 
             if dataTopEl
                 topEl = document.getElementById(dataTopEl)
+                continue unless topEl
+
                 topElOffset = scroll - (topEl.offsetTop + offsetTopMin)
 
                 if topElOffset >= offsetTopMin
