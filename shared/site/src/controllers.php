@@ -44,11 +44,18 @@ $app->match('/course/{id}', function (Request $request) use ($app) {
 })
 ->bind('course');
 
-// @route lecture profile page
-$app->match('/lecture/{id}', function () use ($app) {
-    var_dump(123);die;
+// @route teacher profile page
+$app->match('/teacher/{id}', function (Request $request) use ($app) {
+    $lectureId = $request->get('id');
+
+    return $app['twig']->render('teacher/index.html.twig', array(
+        'teacher' => array(
+            'id' => $lectureId,
+            'name' => 'Max XZ'
+        ),
+    ));
 })
-->bind('lecture');
+->bind('teacher');
 
 // @route update db changes
 $app->match('/admin/update', function () use ($app) {

@@ -1,0 +1,13 @@
+{% extends "layout.html.twig" %}
+
+{% set pageName = 'teacher' %}
+
+{% block content %}
+    {% include 'landing/_header_menu.html.twig' with {link:'/'} %}
+
+    {% spaceless %}
+    <div id="profile" class="section">
+        <i class="icon sfull teacher {{ teacher.id }}"></i>
+    </div>
+    {% endspaceless %}
+{% endblock %}
