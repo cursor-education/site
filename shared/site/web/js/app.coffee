@@ -201,3 +201,11 @@ window.helpers =
             if isElVisible
                 bgOffset = offsetY - el.offsetTop
                 el.style.backgroundPositionY = "#{bgOffset}px"
+
+    initSubmitForm: ->
+        forms = document.getElementsByClassName 'light-form'
+
+        for form in forms
+            form.onsubmit = ->
+                alert(1)
+                return false

@@ -3,6 +3,7 @@ app =
     init: ->
         app.initScrollHook()
         helpers.initScrollToTopEls()
+        helpers.initSubmitForm()
         # app.initGallery()
 
     initScrollHook: ->

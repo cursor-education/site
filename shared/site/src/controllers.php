@@ -57,6 +57,18 @@ $app->match('/teacher/{id}', function (Request $request) use ($app) {
 })
 ->bind('teacher');
 
+// @route submit form from landing page
+$app->post('/callme', function () use ($app) {
+    var_dump(111);die;
+})
+->bind('landing-form');
+
+// @route submit form from course page
+$app->post('/callme-course', function () use ($app) {
+    var_dump(222);die;
+})
+->bind('course-form');
+
 // @route update db changes
 $app->match('/admin/update', function () use ($app) {
     echo time().'<br>';

@@ -12,6 +12,8 @@ module.exports = (grunt) ->
         sprites = [
             'animation-deus'
             'icons'
+            'teachers'
+            'partners'
         ]
 
         settings = {}

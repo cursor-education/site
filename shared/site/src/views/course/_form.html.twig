@@ -2,12 +2,12 @@
   <div id="form" class="section curve-after">
     <div class="wrap">
 
-    <form class="light-form" method="post" action="#">
+    <form class="light-form" method="post" action="{{ path('landing-form') }}">
       <h3>Якщо вас зацікавив даний курс, -<br/>залиште свої контактні дані у формі нижче, і ми вам перетелефонуємо.</h3>
 
       <div class="row">
         <label for="name">Ім'я:</label>
-        <input id="name" type="text" placeholder="Тарас Шевченко" />
+        <input id="name" type="text" placeholder="Тарас Шевченко" validate required />
       </div>
 
       <div class="row">
