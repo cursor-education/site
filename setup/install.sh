@@ -23,3 +23,5 @@ if [ ! -f ${TMP_FILE} ]; then
 else
     echo "SETUP: Already provisioned."
 fi
+
+chmod -R 0777 /vagrant/shared/site/
