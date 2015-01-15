@@ -17,6 +17,8 @@
 >     $ vagrant destroy --force   # to reset vagrant image
 >     $ vagrant up                # to setup virtual machine
 >
+> and navigate to http://local.cursor.education/
+>
 >
 
 []()

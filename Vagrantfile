@@ -34,5 +34,7 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "yum-epel"
   end
 
+  config.vm.provision :shell, inline: "bash /vagrant/setup/install.sh", privileged: false
+
   config.vm.provision :shell, inline: "echo 'VM booted successfully!'"
 end
