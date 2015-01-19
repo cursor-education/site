@@ -103,10 +103,10 @@ section.module.parallax-1 {
   /*background-image: url("http://computerservernetwork.com/wp-content/uploads/2013/06/learncomputer-programing.jpg");*/
 }
 section.module.parallax-2 {
-  background-image: url("http://www.theofficegroup.co.uk/wp-content/uploads/2012/12/SPML-Office-Space-West-End-MC-12.12-940x407.jpg");
+  background-image: url("../img/2.paralax.jpg");
 }
 section.module.parallax-3 {
-  background-image: url("http://pixabay.com/static/uploads/photo/2014/05/02/21/49/home-office-336373_640.jpg");
+  background-image: url("../img/3.paralax.jpg");
 }
 
 .text-center {
