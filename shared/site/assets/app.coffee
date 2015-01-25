@@ -1,3 +1,15 @@
+scrollToTop = ->
+    t = t || null
+
+    if document.body.scrollTop != 0 || document.documentElement.scrollTop != 0
+        window.scrollBy 0, -50
+        t = setTimeout scrollToTop, 5
+    else
+        clearTimeout t
+
+for el in document.getElementsByClassName('go-to-top')
+    el.onclick = scrollToTop
+
 # initParallaxEffect = ->
 #     scroll = document.body.scrollTop
 
