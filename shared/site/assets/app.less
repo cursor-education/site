@@ -34,6 +34,10 @@ body#page-course {
         border-left: 2px #8194B5 solid;
         border-right: 2px #8194B5 solid;
 
+        @media screen and (max-width: 650px) {
+            border-width: 0px;
+        }
+
         .wrap {
             max-width: 1000px;
             margin: 0 auto;
@@ -49,6 +53,8 @@ body#page-course {
 }
 
 body#page-landing {
+    overflow-x: hidden;
+
     section#header {
         background: url(/assets/header-bg-1.png) no-repeat;
         background-size: 100%;
@@ -67,37 +73,6 @@ body#page-landing {
         @media screen and (max-width: 650px) {
             background-size: cover;
             background-position: center;
-
-            #logo {
-                float: left !important;
-                width: 30% !important;
-            }
-
-            ul#menu {
-                float: left !important;
-                list-style: initial !important;
-                width: 69% !important;
-
-                li {
-                    a {
-                        background: rgba(255, 255, 255, 0.11);
-                        margin-right: 5px;
-                        margin-bottom: 5px;
-                    }
-                }
-            }
-
-            #slogan {
-                margin-top: 25px !important;
-
-                span {
-                    display: block !important;
-                    font-size: 20px !important;
-
-                    word-wrap: break-word;
-                    word-break: break-word;
-                }
-            }
         }
 
         &:before {
@@ -109,6 +84,10 @@ body#page-landing {
             width: 50%;
             left: -30px;
 
+            @media screen and (max-width: 650px) {
+                width: 51%;
+            }
+
         }
         &:after {
             content: "";
@@ -118,6 +97,10 @@ body#page-landing {
             bottom: 0;
             width: 50%;
             right: -30px;
+
+            @media screen and (max-width: 650px) {
+                width: 51%;
+            }
         }
 
         .wrap {
@@ -126,11 +109,22 @@ body#page-landing {
             background: rgba(2, 29, 55, 0.74);
 
             max-width: none;
+
+            @media screen and (max-width: 650px) {
+                padding: 10px 10px 155px 10px;
+            }
         }
 
         #logo {
             float: left;
             display: block;
+
+            @media screen and (max-width: 650px) {
+                float: left;
+                background-size: 100px;
+                width: 120px;
+                height: 150px;
+            }
 
             width: 85px;
             height: 115px;
@@ -152,6 +146,21 @@ body#page-landing {
 
             margin: 0;
             padding: 0;
+
+            @media screen and (max-width: 650px) {
+                float: left;
+                list-style: initial;
+                width: 60%;
+                margin-top: 5px;
+
+                li {
+                    a {
+                        background: rgba(255, 255, 255, 0.11);
+                        margin-right: 5px;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
 
             li {
                 display: inline-block;
@@ -188,6 +197,18 @@ body#page-landing {
 
             margin-top: 1px;
 
+            @media screen and (max-width: 650px) {
+                margin-top: 15px;
+
+                span {
+                    display: block !important;
+                    font-size: 20px !important;
+
+                    word-wrap: break-word;
+                    word-break: break-word;
+                }
+            }
+
             span {
                 font-family: "Open Sans";
                 font-weight: 700;
@@ -206,7 +227,7 @@ body#page-landing {
         }
 
         #learn-more-button {
-            margin-top: 35px;
+            margin-top: 25px;
             text-align: center;
 
             .button {
@@ -457,7 +478,7 @@ body#page-landing {
                     background: #FDFDFD;
 
                     img.photo {
-                        transform: perspective(500px) translateZ(70px);
+                        transform: perspective(500px) translateZ(50px);
                     }
                 }
 
@@ -466,6 +487,10 @@ body#page-landing {
                 .status,
                 .desc {
                     display: block;
+                }
+
+                .name {
+                    font-weight: bold;
                 }
 
                 .status {
@@ -485,10 +510,14 @@ body#page-landing {
                 .desc {
                     width: 200px;
 
+                    @media screen and (max-width: 650px) {
+                        width: 90%;
+                    }
+
                     margin: 0 auto;
                     margin-top: 20px;
 
-                    font-size: 14px;
+                    font-size: 15px;
                     text-align: center;
                     word-break: break-word;
                 }
@@ -532,6 +561,10 @@ body#page-landing {
         }
 
         .banner {
+            @media screen and (max-width: 650px) {
+                padding: 10px 10px !important;
+            }
+
             font-family: "Open Sans";
             font-size: 20px;
 
@@ -556,6 +589,13 @@ body#page-landing {
         background: #DBE5F5;
         padding-top: 0px;
         padding-bottom: 0px;
+
+        @media screen and (max-width: 650px) {
+            .wrap .banner span {
+                min-width: 0px !important;
+                width: 90%;
+            }
+        }
 
         .wrap {
             color: black;
