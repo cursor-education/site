@@ -49,6 +49,42 @@ body#page-course {
             letter-spacing: 1px;
             line-height: normal;
         }
+
+        .go-to-top {
+            display: block;
+            position: absolute;
+
+            width: 85px;
+            height: 85px;
+
+            padding-bottom: 5px;
+
+            background: url(http://www.kbconceptspr.com/newtheme/wp-content/uploads/2014/09/up_arrow.png) no-repeat;
+
+            right: 60px;
+            bottom: 50px;
+
+            cursor: pointer;
+
+            @media screen and (max-width: 650px) {
+                position: relative;
+                width: 80%;
+                padding: 0px;
+                right: 0px;
+                bottom: 0px;
+                margin: 0 auto;
+                background-color: rgba(255, 255, 255, 0.43);
+                background-position: center;
+                border-radius: 15px 15px 40px 40px;
+            }
+
+            transition: all 0.15s ease-in-out;
+            transform: perspective(500px) translateZ(0px);
+
+            &:hover {
+                transform: perspective(500px) translateZ(70px);
+            }
+        }
     }
 }
 
@@ -638,8 +674,15 @@ body#page-landing {
 }
 
 body#page-auth {
+    overflow-x: hidden;
+
     .auth-block {
         background-color: #FFF;
+
+        @media screen and (max-width: 650px) {
+            width: 90%;
+            margin-top: 15px;
+        }
 
         width: 680px;
 
@@ -665,9 +708,17 @@ body#page-auth {
         .wrap {
             width: 100%;
             padding: 50px 0px 50px 0px;
+
+            @media screen and (max-width: 650px) {
+                padding: 30px 0px 10px 0px;
+            }
         }
 
         .left {
+            @media screen and (max-width: 650px) {
+                display: none;
+            }
+
             float: left;
             display: inline-block;
 
@@ -703,6 +754,12 @@ body#page-auth {
             padding: 0px 0px 0px 50px;
 
             border-left: 1px solid #E1E1E1;
+
+            @media screen and (max-width: 650px) {
+                width: 90%;
+                padding: 0px 0px 0px 20px;
+                border-left-width: 0px;
+            }
 
             .auth-block-form {
                 input {
