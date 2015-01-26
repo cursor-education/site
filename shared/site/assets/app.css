@@ -3,18 +3,17 @@
   margin: 0;
   border: 0;
 }
-
 .clearfix {
   zoom: 1;
 }
-.clearfix:before, .clearfix:after {
+.clearfix:before,
+.clearfix:after {
   content: '';
   display: table;
 }
 .clearfix:after {
   clear: both;
 }
-
 body#page-landing,
 body#page-auth,
 body#page-course {
@@ -84,12 +83,11 @@ body#page-auth section .go-to-top:hover,
 body#page-course section .go-to-top:hover {
   transform: perspective(500px) translateZ(70px);
 }
-
 body#page-landing {
   overflow-x: hidden;
 }
 body#page-landing section#header {
-  background: url(/assets/header-bg-1.png) no-repeat;
+  background: url(/img/header-bg-1.png) no-repeat;
   background-size: 100%;
   user-select: none;
   -webkit-user-select: none;
@@ -149,7 +147,7 @@ body#page-landing section#header #logo {
   display: block;
   width: 85px;
   height: 115px;
-  background: url(/assets/logo.png) no-repeat;
+  background: url(/img/logo.png) no-repeat;
 }
 @media screen and (max-width: 650px) {
   body#page-landing section#header #logo {
@@ -194,7 +192,7 @@ body#page-landing section#header ul#menu li a {
   color: #fff;
   text-decoration: none;
   text-align: center;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
   transition: all 0.25s ease-in-out;
 }
 body#page-landing section#header ul#menu li a:hover {
@@ -289,7 +287,8 @@ body#page-landing section.curve-line-after:after {
   bottom: -25px;
 }
 body#page-landing section#courses .wrap h2,
-body#page-landing section#teachers .wrap h2 {
+body#page-landing section#teachers .wrap h2,
+body#page-landing section#partners .wrap h2 {
   text-transform: uppercase;
   font-size: 32px;
   text-align: center;
@@ -351,8 +350,13 @@ body#page-landing section#courses .row .t .more {
   display: block;
 }
 body#page-landing section#courses .row .t .name {
-  padding: 10px 5px 5px 5px;
+  padding: 10px 10px 0px 10px;
   margin-bottom: 10px;
+  font-weight: bold;
+}
+body#page-landing section#courses .row .t .time {
+  font-size: 15px;
+  margin-bottom: 30px;
 }
 body#page-landing section#courses .row .t img.image {
   max-width: 180px;
@@ -364,15 +368,11 @@ body#page-landing section#courses .row .t img.image {
 body#page-landing section#courses .row .t .desc {
   margin: 0 auto;
   margin-top: 15px;
+  margin-bottom: 15px;
   padding: 5px 10px 5px 10px;
-  font-size: 14px;
+  font-size: 13px;
   text-align: center;
   word-break: break-word;
-}
-body#page-landing section#courses .row .t .time {
-  font-size: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 body#page-landing section#courses .row .t .more {
   display: inline-block;
@@ -381,7 +381,7 @@ body#page-landing section#courses .row .t .more {
   border: 1px #8194B5 solid;
   font-size: 15px;
   text-decoration: none;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   padding: 10px 20px;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
@@ -427,7 +427,7 @@ body#page-landing section#teachers .row .t {
   }
 }
 body#page-landing section#teachers .row .t:hover {
-  background: #FDFDFD;
+  background: #DBE5F5;
 }
 body#page-landing section#teachers .row .t:hover img.photo {
   transform: perspective(500px) translateZ(50px);
@@ -471,7 +471,7 @@ body#page-landing section#teachers:after {
   -webkit-transform: skew(0deg, -1.5deg);
 }
 body#page-landing section#section-bg-inline {
-  background: url(/assets/bg-inline-2.png) no-repeat;
+  background: url(/img/bg-inline-2.png) no-repeat;
   background-color: rgba(2, 29, 55, 0.74);
   background-size: 100%;
   padding-bottom: 0px;
@@ -514,6 +514,29 @@ body#page-landing section#section-bg-inline .banner {
     padding: 10px 10px !important;
   }
 }
+body#page-landing section#partners {
+  padding-top: 70px;
+}
+body#page-landing section#partners div.list {
+  margin-bottom: 50px;
+  text-align: center;
+}
+body#page-landing section#partners div.list .t {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 15px;
+}
+body#page-landing section#partners div.list .t img {
+  max-width: 250px;
+  background: #FFF;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.15s ease-in-out;
+  transform: perspective(500px) translateZ(0px);
+}
+body#page-landing section#partners div.list .t img:hover {
+  transform: perspective(500px) translateZ(10px);
+}
 body#page-landing section#contacts {
   background: #DBE5F5;
   padding-top: 0px;
@@ -554,7 +577,6 @@ body#page-landing section#contacts:after {
   transform: skew(0deg, 1.5deg);
   -webkit-transform: skew(0deg, 1.5deg);
 }
-
 body#page-auth {
   overflow-x: hidden;
 }
@@ -676,9 +698,8 @@ body#page-auth .auth-block .right .auth-block-form .row.form-submit input:active
   border-color: #28403C;
   color: black;
 }
-
 body#page-course section#header {
-  background: url(/assets/header-bg-1.png) no-repeat;
+  background: url(/img/header-bg-1.png) no-repeat;
   background-size: 100%;
   user-select: none;
   -webkit-user-select: none;
@@ -746,7 +767,7 @@ body#page-course section#header #logo {
   display: block;
   width: 85px;
   height: 115px;
-  background: url(/assets/logo.png) no-repeat;
+  background: url(/img/logo.png) no-repeat;
 }
 body#page-course section#header ul#menu {
   float: right;
@@ -770,7 +791,7 @@ body#page-course section#header ul#menu li a {
   color: #fff;
   text-decoration: none;
   text-align: center;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
   transition: all 0.25s ease-in-out;
 }
 body#page-course section#header ul#menu li a:hover {
@@ -827,7 +848,6 @@ body#page-course section#header #learn-more-button .button:active {
   transform: translateY(2px);
   -webkit-transform: translateY(2px);
 }
-
 section#footer {
   width: 100%;
   background-color: #344C71;

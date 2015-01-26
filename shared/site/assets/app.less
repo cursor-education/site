@@ -92,7 +92,7 @@ body#page-landing {
     overflow-x: hidden;
 
     section#header {
-        background: url(/assets/header-bg-1.png) no-repeat;
+        background: url(/img/header-bg-1.png) no-repeat;
         background-size: 100%;
 
         user-select: none;
@@ -165,7 +165,7 @@ body#page-landing {
             width: 85px;
             height: 115px;
 
-            background: url(/assets/logo.png) no-repeat;
+            background: url(/img/logo.png) no-repeat;
         }
 
         ul#menu {
@@ -338,7 +338,8 @@ body#page-landing {
     }
 
     section#courses,
-    section#teachers {
+    section#teachers,
+    section#partners {
         .wrap h2 {
             text-transform: uppercase;
             font-size: 32px;
@@ -413,8 +414,14 @@ body#page-landing {
                 }
 
                 .name {
-                    padding: 10px 5px 5px 5px;
+                    padding: 10px 10px 0px 10px;
                     margin-bottom: 10px;
+                    font-weight: bold;
+                }
+
+                .time {
+                    font-size: 15px;
+                    margin-bottom: 30px;
                 }
 
                 img.image {
@@ -429,18 +436,13 @@ body#page-landing {
                 .desc {
                     margin: 0 auto;
                     margin-top: 15px;
+                    margin-bottom: 15px;
 
                     padding: 5px 10px 5px 10px;
 
-                    font-size: 14px;
+                    font-size: 13px;
                     text-align: center;
                     word-break: break-word;
-                }
-
-                .time {
-                    font-size: 15px;
-                    margin-top: 10px;
-                    margin-bottom: 10px;
                 }
 
                 .more {
@@ -452,7 +454,7 @@ body#page-landing {
                     font-size: 15px;
                     text-decoration: none;
 
-                    margin-bottom: 5px;
+                    margin-bottom: 10px;
                     padding: 10px 20px;
 
                     cursor: pointer;
@@ -511,7 +513,7 @@ body#page-landing {
                 transition: all .4s ease;
 
                 &:hover {
-                    background: #FDFDFD;
+                    background: #DBE5F5;
 
                     img.photo {
                         transform: perspective(500px) translateZ(50px);
@@ -568,7 +570,7 @@ body#page-landing {
     }
 
     section#section-bg-inline {
-        background: url(/assets/bg-inline-2.png) no-repeat;
+        background: url(/img/bg-inline-2.png) no-repeat;
         background-color: rgba(2, 29, 55, 0.74);
         background-size: 100%;
 
@@ -618,6 +620,36 @@ body#page-landing {
             background: rgba(255, 255, 255, 0.12);
 
             max-width: 700px;
+        }
+    }
+
+    section#partners {
+        padding-top: 70px;
+
+        div.list {
+            margin-bottom: 50px;
+            text-align: center;
+
+            .t {
+                display: inline-block;
+                vertical-align: top;
+
+                margin-right: 15px;
+
+                img {
+                    max-width: 250px;
+                    background: #FFF;
+                    padding: 10px;
+                    border-radius: 5px;
+
+                    transition: all 0.15s ease-in-out;
+                    transform: perspective(500px) translateZ(0px);
+
+                    &:hover {
+                        transform: perspective(500px) translateZ(10px);
+                    }
+                }
+            }
         }
     }
 
@@ -827,7 +859,7 @@ body#page-auth {
 
 body#page-course {
     section#header {
-        background: url(/assets/header-bg-1.png) no-repeat;
+        background: url(/img/header-bg-1.png) no-repeat;
         background-size: 100%;
 
         user-select: none;
@@ -912,7 +944,7 @@ body#page-course {
             width: 85px;
             height: 115px;
 
-            background: url(/assets/logo.png) no-repeat;
+            background: url(/img/logo.png) no-repeat;
         }
 
         ul#menu {
