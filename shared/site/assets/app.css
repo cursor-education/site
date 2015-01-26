@@ -24,11 +24,8 @@ body#page-auth section,
 body#page-course section {
   position: relative;
   min-height: 200px;
-  max-width: 1500px;
   margin: 0 auto;
   padding-bottom: 20px;
-  border-left: 2px #8194B5 solid;
-  border-right: 2px #8194B5 solid;
 }
 @media screen and (max-width: 650px) {
   body#page-landing section,
@@ -73,7 +70,7 @@ body#page-course section .go-to-top {
     right: 0px;
     bottom: 0px;
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.43);
+    background-color: rgba(255,255,255,0.43);
     background-position: center;
     border-radius: 15px 15px 40px 40px;
   }
@@ -134,7 +131,7 @@ body#page-landing section#header:after {
 body#page-landing section#header .wrap {
   margin: 0 auto;
   padding: 50px 50px 155px 50px;
-  background: rgba(2, 29, 55, 0.74);
+  background: rgba(2,29,55,0.74);
   max-width: none;
 }
 @media screen and (max-width: 650px) {
@@ -176,7 +173,7 @@ body#page-landing section#header ul#menu {
     margin-top: 5px;
   }
   body#page-landing section#header ul#menu li a {
-    background: rgba(255, 255, 255, 0.11);
+    background: rgba(255,255,255,0.11);
     margin-right: 5px;
     margin-bottom: 5px;
   }
@@ -192,7 +189,7 @@ body#page-landing section#header ul#menu li a {
   color: #fff;
   text-decoration: none;
   text-align: center;
-  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  border-bottom: 2px solid rgba(0,0,0,0);
   transition: all 0.25s ease-in-out;
 }
 body#page-landing section#header ul#menu li a:hover {
@@ -221,7 +218,7 @@ body#page-landing section#header #slogan span {
   font-family: "Open Sans";
   font-weight: 700;
   font-size: 40px;
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0,0,0,0.15);
   display: inline-block;
   padding: 20px 30px;
 }
@@ -243,7 +240,7 @@ body#page-landing section#header #learn-more-button .button {
   text-align: center;
   letter-spacing: 2px;
   border: 2px #FFF solid;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255,255,255,0.1);
   width: 260px;
   margin: 0 auto;
   padding: 10px;
@@ -254,7 +251,7 @@ body#page-landing section#header #learn-more-button .button {
 }
 body#page-landing section#header #learn-more-button .button:hover {
   background: white;
-  color: rgba(0, 14, 56, 0.75);
+  color: rgba(0,14,56,0.75);
 }
 body#page-landing section#header #learn-more-button .button:active {
   transform: translateY(2px);
@@ -305,8 +302,8 @@ body#page-landing section#go-deeper .wrap {
 }
 body#page-landing section#go-deeper:after {
   background: #8194B5;
-  transform: skew(0deg, -1.5deg);
-  -webkit-transform: skew(0deg, -1.5deg);
+  transform: skew(0deg,-1.5deg);
+  -webkit-transform: skew(0deg,-1.5deg);
 }
 body#page-landing section#courses {
   background: #DBE5F5;
@@ -393,8 +390,8 @@ body#page-landing section#courses .row .t .more:hover {
 }
 body#page-landing section#courses:after {
   background: #DBE5F5;
-  transform: skew(0deg, 1.5deg);
-  -webkit-transform: skew(0deg, 1.5deg);
+  transform: skew(0deg,1.5deg);
+  -webkit-transform: skew(0deg,1.5deg);
 }
 body#page-landing section#teachers {
   background: #F4F8FF;
@@ -467,12 +464,12 @@ body#page-landing section#teachers .row .t .desc {
 }
 body#page-landing section#teachers:after {
   background: #F4F8FF;
-  transform: skew(0deg, -1.5deg);
-  -webkit-transform: skew(0deg, -1.5deg);
+  transform: skew(0deg,-1.5deg);
+  -webkit-transform: skew(0deg,-1.5deg);
 }
 body#page-landing section#section-bg-inline {
   background: url(/img/bg-inline-2.png) no-repeat;
-  background-color: rgba(2, 29, 55, 0.74);
+  background-color: rgba(2,29,55,0.74);
   background-size: 100%;
   padding-bottom: 0px;
   position: relative;
@@ -487,13 +484,13 @@ body#page-landing section#section-bg-inline .wrap {
   margin: 0 auto;
   padding-top: 50px;
   padding-bottom: 50px;
-  background: rgba(2, 29, 55, 0.74);
+  background: rgba(2,29,55,0.74);
   max-width: 100%;
 }
 body#page-landing section#section-bg-inline:after {
   background: #223142;
-  transform: skew(0deg, 1.5deg);
-  -webkit-transform: skew(0deg, 1.5deg);
+  transform: skew(0deg,1.5deg);
+  -webkit-transform: skew(0deg,1.5deg);
 }
 body#page-landing section#section-bg-inline .banner {
   font-family: "Open Sans";
@@ -506,7 +503,7 @@ body#page-landing section#section-bg-inline .banner {
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 20px 40px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255,255,255,0.12);
   max-width: 700px;
 }
 @media screen and (max-width: 650px) {
@@ -569,13 +566,13 @@ body#page-landing section#contacts .wrap .banner span {
   padding: 5px;
   min-width: 500px;
   min-height: 150px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0,0,0,0.5);
   color: #FFF;
 }
 body#page-landing section#contacts:after {
   background: #DBE5F5;
-  transform: skew(0deg, 1.5deg);
-  -webkit-transform: skew(0deg, 1.5deg);
+  transform: skew(0deg,1.5deg);
+  -webkit-transform: skew(0deg,1.5deg);
 }
 body#page-auth {
   overflow-x: hidden;
@@ -598,7 +595,7 @@ body#page-auth .auth-block {
 body#page-auth .auth-block h1.title {
   font: 18px tahoma;
   text-align: center;
-  background: rgba(233, 238, 242, 0.26);
+  background: rgba(233,238,242,0.26);
   padding: 13px;
   user-select: none;
   -webkit-user-select: none;
@@ -660,7 +657,7 @@ body#page-auth .auth-block .right .auth-block-form input {
   color: #646B7E;
   background-color: #EDF0F6;
   border: 1px #EEF1F8 solid;
-  box-shadow: 1px 2px 2px 0 rgba(180, 180, 180, 0.5);
+  box-shadow: 1px 2px 2px 0 rgba(180,180,180,0.5);
 }
 body#page-auth .auth-block .right .auth-block-form .row {
   margin-bottom: 15px;
@@ -724,7 +721,7 @@ body#page-course section#header {
     width: 69% !important;
   }
   body#page-course section#header ul#menu li a {
-    background: rgba(255, 255, 255, 0.11);
+    background: rgba(255,255,255,0.11);
     margin-right: 5px;
     margin-bottom: 5px;
   }
@@ -759,7 +756,7 @@ body#page-course section#header:after {
 body#page-course section#header .wrap {
   margin: 0 auto;
   padding: 50px 50px 155px 50px;
-  background: rgba(2, 29, 55, 0.74);
+  background: rgba(2,29,55,0.74);
   max-width: none;
 }
 body#page-course section#header #logo {
@@ -791,7 +788,7 @@ body#page-course section#header ul#menu li a {
   color: #fff;
   text-decoration: none;
   text-align: center;
-  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  border-bottom: 2px solid rgba(0,0,0,0);
   transition: all 0.25s ease-in-out;
 }
 body#page-course section#header ul#menu li a:hover {
@@ -809,7 +806,7 @@ body#page-course section#header #slogan span {
   font-family: "Open Sans";
   font-weight: 700;
   font-size: 40px;
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0,0,0,0.15);
   display: inline-block;
   padding: 20px 30px;
 }
@@ -831,7 +828,7 @@ body#page-course section#header #learn-more-button .button {
   text-align: center;
   letter-spacing: 2px;
   border: 2px #FFF solid;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255,255,255,0.1);
   width: 260px;
   margin: 0 auto;
   padding: 10px;
@@ -842,7 +839,7 @@ body#page-course section#header #learn-more-button .button {
 }
 body#page-course section#header #learn-more-button .button:hover {
   background: white;
-  color: rgba(0, 14, 56, 0.75);
+  color: rgba(0,14,56,0.75);
 }
 body#page-course section#header #learn-more-button .button:active {
   transform: translateY(2px);
