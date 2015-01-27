@@ -1,14 +1,39 @@
-scrollToTop = ->
+scrollToTop = (val) ->
     t = t || null
+    val = val || 0
 
-    if document.body.scrollTop != 0 || document.documentElement.scrollTop != 0
-        window.scrollBy 0, -50
-        t = setTimeout scrollToTop, 5
+    if /^\d+$/.test(val)
+        topValue = parseInt(val)
+    else
+        topValue = document.getElementById(val).offsetTop
+
+    getScrollTop = ->
+        document.body.scrollTop || document.documentElement.scrollTop
+
+    isTopEqual = (val) ->
+        getScrollTop() == val
+
+    unless isTopEqual(topValue)
+        per = 50
+
+        sign = +1
+        sign = -1 if getScrollTop() > topValue
+
+        diff = (getScrollTop() - topValue) * -sign
+        per = diff if diff > 0 and diff < per
+
+        console.log getScrollTop(), topValue, sign, diff, per
+
+        window.scrollBy 0, sign*per
+        # t = setTimeout (-> scrollToTop(val)), 5
     else
         clearTimeout t
 
 for el in document.getElementsByClassName('go-to-top')
-    el.onclick = scrollToTop
+    do (el) ->
+        el.onclick = (e) ->
+            e.preventDefault();
+            scrollToTop el.getAttribute('data-top')
 
 # initParallaxEffect = ->
 #     scroll = document.body.scrollTop

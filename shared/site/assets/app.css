@@ -45,9 +45,9 @@ body#page-course section .wrap {
   letter-spacing: 1px;
   line-height: normal;
 }
-body#page-landing section .go-to-top,
-body#page-auth section .go-to-top,
-body#page-course section .go-to-top {
+body#page-landing section i.go-to-top,
+body#page-auth section i.go-to-top,
+body#page-course section i.go-to-top {
   display: block;
   position: absolute;
   width: 85px;
@@ -61,9 +61,9 @@ body#page-course section .go-to-top {
   transform: perspective(500px) translateZ(0px);
 }
 @media screen and (max-width: 650px) {
-  body#page-landing section .go-to-top,
-  body#page-auth section .go-to-top,
-  body#page-course section .go-to-top {
+  body#page-landing section i.go-to-top,
+  body#page-auth section i.go-to-top,
+  body#page-course section i.go-to-top {
     position: relative;
     width: 80%;
     padding: 0px;
@@ -75,9 +75,9 @@ body#page-course section .go-to-top {
     border-radius: 15px 15px 40px 40px;
   }
 }
-body#page-landing section .go-to-top:hover,
-body#page-auth section .go-to-top:hover,
-body#page-course section .go-to-top:hover {
+body#page-landing section i.go-to-top:hover,
+body#page-auth section i.go-to-top:hover,
+body#page-course section i.go-to-top:hover {
   transform: perspective(500px) translateZ(70px);
 }
 body#page-landing {
@@ -563,39 +563,7 @@ body#page-landing section#partners div.list .t img:hover {
   transform: perspective(500px) translateZ(10px);
 }
 body#page-landing section#contacts {
-  background: #DBE5F5;
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-@media screen and (max-width: 650px) {
-  body#page-landing section#contacts .wrap .banner span {
-    min-width: 0px !important;
-    width: 90%;
-  }
-}
-body#page-landing section#contacts .wrap {
-  color: black;
-  max-width: none;
-  padding: 0px;
-}
-body#page-landing section#contacts .wrap .map iframe {
-  width: 100%;
-  height: 400px;
-  margin-bottom: -10px;
-}
-body#page-landing section#contacts .wrap .banner {
-  position: absolute;
-  margin-top: 130px;
-  width: 100%;
-  text-align: center;
-}
-body#page-landing section#contacts .wrap .banner span {
-  display: inline-block;
-  padding: 5px;
-  min-width: 500px;
-  min-height: 150px;
-  background: rgba(0, 0, 0, 0.5);
-  color: #FFF;
+  background: red;
 }
 body#page-landing section#contacts:after {
   background: #DBE5F5;
