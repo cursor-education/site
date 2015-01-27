@@ -22,10 +22,10 @@ scrollToTop = (val) ->
         diff = (getScrollTop() - topValue) * -sign
         per = diff if diff > 0 and diff < per
 
-        console.log getScrollTop(), topValue, sign, diff, per
+        # console.log getScrollTop(), topValue, sign, diff, per
 
         window.scrollBy 0, sign*per
-        # t = setTimeout (-> scrollToTop(val)), 5
+        t = setTimeout (-> scrollToTop(val)), 5
     else
         clearTimeout t
 

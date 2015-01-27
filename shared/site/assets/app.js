@@ -25,8 +25,10 @@ scrollToTop = function(val) {
     if (diff > 0 && diff < per) {
       per = diff;
     }
-    console.log(getScrollTop(), topValue, sign, diff, per);
-    return window.scrollBy(0, sign * per);
+    window.scrollBy(0, sign * per);
+    return t = setTimeout((function() {
+      return scrollToTop(val);
+    }), 5);
   } else {
     return clearTimeout(t);
   }
