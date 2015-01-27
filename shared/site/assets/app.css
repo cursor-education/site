@@ -102,7 +102,7 @@ body#page-landing section#header {
 }
 body#page-landing section#header:before {
   content: "";
-  background-color: #8194B5;
+  background-color: #998550;
   height: 60px;
   position: absolute;
   bottom: 0;
@@ -116,7 +116,7 @@ body#page-landing section#header:before {
 }
 body#page-landing section#header:after {
   content: "";
-  background-color: #8194B5;
+  background-color: #998550;
   height: 60px;
   position: absolute;
   bottom: 0;
@@ -131,7 +131,7 @@ body#page-landing section#header:after {
 body#page-landing section#header .wrap {
   margin: 0 auto;
   padding: 50px 50px 155px 50px;
-  background: rgba(2, 29, 55, 0.74);
+  background: rgba(55, 36, 2, 0.44);
   max-width: none;
 }
 @media screen and (max-width: 650px) {
@@ -218,7 +218,7 @@ body#page-landing section#header #slogan span {
   font-family: "Open Sans";
   font-weight: 700;
   font-size: 40px;
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.2);
   display: inline-block;
   padding: 20px 30px;
 }
@@ -271,7 +271,7 @@ body#page-landing #header-arrow:after {
   position: absolute;
   border-width: 30px;
   margin-left: -30px;
-  border-color: #8194B5;
+  border-color: #998550;
   border-top-color: transparent;
 }
 body#page-landing section.curve-line-after:after {
@@ -293,7 +293,7 @@ body#page-landing section#partners .wrap h2 {
   margin-bottom: 50px;
 }
 body#page-landing section#go-deeper {
-  background: #8194B5;
+  background: #998550;
   margin-top: -10px;
   z-index: 3;
 }
@@ -321,6 +321,7 @@ body#page-landing section#courses .row .t {
   display: inline-block;
   vertical-align: top;
   margin-right: 10px;
+  margin-bottom: 30px;
   width: 30%;
   background: #EEF1F7;
   border-radius: 3px;
@@ -342,6 +343,9 @@ body#page-landing section#courses .row .t:hover {
 body#page-landing section#courses .row .t:hover img.image {
   transform: perspective(500px) translateZ(30px);
 }
+body#page-landing section#courses .row .t:hover .title:before {
+  background-size: 110%;
+}
 body#page-landing section#courses .row .t.course-ruby .title:before {
   background-image: url(//d1tijy5l7mg5kk.cloudfront.net/assets/paths/bg-ruby-be027051b381dc1cf89b13c9e65941c3.svg);
 }
@@ -359,6 +363,18 @@ body#page-landing section#courses .row .t.course-htmlcss .title:before {
 }
 body#page-landing section#courses .row .t.course-htmlcss .title:after {
   background-color: #31A480;
+}
+body#page-landing section#courses .row .t.course-php .title:before {
+  background-image: url(http://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1280px-PHP-logo.svg.png);
+}
+body#page-landing section#courses .row .t.course-php .title:after {
+  background-color: #617FB3;
+}
+body#page-landing section#courses .row .t.course-qa .title:before {
+  background-image: url(http://www.qualityliferesources.com/wp-content/uploads/2013/02/quality-assurance.jpg);
+}
+body#page-landing section#courses .row .t.course-qa .title:after {
+  background-color: #DF0000;
 }
 body#page-landing section#courses .row .t .title {
   position: relative;
@@ -390,9 +406,9 @@ body#page-landing section#courses .row .t .title:after {
 }
 body#page-landing section#courses .row .t .name {
   position: relative;
-  padding: 10px 20px;
+  padding: 20px 20px;
   margin-bottom: 5px;
-  font-weight: bold;
+  font-weight: 400;
   z-index: 3;
   color: white;
 }
@@ -454,7 +470,8 @@ body#page-landing section#teachers .row {
 body#page-landing section#teachers .row .t {
   display: inline-block;
   vertical-align: top;
-  margin: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   padding: 25px;
   transition: all .4s ease;
 }
@@ -513,49 +530,14 @@ body#page-landing section#teachers:after {
   transform: skew(0deg, -1.5deg);
   -webkit-transform: skew(0deg, -1.5deg);
 }
-body#page-landing section#section-bg-inline {
-  background: url(/img/bg-inline-2.png) no-repeat;
-  background-color: rgba(2, 29, 55, 0.74);
-  background-size: 100%;
-  padding-bottom: 0px;
+body#page-landing section#section-form {
   position: relative;
+  padding-top: 70px;
 }
-@media screen and (max-width: 650px) {
-  body#page-landing section#section-bg-inline {
-    background-size: cover;
-    background-position: center;
-  }
-}
-body#page-landing section#section-bg-inline .wrap {
-  margin: 0 auto;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  background: rgba(2, 29, 55, 0.74);
-  max-width: 100%;
-}
-body#page-landing section#section-bg-inline:after {
+body#page-landing section#section-form:after {
   background: #223142;
   transform: skew(0deg, 1.5deg);
   -webkit-transform: skew(0deg, 1.5deg);
-}
-body#page-landing section#section-bg-inline .banner {
-  font-family: "Open Sans";
-  font-size: 20px;
-  text-align: left;
-  letter-spacing: 2px;
-  line-height: normal;
-  color: #FFF;
-  margin: 0 auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding: 20px 40px;
-  background: rgba(255, 255, 255, 0.12);
-  max-width: 700px;
-}
-@media screen and (max-width: 650px) {
-  body#page-landing section#section-bg-inline .banner {
-    padding: 10px 10px !important;
-  }
 }
 body#page-landing section#partners {
   padding-top: 70px;

@@ -108,7 +108,7 @@ body#page-landing {
 
         &:before {
             content: "";
-            background-color: #8194B5;
+            background-color: #998550;
             height: 60px;
             position: absolute;
             bottom: 0;
@@ -122,7 +122,7 @@ body#page-landing {
         }
         &:after {
             content: "";
-            background-color: #8194B5;
+            background-color: #998550;
             height: 60px;
             position: absolute;
             bottom: 0;
@@ -137,7 +137,7 @@ body#page-landing {
         .wrap {
             margin: 0 auto;
             padding: 50px 50px 155px 50px;
-            background: rgba(2, 29, 55, 0.74);
+            background: rgba(55, 36, 2, 0.44);
 
             max-width: none;
 
@@ -245,7 +245,7 @@ body#page-landing {
                 font-weight: 700;
                 font-size: 40px;
 
-                background: rgba(0, 0, 0, 0.15);
+                background: rgba(0, 0, 0, 0.2);
                 display: inline-block;
                 padding: 20px 30px;
 
@@ -313,7 +313,7 @@ body#page-landing {
             border-width: 30px;
             margin-left: -30px;
 
-            border-color: #8194B5;
+            border-color: #998550;
             border-top-color: transparent;
         }
     }
@@ -346,7 +346,7 @@ body#page-landing {
     }
 
     section#go-deeper {
-        background: #8194B5;
+        background: #998550;
         margin-top: -10px;
         z-index: 3;
 
@@ -379,6 +379,7 @@ body#page-landing {
                 vertical-align: top;
 
                 margin-right: 10px;
+                margin-bottom: 30px;
 
                 width: 30%;
 
@@ -401,6 +402,12 @@ body#page-landing {
 
                     img.image {
                         transform: perspective(500px) translateZ(30px);
+                    }
+
+                    .title {
+                        &:before {
+                            background-size: 110%;
+                        }
                     }
                 }
 
@@ -433,6 +440,28 @@ body#page-landing {
                         }
                         &:after {
                             background-color: #31A480;
+                        }
+                    }
+                }
+
+                &.course-php {
+                    .title {
+                        &:before {
+                            background-image: url(http://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1280px-PHP-logo.svg.png);
+                        }
+                        &:after {
+                            background-color: #617FB3;
+                        }
+                    }
+                }
+
+                &.course-qa {
+                    .title {
+                        &:before {
+                            background-image: url(http://www.qualityliferesources.com/wp-content/uploads/2013/02/quality-assurance.jpg);
+                        }
+                        &:after {
+                            background-color: #DF0000;
                         }
                     }
                 }
@@ -479,9 +508,9 @@ body#page-landing {
 
                 .name {
                     position: relative;
-                    padding: 10px 20px;
+                    padding: 20px 20px;
                     margin-bottom: 5px;
-                    font-weight: bold;
+                    font-weight: 400;
                     z-index: 3;
                     color: white;
                 }
@@ -563,7 +592,9 @@ body#page-landing {
                 display: inline-block;
                 vertical-align: top;
 
-                margin: 10px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+
                 padding: 25px;
 
                 @media screen and (max-width: 650px) {
@@ -638,28 +669,21 @@ body#page-landing {
         }
     }
 
-    section#section-bg-inline {
-        background: url(/img/bg-inline-2.png) no-repeat;
-        background-color: rgba(2, 29, 55, 0.74);
-        background-size: 100%;
-
-        @media screen and (max-width: 650px) {
-            background-size: cover;
-            background-position: center;
-        }
-
-        padding-bottom: 0px;
+    section#section-form {
         position: relative;
 
-        .wrap {
-            margin: 0 auto;
+        padding-top: 70px;
+        // padding-bottom: 50px;
 
-            padding-top: 50px;
-            padding-bottom: 50px;
+        // .wrap {
+        //     margin: 0 auto;
 
-            background: rgba(2, 29, 55, 0.74);
-            max-width: 100%;
-        }
+        //     padding-top: 50px;
+        //     padding-bottom: 50px;
+
+        //     background: rgba(2, 29, 55, 0.74);
+        //     max-width: 100%;
+        // }
 
         &:after {
             background: #223142;
@@ -667,29 +691,29 @@ body#page-landing {
             -webkit-transform: skew(0deg, 1.5deg);
         }
 
-        .banner {
-            @media screen and (max-width: 650px) {
-                padding: 10px 10px !important;
-            }
+        // .banner {
+            // @media screen and (max-width: 650px) {
+            //     padding: 10px 10px !important;
+            // }
 
-            font-family: "Open Sans";
-            font-size: 20px;
+            // font-family: "Open Sans";
+            // font-size: 20px;
 
-            text-align: left;
-            letter-spacing: 2px;
-            line-height: normal;
-            color: #FFF;
+            // text-align: left;
+            // letter-spacing: 2px;
+            // line-height: normal;
+            // color: #FFF;
 
-            margin: 0 auto;
-            margin-top: 30px;
-            margin-bottom: 30px;
+            // margin: 0 auto;
+            // margin-top: 30px;
+            // margin-bottom: 30px;
 
-            padding: 20px 40px;
+            // padding: 20px 40px;
 
-            background: rgba(255, 255, 255, 0.12);
+            // background: rgba(255, 255, 255, 0.12);
 
-            max-width: 700px;
-        }
+            // max-width: 700px;
+        // }
     }
 
     section#partners {
