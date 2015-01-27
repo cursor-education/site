@@ -382,6 +382,10 @@ body#page-landing {
 
                 width: 30%;
 
+                background: #EEF1F7;
+                border-radius: 3px;
+                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+
                 @media screen and (max-width: 650px) {
                     display: block;
                     width: 100%;
@@ -396,32 +400,102 @@ body#page-landing {
                     background: #FDFDFD;
 
                     img.image {
-                        transform: perspective(500px) translateZ(70px);
+                        transform: perspective(500px) translateZ(30px);
                     }
                 }
 
-                .name,
-                .image,
-                .desc,
-                .time,
-                .more {
-                    display: block;
+                &.course-ruby {
+                    .title {
+                        &:before {
+                            background-image: url(//d1tijy5l7mg5kk.cloudfront.net/assets/paths/bg-ruby-be027051b381dc1cf89b13c9e65941c3.svg);
+                        }
+                        &:after {
+                            background-color: #B24626;
+                        }
+                    }
+                }
+
+                &.course-js {
+                    .title {
+                        &:before {
+                            background-image: url(https://d1tijy5l7mg5kk.cloudfront.net/assets/paths/bg-javascript-fe8cec88499673b890c2efe3bec497d7.svg);
+                        }
+                        &:after {
+                            background-color: #D7A627;
+                        }
+                    }
+                }
+
+                &.course-htmlcss {
+                    .title {
+                        &:before {
+                            background-image: url(https://d1tijy5l7mg5kk.cloudfront.net/assets/paths/badge-html-css-2bcd13b6f0e8092b6e4136a448ea3244.svg);
+                        }
+                        &:after {
+                            background-color: #31A480;
+                        }
+                    }
+                }
+
+                .title {
+                    position: relative;
+
+                    &:before {
+                        content: '';
+
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+
+                        width: 100%;
+                        height: 100%;
+
+                        opacity: 0.35;
+
+                        z-index: 2;
+                    }
+
+                    &:after {
+                        content: '';
+                        background-color: black;
+
+                        height: 100%;
+                        width: 100%;
+
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+
+                        z-index: 1;
+
+                        border-top-left-radius: 3px;
+                        border-top-right-radius: 3px;
+                    }
                 }
 
                 .name {
-                    padding: 10px 10px 0px 10px;
-                    margin-bottom: 10px;
+                    position: relative;
+                    padding: 10px 20px;
+                    margin-bottom: 5px;
                     font-weight: bold;
+                    z-index: 3;
+                    color: white;
                 }
 
                 .time {
                     font-size: 15px;
-                    margin-bottom: 30px;
+                    margin-bottom: 20px;
                 }
 
                 img.image {
+                    display: block;
+
                     max-width: 180px;
-                    max-height: 150px;
+                    max-height: 180px;
                     margin: 0 auto;
 
                     transform: perspective(500px) translateZ(0px);
