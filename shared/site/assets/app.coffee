@@ -1,39 +1,55 @@
-scrollToTop = (val) ->
-    t = t || null
-    val = val || 0
+scrollTo = (val, duration) ->
+    return if duration < 0
 
-    if /^\d+$/.test(val)
-        topValue = parseInt(val)
-    else
-        topValue = document.getElementById(val).offsetTop
+    e = document.documentElement
 
-    getScrollTop = ->
-        document.body.scrollTop || document.documentElement.scrollTop
+    if e.scrollTop == 0
+        t = e.scrollTop
 
-    isTopEqual = (val) ->
-        getScrollTop() == val
+        ++e.scrollTop
 
-    unless isTopEqual(topValue)
-        per = 50
+        if t+1 != e.scrollTop--
+            e = document.body
 
-        sign = +1
-        sign = -1 if getScrollTop() > topValue
+    from = e.scrollTop
+    to = val
 
-        diff = (getScrollTop() - topValue) * -sign
-        per = diff if diff > 0 and diff < per
+    from = from.offsetTop if typeof from == "object"
+    to = to.offsetTop if typeof to == "object"
 
-        # console.log getScrollTop(), topValue, sign, diff, per
+    easeOutCuaic = (t) ->
+        t--
+        t*t*t+1
 
-        window.scrollBy 0, sign*per
-        t = setTimeout (-> scrollToTop(val)), 5
-    else
-        clearTimeout t
+    scrollToX = (element, x1, x2, t, v, step, operacion) ->
+        return if t < 0 || t > 1 || v <= 0
+
+        element.scrollTop = x1 - (x1-x2) * operacion(t);
+        t += v * step
+
+        setTimeout(->
+            scrollToX element, x1, x2, t, v, step, operacion
+        , step)
+
+    scrollToX e, from, to, 0, 1/duration, 20, easeOutCuaic
 
 for el in document.getElementsByClassName('go-to-top')
     do (el) ->
         el.onclick = (e) ->
             e.preventDefault();
-            scrollToTop el.getAttribute('data-top')
+
+            elementID = el.getAttribute('data-top');
+
+            if elementID
+                topValue = document.getElementById(elementID).offsetTop
+            else
+                topValue = 0
+
+            if el.hasAttribute('data-top-offset')
+                topOffset = parseInt el.getAttribute('data-top-offset')
+                topValue += topOffset
+
+            scrollTo topValue, 1000
 
 # initParallaxEffect = ->
 #     scroll = document.body.scrollTop

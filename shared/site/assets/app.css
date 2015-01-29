@@ -17,7 +17,7 @@
 body#page-landing,
 body#page-auth,
 body#page-course {
-  background: #fef8ec;
+  background: #ffffff;
 }
 body#page-landing section,
 body#page-auth section,
@@ -40,7 +40,7 @@ body#page-course section .wrap {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0px 10px;
-  color: #684404;
+  color: #305698;
   font: 18px 'Open Sans';
   letter-spacing: 1px;
   line-height: normal;
@@ -107,7 +107,7 @@ body#page-landing section#header:before {
   left: -30px;
   height: 60px;
   width: 50%;
-  background-color: #e4d5ba;
+  background-color: #cbd7ef;
 }
 @media screen and (max-width: 650px) {
   body#page-landing section#header:before {
@@ -121,7 +121,7 @@ body#page-landing section#header:after {
   width: 50%;
   bottom: 0;
   right: -30px;
-  background-color: #e4d5ba;
+  background-color: #cbd7ef;
 }
 @media screen and (max-width: 650px) {
   body#page-landing section#header:after {
@@ -131,7 +131,7 @@ body#page-landing section#header:after {
 body#page-landing section#header .wrap {
   margin: 0 auto;
   padding: 50px 50px 155px 50px;
-  background-color: rgba(55, 36, 2, 0.44);
+  background-color: rgba(13, 47, 81, 0.6);
   max-width: none;
 }
 @media screen and (max-width: 650px) {
@@ -186,21 +186,21 @@ body#page-landing section#header ul#menu li a {
   display: block;
   margin-right: 5px;
   padding: 10px;
-  color: #fef8ec;
+  color: #dae4f5;
   text-decoration: none;
   text-align: center;
   border-bottom: 2px solid rgba(0, 0, 0, 0);
   transition: all 0.25s ease-in-out;
 }
 body#page-landing section#header ul#menu li a:hover {
-  border-bottom-color: #fef8ec;
+  border-bottom-color: #dae4f5;
 }
 body#page-landing section#header #slogan {
   text-align: center;
   letter-spacing: 2px;
   line-height: normal;
   text-transform: uppercase;
-  color: #fef4e2;
+  color: #dae4f5;
   margin-top: 1px;
 }
 @media screen and (max-width: 650px) {
@@ -240,9 +240,9 @@ body#page-landing section#header #learn-more-button .button {
   text-align: center;
   letter-spacing: 2px;
   text-decoration: none;
-  color: #ecebe0;
+  color: #dae4f5;
   background: rgba(255, 255, 255, 0.1);
-  border: 2px #ecebe0 solid;
+  border: 2px #dae4f5 solid;
   width: 260px;
   margin: 0 auto;
   padding: 10px;
@@ -251,7 +251,8 @@ body#page-landing section#header #learn-more-button .button {
 }
 body#page-landing section#header #learn-more-button .button:hover {
   background: #ffffff;
-  color: rgba(0, 14, 56, 0.75);
+  color: #244071;
+  border-color: #ffffff;
 }
 body#page-landing section#header #learn-more-button .button:active {
   transform: translateY(2px);
@@ -271,7 +272,7 @@ body#page-landing #header-arrow:after {
   margin-left: -30px;
   border: solid transparent;
   border-width: 30px;
-  border-color: #e4d5ba;
+  border-color: #cbd7ef;
   border-top-color: transparent;
 }
 body#page-landing section.curve-line-after:after {
@@ -292,31 +293,31 @@ body#page-landing section#partners .wrap h2 {
   margin-bottom: 50px;
 }
 body#page-landing section#go-deeper {
-  background: #e4d5ba;
+  background: #cbd7ef;
   margin-top: -10px;
   z-index: 3;
 }
 body#page-landing section#go-deeper .wrap {
-  color: rgba(55, 36, 2, 0.85);
+  color: #244071;
 }
 body#page-landing section#go-deeper:after {
-  background: #e4d5ba;
+  background: #cbd7ef;
   transform: skew(0deg, -1.5deg);
   -webkit-transform: skew(0deg, -1.5deg);
 }
 body#page-landing section#courses {
-  background: #f2ebdf;
+  background: #e6ebfa;
   padding-top: 70px;
   padding-bottom: 50px;
 }
 body#page-landing section#courses .wrap {
-  color: #684404;
+  color: #305698;
 }
 body#page-landing section#courses .wrap h2 {
-  color: rgba(55, 36, 2, 0.65);
+  color: #7080a1;
 }
 body#page-landing section#courses:after {
-  background: #f2ebdf;
+  background: #e6ebfa;
   transform: skew(0deg, 1.5deg);
   -webkit-transform: skew(0deg, 1.5deg);
 }
@@ -330,7 +331,7 @@ body#page-landing section#courses .row .t {
   margin-right: 10px;
   margin-bottom: 30px;
   width: 30%;
-  background: #fefaf1;
+  background: #ffffff;
   border-radius: 3px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   transition: all .4s ease;
@@ -443,7 +444,7 @@ body#page-landing section#courses .row .t .desc {
 body#page-landing section#courses .row .t .more {
   display: inline-block;
   color: #ffffff;
-  background: rgba(55, 36, 2, 0.4);
+  background: rgba(36, 64, 113, 0.4);
   font-size: 15px;
   text-decoration: none;
   margin-bottom: 10px;
@@ -452,20 +453,20 @@ body#page-landing section#courses .row .t .more {
   transition: all 0.25s ease-in-out;
 }
 body#page-landing section#courses .row .t .more:hover {
-  background: rgba(55, 36, 2, 0.6);
+  background: rgba(36, 64, 113, 0.6);
   color: #ffffff;
   border-color: #ffffff;
 }
 body#page-landing section#teachers {
-  background: #e4d5ba;
+  background: #ccd5f0;
   padding-top: 70px;
   padding-bottom: 50px;
 }
 body#page-landing section#teachers .wrap {
-  color: rgba(55, 36, 2, 0.75);
+  color: rgba(36, 64, 113, 0.75);
 }
 body#page-landing section#teachers .wrap h2 {
-  color: rgba(55, 36, 2, 0.65);
+  color: #7080a1;
 }
 body#page-landing section#teachers .row {
   text-align: center;
@@ -491,7 +492,7 @@ body#page-landing section#teachers .row .t {
   }
 }
 body#page-landing section#teachers .row .t:hover {
-  background: #fef8ec;
+  background: #f3f5fc;
 }
 body#page-landing section#teachers .row .t:hover img.photo {
   transform: perspective(500px) translateZ(50px);
@@ -530,29 +531,29 @@ body#page-landing section#teachers .row .t .desc {
   }
 }
 body#page-landing section#teachers:after {
-  background: #e4d5ba;
+  background: #ccd5f0;
   transform: skew(0deg, -1.5deg);
   -webkit-transform: skew(0deg, -1.5deg);
 }
 body#page-landing section#section-form {
   position: relative;
   padding-top: 100px;
-  background: #fcf7ee;
+  background: #eaeef9;
 }
 body#page-landing section#section-form:after {
-  background: #fcf7ee;
+  background: #eaeef9;
   transform: skew(0deg, 1.5deg);
   -webkit-transform: skew(0deg, 1.5deg);
 }
 body#page-landing section#partners {
-  background: #f4ecdd;
+  background: #dde4f4;
   padding-top: 70px;
 }
 body#page-landing section#partners .wrap h2 {
-  color: rgba(55, 36, 2, 0.55);
+  color: #7080a1;
 }
 body#page-landing section#partners:after {
-  background: #f4ecdd;
+  background: #dde4f4;
   transform: skew(0deg, -1.5deg);
   -webkit-transform: skew(0deg, -1.5deg);
 }
@@ -572,19 +573,22 @@ body#page-landing section#partners div.list .t {
 body#page-landing section#partners div.list .t:hover {
   opacity: 1;
 }
+body#page-landing section#partners div.list .t a {
+  display: inline-block;
+}
 body#page-landing section#partners div.list .t img {
   max-width: 250px;
   background: #FFF;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 body#page-landing section#contacts {
-  background: #503403;
+  background: #939ebe;
   padding-top: 80px;
   padding-bottom: 30px;
 }
 body#page-landing section#contacts .wrap {
-  color: #ffffff;
+  color: #dde4f4;
   font-size: 15px;
 }
 body#page-auth {
@@ -860,8 +864,7 @@ body#page-course section#header #learn-more-button .button:active {
 }
 section#footer {
   width: 100%;
-  background-color: #322102;
-  color: #503403;
+  background-color: #606a89;
   padding: 20px 0px;
   height: 20px;
   min-height: 0px !important;
@@ -872,4 +875,5 @@ section#footer {
 }
 section#footer .wrap {
   font-size: 13px !important;
+  color: #939ebe !important;
 }

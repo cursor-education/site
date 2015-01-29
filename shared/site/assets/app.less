@@ -1,20 +1,21 @@
-@base: #372402;
+@base: #244071;
 @body-bg: lighten(@base, 85%);
 @body-color: lighten(@base, 10%);
-@header-bg: fade(@base, 44%);
-@header-menu-color: lighten(@base, 85%);
-@slogan-color: lighten(@base, 83%);
+
+@header-bg: rgba(13, 47, 81, 0.6);
+@section1-bg: #CBD7EF;
+@section1-color: #244071;
+@slogan-color: #DAE4F5;
 @slogan-bg: rgba(0, 0, 0, 0.2);
-@header-learnmore-color: #ECEBE0;
+@header-menu-color: @slogan-color;
+@header-learnmore-color: @slogan-color;
 @header-learnmore-bg: rgba(255, 255, 255, 0.1);
-@header-learnmore-border: #ECEBE0;
+@header-learnmore-border: @header-learnmore-color;
 @header-learnmore-hover-bg: white;
-@header-learnmore-hover-color: rgba(0, 14, 56, 0.75);
-@section1-bg: lighten(desaturate(@base, 50%), 70%);
-@section1-color: fade(@base, 85%);
-@section2-bg: lighten(desaturate(@base, 50%), 80%);
+@header-learnmore-hover-color: @section1-color;
+@section2-bg: #E6EBFA;
 @section2-color: @body-color;
-@section2-h2: fade(@base, 65%);
+@section2-h2: #7080A1;
 @course-bg: lighten(@base, 86%);
 @course-hover-bg: lighten(@base, 90%);
 @course-more-color: #FFF;
@@ -22,16 +23,16 @@
 @course-more-hover-bg: fade(@base, 60%);
 @course-more-hover-color: #FFF;
 @course-more-hover-border: #FFF;
-@section3-bg: lighten(desaturate(@base, 50%), 70%);
+@section3-bg: #CCD5F0;
 @section3-color: fade(@base, 75%);
-@section3-h2: fade(@base, 65%);
-@teacher-hover: lighten(@base, 85%);
-@section4-bg: lighten(desaturate(@base, 20%), 85%);
-@section5-bg: lighten(desaturate(@base, 40%), 80%);
-@section5-h2: fade(@base, 55%);
-@section6-bg: lighten(@base, 5%);
-@section6-color: white;
-@footer-bg: darken(@section6-bg, 6%);
+@section3-h2: @section2-h2;
+@teacher-hover: lighten(@section3-bg, 10%);
+@section4-bg: #EAEEF9;
+@section5-bg: #DDE4F4;
+@section5-h2: @section2-h2;
+@section6-bg: #939EBE;
+@section6-color: @section5-bg;
+@footer-bg: #606A89;
 @footer-color: @section6-bg;
 
 * {
@@ -336,6 +337,7 @@ body#page-landing {
                 &:hover {
                     background: @header-learnmore-hover-bg;
                     color: @header-learnmore-hover-color;
+                    border-color: @header-learnmore-hover-bg;
                 }
 
                 &:active {
@@ -789,22 +791,15 @@ body#page-landing {
                     opacity: 1;
                 }
 
+                a {
+                    display: inline-block;
+                }
+
                 img {
                     max-width: 250px;
                     background: #FFF;
                     padding: 10px;
-                    border-radius: 5px;
-
-                    // &:hover {
-                    //     opacity: 1;
-                    // }
-
-                    // transition: all 0.15s ease-in-out;
-                    // transform: perspective(500px) translateZ(0px);
-
-                    // &:hover {
-                    //     transform: perspective(500px) translateZ(10px);
-                    // }
+                    border-radius: 4px;
                 }
             }
         }
@@ -1179,7 +1174,6 @@ section#footer {
     width: 100%;
 
     background-color: @footer-bg;
-    color: @footer-color;
 
     padding: 20px 0px;
 
@@ -1194,5 +1188,6 @@ section#footer {
 
     .wrap {
         font-size: 13px !important;
+        color: @footer-color !important;
     }
 }
