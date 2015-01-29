@@ -686,13 +686,6 @@ body#page-landing {
                     }
                 }
 
-                .name,
-                .photo,
-                .status,
-                .desc {
-                    display: block;
-                }
-
                 .name {
                     font-weight: bold;
                 }
@@ -703,6 +696,8 @@ body#page-landing {
                 }
 
                 img.photo {
+                    display: block;
+
                     margin: 0 auto;
                     margin-top: 20px;
 
@@ -726,6 +721,37 @@ body#page-landing {
                     font-size: 15px;
                     text-align: center;
                     word-break: break-word;
+                }
+
+                .social {
+                    margin-top: 10px;
+
+                    a {
+                        display: inline-block;
+                    }
+
+                    i {
+                        display: inline-block;
+                        width: 16px;
+                        height: 16px;
+                        background-size: 16px;
+
+                        &.linkedin {
+                            background-image: url(https://cdn4.iconfinder.com/data/icons/windev-contacts-2/512/linkedin-16.png);
+                        }
+
+                        &.facebook {
+                            background-image: url(https://cdn4.iconfinder.com/data/icons/windev-contacts-2/512/facebook-16.png);
+                        }
+
+                        &.vkontakte {
+                            background-image: url(https://cdn0.iconfinder.com/data/icons/social-flat-rounded-rects/512/vkontakte-16.png);
+                        }
+
+                        &.github {
+                            background-image: url(https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png);
+                        }
+                    }
                 }
             }
         }

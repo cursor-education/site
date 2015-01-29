@@ -497,12 +497,6 @@ body#page-landing section#teachers .row .t:hover {
 body#page-landing section#teachers .row .t:hover img.photo {
   transform: perspective(500px) translateZ(50px);
 }
-body#page-landing section#teachers .row .t .name,
-body#page-landing section#teachers .row .t .photo,
-body#page-landing section#teachers .row .t .status,
-body#page-landing section#teachers .row .t .desc {
-  display: block;
-}
 body#page-landing section#teachers .row .t .name {
   font-weight: bold;
 }
@@ -511,6 +505,7 @@ body#page-landing section#teachers .row .t .status {
   margin-top: 5px;
 }
 body#page-landing section#teachers .row .t img.photo {
+  display: block;
   margin: 0 auto;
   margin-top: 20px;
   border-radius: 50%;
@@ -529,6 +524,30 @@ body#page-landing section#teachers .row .t .desc {
   body#page-landing section#teachers .row .t .desc {
     width: 90%;
   }
+}
+body#page-landing section#teachers .row .t .social {
+  margin-top: 10px;
+}
+body#page-landing section#teachers .row .t .social a {
+  display: inline-block;
+}
+body#page-landing section#teachers .row .t .social i {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-size: 16px;
+}
+body#page-landing section#teachers .row .t .social i.linkedin {
+  background-image: url(https://cdn4.iconfinder.com/data/icons/windev-contacts-2/512/linkedin-16.png);
+}
+body#page-landing section#teachers .row .t .social i.facebook {
+  background-image: url(https://cdn4.iconfinder.com/data/icons/windev-contacts-2/512/facebook-16.png);
+}
+body#page-landing section#teachers .row .t .social i.vkontakte {
+  background-image: url(https://cdn0.iconfinder.com/data/icons/social-flat-rounded-rects/512/vkontakte-16.png);
+}
+body#page-landing section#teachers .row .t .social i.github {
+  background-image: url(https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png);
 }
 body#page-landing section#teachers:after {
   background: #ccd5f0;
