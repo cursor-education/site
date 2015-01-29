@@ -65,14 +65,11 @@ body#page-course section i.go-to-top {
   body#page-auth section i.go-to-top,
   body#page-course section i.go-to-top {
     position: relative;
-    width: 80%;
     right: 0px;
     bottom: 0px;
     margin: 0 auto;
     padding: 0px;
-    background-color: rgba(255, 255, 255, 0.43);
     background-position: center;
-    border-radius: 15px 15px 40px 40px;
   }
 }
 body#page-landing section i.go-to-top:hover,
@@ -173,7 +170,7 @@ body#page-landing section#header ul#menu {
     margin-top: 5px;
   }
   body#page-landing section#header ul#menu li a {
-    background: red;
+    background: rgba(255, 255, 255, 0.11);
     margin-right: 5px;
     margin-bottom: 5px;
   }
@@ -331,7 +328,7 @@ body#page-landing section#courses .row .t {
   margin-right: 10px;
   margin-bottom: 30px;
   width: 30%;
-  background: #ffffff;
+  background: #f3f5fd;
   border-radius: 3px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   transition: all .4s ease;
@@ -342,7 +339,6 @@ body#page-landing section#courses .row .t {
     width: 100%;
     margin-bottom: 10px;
     padding-bottom: 15px;
-    border-bottom: 2px #FFF solid;
   }
 }
 body#page-landing section#courses .row .t:hover {
@@ -488,7 +484,8 @@ body#page-landing section#teachers .row .t {
     margin-bottom: 10px;
     padding: 0;
     padding-bottom: 15px;
-    border-bottom: 2px #FFF solid;
+    padding-top: 10px;
+    border-bottom: 4px rgba(0, 0, 0, 0.03) solid;
   }
 }
 body#page-landing section#teachers .row .t:hover {
@@ -557,6 +554,7 @@ body#page-landing section#teachers:after {
 body#page-landing section#section-form {
   position: relative;
   padding-top: 100px;
+  padding-bottom: 30px;
   background: #eaeef9;
 }
 body#page-landing section#section-form:after {
@@ -580,6 +578,11 @@ body#page-landing section#partners div.list {
   margin-bottom: 50px;
   text-align: center;
 }
+@media screen and (max-width: 650px) {
+  body#page-landing section#partners div.list {
+    margin-bottom: 0px;
+  }
+}
 body#page-landing section#partners div.list:hover .t {
   opacity: 0.4;
 }
@@ -588,6 +591,12 @@ body#page-landing section#partners div.list .t {
   vertical-align: top;
   margin-right: 15px;
   transition: all 0.15s ease-in-out;
+}
+@media screen and (max-width: 650px) {
+  body#page-landing section#partners div.list .t {
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
 }
 body#page-landing section#partners div.list .t:hover {
   opacity: 1;

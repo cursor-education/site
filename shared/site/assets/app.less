@@ -16,7 +16,7 @@
 @section2-bg: #E6EBFA;
 @section2-color: @body-color;
 @section2-h2: #7080A1;
-@course-bg: lighten(@base, 86%);
+@course-bg: lighten(@section2-bg, 3%);
 @course-hover-bg: lighten(@base, 90%);
 @course-more-color: #FFF;
 @course-more-bg: fade(@base, 40%);
@@ -101,17 +101,13 @@ body#page-course {
             @media screen and (max-width: 650px) {
                 position: relative;
 
-                width: 80%;
                 right: 0px;
                 bottom: 0px;
 
                 margin: 0 auto;
                 padding: 0px;
 
-                background-color: rgba(255, 255, 255, 0.43);
                 background-position: center;
-
-                border-radius: 15px 15px 40px 40px;
             }
 
             transition: all 0.15s ease-in-out;
@@ -233,7 +229,7 @@ body#page-landing {
 
                 li {
                     a {
-                        background: red;//rgba(255, 255, 255, 0.11);
+                        background: rgba(255, 255, 255, 0.11);
                         margin-right: 5px;
                         margin-bottom: 5px;
                     }
@@ -458,7 +454,6 @@ body#page-landing {
 
                     margin-bottom: 10px;
                     padding-bottom: 15px;
-                    border-bottom: 2px #FFF solid;
                 }
 
                 transition: all .4s ease;
@@ -672,8 +667,9 @@ body#page-landing {
 
                     padding: 0;
                     padding-bottom: 15px;
+                    padding-top: 10px;
 
-                    border-bottom: 2px #FFF solid;
+                    border-bottom: 4px rgba(0, 0, 0, 0.03) solid;
                 }
 
                 transition: all .4s ease;
@@ -767,6 +763,7 @@ body#page-landing {
     section#section-form {
         position: relative;
         padding-top: 100px;
+        padding-bottom: 30px;
 
         background: @section4-bg;
 
@@ -799,6 +796,10 @@ body#page-landing {
             margin-bottom: 50px;
             text-align: center;
 
+            @media screen and (max-width: 650px) {
+                margin-bottom: 0px;
+            }
+
             &:hover {
                 .t {
                     opacity: 0.4;
@@ -806,6 +807,11 @@ body#page-landing {
             }
 
             .t {
+                @media screen and (max-width: 650px) {
+                    vertical-align: middle;
+                    margin-bottom: 10px;
+                }
+
                 display: inline-block;
                 vertical-align: top;
 
