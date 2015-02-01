@@ -48,17 +48,19 @@ helpers =
         scroll = document.body.scrollTop
 
         headerMenuEl = document.getElementById('header-menu')
-        offsetTop = document.getElementById('learn-more-button').offsetTop
+
+        fromEl = document.getElementById(headerMenuEl.getAttribute('data-animate-from-element'))
+        fromElOffset = fromEl.offsetTop
 
         className = 'open'
         classNameAnimate = headerMenuEl.getAttribute('data-animate-effect')
 
-        if scroll >= offsetTop
+        if scroll >= (fromElOffset - 50)
             headerMenuEl.classList.add(className)
-            headerMenuEl.classList.add(classNameAnimate)
+            # headerMenuEl.classList.add(classNameAnimate)
         else
             headerMenuEl.classList.remove(className)
-            headerMenuEl.classList.remove(classNameAnimate)
+            # headerMenuEl.classList.remove(classNameAnimate)
 
     scrollHookMenuReset: ->
         classSelected = 'selected'

@@ -50,18 +50,17 @@ helpers = {
     return helpers.scrollHookMenu();
   },
   scrollHookHeader: function() {
-    var className, classNameAnimate, headerMenuEl, offsetTop, scroll;
+    var className, classNameAnimate, fromEl, fromElOffset, headerMenuEl, scroll;
     scroll = document.body.scrollTop;
     headerMenuEl = document.getElementById('header-menu');
-    offsetTop = document.getElementById('learn-more-button').offsetTop;
+    fromEl = document.getElementById(headerMenuEl.getAttribute('data-animate-from-element'));
+    fromElOffset = fromEl.offsetTop;
     className = 'open';
     classNameAnimate = headerMenuEl.getAttribute('data-animate-effect');
-    if (scroll >= offsetTop) {
-      headerMenuEl.classList.add(className);
-      return headerMenuEl.classList.add(classNameAnimate);
+    if (scroll >= (fromElOffset - 50)) {
+      return headerMenuEl.classList.add(className);
     } else {
-      headerMenuEl.classList.remove(className);
-      return headerMenuEl.classList.remove(classNameAnimate);
+      return headerMenuEl.classList.remove(className);
     }
   },
   scrollHookMenuReset: function() {

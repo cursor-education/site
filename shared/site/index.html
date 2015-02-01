@@ -27,7 +27,7 @@
 
 <body id="page-landing" class="page">
 
-  <div id="header-menu" class="animated" data-animate-effect="fadeInDown">
+  <div id="header-menu" class="animated" data-animate-from-element="slogan" data-animate-effect="fadeInDown">
     <div class="wrap">
 
       <a href="javascript:;" id="logo" class="animated flip">
@@ -247,6 +247,30 @@
 
       Porta id parturient aptent facilisi nullam feugiat et suspendisse sit ridiculus scelerisque risus inceptos posuere purus ad sapien cursus a. Faucibus platea aptent mi turpis ullamcorper duis dapibus auctor eu malesuada congue condimentum a ullamcorper platea in lectus montes ac a ante dignissim a id eu nec mi.
 
+      <form method="post" action="#">
+        <div class="row">
+          <label for="name">Ім'я:</label>
+          <input id="name" type="text" placeholder="Тарас Шевченко" />
+        </div>
+
+        <div class="row">
+          <label for="phone">Телефон:</label>
+          <input id="phone" type="text" placeholder="093 123 45 67" />
+        </div>
+
+        <input type="submit" />
+      </form>
+
+      <br/>
+
+      <i class="icon fa comments"></i>
+      <br/>
+      <i class="icon"></i>
+      <br/>
+      <i class="icon"></i>
+      <br/>
+      <br/>
+
     </div>
   </div>
 
@@ -281,14 +305,46 @@
   <div id="contacts" class="section">
     <div class="wrap">
 
-      skype: aaa<br/>
-      email: aa@bb.cc<br/>
+      <div class="column">
 
-      <br/>
-      093 333 55 99 (+viber, +whatsapp)<br/>
-      093 333 55 99<br/>
-      067 111 77 77<br/>
-      099 999 55 88<br/>
+        <div class="t">
+          <a href="skype:cursor.education?chat"><i class="icon skype" title="skype"></i><span>cursor.education</span></a>
+        </div>
+
+        <div class="t">
+          <a href="http://linkedin.com/" target="_blank"><i class="icon linkedin" title="linkedin"></i><span>linkedin.com/cursor.education</span></a>
+        </div>
+
+        <div class="t">
+          <a href="#" target="_blank"><i class="icon email" title="email"></i><span>info@cursor.education</span></a>
+        </div>
+
+        <br/>
+
+        <div class="t">
+          <a href="#" target="_blank"><i class="icon vkontakte" title="vkontakte"></i><span>vk.com/cursor.education</span></a>
+        </div>
+
+        <div class="t">
+          <a href="#" target="_blank"><i class="icon facebook" title="facebook"></i><span>facebook.com/cursor.education</span></a>
+        </div>
+
+      </div>
+      <div class="column column-padding">
+
+        <div class="t">
+          <a href="call://+380938414884" target="_blank"><i class="icon phone" title="phone"></i><span>093 841 4884 <i class="desc">Роман (phone, SMS)</i></span></a>
+        </div>
+
+        <div class="t">
+          <a href="call://+380676721646" target="_blank"><i class="icon phone" title="phone"></i><span>067 672 1646 <i class="desc">Андрій (phone, SMS)</i></span></a>
+        </div>
+
+        <div class="t">
+          <a href="call://+380938414884"><i class="icon viber" title="viber"></i><span>093 841 4884 <i class="desc">Роман (Viber, WhatsApp)</i></span></a>
+        </div>
+
+      </div>
 
     </div>
   </div>

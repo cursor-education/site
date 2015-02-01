@@ -3,6 +3,12 @@
   margin: 0;
   border: 0;
 }
+*:after,
+*:before {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
 .clearfix {
   zoom: 1;
 }
@@ -35,7 +41,7 @@ body.page .section .wrap {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0px 10px;
-  color: #305698;
+  color: #ffffff;
   font: 18px 'Open Sans';
   letter-spacing: 1px;
   line-height: normal;
@@ -85,7 +91,9 @@ body#page-landing .section .wrap h2 {
   margin-bottom: 50px;
 }
 body#page-landing #header-menu {
-  position: absolute;
+  position: fixed;
+  left: 0;
+  top: 0;
   z-index: 3;
   width: 100%;
   text-align: center;
@@ -95,11 +103,9 @@ body#page-landing #header-menu {
   transition: all 0.15s ease-in-out;
 }
 body#page-landing #header-menu.open {
-  position: fixed;
-  left: 0;
-  top: 0;
   z-index: 9999;
-  background: rgba(84, 101, 136, 0.85);
+  background: rgba(45, 52, 62, 0.85);
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 3px 1px;
 }
 body#page-landing #header-menu.open .wrap {
   margin-top: 0px;
@@ -136,6 +142,7 @@ body#page-landing #header-menu .wrap {
   width: 90%;
   max-width: 1100px;
   margin-top: 15px;
+  transition: all 0.15s ease-in-out;
 }
 @media screen and (max-width: 650px) {
 
@@ -168,6 +175,7 @@ body#page-landing #header-menu ul#menu {
   font-size: 16px;
   margin: 0;
   padding: 0;
+  transition: all 0.15s ease-in-out;
 }
 @media screen and (max-width: 650px) {
   body#page-landing #header-menu ul#menu {
@@ -190,14 +198,14 @@ body#page-landing #header-menu ul#menu li a {
   display: block;
   margin-right: 5px;
   padding: 10px;
-  color: #dae4f5;
+  color: #e9f1ff;
   text-decoration: none;
   text-align: center;
   border-bottom: 2px solid rgba(0, 0, 0, 0);
   transition: all 0.25s ease-in-out;
 }
 body#page-landing #header-menu ul#menu li a:hover {
-  border-bottom-color: #dae4f5;
+  border-bottom-color: #e9f1ff;
 }
 body#page-landing #header {
   background: url(/img/header-bg-1.png) no-repeat;
@@ -218,29 +226,26 @@ body#page-landing #header {
   }
 }
 body#page-landing #header:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
   left: -30px;
   height: 60px;
   width: 50%;
-  background-color: #cbd7ef;
+  box-shadow: rgba(0, 0, 0, 0.2) -5px -1px 3px 2px;
 }
-@media screen and (max-width: 650px) {
-  body#page-landing #header:before {
-    width: 51%;
-  }
+body#page-landing #header:after {
+  right: -30px;
+  height: 60px;
+  width: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 5px -1px 3px 2px;
 }
+body#page-landing #header:before,
 body#page-landing #header:after {
   content: "";
   position: absolute;
-  height: 60px;
-  width: 50%;
   bottom: 0;
-  right: -30px;
-  background-color: #cbd7ef;
+  background-color: #f4c420;
 }
 @media screen and (max-width: 650px) {
+  body#page-landing #header:before,
   body#page-landing #header:after {
     width: 51%;
   }
@@ -248,7 +253,7 @@ body#page-landing #header:after {
 body#page-landing #header .wrap {
   margin: 0 auto;
   padding: 160px 50px 155px 50px;
-  background-color: rgba(13, 47, 81, 0.6);
+  background-color: rgba(100, 87, 45, 0.5);
   max-width: none;
 }
 @media screen and (max-width: 650px) {
@@ -261,7 +266,7 @@ body#page-landing #header #slogan {
   letter-spacing: 2px;
   line-height: normal;
   text-transform: uppercase;
-  color: #dae4f5;
+  color: #e9f1ff;
   margin-top: 1px;
 }
 @media screen and (max-width: 650px) {
@@ -278,7 +283,7 @@ body#page-landing #header #slogan {
 body#page-landing #header #slogan span {
   display: inline-block;
   padding: 20px 30px;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
   font-family: "Open Sans";
   font-weight: 700;
   font-size: 40px;
@@ -301,9 +306,9 @@ body#page-landing #header #learn-more-button .button {
   text-align: center;
   letter-spacing: 2px;
   text-decoration: none;
-  color: #dae4f5;
+  color: #e9f1ff;
   background: rgba(255, 255, 255, 0.1);
-  border: 2px #dae4f5 solid;
+  border: 2px #e9f1ff solid;
   width: 260px;
   margin: 0 auto;
   padding: 10px;
@@ -312,7 +317,7 @@ body#page-landing #header #learn-more-button .button {
 }
 body#page-landing #header #learn-more-button .button:hover {
   background: #ffffff;
-  color: #244071;
+  color: #132b56;
   border-color: #ffffff;
 }
 body#page-landing #header #learn-more-button .button:active {
@@ -333,37 +338,40 @@ body#page-landing #header-arrow:after {
   margin-left: -30px;
   border: solid transparent;
   border-width: 30px;
-  border-color: #cbd7ef;
+  border-color: #f4c420;
   border-top-color: transparent;
 }
 body#page-landing #go-deeper {
-  background: #cbd7ef;
+  background: #f4c420;
   margin-top: -10px;
   z-index: 3;
 }
 body#page-landing #go-deeper .wrap {
-  color: #244071;
+  color: #132b56;
+  line-height: 1.4em;
 }
 body#page-landing #go-deeper:after {
-  background: #cbd7ef;
+  background: #f4c420;
   transform: skew(0deg, -1.5deg);
   -webkit-transform: skew(0deg, -1.5deg);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -1px;
 }
 body#page-landing #courses {
-  background: #e6ebfa;
+  background: #f0f3f7;
   padding-top: 70px;
   padding-bottom: 50px;
 }
 body#page-landing #courses .wrap {
-  color: #305698;
+  color: #1a3562;
 }
 body#page-landing #courses .wrap h2 {
-  color: #7080a1;
+  color: #485362;
 }
 body#page-landing #courses:after {
-  background: #e6ebfa;
+  background: #f0f3f7;
   transform: skew(0deg, 1.5deg);
   -webkit-transform: skew(0deg, 1.5deg);
+  box-shadow: rgba(255, 255, 255, 0.9) 0px 5px 3px -2px;
 }
 body#page-landing #courses .row {
   text-align: center;
@@ -375,7 +383,7 @@ body#page-landing #courses .row .t {
   margin-right: 10px;
   margin-bottom: 30px;
   width: 30%;
-  background: #f3f5fd;
+  background: #fafbfc;
   border-radius: 3px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   transition: all .4s ease;
@@ -487,7 +495,7 @@ body#page-landing #courses .row .t .desc {
 body#page-landing #courses .row .t .more {
   display: inline-block;
   color: #ffffff;
-  background: rgba(36, 64, 113, 0.4);
+  background: rgba(240, 243, 247, 0.4);
   font-size: 15px;
   text-decoration: none;
   margin-bottom: 10px;
@@ -496,7 +504,7 @@ body#page-landing #courses .row .t .more {
   transition: all 0.25s ease-in-out;
 }
 body#page-landing #courses .row .t .more:hover {
-  background: rgba(36, 64, 113, 0.6);
+  background: rgba(240, 243, 247, 0.6);
   color: #ffffff;
   border-color: #ffffff;
 }
@@ -506,10 +514,10 @@ body#page-landing #teachers {
   padding-bottom: 50px;
 }
 body#page-landing #teachers .wrap {
-  color: rgba(36, 64, 113, 0.75);
+  color: rgba(240, 243, 247, 0.75);
 }
 body#page-landing #teachers .wrap h2 {
-  color: #7080a1;
+  color: #485362;
 }
 body#page-landing #teachers .row {
   text-align: center;
@@ -602,24 +610,85 @@ body#page-landing #registration-form {
   position: relative;
   padding-top: 100px;
   padding-bottom: 30px;
-  background: #eaeef9;
+  background: #2d343e;
 }
 body#page-landing #registration-form:after {
-  background: #eaeef9;
+  background: #2d343e;
   transform: skew(0deg, 1.5deg);
   -webkit-transform: skew(0deg, 1.5deg);
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 3px 3px -2px;
+}
+body#page-landing #registration-form i.icon {
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: url('http://ecokirp.ru/img/bg.png') repeat-x center center;
+  background-color: #5CB85C;
+  font-size: 50px;
+}
+body#page-landing #registration-form i.icon.fa {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+body#page-landing #registration-form i.icon.comments:before {
+  content: "\f0e6";
+}
+body#page-landing #registration-form form {
+  margin: 30px 0px;
+  font-size: 19px;
+  text-align: center;
+}
+body#page-landing #registration-form form .row {
+  display: inline-block;
+  margin-right: 10px;
+}
+body#page-landing #registration-form form input[type="text"] {
+  padding: 15px 12px;
+  font-family: Verdana;
+  font-size: 16px;
+  border-radius: 2px;
+  color: #646B7E;
+  background-color: #EDF0F6;
+  border: 1px #EEF1F8 solid;
+  box-shadow: 1px 2px 2px 0 rgba(180, 180, 180, 0.5);
+}
+body#page-landing #registration-form form input[type="submit"] {
+  padding: 10px 20px;
+  margin: 0;
+  cursor: pointer;
+  font: 14px 'Comfortaa', Verdana;
+  background: #28403C;
+  color: white;
+  border: 2px solid #28403C;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+body#page-landing #registration-form form input[type="submit"]:hover {
+  background: #66857F;
+  border-color: #66857F;
+}
+body#page-landing #registration-form form input[type="submit"]:active {
+  background: white;
+  border-color: #28403C;
+  color: black;
 }
 body#page-landing #partners {
-  background: #dde4f4;
+  background: #fde07f;
   padding-top: 70px;
 }
 body#page-landing #partners .wrap h2 {
-  color: #7080a1;
+  color: #485362;
 }
 body#page-landing #partners:after {
-  background: #dde4f4;
+  background: #fde07f;
   transform: skew(0deg, -1.5deg);
   -webkit-transform: skew(0deg, -1.5deg);
+  box-shadow: #fde07f 0px 3px 3px -2px;
 }
 body#page-landing #partners div.list {
   margin-bottom: 50px;
@@ -658,13 +727,77 @@ body#page-landing #partners div.list .t img {
   border-radius: 4px;
 }
 body#page-landing #contacts {
-  background: #939ebe;
+  background: #2d343e;
   padding-top: 80px;
   padding-bottom: 30px;
 }
 body#page-landing #contacts .wrap {
   color: #dde4f4;
   font-size: 15px;
+}
+body#page-landing #contacts .wrap .column {
+  display: inline-block;
+  vertical-align: top;
+}
+body#page-landing #contacts .wrap .column-padding {
+  margin-left: 50px;
+}
+body#page-landing #contacts .wrap .t {
+  position: relative;
+  margin-bottom: 7px;
+  text-align: left;
+}
+body#page-landing #contacts .wrap .t a {
+  color: #dde4f4;
+  text-decoration: none;
+}
+body#page-landing #contacts .wrap .t a i.icon {
+  position: absolute;
+  left: 0;
+  top: 3px;
+}
+body#page-landing #contacts .wrap .t a i.desc {
+  margin-left: 2px;
+  font-style: normal;
+  font-size: 13px;
+  color: #A5AEC3;
+}
+body#page-landing #contacts .wrap .t a span {
+  padding-bottom: 1px;
+  margin-left: 22px;
+  border-bottom: 1px #4E5B6F solid;
+  transition: border-bottom-color 0.15s ease-in-out;
+}
+body#page-landing #contacts .wrap .t a:hover span {
+  border-bottom-color: #dde4f4;
+}
+body#page-landing #contacts .wrap i.icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-size: 16px;
+  background-repeat: no-repeat;
+}
+body#page-landing #contacts .wrap i.icon.skype {
+  background-image: url(https://cdn1.iconfinder.com/data/icons/smallicons-logotypes/32/skype-16.png);
+}
+body#page-landing #contacts .wrap i.icon.linkedin {
+  background-image: url(https://cdn1.iconfinder.com/data/icons/smallicons-logotypes/32/linkedin-16.png);
+}
+body#page-landing #contacts .wrap i.icon.email {
+  background-image: url(https://cdn0.iconfinder.com/data/icons/basic-ui-elements-colored/700/08_mail-16.png);
+}
+body#page-landing #contacts .wrap i.icon.viber {
+  background-image: url(https://cdn0.iconfinder.com/data/icons/social-flat-rounded-rects/512/viber-16.png);
+}
+body#page-landing #contacts .wrap i.icon.phone {
+  background-image: url(https://cdn0.iconfinder.com/data/icons/social-flat-rounded-rects/512/whatsapp-16.png);
+}
+body#page-landing #contacts .wrap i.icon.vkontakte {
+  background-image: url(https://cdn0.iconfinder.com/data/icons/social-flat-rounded-rects/512/vkontakte-16.png);
+}
+body#page-landing #contacts .wrap i.icon.facebook {
+  background-image: url(https://cdn4.iconfinder.com/data/icons/windev-contacts-2/512/facebook-16.png);
 }
 body#page-auth {
   overflow-x: hidden;
@@ -939,7 +1072,7 @@ body#page-course section#header #learn-more-button .button:active {
 }
 #footer {
   width: 100%;
-  background-color: #606a89;
+  background-color: #292f38;
   padding: 20px 0px;
   height: 20px;
   min-height: 0px !important;
@@ -950,5 +1083,5 @@ body#page-course section#header #learn-more-button .button:active {
 }
 #footer .wrap {
   font-size: 13px !important;
-  color: #939ebe !important;
+  color: #6c7381 !important;
 }
