@@ -168,6 +168,10 @@ body#page-landing {
 
         transition: all 0.15s ease-in-out;
 
+        @media screen and (max-width: 650px) {
+            height: auto;
+        }
+
         &.open {
             z-index: 9999;
 
@@ -197,12 +201,21 @@ body#page-landing {
                     font: 20px 'Exo 2';
                     color: #F3F5FD;
 
+                    @media screen and (max-width: 650px) {
+                        font-size: 22px;
+                    }
+
                     margin-top: 7px;
                 }
             }
 
             #menu {
                 margin-top: 7px;
+
+                @media screen and (max-width: 650px) {
+                    margin-top: 5px;
+                    width: 100%;
+                }
 
                 li a {
                     padding: 7px 10px;
@@ -240,10 +253,10 @@ body#page-landing {
             @media screen and (max-width: 650px) {
                 float: left;
 
-                background-size: 100px;
+                background-size: 70px;
 
-                width: 120px;
-                height: 150px;
+                width: 85px;
+                height: 100px;
             }
 
             width: 85px;
@@ -361,7 +374,7 @@ body#page-landing {
             background-color: @section1-bg;
 
             @media screen and (max-width: 650px) {
-                width: 51%;
+                width: 50%;
             }
         }
 
@@ -373,7 +386,7 @@ body#page-landing {
             max-width: none;
 
             @media screen and (max-width: 650px) {
-                padding: 10px 10px 155px 10px;
+                padding: 10px 10px 125px 10px;
             }
         }
 
@@ -388,7 +401,7 @@ body#page-landing {
             margin-top: 1px;
 
             @media screen and (max-width: 650px) {
-                margin-top: 15px;
+                margin-top: 140px;
 
                 span {
                     display: block !important;
@@ -905,9 +918,21 @@ body#page-landing {
             font-size: 19px;
             text-align: center;
 
+            @media screen and (max-width: 650px) {
+                // text-align: center;
+            }
+
             .row {
                 display: inline-block;
                 margin-right: 10px;
+                padding-left: 20px;
+
+                @media screen and (max-width: 650px) {
+                    margin: 0;
+                    margin-bottom: 10px;
+                    width: 100%;
+                    text-align: left;
+                }
             }
 
             input[type="text"] {
@@ -1023,15 +1048,23 @@ body#page-landing {
         .wrap {
             color: @section-PRE_FOOTER-color;
             font-size: 15px;
-            // text-align: center;
 
             .column {
                 display: inline-block;
                 vertical-align: top;
-            }
 
-            .column-padding {
-                margin-left: 50px;
+                @media screen and (max-width: 650px) {
+                    margin-left: 20px;
+                }
+
+                &.column-padding {
+                    margin-left: 50px;
+
+                    @media screen and (max-width: 650px) {
+                        margin-left: 20px;
+                        margin-top: 20px;
+                    }
+                }
             }
 
             .t {

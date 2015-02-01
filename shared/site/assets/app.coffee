@@ -50,7 +50,7 @@ helpers =
         headerMenuEl = document.getElementById('header-menu')
 
         fromEl = document.getElementById(headerMenuEl.getAttribute('data-animate-from-element'))
-        fromElOffset = fromEl.offsetTop
+        fromElOffset = Math.max(fromEl.offsetTop, 100)
 
         className = 'open'
         classNameAnimate = headerMenuEl.getAttribute('data-animate-effect')

@@ -102,6 +102,11 @@ body#page-landing #header-menu {
   padding: 0;
   transition: all 0.15s ease-in-out;
 }
+@media screen and (max-width: 650px) {
+  body#page-landing #header-menu {
+    height: auto;
+  }
+}
 body#page-landing #header-menu.open {
   z-index: 9999;
   background: rgba(45, 52, 62, 0.85);
@@ -126,8 +131,19 @@ body#page-landing #header-menu.open #logo span {
   color: #F3F5FD;
   margin-top: 7px;
 }
+@media screen and (max-width: 650px) {
+  body#page-landing #header-menu.open #logo span {
+    font-size: 22px;
+  }
+}
 body#page-landing #header-menu.open #menu {
   margin-top: 7px;
+}
+@media screen and (max-width: 650px) {
+  body#page-landing #header-menu.open #menu {
+    margin-top: 5px;
+    width: 100%;
+  }
 }
 body#page-landing #header-menu.open #menu li a {
   padding: 7px 10px;
@@ -157,9 +173,9 @@ body#page-landing #header-menu #logo {
 @media screen and (max-width: 650px) {
   body#page-landing #header-menu #logo {
     float: left;
-    background-size: 100px;
-    width: 120px;
-    height: 150px;
+    background-size: 70px;
+    width: 85px;
+    height: 100px;
   }
 }
 body#page-landing #header-menu #logo span {
@@ -247,7 +263,7 @@ body#page-landing #header:after {
 @media screen and (max-width: 650px) {
   body#page-landing #header:before,
   body#page-landing #header:after {
-    width: 51%;
+    width: 50%;
   }
 }
 body#page-landing #header .wrap {
@@ -258,7 +274,7 @@ body#page-landing #header .wrap {
 }
 @media screen and (max-width: 650px) {
   body#page-landing #header .wrap {
-    padding: 10px 10px 155px 10px;
+    padding: 10px 10px 125px 10px;
   }
 }
 body#page-landing #header #slogan {
@@ -271,7 +287,7 @@ body#page-landing #header #slogan {
 }
 @media screen and (max-width: 650px) {
   body#page-landing #header #slogan {
-    margin-top: 15px;
+    margin-top: 140px;
   }
   body#page-landing #header #slogan span {
     display: block !important;
@@ -643,9 +659,21 @@ body#page-landing #registration-form form {
   font-size: 19px;
   text-align: center;
 }
+@media screen and (max-width: 650px) {
+
+}
 body#page-landing #registration-form form .row {
   display: inline-block;
   margin-right: 10px;
+  padding-left: 20px;
+}
+@media screen and (max-width: 650px) {
+  body#page-landing #registration-form form .row {
+    margin: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: left;
+  }
 }
 body#page-landing #registration-form form input[type="text"] {
   padding: 15px 12px;
@@ -739,8 +767,19 @@ body#page-landing #contacts .wrap .column {
   display: inline-block;
   vertical-align: top;
 }
-body#page-landing #contacts .wrap .column-padding {
+@media screen and (max-width: 650px) {
+  body#page-landing #contacts .wrap .column {
+    margin-left: 20px;
+  }
+}
+body#page-landing #contacts .wrap .column.column-padding {
   margin-left: 50px;
+}
+@media screen and (max-width: 650px) {
+  body#page-landing #contacts .wrap .column.column-padding {
+    margin-left: 20px;
+    margin-top: 20px;
+  }
 }
 body#page-landing #contacts .wrap .t {
   position: relative;
