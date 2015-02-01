@@ -25,21 +25,28 @@
   <link href='http://fonts.googleapis.com/css?family=Exo+2|Open+Sans:300,400,600,700,regular&subset=latin,cyrillic' rel='stylesheet' type='text/css' media='all' />
 </head>
 
-<body id="page-landing">
+<body id="page-landing" class="page">
 
-  <section id="header">
+  <div id="header-menu" class="animated" data-animate-effect="fadeInDown">
     <div class="wrap">
 
-      <div id="logo-menu" class="clearfix">
-        <a href="javascript:;" id="logo" class="animated flip"></a>
+      <a href="javascript:;" id="logo" class="animated flip">
+        <span>CURSOR education</span>
+      </a>
 
-        <ul id="menu" class="animated fadeIn">
-          <li><a href="/">Головна</a></li>
-          <li><a href="#courses" class="go-to-top" data-top="courses">Курси</a></li>
-          <li><a href="#teachers" class="go-to-top" data-top="teachers">Викладачі</a></li>
-          <li><a href="#contacts" class="go-to-top" data-top="contacts">Контакти</a></li>
-        </ul>
-      </div>
+      <ul id="menu" class="animated fadeIn">
+        <li><a href="/">Головна</a></li>
+        <li><a href="#courses" class="go-to-top" data-top="courses">Курси</a></li>
+        <!-- <li><a href="#teachers" class="hidden go-to-top" data-top="teachers">Викладачі</a></li> -->
+        <li><a href="#partners" class="go-to-top" data-top="partners">Партнери</a></li>
+        <li><a href="#contacts" class="go-to-top" data-top="contacts">Контакти</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div id="header">
+    <div class="wrap">
 
       <div id="slogan" class="clearfix animated flipInX">
         <span>
@@ -54,19 +61,19 @@
       </div>
 
     </div>
-  </section>
+  </div>
 
   <div id="header-arrow"></div>
 
-  <section id="go-deeper" class="curve-line-after">
+  <div id="go-deeper" class="curve-after section">
     <div class="wrap">
 
       фив Lorem ipsum dolor sit amet, ad cum eleifend principes. Vel idque recusabo imperdiet an, corrumpit deseruisse per et, an scaevola persecuti sit. Omnes ancillae eu mel, nec vitae officiis an, usu at equidem consulatu. In nam numquam neglegentur. Sonet dolores vivendum an mel. Cu purto instructior eos, dicit primis voluptaria nec id, at eos doming fuisset. In mea primis maiestatis, cu his euismod tincidunt, case utamur assentior ne nam. Ne nam euismod suavitate incorrupte, ad admodum nusquam adipiscing mei. Sumo solum abhorreant ex mei, pri inani similique id. Duo at modo vero, pro posse expetendis id. Diam errem elaboraret in pri.
 
     </div>
-  </section>
+  </div>
 
-  <section id="courses" class="curve-line-after">
+  <div id="courses" class="section curve-after">
     <div class="wrap">
 
       <h2>Напрямки курсів</h2>
@@ -154,9 +161,9 @@
       <i class="go-to-top"></i>
 
     </div>
-  </section>
+  </div>
 
-  <section id="teachers" class="curve-line-after">
+  <div id="teachers" class="hidden section curve-after">
     <div class="wrap">
 
       <h2>Викладачі</h2>
@@ -233,17 +240,17 @@
       <i class="go-to-top"></i>
 
     </div>
-  </section>
+  </div>
 
-  <section id="section-form" class="curve-line-after">
+  <div id="registration-form" class="section curve-after">
     <div class="wrap">
 
       Porta id parturient aptent facilisi nullam feugiat et suspendisse sit ridiculus scelerisque risus inceptos posuere purus ad sapien cursus a. Faucibus platea aptent mi turpis ullamcorper duis dapibus auctor eu malesuada congue condimentum a ullamcorper platea in lectus montes ac a ante dignissim a id eu nec mi.
 
     </div>
-  </section>
+  </div>
 
-  <section id="partners" class="curve-line-after">
+  <div id="partners" class="section curve-after">
     <div class="wrap">
 
       <h2>Партнери</h2>
@@ -269,9 +276,9 @@
       </div>
 
     </div>
-  </section>
+  </div>
 
-  <section id="contacts">
+  <div id="contacts" class="section">
     <div class="wrap">
 
       skype: aaa<br/>
@@ -284,15 +291,15 @@
       099 999 55 88<br/>
 
     </div>
-  </section>
+  </div>
 
-  <section id="footer">
+  <div id="footer" class="section">
     <div class="wrap">
 
       Cursor Education &copy; 2014-2015
 
     </div>
-  </section>
+  </div>
 
   <script type="text/javascript" src="/assets/app.js"></script>
 

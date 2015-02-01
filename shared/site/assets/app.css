@@ -14,29 +14,24 @@
 .clearfix:after {
   clear: both;
 }
-body#page-landing,
-body#page-auth,
-body#page-course {
+.hidden {
+  display: none !important;
+}
+body.page {
   background: #ffffff;
 }
-body#page-landing section,
-body#page-auth section,
-body#page-course section {
+body.page .section {
   position: relative;
   min-height: 150px;
   margin: 0 auto;
   padding-bottom: 20px;
 }
 @media screen and (max-width: 650px) {
-  body#page-landing section,
-  body#page-auth section,
-  body#page-course section {
+  body.page .section {
     border-width: 0px;
   }
 }
-body#page-landing section .wrap,
-body#page-auth section .wrap,
-body#page-course section .wrap {
+body.page .section .wrap {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0px 10px;
@@ -45,9 +40,7 @@ body#page-course section .wrap {
   letter-spacing: 1px;
   line-height: normal;
 }
-body#page-landing section i.go-to-top,
-body#page-auth section i.go-to-top,
-body#page-course section i.go-to-top {
+body.page .section i.go-to-top {
   display: block;
   position: absolute;
   width: 85px;
@@ -61,9 +54,7 @@ body#page-course section i.go-to-top {
   transform: perspective(500px) translateZ(0px);
 }
 @media screen and (max-width: 650px) {
-  body#page-landing section i.go-to-top,
-  body#page-auth section i.go-to-top,
-  body#page-course section i.go-to-top {
+  body.page .section i.go-to-top {
     position: relative;
     right: 0px;
     bottom: 0px;
@@ -72,71 +63,84 @@ body#page-course section i.go-to-top {
     background-position: center;
   }
 }
-body#page-landing section i.go-to-top:hover,
-body#page-auth section i.go-to-top:hover,
-body#page-course section i.go-to-top:hover {
+body.page .section i.go-to-top:hover {
   transform: perspective(500px) translateZ(70px);
 }
 body#page-landing {
   overflow-x: hidden;
 }
-body#page-landing section#header {
-  background: url(/img/header-bg-1.png) no-repeat;
-  background-size: 100%;
-  user-select: none;
-  -webkit-user-select: none;
-  position: relative;
-  overflow: hidden;
-  border: none;
-  max-width: none;
-  padding: 0px;
-}
-@media screen and (max-width: 650px) {
-  body#page-landing section#header {
-    background-size: cover;
-    background-position: center;
-  }
-}
-body#page-landing section#header:before {
-  content: "";
+body#page-landing .section.curve-after:after {
+  content: " ";
   position: absolute;
-  bottom: 0;
-  left: -30px;
-  height: 60px;
-  width: 50%;
-  background-color: #cbd7ef;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  bottom: -25px;
+  z-index: 1;
 }
-@media screen and (max-width: 650px) {
-  body#page-landing section#header:before {
-    width: 51%;
-  }
+body#page-landing .section .wrap h2 {
+  text-transform: uppercase;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 50px;
 }
-body#page-landing section#header:after {
-  content: "";
+body#page-landing #header-menu {
   position: absolute;
-  height: 60px;
-  width: 50%;
-  bottom: 0;
-  right: -30px;
-  background-color: #cbd7ef;
+  z-index: 3;
+  width: 100%;
+  text-align: center;
+  min-height: inherit;
+  height: 50px;
+  padding: 0;
+  transition: all 0.15s ease-in-out;
+}
+body#page-landing #header-menu.open {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  background: rgba(84, 101, 136, 0.85);
+}
+body#page-landing #header-menu.open .wrap {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+body#page-landing #header-menu.open #logo {
+  background-size: 30px;
+  height: 45px;
+  width: auto;
+  margin-top: 5px;
+  padding-left: 40px;
+  text-align: left;
+  text-decoration: none;
+}
+body#page-landing #header-menu.open #logo span {
+  display: inline-block;
+  font: 20px 'Exo 2';
+  color: #F3F5FD;
+  margin-top: 7px;
+}
+body#page-landing #header-menu.open #menu {
+  margin-top: 7px;
+}
+body#page-landing #header-menu.open #menu li a {
+  padding: 7px 10px;
+}
+body#page-landing #header-menu.open #menu li a.selected,
+body#page-landing #header-menu.open #menu li a:hover {
+  background: rgba(218, 228, 245, 0.2);
+  border-bottom-color: transparent;
+}
+body#page-landing #header-menu .wrap {
+  display: inline-block;
+  width: 90%;
+  max-width: 1100px;
+  margin-top: 15px;
 }
 @media screen and (max-width: 650px) {
-  body#page-landing section#header:after {
-    width: 51%;
-  }
+
 }
-body#page-landing section#header .wrap {
-  margin: 0 auto;
-  padding: 50px 50px 155px 50px;
-  background-color: rgba(13, 47, 81, 0.6);
-  max-width: none;
-}
-@media screen and (max-width: 650px) {
-  body#page-landing section#header .wrap {
-    padding: 10px 10px 155px 10px;
-  }
-}
-body#page-landing section#header #logo {
+body#page-landing #header-menu #logo {
   float: left;
   display: block;
   width: 85px;
@@ -144,14 +148,17 @@ body#page-landing section#header #logo {
   background: url(/img/logo.png) no-repeat;
 }
 @media screen and (max-width: 650px) {
-  body#page-landing section#header #logo {
+  body#page-landing #header-menu #logo {
     float: left;
     background-size: 100px;
     width: 120px;
     height: 150px;
   }
 }
-body#page-landing section#header ul#menu {
+body#page-landing #header-menu #logo span {
+  display: none;
+}
+body#page-landing #header-menu ul#menu {
   float: right;
   text-align: right;
   white-space: nowrap;
@@ -163,23 +170,23 @@ body#page-landing section#header ul#menu {
   padding: 0;
 }
 @media screen and (max-width: 650px) {
-  body#page-landing section#header ul#menu {
+  body#page-landing #header-menu ul#menu {
     float: left;
     list-style: initial;
     width: 60%;
     margin-top: 5px;
   }
-  body#page-landing section#header ul#menu li a {
+  body#page-landing #header-menu ul#menu li a {
     background: rgba(255, 255, 255, 0.11);
     margin-right: 5px;
     margin-bottom: 5px;
   }
 }
-body#page-landing section#header ul#menu li {
+body#page-landing #header-menu ul#menu li {
   display: inline-block;
   float: left;
 }
-body#page-landing section#header ul#menu li a {
+body#page-landing #header-menu ul#menu li a {
   display: block;
   margin-right: 5px;
   padding: 10px;
@@ -189,10 +196,67 @@ body#page-landing section#header ul#menu li a {
   border-bottom: 2px solid rgba(0, 0, 0, 0);
   transition: all 0.25s ease-in-out;
 }
-body#page-landing section#header ul#menu li a:hover {
+body#page-landing #header-menu ul#menu li a:hover {
   border-bottom-color: #dae4f5;
 }
-body#page-landing section#header #slogan {
+body#page-landing #header {
+  background: url(/img/header-bg-1.png) no-repeat;
+  background-size: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  max-width: none;
+  padding: 0px;
+  z-index: 2;
+}
+@media screen and (max-width: 650px) {
+  body#page-landing #header {
+    background-size: cover;
+    background-position: center;
+  }
+}
+body#page-landing #header:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -30px;
+  height: 60px;
+  width: 50%;
+  background-color: #cbd7ef;
+}
+@media screen and (max-width: 650px) {
+  body#page-landing #header:before {
+    width: 51%;
+  }
+}
+body#page-landing #header:after {
+  content: "";
+  position: absolute;
+  height: 60px;
+  width: 50%;
+  bottom: 0;
+  right: -30px;
+  background-color: #cbd7ef;
+}
+@media screen and (max-width: 650px) {
+  body#page-landing #header:after {
+    width: 51%;
+  }
+}
+body#page-landing #header .wrap {
+  margin: 0 auto;
+  padding: 160px 50px 155px 50px;
+  background-color: rgba(13, 47, 81, 0.6);
+  max-width: none;
+}
+@media screen and (max-width: 650px) {
+  body#page-landing #header .wrap {
+    padding: 10px 10px 155px 10px;
+  }
+}
+body#page-landing #header #slogan {
   text-align: center;
   letter-spacing: 2px;
   line-height: normal;
@@ -201,17 +265,17 @@ body#page-landing section#header #slogan {
   margin-top: 1px;
 }
 @media screen and (max-width: 650px) {
-  body#page-landing section#header #slogan {
+  body#page-landing #header #slogan {
     margin-top: 15px;
   }
-  body#page-landing section#header #slogan span {
+  body#page-landing #header #slogan span {
     display: block !important;
     font-size: 20px !important;
     word-wrap: break-word;
     word-break: break-word;
   }
 }
-body#page-landing section#header #slogan span {
+body#page-landing #header #slogan span {
   display: inline-block;
   padding: 20px 30px;
   background: rgba(0, 0, 0, 0.2);
@@ -219,16 +283,16 @@ body#page-landing section#header #slogan span {
   font-weight: 700;
   font-size: 40px;
 }
-body#page-landing section#header #slogan span br {
+body#page-landing #header #slogan span br {
   content: "";
   display: block;
   margin-bottom: 5px;
 }
-body#page-landing section#header #learn-more-button {
+body#page-landing #header #learn-more-button {
   margin-top: 25px;
   text-align: center;
 }
-body#page-landing section#header #learn-more-button .button {
+body#page-landing #header #learn-more-button .button {
   display: inline-block;
   font-family: "Open Sans";
   font-weight: 700;
@@ -246,12 +310,12 @@ body#page-landing section#header #learn-more-button .button {
   cursor: pointer;
   transition: all 0.25s ease-in-out;
 }
-body#page-landing section#header #learn-more-button .button:hover {
+body#page-landing #header #learn-more-button .button:hover {
   background: #ffffff;
   color: #244071;
   border-color: #ffffff;
 }
-body#page-landing section#header #learn-more-button .button:active {
+body#page-landing #header #learn-more-button .button:active {
   transform: translateY(2px);
   -webkit-transform: translateY(2px);
 }
@@ -272,57 +336,40 @@ body#page-landing #header-arrow:after {
   border-color: #cbd7ef;
   border-top-color: transparent;
 }
-body#page-landing section.curve-line-after:after {
-  content: " ";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  bottom: -25px;
-  z-index: 1;
-}
-body#page-landing section#courses .wrap h2,
-body#page-landing section#teachers .wrap h2,
-body#page-landing section#partners .wrap h2 {
-  text-transform: uppercase;
-  font-size: 32px;
-  text-align: center;
-  margin-bottom: 50px;
-}
-body#page-landing section#go-deeper {
+body#page-landing #go-deeper {
   background: #cbd7ef;
   margin-top: -10px;
   z-index: 3;
 }
-body#page-landing section#go-deeper .wrap {
+body#page-landing #go-deeper .wrap {
   color: #244071;
 }
-body#page-landing section#go-deeper:after {
+body#page-landing #go-deeper:after {
   background: #cbd7ef;
   transform: skew(0deg, -1.5deg);
   -webkit-transform: skew(0deg, -1.5deg);
 }
-body#page-landing section#courses {
+body#page-landing #courses {
   background: #e6ebfa;
   padding-top: 70px;
   padding-bottom: 50px;
 }
-body#page-landing section#courses .wrap {
+body#page-landing #courses .wrap {
   color: #305698;
 }
-body#page-landing section#courses .wrap h2 {
+body#page-landing #courses .wrap h2 {
   color: #7080a1;
 }
-body#page-landing section#courses:after {
+body#page-landing #courses:after {
   background: #e6ebfa;
   transform: skew(0deg, 1.5deg);
   -webkit-transform: skew(0deg, 1.5deg);
 }
-body#page-landing section#courses .row {
+body#page-landing #courses .row {
   text-align: center;
   margin-bottom: 30px;
 }
-body#page-landing section#courses .row .t {
+body#page-landing #courses .row .t {
   display: inline-block;
   vertical-align: top;
   margin-right: 10px;
@@ -334,56 +381,56 @@ body#page-landing section#courses .row .t {
   transition: all .4s ease;
 }
 @media screen and (max-width: 650px) {
-  body#page-landing section#courses .row .t {
+  body#page-landing #courses .row .t {
     display: block;
     width: 100%;
     margin-bottom: 10px;
     padding-bottom: 15px;
   }
 }
-body#page-landing section#courses .row .t:hover {
+body#page-landing #courses .row .t:hover {
   background: #ffffff;
 }
-body#page-landing section#courses .row .t:hover img.image {
+body#page-landing #courses .row .t:hover img.image {
   transform: perspective(500px) translateZ(30px);
 }
-body#page-landing section#courses .row .t:hover .title:before {
+body#page-landing #courses .row .t:hover .title:before {
   background-size: 110%;
 }
-body#page-landing section#courses .row .t.course-ruby .title:before {
+body#page-landing #courses .row .t.course-ruby .title:before {
   background-image: url(//d1tijy5l7mg5kk.cloudfront.net/assets/paths/bg-ruby-be027051b381dc1cf89b13c9e65941c3.svg);
 }
-body#page-landing section#courses .row .t.course-ruby .title:after {
+body#page-landing #courses .row .t.course-ruby .title:after {
   background-color: #B24626;
 }
-body#page-landing section#courses .row .t.course-js .title:before {
+body#page-landing #courses .row .t.course-js .title:before {
   background-image: url(https://d1tijy5l7mg5kk.cloudfront.net/assets/paths/bg-javascript-fe8cec88499673b890c2efe3bec497d7.svg);
 }
-body#page-landing section#courses .row .t.course-js .title:after {
+body#page-landing #courses .row .t.course-js .title:after {
   background-color: #D7A627;
 }
-body#page-landing section#courses .row .t.course-htmlcss .title:before {
+body#page-landing #courses .row .t.course-htmlcss .title:before {
   background-image: url(https://d1tijy5l7mg5kk.cloudfront.net/assets/paths/badge-html-css-2bcd13b6f0e8092b6e4136a448ea3244.svg);
 }
-body#page-landing section#courses .row .t.course-htmlcss .title:after {
+body#page-landing #courses .row .t.course-htmlcss .title:after {
   background-color: #31A480;
 }
-body#page-landing section#courses .row .t.course-php .title:before {
+body#page-landing #courses .row .t.course-php .title:before {
   background-image: url(http://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1280px-PHP-logo.svg.png);
 }
-body#page-landing section#courses .row .t.course-php .title:after {
+body#page-landing #courses .row .t.course-php .title:after {
   background-color: #617FB3;
 }
-body#page-landing section#courses .row .t.course-qa .title:before {
+body#page-landing #courses .row .t.course-qa .title:before {
   background-image: url(http://www.qualityliferesources.com/wp-content/uploads/2013/02/quality-assurance.jpg);
 }
-body#page-landing section#courses .row .t.course-qa .title:after {
+body#page-landing #courses .row .t.course-qa .title:after {
   background-color: #DF0000;
 }
-body#page-landing section#courses .row .t .title {
+body#page-landing #courses .row .t .title {
   position: relative;
 }
-body#page-landing section#courses .row .t .title:before {
+body#page-landing #courses .row .t .title:before {
   content: '';
   position: absolute;
   left: 0;
@@ -396,7 +443,7 @@ body#page-landing section#courses .row .t .title:before {
   opacity: 0.35;
   z-index: 2;
 }
-body#page-landing section#courses .row .t .title:after {
+body#page-landing #courses .row .t .title:after {
   content: '';
   background-color: black;
   height: 100%;
@@ -408,7 +455,7 @@ body#page-landing section#courses .row .t .title:after {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
-body#page-landing section#courses .row .t .name {
+body#page-landing #courses .row .t .name {
   position: relative;
   padding: 20px 20px;
   margin-bottom: 5px;
@@ -416,11 +463,11 @@ body#page-landing section#courses .row .t .name {
   z-index: 3;
   color: white;
 }
-body#page-landing section#courses .row .t .time {
+body#page-landing #courses .row .t .time {
   font-size: 15px;
   margin-bottom: 20px;
 }
-body#page-landing section#courses .row .t img.image {
+body#page-landing #courses .row .t img.image {
   display: block;
   max-width: 180px;
   max-height: 180px;
@@ -428,7 +475,7 @@ body#page-landing section#courses .row .t img.image {
   transform: perspective(500px) translateZ(0px);
   transition: all .15s ease;
 }
-body#page-landing section#courses .row .t .desc {
+body#page-landing #courses .row .t .desc {
   margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -437,7 +484,7 @@ body#page-landing section#courses .row .t .desc {
   text-align: center;
   word-break: break-word;
 }
-body#page-landing section#courses .row .t .more {
+body#page-landing #courses .row .t .more {
   display: inline-block;
   color: #ffffff;
   background: rgba(36, 64, 113, 0.4);
@@ -448,27 +495,27 @@ body#page-landing section#courses .row .t .more {
   cursor: pointer;
   transition: all 0.25s ease-in-out;
 }
-body#page-landing section#courses .row .t .more:hover {
+body#page-landing #courses .row .t .more:hover {
   background: rgba(36, 64, 113, 0.6);
   color: #ffffff;
   border-color: #ffffff;
 }
-body#page-landing section#teachers {
+body#page-landing #teachers {
   background: #ccd5f0;
   padding-top: 70px;
   padding-bottom: 50px;
 }
-body#page-landing section#teachers .wrap {
+body#page-landing #teachers .wrap {
   color: rgba(36, 64, 113, 0.75);
 }
-body#page-landing section#teachers .wrap h2 {
+body#page-landing #teachers .wrap h2 {
   color: #7080a1;
 }
-body#page-landing section#teachers .row {
+body#page-landing #teachers .row {
   text-align: center;
   margin-bottom: 30px;
 }
-body#page-landing section#teachers .row .t {
+body#page-landing #teachers .row .t {
   display: inline-block;
   vertical-align: top;
   margin-right: 10px;
@@ -477,7 +524,7 @@ body#page-landing section#teachers .row .t {
   transition: all .4s ease;
 }
 @media screen and (max-width: 650px) {
-  body#page-landing section#teachers .row .t {
+  body#page-landing #teachers .row .t {
     display: block;
     width: 100%;
     margin: 0;
@@ -488,20 +535,20 @@ body#page-landing section#teachers .row .t {
     border-bottom: 4px rgba(0, 0, 0, 0.03) solid;
   }
 }
-body#page-landing section#teachers .row .t:hover {
+body#page-landing #teachers .row .t:hover {
   background: #f3f5fc;
 }
-body#page-landing section#teachers .row .t:hover img.photo {
+body#page-landing #teachers .row .t:hover img.photo {
   transform: perspective(500px) translateZ(50px);
 }
-body#page-landing section#teachers .row .t .name {
+body#page-landing #teachers .row .t .name {
   font-weight: bold;
 }
-body#page-landing section#teachers .row .t .status {
+body#page-landing #teachers .row .t .status {
   font-size: 15px;
   margin-top: 5px;
 }
-body#page-landing section#teachers .row .t img.photo {
+body#page-landing #teachers .row .t img.photo {
   display: block;
   margin: 0 auto;
   margin-top: 20px;
@@ -509,7 +556,7 @@ body#page-landing section#teachers .row .t img.photo {
   transform: perspective(500px) translateZ(0px);
   transition: all .15s ease;
 }
-body#page-landing section#teachers .row .t .desc {
+body#page-landing #teachers .row .t .desc {
   width: 200px;
   margin: 0 auto;
   margin-top: 20px;
@@ -518,104 +565,104 @@ body#page-landing section#teachers .row .t .desc {
   word-break: break-word;
 }
 @media screen and (max-width: 650px) {
-  body#page-landing section#teachers .row .t .desc {
+  body#page-landing #teachers .row .t .desc {
     width: 90%;
   }
 }
-body#page-landing section#teachers .row .t .social {
+body#page-landing #teachers .row .t .social {
   margin-top: 10px;
 }
-body#page-landing section#teachers .row .t .social a {
+body#page-landing #teachers .row .t .social a {
   display: inline-block;
 }
-body#page-landing section#teachers .row .t .social i {
+body#page-landing #teachers .row .t .social i {
   display: inline-block;
   width: 16px;
   height: 16px;
   background-size: 16px;
 }
-body#page-landing section#teachers .row .t .social i.linkedin {
+body#page-landing #teachers .row .t .social i.linkedin {
   background-image: url(https://cdn4.iconfinder.com/data/icons/windev-contacts-2/512/linkedin-16.png);
 }
-body#page-landing section#teachers .row .t .social i.facebook {
+body#page-landing #teachers .row .t .social i.facebook {
   background-image: url(https://cdn4.iconfinder.com/data/icons/windev-contacts-2/512/facebook-16.png);
 }
-body#page-landing section#teachers .row .t .social i.vkontakte {
+body#page-landing #teachers .row .t .social i.vkontakte {
   background-image: url(https://cdn0.iconfinder.com/data/icons/social-flat-rounded-rects/512/vkontakte-16.png);
 }
-body#page-landing section#teachers .row .t .social i.github {
+body#page-landing #teachers .row .t .social i.github {
   background-image: url(https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-16.png);
 }
-body#page-landing section#teachers:after {
+body#page-landing #teachers:after {
   background: #ccd5f0;
   transform: skew(0deg, -1.5deg);
   -webkit-transform: skew(0deg, -1.5deg);
 }
-body#page-landing section#section-form {
+body#page-landing #registration-form {
   position: relative;
   padding-top: 100px;
   padding-bottom: 30px;
   background: #eaeef9;
 }
-body#page-landing section#section-form:after {
+body#page-landing #registration-form:after {
   background: #eaeef9;
   transform: skew(0deg, 1.5deg);
   -webkit-transform: skew(0deg, 1.5deg);
 }
-body#page-landing section#partners {
+body#page-landing #partners {
   background: #dde4f4;
   padding-top: 70px;
 }
-body#page-landing section#partners .wrap h2 {
+body#page-landing #partners .wrap h2 {
   color: #7080a1;
 }
-body#page-landing section#partners:after {
+body#page-landing #partners:after {
   background: #dde4f4;
   transform: skew(0deg, -1.5deg);
   -webkit-transform: skew(0deg, -1.5deg);
 }
-body#page-landing section#partners div.list {
+body#page-landing #partners div.list {
   margin-bottom: 50px;
   text-align: center;
 }
 @media screen and (max-width: 650px) {
-  body#page-landing section#partners div.list {
+  body#page-landing #partners div.list {
     margin-bottom: 0px;
   }
 }
-body#page-landing section#partners div.list:hover .t {
+body#page-landing #partners div.list:hover .t {
   opacity: 0.4;
 }
-body#page-landing section#partners div.list .t {
+body#page-landing #partners div.list .t {
   display: inline-block;
   vertical-align: top;
   margin-right: 15px;
   transition: all 0.15s ease-in-out;
 }
 @media screen and (max-width: 650px) {
-  body#page-landing section#partners div.list .t {
+  body#page-landing #partners div.list .t {
     vertical-align: middle;
     margin-bottom: 10px;
   }
 }
-body#page-landing section#partners div.list .t:hover {
+body#page-landing #partners div.list .t:hover {
   opacity: 1;
 }
-body#page-landing section#partners div.list .t a {
+body#page-landing #partners div.list .t a {
   display: inline-block;
 }
-body#page-landing section#partners div.list .t img {
+body#page-landing #partners div.list .t img {
   max-width: 250px;
   background: #FFF;
   padding: 10px;
   border-radius: 4px;
 }
-body#page-landing section#contacts {
+body#page-landing #contacts {
   background: #939ebe;
   padding-top: 80px;
   padding-bottom: 30px;
 }
-body#page-landing section#contacts .wrap {
+body#page-landing #contacts .wrap {
   color: #dde4f4;
   font-size: 15px;
 }
@@ -890,7 +937,7 @@ body#page-course section#header #learn-more-button .button:active {
   transform: translateY(2px);
   -webkit-transform: translateY(2px);
 }
-section#footer {
+#footer {
   width: 100%;
   background-color: #606a89;
   padding: 20px 0px;
@@ -901,7 +948,7 @@ section#footer {
   user-select: none;
   -webkit-user-select: none;
 }
-section#footer .wrap {
+#footer .wrap {
   font-size: 13px !important;
   color: #939ebe !important;
 }

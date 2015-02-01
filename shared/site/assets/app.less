@@ -53,12 +53,14 @@
     &:after { clear: both; }
 }
 
-body#page-landing,
-body#page-auth,
-body#page-course {
+.hidden {
+    display: none !important;
+}
+
+body.page {
     background: @body-bg;
 
-    section {
+    .section {
         position: relative;
 
         min-height: 150px;
@@ -123,67 +125,99 @@ body#page-course {
 body#page-landing {
     overflow-x: hidden;
 
-    section#header {
-        background: url(/img/header-bg-1.png) no-repeat;
-        background-size: 100%;
+    .section {
+        &.curve-after {
+            &:after {
+                content: " ";
 
-        user-select: none;
-        -webkit-user-select: none;
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 50px;
+                bottom: -25px;
 
-        position: relative;
-        overflow: hidden;
-
-        border: none;
-        max-width: none;
-
-        padding: 0px;
-
-        @media screen and (max-width: 650px) {
-            background-size: cover;
-            background-position: center;
-        }
-
-        &:before {
-            content: "";
-
-            position: absolute;
-            bottom: 0;
-            left: -30px;
-            height: 60px;
-            width: 50%;
-
-            background-color: @section1-bg;
-
-            @media screen and (max-width: 650px) {
-                width: 51%;
+                z-index: 1;
             }
         }
 
-        &:after {
-            content: "";
+        .wrap h2 {
+            text-transform: uppercase;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+    }
 
-            position: absolute;
-            height: 60px;
-            width: 50%;
-            bottom: 0;
-            right: -30px;
+    #header-menu {
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        text-align: center;
+        min-height: inherit;
+        height: 50px;
+        padding: 0;
 
-            background-color: @section1-bg;
+        transition: all 0.15s ease-in-out;
 
-            @media screen and (max-width: 650px) {
-                width: 51%;
+        &.open {
+            position: fixed;
+            left: 0; top: 0;
+
+            z-index: 9999;
+            background: rgba(84, 101, 136, 0.85);
+
+            .wrap {
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+
+            #logo {
+                background-size: 30px;
+
+                height: 45px;
+                width: auto;
+
+                margin-top: 5px;
+                padding-left: 40px;
+
+                text-align: left;
+                text-decoration: none;
+
+                span {
+                    display: inline-block;
+
+                    font: 20px 'Exo 2';
+                    color: #F3F5FD;
+
+                    margin-top: 7px;
+                }
+            }
+
+            #menu {
+                margin-top: 7px;
+
+                li a {
+                    padding: 7px 10px;
+
+                    &.selected,
+                    &:hover {
+                        background: rgba(218, 228, 245, 0.2);
+                        border-bottom-color: transparent;
+                    }
+                }
             }
         }
 
         .wrap {
-            margin: 0 auto;
-            padding: 50px 50px 155px 50px;
-            background-color: @header-bg;
+            display: inline-block;
 
-            max-width: none;
+            width: 90%;
+            max-width: 1100px;
+
+            margin-top: 15px;
 
             @media screen and (max-width: 650px) {
-                padding: 10px 10px 155px 10px;
+                // padding: 10px 10px 155px 10px;
             }
         }
 
@@ -204,6 +238,10 @@ body#page-landing {
             height: 115px;
 
             background: url(/img/logo.png) no-repeat;
+
+            span {
+                display: none;
+            }
         }
 
         ul#menu {
@@ -259,6 +297,73 @@ body#page-landing {
                         border-bottom-color: @header-menu-color;
                     }
                 }
+            }
+        }
+    }
+
+    #header {
+        background: url(/img/header-bg-1.png) no-repeat;
+        background-size: 100%;
+
+        user-select: none;
+        -webkit-user-select: none;
+
+        position: relative;
+        overflow: hidden;
+
+        border: none;
+        max-width: none;
+
+        padding: 0px;
+
+        z-index: 2;
+
+        @media screen and (max-width: 650px) {
+            background-size: cover;
+            background-position: center;
+        }
+
+        &:before {
+            content: "";
+
+            position: absolute;
+            bottom: 0;
+            left: -30px;
+            height: 60px;
+            width: 50%;
+
+            background-color: @section1-bg;
+
+            @media screen and (max-width: 650px) {
+                width: 51%;
+            }
+        }
+
+        &:after {
+            content: "";
+
+            position: absolute;
+            height: 60px;
+            width: 50%;
+            bottom: 0;
+            right: -30px;
+
+            background-color: @section1-bg;
+
+            @media screen and (max-width: 650px) {
+                width: 51%;
+            }
+        }
+
+        .wrap {
+            margin: 0 auto;
+            padding: 160px 50px 155px 50px;
+            background-color: @header-bg;
+
+            max-width: none;
+
+            @media screen and (max-width: 650px) {
+                padding: 10px 10px 155px 10px;
             }
         }
 
@@ -367,34 +472,7 @@ body#page-landing {
         }
     }
 
-    section {
-        &.curve-line-after {
-            &:after {
-                content: " ";
-
-                position: absolute;
-                left: 0;
-                width: 100%;
-                height: 50px;
-                bottom: -25px;
-
-                z-index: 1;
-            }
-        }
-    }
-
-    section#courses,
-    section#teachers,
-    section#partners {
-        .wrap h2 {
-            text-transform: uppercase;
-            font-size: 32px;
-            text-align: center;
-            margin-bottom: 50px;
-        }
-    }
-
-    section#go-deeper {
+    #go-deeper {
         background: @section1-bg;
         margin-top: -10px;
         z-index: 3;
@@ -411,7 +489,7 @@ body#page-landing {
         }
     }
 
-    section#courses {
+    #courses {
         background: @section2-bg;
         padding-top: 70px;
         padding-bottom: 50px;
@@ -632,7 +710,7 @@ body#page-landing {
         }
     }
 
-    section#teachers {
+    #teachers {
         background: @section3-bg;
         padding-top: 70px;
         padding-bottom: 50px;
@@ -760,7 +838,7 @@ body#page-landing {
         }
     }
 
-    section#section-form {
+    #registration-form {
         position: relative;
         padding-top: 100px;
         padding-bottom: 30px;
@@ -773,9 +851,11 @@ body#page-landing {
             transform: skew(0deg, 1.5deg);
             -webkit-transform: skew(0deg, 1.5deg);
         }
+
+        //
     }
 
-    section#partners {
+    #partners {
         background: @section5-bg;
         padding-top: 70px;
 
@@ -837,7 +917,7 @@ body#page-landing {
         }
     }
 
-    section#contacts {
+    #contacts {
         background: @section6-bg;
         padding-top: 80px;
         padding-bottom: 30px;
@@ -1202,7 +1282,7 @@ body#page-course {
 
 }
 
-section#footer {
+#footer {
     width: 100%;
 
     background-color: @footer-bg;
