@@ -41,7 +41,7 @@ body.page .section .wrap {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0px 10px;
-  color: #ffffff;
+  color: #dde4f4;
   font: 18px 'Open Sans';
   letter-spacing: 1px;
   line-height: normal;
@@ -78,8 +78,8 @@ body#page-landing {
 body#page-landing .section.curve-after:after {
   content: " ";
   position: absolute;
-  left: 0;
-  width: 100%;
+  left: -5px;
+  width: 105%;
   height: 50px;
   bottom: -25px;
   z-index: 1;
@@ -109,8 +109,11 @@ body#page-landing #header-menu {
 }
 body#page-landing #header-menu.open {
   z-index: 9999;
-  background: rgba(45, 52, 62, 0.85);
-  box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 3px 1px;
+  background: rgba(36, 46, 61, 0.6);
+  box-shadow: rgba(0, 0, 0, 0.29) 0px 0px 3px 1px;
+}
+body#page-landing #header-menu.open:hover {
+  background: rgba(36, 46, 61, 0.9);
 }
 body#page-landing #header-menu.open .wrap {
   margin-top: 0px;
@@ -214,14 +217,14 @@ body#page-landing #header-menu ul#menu li a {
   display: block;
   margin-right: 5px;
   padding: 10px;
-  color: #e9f1ff;
+  color: #3a434f;
   text-decoration: none;
   text-align: center;
   border-bottom: 2px solid rgba(0, 0, 0, 0);
   transition: all 0.25s ease-in-out;
 }
 body#page-landing #header-menu ul#menu li a:hover {
-  border-bottom-color: #e9f1ff;
+  border-bottom-color: #3a434f;
 }
 body#page-landing #header {
   background: url(/img/header-bg-1.png) no-repeat;
@@ -245,20 +248,18 @@ body#page-landing #header:before {
   left: -30px;
   height: 60px;
   width: 50%;
-  box-shadow: rgba(0, 0, 0, 0.2) -5px -1px 3px 2px;
 }
 body#page-landing #header:after {
   right: -30px;
   height: 60px;
   width: 50%;
-  box-shadow: rgba(0, 0, 0, 0.2) 5px -1px 3px 2px;
 }
 body#page-landing #header:before,
 body#page-landing #header:after {
   content: "";
   position: absolute;
   bottom: 0;
-  background-color: #f4c420;
+  background-color: #facf3b;
 }
 @media screen and (max-width: 650px) {
   body#page-landing #header:before,
@@ -282,7 +283,7 @@ body#page-landing #header #slogan {
   letter-spacing: 2px;
   line-height: normal;
   text-transform: uppercase;
-  color: #e9f1ff;
+  color: #3a434f;
   margin-top: 1px;
 }
 @media screen and (max-width: 650px) {
@@ -299,7 +300,7 @@ body#page-landing #header #slogan {
 body#page-landing #header #slogan span {
   display: inline-block;
   padding: 20px 30px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.32);
   font-family: "Open Sans";
   font-weight: 700;
   font-size: 40px;
@@ -322,9 +323,9 @@ body#page-landing #header #learn-more-button .button {
   text-align: center;
   letter-spacing: 2px;
   text-decoration: none;
-  color: #e9f1ff;
+  color: #3a434f;
   background: rgba(255, 255, 255, 0.1);
-  border: 2px #e9f1ff solid;
+  border: 2px #3a434f solid;
   width: 260px;
   margin: 0 auto;
   padding: 10px;
@@ -354,11 +355,11 @@ body#page-landing #header-arrow:after {
   margin-left: -30px;
   border: solid transparent;
   border-width: 30px;
-  border-color: #f4c420;
+  border-color: #facf3b;
   border-top-color: transparent;
 }
 body#page-landing #go-deeper {
-  background: #f4c420;
+  background: #facf3b;
   margin-top: -10px;
   z-index: 3;
 }
@@ -367,7 +368,7 @@ body#page-landing #go-deeper .wrap {
   line-height: 1.4em;
 }
 body#page-landing #go-deeper:after {
-  background: #f4c420;
+  background: #facf3b;
   transform: skew(0deg, -1.5deg);
   -webkit-transform: skew(0deg, -1.5deg);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -1px;
@@ -387,7 +388,7 @@ body#page-landing #courses:after {
   background: #f0f3f7;
   transform: skew(0deg, 1.5deg);
   -webkit-transform: skew(0deg, 1.5deg);
-  box-shadow: rgba(255, 255, 255, 0.9) 0px 5px 3px -2px;
+  box-shadow: #f0f3f7 0px 3px 2px -2px;
 }
 body#page-landing #courses .row {
   text-align: center;
@@ -632,7 +633,7 @@ body#page-landing #registration-form:after {
   background: #2d343e;
   transform: skew(0deg, 1.5deg);
   -webkit-transform: skew(0deg, 1.5deg);
-  box-shadow: rgba(0, 0, 0, 0.9) 0px 3px 3px -2px;
+  box-shadow: #2d343e 0px 3px 3px -2px;
 }
 body#page-landing #registration-form i.icon {
   display: inline-block;
@@ -706,17 +707,17 @@ body#page-landing #registration-form form input[type="submit"]:active {
   color: black;
 }
 body#page-landing #partners {
-  background: #fde07f;
+  background: #ffdc69;
   padding-top: 70px;
 }
 body#page-landing #partners .wrap h2 {
   color: #485362;
 }
 body#page-landing #partners:after {
-  background: #fde07f;
+  background: #ffdc69;
   transform: skew(0deg, -1.5deg);
   -webkit-transform: skew(0deg, -1.5deg);
-  box-shadow: #fde07f 0px 3px 3px -2px;
+  box-shadow: #ffdc69 0px 3px 2px -2px;
 }
 body#page-landing #partners div.list {
   margin-bottom: 50px;
@@ -755,7 +756,7 @@ body#page-landing #partners div.list .t img {
   border-radius: 4px;
 }
 body#page-landing #contacts {
-  background: #2d343e;
+  background: #303842;
   padding-top: 80px;
   padding-bottom: 30px;
 }

@@ -1,21 +1,18 @@
 @base: #F0F3F7;
 @body-bg: lighten(@base, 85%);
-@body-color: lighten(@base, 10%);
+@body-color: #DDE4F4;
 
 @header-bg: rgba(100, 87, 45, 0.5);
-@section1-bg: #F4C420;
-@section1-color: #132B56;
-@slogan-color: #E9F1FF;
-@slogan-bg: rgba(0, 0, 0, 0.3);
+@section-GO_DEEPER-bg: #FACF3B;
+@section-GO_DEEPER-color: #132B56;
+@slogan-color: #3A434F;
+@slogan-bg: rgba(255, 255, 255, 0.32);
 @header-menu-color: @slogan-color;
 @header-learnmore-color: @slogan-color;
 @header-learnmore-bg: rgba(255, 255, 255, 0.1);
 @header-learnmore-border: @header-learnmore-color;
 @header-learnmore-hover-bg: white;
-@header-learnmore-hover-color: @section1-color;
-@section-COURSES-bg: #F0F3F7;
-@section-COURSES-color: #1A3562;
-@section-COURSES-h2: #485362;
+@header-learnmore-hover-color: @section-GO_DEEPER-color;
 @course-bg: lighten(@section-COURSES-bg, 3%);
 @course-hover-bg: lighten(@base, 90%);
 @course-more-color: #FFF;
@@ -23,17 +20,20 @@
 @course-more-hover-bg: fade(@base, 60%);
 @course-more-hover-color: #FFF;
 @course-more-hover-border: #FFF;
-@section3-bg: #CCD5F0;
-@section3-color: fade(@base, 75%);
-@section3-h2: @section-COURSES-h2;
-@teacher-hover: lighten(@section3-bg, 10%);
-@section4-bg: #2D343E;
-@section-PARTNERS-bg: #FDE07F;
+@teacher-hover: lighten(@section-TEACHERS-bg, 10%);
+@section-COURSES-bg: #F0F3F7;
+@section-COURSES-color: #1A3562;
+@section-COURSES-h2: #485362;
+@section-TEACHERS-bg: #CCD5F0;
+@section-TEACHERS-color: fade(@base, 75%);
+@section-TEACHERS-h2: @section-COURSES-h2;
+@section-REG_FORM-bg: #2D343E;
+@section-PARTNERS-bg: #FFDC69;
 @section-PARTNERS-h2: #485362;
-@section-PRE_FOOTER-bg: #2D343E;
-@section-PRE_FOOTER-color: #DDE4F4;
-@footer-bg: #292F38;
-@footer-color: #6C7381;
+@section-CONTACTS-bg: #303842;
+@section-CONTACTS-color: #DDE4F4;
+@section-FOOTER-bg: #292F38;
+@section-FOOTER-color: #6C7381;
 
 * {
     padding: 0;
@@ -138,8 +138,8 @@ body#page-landing {
                 content: " ";
 
                 position: absolute;
-                left: 0;
-                width: 100%;
+                left: -5px;
+                width: 105%;
                 height: 50px;
                 bottom: -25px;
 
@@ -175,8 +175,12 @@ body#page-landing {
         &.open {
             z-index: 9999;
 
-            background: rgba(45, 52, 62, 0.85);
-            box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 3px 1px;
+            background: rgba(36, 46, 61, 0.60);
+            box-shadow: rgba(0, 0, 0, 0.29) 0px 0px 3px 1px;
+
+            &:hover {
+                background: rgba(36, 46, 61, 0.9);
+            }
 
             .wrap {
                 margin-top: 0px;
@@ -354,14 +358,14 @@ body#page-landing {
             left: -30px;
             height: 60px;
             width: 50%;
-            box-shadow: rgba(0, 0, 0, 0.2) -5px -1px 3px 2px;
+            // box-shadow: rgba(0, 0, 0, 0.2) -5px -1px 3px 2px;
         }
 
         &:after {
             right: -30px;
             height: 60px;
             width: 50%;
-            box-shadow: rgba(0, 0, 0, 0.2) 5px -1px 3px 2px;
+            // box-shadow: rgba(0, 0, 0, 0.2) 5px -1px 3px 2px;
         }
 
         &:before,
@@ -371,7 +375,7 @@ body#page-landing {
             position: absolute;
             bottom: 0;
 
-            background-color: @section1-bg;
+            background-color: @section-GO_DEEPER-bg;
 
             @media screen and (max-width: 650px) {
                 width: 50%;
@@ -490,23 +494,23 @@ body#page-landing {
             border: solid transparent;
             border-width: 30px;
 
-            border-color: @section1-bg;
+            border-color: @section-GO_DEEPER-bg;
             border-top-color: transparent;
         }
     }
 
     #go-deeper {
-        background: @section1-bg;
+        background: @section-GO_DEEPER-bg;
         margin-top: -10px;
         z-index: 3;
 
         .wrap {
-            color: @section1-color;
+            color: @section-GO_DEEPER-color;
             line-height: 1.4em;
         }
 
         &:after {
-            background: @section1-bg;
+            background: @section-GO_DEEPER-bg;
 
             transform: skew(0deg, -1.5deg);
             -webkit-transform: skew(0deg, -1.5deg);
@@ -534,7 +538,7 @@ body#page-landing {
             transform: skew(0deg, 1.5deg);
             -webkit-transform: skew(0deg, 1.5deg);
 
-            box-shadow: rgba(255, 255, 255, 0.9) 0px 5px 3px -2px;
+            box-shadow: @section-COURSES-bg 0px 3px 2px -2px;
         }
 
         .row {
@@ -739,15 +743,15 @@ body#page-landing {
     }
 
     #teachers {
-        background: @section3-bg;
+        background: @section-TEACHERS-bg;
         padding-top: 70px;
         padding-bottom: 50px;
 
         .wrap {
-            color: @section3-color;
+            color: @section-TEACHERS-color;
 
             h2 {
-                color: @section3-h2;
+                color: @section-TEACHERS-h2;
             }
         }
 
@@ -859,7 +863,7 @@ body#page-landing {
         }
 
         &:after {
-            background: @section3-bg;
+            background: @section-TEACHERS-bg;
 
             transform: skew(0deg, -1.5deg);
             -webkit-transform: skew(0deg, -1.5deg);
@@ -873,15 +877,15 @@ body#page-landing {
         padding-top: 100px;
         padding-bottom: 30px;
 
-        background: @section4-bg;
+        background: @section-REG_FORM-bg;
 
         &:after {
-            background: @section4-bg;
+            background: @section-REG_FORM-bg;
 
             transform: skew(0deg, 1.5deg);
             -webkit-transform: skew(0deg, 1.5deg);
 
-            box-shadow: rgba(0, 0, 0, 0.9) 0px 3px 3px -2px;
+            box-shadow: @section-REG_FORM-bg 0px 3px 3px -2px;
         }
 
         i.icon {
@@ -992,7 +996,7 @@ body#page-landing {
             transform: skew(0deg, -1.5deg);
             -webkit-transform: skew(0deg, -1.5deg);
 
-            box-shadow: @section-PARTNERS-bg 0px 3px 3px -2px;
+            box-shadow: @section-PARTNERS-bg 0px 3px 2px -2px;
         }
 
         div.list {
@@ -1041,12 +1045,12 @@ body#page-landing {
     }
 
     #contacts {
-        background: @section-PRE_FOOTER-bg;
+        background: @section-CONTACTS-bg;
         padding-top: 80px;
         padding-bottom: 30px;
 
         .wrap {
-            color: @section-PRE_FOOTER-color;
+            color: @section-CONTACTS-color;
             font-size: 15px;
 
             .column {
@@ -1073,7 +1077,7 @@ body#page-landing {
                 text-align: left;
 
                 a {
-                    color: @section-PRE_FOOTER-color;
+                    color: @section-CONTACTS-color;
                     text-decoration: none;
 
                     i.icon {
@@ -1101,7 +1105,7 @@ body#page-landing {
 
                     &:hover {
                         span {
-                            border-bottom-color: @section-PRE_FOOTER-color;
+                            border-bottom-color: @section-CONTACTS-color;
                         }
                     }
                 }
@@ -1503,7 +1507,7 @@ body#page-course {
 #footer {
     width: 100%;
 
-    background-color: @footer-bg;
+    background-color: @section-FOOTER-bg;
 
     padding: 20px 0px;
 
@@ -1518,6 +1522,6 @@ body#page-course {
 
     .wrap {
         font-size: 13px !important;
-        color: @footer-color !important;
+        color: @section-FOOTER-color !important;
     }
 }
