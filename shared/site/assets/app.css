@@ -328,10 +328,14 @@ body#page-landing .section.curve-after:after {
   z-index: 1;
 }
 body#page-landing .section .wrap h2 {
+  position: relative;
+  z-index: 9;
   text-transform: uppercase;
   font-size: 32px;
   text-align: center;
   margin-bottom: 50px;
+  user-select: none;
+  -webkit-user-select: none;
 }
 body#page-landing #header-menu {
   position: fixed;
@@ -375,7 +379,7 @@ body#page-landing #header-menu.open #logo span {
 }
 body#page-landing #header-menu.open #menu li a.selected,
 body#page-landing #header-menu.open #menu li a:hover {
-  background: rgba(218, 228, 245, 0.2);
+  background: rgba(255, 255, 255, 0.3);
   border-bottom-color: transparent;
 }
 body#page-landing #header-menu .wrap {
@@ -437,14 +441,15 @@ body#page-landing #header-menu ul#menu li a {
   display: block;
   margin-right: 5px;
   padding: 10px;
-  color: #f0f0f0;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   text-align: center;
   border-bottom: 2px solid rgba(0, 0, 0, 0);
   transition: all 0.25s ease-in-out;
 }
 body#page-landing #header-menu ul#menu li a:hover {
-  border-bottom-color: rgba(255, 255, 255, 0.29);
+  color: #ffffff;
+  border-bottom-color: rgba(255, 255, 255, 0.6);
 }
 body#page-landing #header {
   background: url(/img/header-bg-2.png) no-repeat;
@@ -494,7 +499,7 @@ body#page-landing #header .slogan {
 body#page-landing #header .slogan span {
   display: inline-block;
   padding: 20px 30px;
-  background: rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.45);
   font-family: "Open Sans";
   font-weight: 700;
   font-size: 30px;
@@ -583,6 +588,10 @@ body#page-landing .bg-animated.bg7 {
 }
 body#page-landing .bg-animated.bg8 {
   left: 40%;
+  top: 70%;
+}
+body#page-landing .bg-animated.bg-form-1 {
+  left: 40%;
   top: -5%;
 }
 body#page-landing .bg-animated.deus1 {
@@ -649,14 +658,18 @@ body#page-landing #courses .row .t:hover {
 body#page-landing #courses .row .t:hover img.image {
   transform: perspective(500px) translateZ(30px);
 }
-body#page-landing #courses .row .t:hover .title:before {
-  background-size: 110%;
-}
 body#page-landing #courses .row .t.course-ruby .title:before {
   background-image: url(//d1tijy5l7mg5kk.cloudfront.net/assets/paths/bg-ruby-be027051b381dc1cf89b13c9e65941c3.svg);
+  opacity: 0.7;
 }
 body#page-landing #courses .row .t.course-ruby .title:after {
   background-color: #B24626;
+}
+body#page-landing #courses .row .t.course-java .title:before {
+  background-image: url(http://core0.staticworld.net/images/article/2013/03/java-logo-100027745-large.jpg);
+}
+body#page-landing #courses .row .t.course-java .title:after {
+  background-color: #542B05;
 }
 body#page-landing #courses .row .t.course-js .title:before {
   background-image: url(https://d1tijy5l7mg5kk.cloudfront.net/assets/paths/bg-javascript-fe8cec88499673b890c2efe3bec497d7.svg);
@@ -671,16 +684,35 @@ body#page-landing #courses .row .t.course-htmlcss .title:after {
   background-color: #31A480;
 }
 body#page-landing #courses .row .t.course-php .title:before {
-  background-image: url(http://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1280px-PHP-logo.svg.png);
+  background-image: url(http://blog.mrwebmaster.it/files/2012/07/php.png);
+  background-position: 5px -10px;
 }
 body#page-landing #courses .row .t.course-php .title:after {
-  background-color: #617FB3;
+  background-color: #7480A8;
 }
 body#page-landing #courses .row .t.course-qa .title:before {
   background-image: url(http://www.qualityliferesources.com/wp-content/uploads/2013/02/quality-assurance.jpg);
 }
 body#page-landing #courses .row .t.course-qa .title:after {
-  background-color: #DF0000;
+  background-color: #00791E;
+}
+body#page-landing #courses .row .t.course-security .title:before {
+  background-image: url(http://assets.nybooks.com/media/events/anonymous_masks_616.jpg);
+}
+body#page-landing #courses .row .t.course-security .title:after {
+  background-color: #000;
+}
+body#page-landing #courses .row .t.course-android .title:before {
+  background-image: url(http://mejorandroid.com/wp-content/uploads/2014/12/imagen-android.jpg);
+}
+body#page-landing #courses .row .t.course-android .title:after {
+  background-color: #536E01;
+}
+body#page-landing #courses .row .t.course-english .title:before {
+  background-image: url(http://www.h3dwallpapers.com/wp-content/uploads/2014/08/Uk_union_flag.png);
+}
+body#page-landing #courses .row .t.course-english .title:after {
+  background-color: #A30A10;
 }
 body#page-landing #courses .row .t .title {
   position: relative;
@@ -758,9 +790,6 @@ body#page-landing #courses .row .t .more:hover {
   background: #ced7e4;
   color: #516683;
   border-color: #ffffff;
-}
-body#page-landing #courses .row .t.course1 span {
-  font-size: 20px;
 }
 body#page-landing #teachers {
   background: #ccd5f0;
@@ -845,7 +874,7 @@ body#page-landing #teachers:after {
 }
 body#page-landing #registration-form {
   position: relative;
-  z-index: 6;
+  z-index: 1;
   padding-top: 100px;
   padding-bottom: 30px;
   background: #2d343e;

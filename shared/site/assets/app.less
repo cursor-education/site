@@ -6,9 +6,10 @@
 @section-GO_DEEPER-bg: #FACF3B;
 @section-GO_DEEPER-color: #132B56;
 @slogan-color: #4E545E;
-@slogan-bg: rgba(255, 255, 255, 0.32);
-@header-menu-color: #F0F0F0;
-@header-menu-hover-border: rgba(255, 255, 255, 0.29);
+@slogan-bg: rgba(255, 255, 255, 0.45);
+@header-menu-color: rgba(255, 255, 255, 0.8);//#F0F0F0;
+@header-menu-hover-color: white;
+@header-menu-hover-border: rgba(255, 255, 255, 0.6);
 // @header-learnmore-color: @slogan-color;
 // @header-learnmore-bg: rgba(255, 255, 255, 0.1);
 // @header-learnmore-border: @header-learnmore-color;
@@ -149,10 +150,16 @@ body#page-landing {
         }
 
         .wrap h2 {
+            position: relative;
+            z-index: 9;
+
             text-transform: uppercase;
             font-size: 32px;
             text-align: center;
             margin-bottom: 50px;
+
+            user-select: none;
+            -webkit-user-select: none;
         }
     }
 
@@ -238,7 +245,7 @@ body#page-landing {
 
                     &.selected,
                     &:hover {
-                        background: rgba(218, 228, 245, 0.2);
+                        background: rgba(255, 255, 255, 0.3);
                         border-bottom-color: transparent;
                     }
                 }
@@ -363,6 +370,7 @@ body#page-landing {
                     transition: all 0.25s ease-in-out;
 
                     &:hover {
+                        color: @header-menu-hover-color;
                         border-bottom-color: @header-menu-hover-border;
                     }
                 }
@@ -594,7 +602,8 @@ body#page-landing {
         &.bg5 { left: 20%; top: 70%; }
         &.bg6 { left: 55%; top: 40%; }
         &.bg7 { left: 60%; top: 0%; }
-        &.bg8 { left: 40%; top: -5%; }
+        &.bg8 { left: 40%; top: 70%; }
+        &.bg-form-1 { left: 40%; top: -5%; }
 
         &.deus1 {
             background: url(http://mokselle-dev.ru/kojaitaly/a/i/deus1.png) 0 0 no-repeat;
@@ -685,20 +694,32 @@ body#page-landing {
                         transform: perspective(500px) translateZ(30px);
                     }
 
-                    .title {
-                        &:before {
-                            background-size: 110%;
-                        }
-                    }
+                    // .title {
+                    //     &:before {
+                    //         background-size: 110%;
+                    //     }
+                    // }
                 }
 
                 &.course-ruby {
                     .title {
                         &:before {
                             background-image: url(//d1tijy5l7mg5kk.cloudfront.net/assets/paths/bg-ruby-be027051b381dc1cf89b13c9e65941c3.svg);
+                            opacity: 0.7;
                         }
                         &:after {
                             background-color: #B24626;
+                        }
+                    }
+                }
+
+                &.course-java {
+                    .title {
+                        &:before {
+                            background-image: url(http://core0.staticworld.net/images/article/2013/03/java-logo-100027745-large.jpg);
+                        }
+                        &:after {
+                            background-color: #542B05;
                         }
                     }
                 }
@@ -728,10 +749,11 @@ body#page-landing {
                 &.course-php {
                     .title {
                         &:before {
-                            background-image: url(http://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1280px-PHP-logo.svg.png);
+                            background-image: url(http://blog.mrwebmaster.it/files/2012/07/php.png);
+                            background-position: 5px -10px;
                         }
                         &:after {
-                            background-color: #617FB3;
+                            background-color: #7480A8;
                         }
                     }
                 }
@@ -742,7 +764,40 @@ body#page-landing {
                             background-image: url(http://www.qualityliferesources.com/wp-content/uploads/2013/02/quality-assurance.jpg);
                         }
                         &:after {
-                            background-color: #DF0000;
+                            background-color: #00791E;
+                        }
+                    }
+                }
+
+                &.course-security {
+                    .title {
+                        &:before {
+                            background-image: url(http://assets.nybooks.com/media/events/anonymous_masks_616.jpg);
+                        }
+                        &:after {
+                            background-color: #000;
+                        }
+                    }
+                }
+
+                &.course-android {
+                    .title {
+                        &:before {
+                            background-image: url(http://mejorandroid.com/wp-content/uploads/2014/12/imagen-android.jpg);
+                        }
+                        &:after {
+                            background-color: #536E01;
+                        }
+                    }
+                }
+
+                &.course-english {
+                    .title {
+                        &:before {
+                            background-image: url(http://www.h3dwallpapers.com/wp-content/uploads/2014/08/Uk_union_flag.png);
+                        }
+                        &:after {
+                            background-color: #A30A10;
                         }
                     }
                 }
@@ -852,10 +907,6 @@ body#page-landing {
                         color: @course-more-hover-color;
                         border-color: @course-more-hover-border;
                     }
-                }
-
-                &.course1 span {
-                    font-size: 20px;
                 }
             }
         }
@@ -993,7 +1044,7 @@ body#page-landing {
 
     #registration-form {
         position: relative;
-        z-index: 6;
+        z-index: 1;
 
         padding-top: 100px;
         padding-bottom: 30px;
