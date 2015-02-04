@@ -586,11 +586,69 @@ body#page-landing {
         padding-top: 70px;
         padding-bottom: 50px;
 
+        position: relative;
+        z-index: 2;
+
         .wrap {
             color: @section-COURSES-color;
 
             h2 {
                 color: @section-COURSES-h2;
+            }
+        }
+
+        @import 'animate-deus.less';
+
+        .bg-animated {
+            background: red;
+            position: absolute;
+            z-index: 5;
+
+            &.deus1 {
+                background: url(http://mokselle-dev.ru/kojaitaly/a/i/deus1.png) 0 0 no-repeat;
+                height: 569px;
+                width: 612px;
+                left: 60%;
+                top: 0%;
+            }
+
+            &.deus2 {
+                background: url(http://mokselle-dev.ru/kojaitaly/a/i/deus2.png) 0 0 no-repeat;
+                height: 569px;
+                width: 612px;
+                left: 20%;
+                top: -5%;
+            }
+
+            &.deus3,
+            &.deus4,
+            &.deus6 {
+                background: url(http://mokselle-dev.ru/kojaitaly/a/i/deus3-4-6.png) 0 0 no-repeat;
+                height: 569px;
+                width: 612px;
+            }
+
+            &.deus3 {
+                left: 0%;
+                top: 20%;
+            }
+
+            &.deus4 {
+                left: 10%;
+                top: 50%;
+            }
+
+            &.deus6 {
+                left: 55%;
+                top: 40%;
+            }
+
+            &.deus5 {
+                background: url(http://mokselle-dev.ru/kojaitaly/a/i/deus5.png) 0 0 no-repeat;
+                height: 569px;
+                width: 612px;
+                left: 20%;
+                top: 70%;
             }
         }
 
@@ -608,6 +666,9 @@ body#page-landing {
             margin-bottom: 30px;
 
             .t {
+                position: relative;
+                z-index: 5;
+
                 display: inline-block;
                 vertical-align: top;
 
