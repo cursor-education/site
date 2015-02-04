@@ -49,8 +49,11 @@ helpers =
 
         headerMenuEl = document.getElementById('header-menu')
 
-        fromEl = document.getElementById(headerMenuEl.getAttribute('data-animate-from-element'))
-        fromElOffset = Math.max(fromEl.offsetTop, 100)
+        if headerMenuEl.hasAttribute('data-animate-from-element')
+            fromEl = document.getElementById(headerMenuEl.getAttribute('data-animate-from-element'))
+            fromElOffset = Math.max(fromEl.offsetTop, 100)
+        else
+            fromElOffset = Math.max(headerMenuEl.getAttribute('data-animate-from'), 100)
 
         className = 'open'
         classNameAnimate = headerMenuEl.getAttribute('data-animate-effect')
@@ -122,6 +125,7 @@ app =
     init: ->
         app.initScrollHook()
         app.initGoToTop()
+        app.initGallery()
 
     initScrollHook: ->
         window.onscroll = -> helpers.scrollHook()
@@ -150,5 +154,26 @@ app =
                     helpers.scrollTo topValue, 1000, ->
                         helpers.scrollHookMenuReset()
                         el.classList.add('selected')
+
+    initGallery: ->
+        for el in document.getElementsByClassName('gallery')
+            do (el) ->
+                hiddenClass = 'hidden'
+
+                elsClass = el.getAttribute('data-gallery-class')
+                els = el.getElementsByClassName(elsClass)
+
+                setInterval ->
+                    num = parseInt(Math.random() * els.length)
+
+                    for el in els
+                        unless el.classList.contains(hiddenClass)
+                            el.classList.add(hiddenClass)
+
+                    els[num].classList.remove(hiddenClass)
+
+                    console.log 11, el
+                , 2000
+
 #
 app.init()

@@ -53,8 +53,12 @@ helpers = {
     var className, classNameAnimate, fromEl, fromElOffset, headerMenuEl, scroll;
     scroll = document.body.scrollTop;
     headerMenuEl = document.getElementById('header-menu');
-    fromEl = document.getElementById(headerMenuEl.getAttribute('data-animate-from-element'));
-    fromElOffset = Math.max(fromEl.offsetTop, 100);
+    if (headerMenuEl.hasAttribute('data-animate-from-element')) {
+      fromEl = document.getElementById(headerMenuEl.getAttribute('data-animate-from-element'));
+      fromElOffset = Math.max(fromEl.offsetTop, 100);
+    } else {
+      fromElOffset = Math.max(headerMenuEl.getAttribute('data-animate-from'), 100);
+    }
     className = 'open';
     classNameAnimate = headerMenuEl.getAttribute('data-animate-effect');
     if (scroll >= (fromElOffset - 50)) {
@@ -130,7 +134,8 @@ helpers = {
 app = {
   init: function() {
     app.initScrollHook();
-    return app.initGoToTop();
+    app.initGoToTop();
+    return app.initGallery();
   },
   initScrollHook: function() {
     window.onscroll = function() {
@@ -165,6 +170,33 @@ app = {
             return el.classList.add('selected');
           });
         };
+      })(el));
+    }
+    return _results;
+  },
+  initGallery: function() {
+    var el, _i, _len, _ref, _results;
+    _ref = document.getElementsByClassName('gallery');
+    _results = [];
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      el = _ref[_i];
+      _results.push((function(el) {
+        var els, elsClass, hiddenClass;
+        hiddenClass = 'hidden';
+        elsClass = el.getAttribute('data-gallery-class');
+        els = el.getElementsByClassName(elsClass);
+        return setInterval(function() {
+          var num, _j, _len1;
+          num = parseInt(Math.random() * els.length);
+          for (_j = 0, _len1 = els.length; _j < _len1; _j++) {
+            el = els[_j];
+            if (!el.classList.contains(hiddenClass)) {
+              el.classList.add(hiddenClass);
+            }
+          }
+          els[num].classList.remove(hiddenClass);
+          return console.log(11, el);
+        }, 2000);
       })(el));
     }
     return _results;

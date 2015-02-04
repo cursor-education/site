@@ -32,11 +32,6 @@ body.page .section {
   margin: 0 auto;
   padding-bottom: 20px;
 }
-@media screen and (max-width: 650px) {
-  body.page .section {
-    border-width: 0px;
-  }
-}
 body.page .section .wrap {
   max-width: 1000px;
   margin: 0 auto;
@@ -59,16 +54,6 @@ body.page .section i.go-to-top {
   transition: all 0.15s ease-in-out;
   transform: perspective(500px) translateZ(0px);
 }
-@media screen and (max-width: 650px) {
-  body.page .section i.go-to-top {
-    position: relative;
-    right: 0px;
-    bottom: 0px;
-    margin: 0 auto;
-    padding: 0px;
-    background-position: center;
-  }
-}
 body.page .section i.go-to-top:hover {
   transform: perspective(500px) translateZ(70px);
 }
@@ -78,8 +63,8 @@ body#page-landing {
 body#page-landing .section.curve-after:after {
   content: " ";
   position: absolute;
-  left: -5px;
-  width: 105%;
+  left: 0px;
+  width: 100%;
   height: 50px;
   bottom: -25px;
   z-index: 1;
@@ -102,54 +87,33 @@ body#page-landing #header-menu {
   padding: 0;
   transition: all 0.15s ease-in-out;
 }
-@media screen and (max-width: 650px) {
-  body#page-landing #header-menu {
-    height: auto;
-  }
-}
 body#page-landing #header-menu.open {
   z-index: 9999;
-  background: rgba(36, 46, 61, 0.6);
+  height: auto;
+  background: rgba(36, 46, 61, 0.75);
   box-shadow: rgba(0, 0, 0, 0.29) 0px 0px 3px 1px;
 }
 body#page-landing #header-menu.open:hover {
   background: rgba(36, 46, 61, 0.9);
 }
 body#page-landing #header-menu.open .wrap {
-  margin-top: 0px;
   margin-bottom: 0px;
+  height: 50px;
 }
 body#page-landing #header-menu.open #logo {
-  background-size: 30px;
-  height: 45px;
-  width: auto;
-  margin-top: 5px;
-  padding-left: 40px;
   text-align: left;
   text-decoration: none;
 }
+body#page-landing #header-menu.open #logo i.icon-big {
+  margin-top: -100px;
+}
+body#page-landing #header-menu.open #logo i.icon-small {
+  margin-top: -6px;
+}
 body#page-landing #header-menu.open #logo span {
-  display: inline-block;
-  font: 20px 'Exo 2';
-  color: #F3F5FD;
-  margin-top: 7px;
-}
-@media screen and (max-width: 650px) {
-  body#page-landing #header-menu.open #logo span {
-    font-size: 22px;
-  }
-}
-body#page-landing #header-menu.open #menu {
-  margin-top: 7px;
-}
-@media screen and (max-width: 650px) {
-  body#page-landing #header-menu.open #menu {
-    margin-top: 5px;
-    width: 100%;
-  }
-}
-body#page-landing #header-menu.open #menu li a {
-  padding: 7px 10px;
+  margin-top: 5px;
+  margin-left: 40px;
+  opacity: 1;
 }
 body#page-landing #header-menu.open #menu li a.selected,
 body#page-landing #header-menu.open #menu li a:hover {
@@ -163,26 +127,37 @@ body#page-landing #header-menu .wrap {
   margin-top: 15px;
   transition: all 0.15s ease-in-out;
 }
-@media screen and (max-width: 650px) {
-
-}
 body#page-landing #header-menu #logo {
   float: left;
   display: block;
-  width: 85px;
-  height: 115px;
-  background: url(/img/logo.png) no-repeat;
 }
-@media screen and (max-width: 650px) {
-  body#page-landing #header-menu #logo {
-    float: left;
-    background-size: 70px;
-    width: 85px;
-    height: 100px;
-  }
+body#page-landing #header-menu #logo i.icon-big,
+body#page-landing #header-menu #logo i.icon-small {
+  display: inline-block;
+  transition: all 0.32s ease-in-out;
+}
+body#page-landing #header-menu #logo i.icon-big {
+  position: absolute;
+  margin-top: 0px;
+  background: url(/img/logo-big.png) no-repeat;
+  width: 61px;
+  height: 85px;
+}
+body#page-landing #header-menu #logo i.icon-small {
+  position: absolute;
+  margin-top: -200px;
+  background: url(/img/logo-small.png) no-repeat;
+  width: 30px;
+  height: 42px;
 }
 body#page-landing #header-menu #logo span {
-  display: none;
+  transition: all 0.4s ease;
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 0px;
+  font: 20px 'Exo 2';
+  color: #F3F5FD;
+  opacity: 0;
 }
 body#page-landing #header-menu ul#menu {
   float: right;
@@ -196,19 +171,6 @@ body#page-landing #header-menu ul#menu {
   padding: 0;
   transition: all 0.15s ease-in-out;
 }
-@media screen and (max-width: 650px) {
-  body#page-landing #header-menu ul#menu {
-    float: left;
-    list-style: initial;
-    width: 60%;
-    margin-top: 5px;
-  }
-  body#page-landing #header-menu ul#menu li a {
-    background: rgba(255, 255, 255, 0.11);
-    margin-right: 5px;
-    margin-bottom: 5px;
-  }
-}
 body#page-landing #header-menu ul#menu li {
   display: inline-block;
   float: left;
@@ -217,18 +179,18 @@ body#page-landing #header-menu ul#menu li a {
   display: block;
   margin-right: 5px;
   padding: 10px;
-  color: #3a434f;
+  color: #f0f0f0;
   text-decoration: none;
   text-align: center;
   border-bottom: 2px solid rgba(0, 0, 0, 0);
   transition: all 0.25s ease-in-out;
 }
 body#page-landing #header-menu ul#menu li a:hover {
-  border-bottom-color: #3a434f;
+  border-bottom-color: rgba(255, 255, 255, 0.29);
 }
 body#page-landing #header {
-  background: url(/img/header-bg-1.png) no-repeat;
-  background-size: 100%;
+  background: url(/img/header-bg-2.png) no-repeat;
+  background-size: 104%;
   user-select: none;
   -webkit-user-select: none;
   position: relative;
@@ -237,12 +199,6 @@ body#page-landing #header {
   max-width: none;
   padding: 0px;
   z-index: 2;
-}
-@media screen and (max-width: 650px) {
-  body#page-landing #header {
-    background-size: cover;
-    background-position: center;
-  }
 }
 body#page-landing #header:before {
   left: -30px;
@@ -261,85 +217,35 @@ body#page-landing #header:after {
   bottom: 0;
   background-color: #facf3b;
 }
-@media screen and (max-width: 650px) {
-  body#page-landing #header:before,
-  body#page-landing #header:after {
-    width: 50%;
-  }
-}
 body#page-landing #header .wrap {
   margin: 0 auto;
-  padding: 160px 50px 155px 50px;
-  background-color: rgba(100, 87, 45, 0.5);
+  padding: 85px 50px 120px 50px;
+  background-color: rgba(255, 255, 255, 0.4);
   max-width: none;
 }
-@media screen and (max-width: 650px) {
-  body#page-landing #header .wrap {
-    padding: 10px 10px 125px 10px;
-  }
-}
-body#page-landing #header #slogan {
+body#page-landing #header .slogan {
+  position: relative;
+  z-index: 3;
   text-align: center;
   letter-spacing: 2px;
   line-height: normal;
   text-transform: uppercase;
-  color: #3a434f;
+  color: #4e545e;
   margin-top: 1px;
 }
-@media screen and (max-width: 650px) {
-  body#page-landing #header #slogan {
-    margin-top: 140px;
-  }
-  body#page-landing #header #slogan span {
-    display: block !important;
-    font-size: 20px !important;
-    word-wrap: break-word;
-    word-break: break-word;
-  }
-}
-body#page-landing #header #slogan span {
+body#page-landing #header .slogan span {
   display: inline-block;
   padding: 20px 30px;
   background: rgba(255, 255, 255, 0.32);
   font-family: "Open Sans";
   font-weight: 700;
-  font-size: 40px;
+  font-size: 30px;
+  text-align: left;
 }
-body#page-landing #header #slogan span br {
+body#page-landing #header .slogan span br {
   content: "";
   display: block;
   margin-bottom: 5px;
-}
-body#page-landing #header #learn-more-button {
-  margin-top: 25px;
-  text-align: center;
-}
-body#page-landing #header #learn-more-button .button {
-  display: inline-block;
-  font-family: "Open Sans";
-  font-weight: 700;
-  font-size: 15px;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 2px;
-  text-decoration: none;
-  color: #3a434f;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px #3a434f solid;
-  width: 260px;
-  margin: 0 auto;
-  padding: 10px;
-  cursor: pointer;
-  transition: all 0.25s ease-in-out;
-}
-body#page-landing #header #learn-more-button .button:hover {
-  background: #ffffff;
-  color: #132b56;
-  border-color: #ffffff;
-}
-body#page-landing #header #learn-more-button .button:active {
-  transform: translateY(2px);
-  -webkit-transform: translateY(2px);
 }
 body#page-landing #header-arrow {
   position: relative;
@@ -360,8 +266,19 @@ body#page-landing #header-arrow:after {
 }
 body#page-landing #go-deeper {
   background: #facf3b;
-  margin-top: -10px;
+  margin-top: -5px;
   z-index: 3;
+}
+body#page-landing #go-deeper .icon.icon-large-notebook {
+  display: inline-block;
+  float: left;
+  background: url(http://www.e-legion.ru/assets/landing_pages/ios_school/macbook-03f5d0556c04f2f483d561af02029e2e.png);
+  background-size: 400px;
+  background-repeat: no-repeat;
+  height: 496px;
+  width: 400px;
+  z-index: 3;
+  margin-right: 20px;
 }
 body#page-landing #go-deeper .wrap {
   color: #132b56;
@@ -404,14 +321,6 @@ body#page-landing #courses .row .t {
   border-radius: 3px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   transition: all .4s ease;
-}
-@media screen and (max-width: 650px) {
-  body#page-landing #courses .row .t {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-    padding-bottom: 15px;
-  }
 }
 body#page-landing #courses .row .t:hover {
   background: #ffffff;
@@ -512,7 +421,7 @@ body#page-landing #courses .row .t .desc {
 body#page-landing #courses .row .t .more {
   display: inline-block;
   color: #ffffff;
-  background: rgba(240, 243, 247, 0.4);
+  background: #97a4b6;
   font-size: 15px;
   text-decoration: none;
   margin-bottom: 10px;
@@ -520,10 +429,17 @@ body#page-landing #courses .row .t .more {
   cursor: pointer;
   transition: all 0.25s ease-in-out;
 }
+body#page-landing #courses .row .t .more span {
+  display: inline-block;
+  margin-left: 5px;
+}
 body#page-landing #courses .row .t .more:hover {
-  background: rgba(240, 243, 247, 0.6);
-  color: #ffffff;
+  background: #ced7e4;
+  color: #516683;
   border-color: #ffffff;
+}
+body#page-landing #courses .row .t.course1 span {
+  font-size: 20px;
 }
 body#page-landing #teachers {
   background: #ccd5f0;
@@ -547,18 +463,6 @@ body#page-landing #teachers .row .t {
   margin-bottom: 10px;
   padding: 25px;
   transition: all .4s ease;
-}
-@media screen and (max-width: 650px) {
-  body#page-landing #teachers .row .t {
-    display: block;
-    width: 100%;
-    margin: 0;
-    margin-bottom: 10px;
-    padding: 0;
-    padding-bottom: 15px;
-    padding-top: 10px;
-    border-bottom: 4px rgba(0, 0, 0, 0.03) solid;
-  }
 }
 body#page-landing #teachers .row .t:hover {
   background: #f3f5fc;
@@ -588,11 +492,6 @@ body#page-landing #teachers .row .t .desc {
   font-size: 15px;
   text-align: center;
   word-break: break-word;
-}
-@media screen and (max-width: 650px) {
-  body#page-landing #teachers .row .t .desc {
-    width: 90%;
-  }
 }
 body#page-landing #teachers .row .t .social {
   margin-top: 10px;
@@ -635,46 +534,14 @@ body#page-landing #registration-form:after {
   -webkit-transform: skew(0deg, 1.5deg);
   box-shadow: #2d343e 0px 3px 3px -2px;
 }
-body#page-landing #registration-form i.icon {
-  display: inline-block;
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  background: url('http://ecokirp.ru/img/bg.png') repeat-x center center;
-  background-color: #5CB85C;
-  font-size: 50px;
-}
-body#page-landing #registration-form i.icon.fa {
-  font-family: 'FontAwesome';
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
-}
-body#page-landing #registration-form i.icon.comments:before {
-  content: "\f0e6";
-}
 body#page-landing #registration-form form {
-  margin: 30px 0px;
+  margin: 50px 0px 10px 0px;
   font-size: 19px;
   text-align: center;
 }
-@media screen and (max-width: 650px) {
-
-}
 body#page-landing #registration-form form .row {
   display: inline-block;
-  margin-right: 10px;
-  padding-left: 20px;
-}
-@media screen and (max-width: 650px) {
-  body#page-landing #registration-form form .row {
-    margin: 0;
-    margin-bottom: 10px;
-    width: 100%;
-    text-align: left;
-  }
+  margin-right: 15px;
 }
 body#page-landing #registration-form form input[type="text"] {
   padding: 15px 12px;
@@ -689,44 +556,41 @@ body#page-landing #registration-form form input[type="text"] {
 body#page-landing #registration-form form input[type="submit"] {
   padding: 10px 20px;
   margin: 0;
+  margin-left: 10px;
+  font: 13px 'Open Sans';
+  font-weight: bold;
   cursor: pointer;
-  font: 14px 'Comfortaa', Verdana;
-  background: #28403C;
-  color: white;
-  border: 2px solid #28403C;
+  background: #FFC400;
+  color: #2D343E;
+  border: 2px solid #FFC400;
   border-radius: 4px;
   transition: all 0.3s ease;
 }
 body#page-landing #registration-form form input[type="submit"]:hover {
-  background: #66857F;
-  border-color: #66857F;
+  background: #D3A200;
+  border-color: #D3A200;
 }
 body#page-landing #registration-form form input[type="submit"]:active {
   background: white;
-  border-color: #28403C;
-  color: black;
+  border-color: #2D343E;
+  color: #2D343E;
 }
 body#page-landing #partners {
-  background: #ffdc69;
+  background: #ffd752;
   padding-top: 70px;
 }
 body#page-landing #partners .wrap h2 {
   color: #485362;
 }
 body#page-landing #partners:after {
-  background: #ffdc69;
+  background: #ffd752;
   transform: skew(0deg, -1.5deg);
   -webkit-transform: skew(0deg, -1.5deg);
-  box-shadow: #ffdc69 0px 3px 2px -2px;
+  box-shadow: #ffd752 0px 3px 2px -2px;
 }
 body#page-landing #partners div.list {
   margin-bottom: 50px;
   text-align: center;
-}
-@media screen and (max-width: 650px) {
-  body#page-landing #partners div.list {
-    margin-bottom: 0px;
-  }
 }
 body#page-landing #partners div.list:hover .t {
   opacity: 0.4;
@@ -736,12 +600,6 @@ body#page-landing #partners div.list .t {
   vertical-align: top;
   margin-right: 15px;
   transition: all 0.15s ease-in-out;
-}
-@media screen and (max-width: 650px) {
-  body#page-landing #partners div.list .t {
-    vertical-align: middle;
-    margin-bottom: 10px;
-  }
 }
 body#page-landing #partners div.list .t:hover {
   opacity: 1;
@@ -768,19 +626,8 @@ body#page-landing #contacts .wrap .column {
   display: inline-block;
   vertical-align: top;
 }
-@media screen and (max-width: 650px) {
-  body#page-landing #contacts .wrap .column {
-    margin-left: 20px;
-  }
-}
 body#page-landing #contacts .wrap .column.column-padding {
   margin-left: 50px;
-}
-@media screen and (max-width: 650px) {
-  body#page-landing #contacts .wrap .column.column-padding {
-    margin-left: 20px;
-    margin-top: 20px;
-  }
 }
 body#page-landing #contacts .wrap .t {
   position: relative;
@@ -810,6 +657,10 @@ body#page-landing #contacts .wrap .t a span {
 }
 body#page-landing #contacts .wrap .t a:hover span {
   border-bottom-color: #dde4f4;
+}
+body#page-landing #contacts .wrap .t a:active,
+body#page-landing #contacts .wrap .t a:active i.desc {
+  color: white;
 }
 body#page-landing #contacts .wrap i.icon {
   display: inline-block;
@@ -851,12 +702,6 @@ body#page-auth .auth-block {
   border-radius: 3px;
   box-shadow: 0px 1px 2px #C3CDD1;
 }
-@media screen and (max-width: 650px) {
-  body#page-auth .auth-block {
-    width: 90%;
-    margin-top: 15px;
-  }
-}
 body#page-auth .auth-block h1.title {
   font: 18px tahoma;
   text-align: center;
@@ -869,11 +714,6 @@ body#page-auth .auth-block .wrap {
   width: 100%;
   padding: 50px 0px 50px 0px;
 }
-@media screen and (max-width: 650px) {
-  body#page-auth .auth-block .wrap {
-    padding: 30px 0px 10px 0px;
-  }
-}
 body#page-auth .auth-block .left {
   float: left;
   display: inline-block;
@@ -881,11 +721,6 @@ body#page-auth .auth-block .left {
   padding: 0px 0px 0px 50px;
   user-select: none;
   -webkit-user-select: none;
-}
-@media screen and (max-width: 650px) {
-  body#page-auth .auth-block .left {
-    display: none;
-  }
 }
 body#page-auth .auth-block .left .wrap2 {
   margin-left: 30px;
@@ -906,13 +741,6 @@ body#page-auth .auth-block .right {
   width: 240px;
   padding: 0px 0px 0px 50px;
   border-left: 1px solid #E1E1E1;
-}
-@media screen and (max-width: 650px) {
-  body#page-auth .auth-block .right {
-    width: 90%;
-    padding: 0px 0px 0px 20px;
-    border-left-width: 0px;
-  }
 }
 body#page-auth .auth-block .right .auth-block-form input {
   padding: 12px 10px;
@@ -959,156 +787,6 @@ body#page-auth .auth-block .right .auth-block-form .row.form-submit input:active
   background: white;
   border-color: #28403C;
   color: black;
-}
-body#page-course section#header {
-  background: url(/img/header-bg-1.png) no-repeat;
-  background-size: 100%;
-  user-select: none;
-  -webkit-user-select: none;
-  position: relative;
-  overflow: hidden;
-  border: none;
-  max-width: none;
-  padding: 0px;
-}
-@media screen and (max-width: 650px) {
-  body#page-course section#header {
-    background-size: cover;
-    background-position: center;
-  }
-  body#page-course section#header #logo {
-    float: left !important;
-    width: 30% !important;
-  }
-  body#page-course section#header ul#menu {
-    float: left !important;
-    list-style: initial !important;
-    width: 69% !important;
-  }
-  body#page-course section#header ul#menu li a {
-    background: rgba(255, 255, 255, 0.11);
-    margin-right: 5px;
-    margin-bottom: 5px;
-  }
-  body#page-course section#header #slogan {
-    margin-top: 25px !important;
-  }
-  body#page-course section#header #slogan span {
-    display: block !important;
-    font-size: 20px !important;
-    word-wrap: break-word;
-    word-break: break-word;
-  }
-}
-body#page-course section#header:before {
-  content: "";
-  background-color: #8194B5;
-  height: 60px;
-  position: absolute;
-  bottom: 0;
-  width: 50%;
-  left: -30px;
-}
-body#page-course section#header:after {
-  content: "";
-  background-color: #8194B5;
-  height: 60px;
-  position: absolute;
-  bottom: 0;
-  width: 50%;
-  right: -30px;
-}
-body#page-course section#header .wrap {
-  margin: 0 auto;
-  padding: 50px 50px 155px 50px;
-  background: rgba(2, 29, 55, 0.74);
-  max-width: none;
-}
-body#page-course section#header #logo {
-  float: left;
-  display: block;
-  width: 85px;
-  height: 115px;
-  background: url(/img/logo.png) no-repeat;
-}
-body#page-course section#header ul#menu {
-  float: right;
-  text-align: right;
-  white-space: nowrap;
-  list-style: none;
-  list-style-image: none;
-  font-family: 'Exo 2', sans-serif;
-  font-size: 16px;
-  margin: 0;
-  padding: 0;
-}
-body#page-course section#header ul#menu li {
-  display: inline-block;
-  float: left;
-}
-body#page-course section#header ul#menu li a {
-  display: block;
-  margin-right: 5px;
-  padding: 10px;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  border-bottom: 2px solid rgba(0, 0, 0, 0);
-  transition: all 0.25s ease-in-out;
-}
-body#page-course section#header ul#menu li a:hover {
-  border-bottom-color: #fff;
-}
-body#page-course section#header #slogan {
-  text-align: center;
-  letter-spacing: 2px;
-  line-height: normal;
-  color: #FFF;
-  text-transform: uppercase;
-  margin-top: 1px;
-}
-body#page-course section#header #slogan span {
-  font-family: "Open Sans";
-  font-weight: 700;
-  font-size: 40px;
-  background: rgba(0, 0, 0, 0.15);
-  display: inline-block;
-  padding: 20px 30px;
-}
-body#page-course section#header #slogan span br {
-  content: "";
-  display: block;
-  margin-bottom: 5px;
-}
-body#page-course section#header #learn-more-button {
-  margin-top: 35px;
-  text-align: center;
-}
-body#page-course section#header #learn-more-button .button {
-  display: inline-block;
-  font-family: "Open Sans";
-  font-weight: 700;
-  font-size: 15px;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 2px;
-  border: 2px #FFF solid;
-  background: rgba(255, 255, 255, 0.1);
-  width: 260px;
-  margin: 0 auto;
-  padding: 10px;
-  cursor: pointer;
-  transition: all 0.25s ease-in-out;
-  color: white;
-  text-decoration: none;
-}
-body#page-course section#header #learn-more-button .button:hover {
-  background: white;
-  color: rgba(0, 14, 56, 0.75);
-}
-body#page-course section#header #learn-more-button .button:active {
-  transform: translateY(2px);
-  -webkit-transform: translateY(2px);
 }
 #footer {
   width: 100%;

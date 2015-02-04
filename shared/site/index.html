@@ -27,10 +27,12 @@
 
 <body id="page-landing" class="page">
 
-  <div id="header-menu" class="animated" data-animate-from-element="slogan" data-animate-effect="fadeInDown">
+  <div id="header-menu" class="animated" data-animate-from="150" data-animate-effect="fadeInDown">
     <div class="wrap">
 
-      <a href="javascript:;" id="logo" class="animated flip">
+      <a href="javascript:;" id="logo">
+        <i class="icon-big animated flip"></i>
+        <i class="icon-small animated flip"></i>
         <span>CURSOR education</span>
       </a>
 
@@ -45,30 +47,38 @@
     </div>
   </div>
 
-  <div id="header">
-    <div class="wrap">
-
-      <div id="slogan" class="clearfix animated flipInX">
+  <div id="header" class="gallery-x" data-gallery-class="wrap">
+    <div class="wrap wrap1">
+      <div class="slogan clearfix animated flipInX">
         <span>
-          Мрієш стати айтішником?
-          <br/>
-          Ми допоможемо тобі.
+          Ми не школа. Ми не вуз.<br/>
+          Ми просто навчаємо.
         </span>
       </div>
-
-      <div id="learn-more-button" class="button animated zoomInDown">
-        <a href="#go-deeper" class="button go-to-top" data-top="go-deeper" data-top-offset="-60">Дізнатися більше</a>
-      </div>
-
     </div>
+
+    <!--
+    <div class="wrap wrap2 hidden">
+      <div class="slogan clearfix">
+        <span>
+          Ми навчаємо кращих.<br/>
+          Приєднуйся до команди.
+        </span>
+      </div>
+    </div>
+    -->
   </div>
 
   <div id="header-arrow"></div>
 
   <div id="go-deeper" class="curve-after section">
-    <div class="wrap">
+    <div class="wrap clearfix">
 
-      фив Lorem ipsum dolor sit amet, ad cum eleifend principes. Vel idque recusabo imperdiet an, corrumpit deseruisse per et, an scaevola persecuti sit. Omnes ancillae eu mel, nec vitae officiis an, usu at equidem consulatu. In nam numquam neglegentur. Sonet dolores vivendum an mel. Cu purto instructior eos, dicit primis voluptaria nec id, at eos doming fuisset. In mea primis maiestatis, cu his euismod tincidunt, case utamur assentior ne nam. Ne nam euismod suavitate incorrupte, ad admodum nusquam adipiscing mei. Sumo solum abhorreant ex mei, pri inani similique id. Duo at modo vero, pro posse expetendis id. Diam errem elaboraret in pri.
+      <i class="icon icon-large-notebook"></i>
+
+      <span>
+        Lorem ipsum dolor sit amet, ad cum eleifend principes. Vel idque recusabo imperdiet an, corrumpit deseruisse per et, an scaevola persecuti sit. Omnes ancillae eu mel, nec vitae officiis an, usu at equidem consulatu. In nam numquam neglegentur. Sonet dolores vivendum an mel. Cu purto instructior eos, dicit primis voluptaria nec id, at eos doming fuisset. In mea primis maiestatis, cu his euismod tincidunt, case utamur assentior ne nam. Ne nam euismod suavitate incorrupte, ad admodum nusquam adipiscing mei. Sumo solum abhorreant ex mei, pri inani similique id. Duo at modo vero, pro posse expetendis id. Diam errem elaboraret in pri.
+      </span>
 
     </div>
   </div>
@@ -81,7 +91,7 @@
       <div class="row clearfix">
 
 
-        <div class="t course-ruby">
+        <div class="t course-ruby course1">
           <div class="title">
             <div class="name">Базовий курс Ruby</div>
           </div>
@@ -92,41 +102,11 @@
 
           <div class="desc">Програма курсу спеціально розроблена для тих, хто не може навчатися у будні.  Або тих, хто живе не у Львові, але бажає навчатися на курсі. Навчання проводитиметься по субботах та неділях. Три тижні поспіль.</div>
 
-          <a href="http://goo.gl/I67WS2" class="more" target="_blank">Детальніше</a>
+          <a href="http://goo.gl/I67WS2" class="more" target="_blank">Детальніше<span>&#8620;</span></a>
         </div>
 
 
-        <div class="t course-js">
-          <div class="title">
-            <div class="name">Базовий курс Javascript</div>
-          </div>
-
-          <div class="time">Початок: <b title="07 січня 2015 року">через 10 днів</b></div>
-
-          <img class="image" src="https://d1tijy5l7mg5kk.cloudfront.net/assets/paths/badge-javascript-6d3dadcfccd99554cff7af219749573e.svg" />
-
-          <div class="desc">Програма курсу спеціально розроблена для тих, хто не може навчатися у будні.  Або тих, хто живе не у Львові, але бажає навчатися на курсі. Навчання проводитиметься по субботах та неділях. Три тижні поспіль.</div>
-
-          <a href="http://goo.gl/I67WS2" class="more" target="_blank">Детальніше</a>
-        </div>
-
-
-        <div class="t course-htmlcss">
-          <div class="title">
-            <div class="name">Базовий курс HTML/CSS</div>
-          </div>
-
-          <div class="time">Початок: <b title="07 січня 2015 року">через 30 днів</b></div>
-
-          <img class="image" src="https://d1tijy5l7mg5kk.cloudfront.net/assets/paths/badge-html-css-2bcd13b6f0e8092b6e4136a448ea3244.svg" />
-
-          <div class="desc">Програма курсу спеціально розроблена для тих, хто не може навчатися у будні.  Або тих, хто живе не у Львові, але бажає навчатися на курсі. Навчання проводитиметься по субботах та неділях. Три тижні поспіль.</div>
-
-          <a href="http://goo.gl/I67WS2" class="more" target="_blank">Детальніше</a>
-        </div>
-
-
-        <div class="t course-php">
+        <div class="t course-php course2">
           <div class="title">
             <div class="name">Базовий курс PHP</div>
           </div>
@@ -137,11 +117,56 @@
 
           <div class="desc">Програма курсу спеціально розроблена для тих, хто не може навчатися у будні.  Або тих, хто живе не у Львові, але бажає навчатися на курсі. Навчання проводитиметься по субботах та неділях. Три тижні поспіль.</div>
 
-          <a href="http://goo.gl/I67WS2" class="more" target="_blank">Детальніше</a>
+          <a href="http://goo.gl/I67WS2" class="more" target="_blank">Детальніше<span>&#8618;</span></a>
         </div>
 
 
-        <div class="t course-qa">
+        <div class="t course-php course3">
+          <div class="title">
+            <div class="name">Базовий курс JAVA</div>
+          </div>
+
+          <div class="time">Початок: <b title="07 січня 2015 року">через 10 днів</b></div>
+
+          <img class="image" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Java_logo_and_wordmark.svg/100px-Java_logo_and_wordmark.svg.png" />
+
+          <div class="desc">Програма курсу спеціально розроблена для тих, хто не може навчатися у будні.  Або тих, хто живе не у Львові, але бажає навчатися на курсі. Навчання проводитиметься по субботах та неділях. Три тижні поспіль.</div>
+
+          <a href="http://goo.gl/I67WS2" class="more" target="_blank">Детальніше<span>&#8627;</span></a>
+        </div>
+
+
+        <div class="t course-js course4">
+          <div class="title">
+            <div class="name">Базовий курс Javascript</div>
+          </div>
+
+          <div class="time">Початок: <b title="07 січня 2015 року">через 10 днів</b></div>
+
+          <img class="image" src="https://d1tijy5l7mg5kk.cloudfront.net/assets/paths/badge-javascript-6d3dadcfccd99554cff7af219749573e.svg" />
+
+          <div class="desc">Програма курсу спеціально розроблена для тих, хто не може навчатися у будні.  Або тих, хто живе не у Львові, але бажає навчатися на курсі. Навчання проводитиметься по субботах та неділях. Три тижні поспіль.</div>
+
+          <a href="http://goo.gl/I67WS2" class="more" target="_blank">Детальніше<span>&#65515;</span></a>
+        </div>
+
+
+        <div class="t course-htmlcss course5">
+          <div class="title">
+            <div class="name">Базовий курс HTML/CSS</div>
+          </div>
+
+          <div class="time">Початок: <b title="07 січня 2015 року">через 30 днів</b></div>
+
+          <img class="image" src="https://d1tijy5l7mg5kk.cloudfront.net/assets/paths/badge-html-css-2bcd13b6f0e8092b6e4136a448ea3244.svg" />
+
+          <div class="desc">Програма курсу спеціально розроблена для тих, хто не може навчатися у будні.  Або тих, хто живе не у Львові, але бажає навчатися на курсі. Навчання проводитиметься по субботах та неділях. Три тижні поспіль.</div>
+
+          <a href="http://goo.gl/I67WS2" class="more" target="_blank">Детальніше<span>&#10154;</span></a>
+        </div>
+
+
+        <div class="t course-qa course6">
           <div class="title">
             <div class="name">Базовий курс тестування</div>
           </div>
@@ -152,7 +177,7 @@
 
           <div class="desc">Програма курсу спеціально розроблена для тих, хто не може навчатися у будні.  Або тих, хто живе не у Львові, але бажає навчатися на курсі. Навчання проводитиметься по субботах та неділях. Три тижні поспіль.</div>
 
-          <a href="http://goo.gl/I67WS2" class="more" target="_blank">Детальніше</a>
+          <a href="http://goo.gl/I67WS2" class="more" target="_blank">Детальніше<span>&#10149;<span></a>
         </div>
 
 
@@ -258,18 +283,8 @@
           <input id="phone" type="text" placeholder="093 123 45 67" />
         </div>
 
-        <input type="submit" />
+        <input type="submit" value="Надіслати" />
       </form>
-
-      <br/>
-
-      <i class="icon fa comments"></i>
-      <br/>
-      <i class="icon"></i>
-      <br/>
-      <i class="icon"></i>
-      <br/>
-      <br/>
 
     </div>
   </div>
