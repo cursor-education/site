@@ -1,0 +1,169 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+@icon-icons-facebook-16-name: icon-icons-facebook-16;
+@icon-icons-facebook-16-x: 0px;
+@icon-icons-facebook-16-y: 0px;
+@icon-icons-facebook-16-offset-x: 0px;
+@icon-icons-facebook-16-offset-y: 0px;
+@icon-icons-facebook-16-width: 16px;
+@icon-icons-facebook-16-height: 16px;
+@icon-icons-facebook-16-total-width: 48px;
+@icon-icons-facebook-16-total-height: 48px;
+@icon-icons-facebook-16-image: '/assets/sprites-icons.png';
+@icon-icons-facebook-16: 0px 0px 0px 0px 16px 16px 48px 48px '/assets/sprites-icons.png' icon-icons-facebook-16;
+@icon-icons-github-16-name: icon-icons-github-16;
+@icon-icons-github-16-x: 16px;
+@icon-icons-github-16-y: 0px;
+@icon-icons-github-16-offset-x: -16px;
+@icon-icons-github-16-offset-y: 0px;
+@icon-icons-github-16-width: 16px;
+@icon-icons-github-16-height: 16px;
+@icon-icons-github-16-total-width: 48px;
+@icon-icons-github-16-total-height: 48px;
+@icon-icons-github-16-image: '/assets/sprites-icons.png';
+@icon-icons-github-16: 16px 0px -16px 0px 16px 16px 48px 48px '/assets/sprites-icons.png' icon-icons-github-16;
+@icon-icons-linkedin-16-2-name: icon-icons-linkedin-16-2;
+@icon-icons-linkedin-16-2-x: 0px;
+@icon-icons-linkedin-16-2-y: 16px;
+@icon-icons-linkedin-16-2-offset-x: 0px;
+@icon-icons-linkedin-16-2-offset-y: -16px;
+@icon-icons-linkedin-16-2-width: 16px;
+@icon-icons-linkedin-16-2-height: 16px;
+@icon-icons-linkedin-16-2-total-width: 48px;
+@icon-icons-linkedin-16-2-total-height: 48px;
+@icon-icons-linkedin-16-2-image: '/assets/sprites-icons.png';
+@icon-icons-linkedin-16-2: 0px 16px 0px -16px 16px 16px 48px 48px '/assets/sprites-icons.png' icon-icons-linkedin-16-2;
+@icon-icons-linkedin-16-name: icon-icons-linkedin-16;
+@icon-icons-linkedin-16-x: 16px;
+@icon-icons-linkedin-16-y: 16px;
+@icon-icons-linkedin-16-offset-x: -16px;
+@icon-icons-linkedin-16-offset-y: -16px;
+@icon-icons-linkedin-16-width: 16px;
+@icon-icons-linkedin-16-height: 16px;
+@icon-icons-linkedin-16-total-width: 48px;
+@icon-icons-linkedin-16-total-height: 48px;
+@icon-icons-linkedin-16-image: '/assets/sprites-icons.png';
+@icon-icons-linkedin-16: 16px 16px -16px -16px 16px 16px 48px 48px '/assets/sprites-icons.png' icon-icons-linkedin-16;
+@icon-icons-mail-16-name: icon-icons-mail-16;
+@icon-icons-mail-16-x: 0px;
+@icon-icons-mail-16-y: 32px;
+@icon-icons-mail-16-offset-x: 0px;
+@icon-icons-mail-16-offset-y: -32px;
+@icon-icons-mail-16-width: 16px;
+@icon-icons-mail-16-height: 16px;
+@icon-icons-mail-16-total-width: 48px;
+@icon-icons-mail-16-total-height: 48px;
+@icon-icons-mail-16-image: '/assets/sprites-icons.png';
+@icon-icons-mail-16: 0px 32px 0px -32px 16px 16px 48px 48px '/assets/sprites-icons.png' icon-icons-mail-16;
+@icon-icons-skype-16-name: icon-icons-skype-16;
+@icon-icons-skype-16-x: 32px;
+@icon-icons-skype-16-y: 0px;
+@icon-icons-skype-16-offset-x: -32px;
+@icon-icons-skype-16-offset-y: 0px;
+@icon-icons-skype-16-width: 16px;
+@icon-icons-skype-16-height: 16px;
+@icon-icons-skype-16-total-width: 48px;
+@icon-icons-skype-16-total-height: 48px;
+@icon-icons-skype-16-image: '/assets/sprites-icons.png';
+@icon-icons-skype-16: 32px 0px -32px 0px 16px 16px 48px 48px '/assets/sprites-icons.png' icon-icons-skype-16;
+@icon-icons-viber-16-name: icon-icons-viber-16;
+@icon-icons-viber-16-x: 32px;
+@icon-icons-viber-16-y: 16px;
+@icon-icons-viber-16-offset-x: -32px;
+@icon-icons-viber-16-offset-y: -16px;
+@icon-icons-viber-16-width: 16px;
+@icon-icons-viber-16-height: 16px;
+@icon-icons-viber-16-total-width: 48px;
+@icon-icons-viber-16-total-height: 48px;
+@icon-icons-viber-16-image: '/assets/sprites-icons.png';
+@icon-icons-viber-16: 32px 16px -32px -16px 16px 16px 48px 48px '/assets/sprites-icons.png' icon-icons-viber-16;
+@icon-icons-vkontakte-16-name: icon-icons-vkontakte-16;
+@icon-icons-vkontakte-16-x: 16px;
+@icon-icons-vkontakte-16-y: 32px;
+@icon-icons-vkontakte-16-offset-x: -16px;
+@icon-icons-vkontakte-16-offset-y: -32px;
+@icon-icons-vkontakte-16-width: 16px;
+@icon-icons-vkontakte-16-height: 16px;
+@icon-icons-vkontakte-16-total-width: 48px;
+@icon-icons-vkontakte-16-total-height: 48px;
+@icon-icons-vkontakte-16-image: '/assets/sprites-icons.png';
+@icon-icons-vkontakte-16: 16px 32px -16px -32px 16px 16px 48px 48px '/assets/sprites-icons.png' icon-icons-vkontakte-16;
+@icon-icons-whatsapp-16-name: icon-icons-whatsapp-16;
+@icon-icons-whatsapp-16-x: 32px;
+@icon-icons-whatsapp-16-y: 32px;
+@icon-icons-whatsapp-16-offset-x: -32px;
+@icon-icons-whatsapp-16-offset-y: -32px;
+@icon-icons-whatsapp-16-width: 16px;
+@icon-icons-whatsapp-16-height: 16px;
+@icon-icons-whatsapp-16-total-width: 48px;
+@icon-icons-whatsapp-16-total-height: 48px;
+@icon-icons-whatsapp-16-image: '/assets/sprites-icons.png';
+@icon-icons-whatsapp-16: 32px 32px -32px -32px 16px 16px 48px 48px '/assets/sprites-icons.png' icon-icons-whatsapp-16;
+@spritesheet-width: 48px;
+@spritesheet-height: 48px;
+@spritesheet-image: '/assets/sprites-icons.png';
+@spritesheet-sprites: @icon-icons-facebook-16 @icon-icons-github-16 @icon-icons-linkedin-16-2 @icon-icons-linkedin-16 @icon-icons-mail-16 @icon-icons-skype-16 @icon-icons-viber-16 @icon-icons-vkontakte-16 @icon-icons-whatsapp-16;
+@spritesheet: 48px 48px '/assets/sprites-icons.png' @spritesheet-sprites;
+
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+*/
+.sprite-width(@sprite) {
+  width: extract(@sprite, 5);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 6);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite-image(@sprite) {
+  @sprite-image: extract(@sprite, 9);
+  @sprite-image-bare: ~`"@{sprite-image}".slice(1, -1)`;
+  background-image: url(@sprite-image-bare);
+}
+
+.sprite(@sprite) {
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+.sprites(@spritesheet-sprites);
+*/
+.sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
+  @sprite: extract(@sprites, @i);
+  @sprite-name: extract(@sprite, 10);
+  .@{sprite-name} {
+    .sprite(@sprite);
+  }
+  .sprites(@sprites, @i + 1);
+}

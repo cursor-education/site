@@ -16,6 +16,15 @@
 >
 >     $ vagrant destroy --force   # to reset vagrant image
 >     $ vagrant up                # to setup virtual machine
+>     $ vagrant ssh               # to enter inside of vm
+>
+>
+> initialize app dependencies
+>
+>     vm$ cd /vagrant/shared/site/
+>     vm$ curl -sS https://getcomposer.org/installer | php
+>     vm$ php composer.phar install
+>
 >
 > and navigate to http://local.cursor.education/
 >

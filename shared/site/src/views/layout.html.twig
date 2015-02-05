@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+{% spaceless %}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>{% block title %}{% endblock %}</title>
+
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <meta name="robots" content="all" />
+  <meta name="revisit-after" content="2 days" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" type="image/x-icon" href="/favicon.png" />
+
+  {% if app.debug %}
+    <link rel="stylesheet/less" type="text/css" href="/css/page-{{ pageName }}.less">
+  {% else %}
+    <link rel="stylesheet" type="text/css" href="/assets/page-{{ pageName }}.css">
+  {% endif %}
+
+  <link rel="stylesheet" type="text/css" href="/css/animate.css" />
+
+  <link href='http://fonts.googleapis.com/css?family=Exo+2|Open+Sans:300,400,600,700,regular&subset=latin,cyrillic' rel='stylesheet' type='text/css' media='all' />
+
+  {% if app.debug %}
+    <script data-env="development" src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.2.0/less.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/coffee-script/1.7.1/coffee-script.min.js"></script>
+  {% endif %}
+</head>
+{% endspaceless %}
+<body id="page-{{ pageName }}">
+  {% block content %}{% endblock %}
+
+  {% if app.debug %}
+    <script type="text/coffeescript" src="/js/page-{{ pageName }}.coffee"></script>
+  {% else %}
+    <script type="text/javascript" src="/assets/page-{{ pageName }}.js"></script>
+  {% endif %}
+</body>
+</html>

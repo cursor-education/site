@@ -1,0 +1,14 @@
+{
+    "name": "cursor/cursor",
+    "require": {
+        "silex/silex": "~1.2",
+        "igorw/config-service-provider": "1.2.*@dev",
+        "symfony/yaml": "~2.6",
+        "symfony/twig-bridge": "~2.6"
+    },
+    "autoload": {
+        "psr-0": {
+            "SKE": "src/"
+        }
+    }
+}
