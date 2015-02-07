@@ -1,0 +1,31 @@
+{
+    "name": "moust/silex-cache",
+    "type": "library",
+    "description": "Cache service provider for Silex application",
+    "keywords": ["library", "cache", "service", "provider", "silex"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Quentin Aupetit",
+            "email": "qaupetit@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "pimple/pimple": "~1.0"
+    },
+    "require-dev": {
+        "silex/silex": "~1.0",
+        "phpunit/phpunit": "~3.7"
+    },
+    "autoload": {
+        "psr-0": {
+            "Moust\\Silex": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
