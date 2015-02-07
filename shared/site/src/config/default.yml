@@ -1,3 +1,12 @@
 environment: default
 debug: false
 twig.options.cache: false
+
+admin.username: null
+admin.password: null
+
+db.google.courses.key: null
+db.google.courses.gid: null
+
+db.google.partners.key: null
+db.google.partners.gid: null
