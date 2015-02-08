@@ -1,0 +1,20 @@
+{% extends "layout.html.twig" %}
+
+{% set pageName = 'error' %}
+
+{% block content %}
+    {% include '_header_menu.html.twig' %}
+
+    {% include 'landing/_header.html.twig' %}
+    <div id="header-arrow"></div>
+
+    {% spaceless %}
+    <div class="section">
+    <div class="wrap">
+
+        <h2>{{ code }}</h2>
+
+    </div>
+    </div>
+    {% endspaceless %}
+{% endblock %}

@@ -23,6 +23,7 @@
 >
 >     vm$ cd /vagrant/shared/site/
 >     vm$ curl -sS https://getcomposer.org/installer | php
+>     vm$ php composer.phar clearcache
 >     vm$ php composer.phar install
 >
 >

@@ -9,10 +9,14 @@ if [ ! -f ${TMP_FILE} ]; then
     sudo chkconfig iptables off
 
     # install midnight-commander
-    sudo yum -y install mc
+    sudo yum -y install mc curl git
+
+    # install php
+    sudo rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
+    sudo yum -y install php54w
 
     # install & configure apache
-    sudo yum -y install httpd php
+    sudo yum -y install httpd
     sudo rm -rfv /etc/httpd/conf.d/*.conf
     sudo cp -f -v /vagrant/setup/nginx/*.conf /etc/httpd/conf.d/
     sudo service httpd restart

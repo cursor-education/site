@@ -1,6 +1,116 @@
+@import 'modules/animate-deus.less';
+@import 'modules/animate.less';
+
 body {
     background: @body-bg;
     overflow-x: hidden;
+
+    .section {
+        position: relative;
+
+        min-height: 150px;
+
+        margin: 0 auto;
+        padding-bottom: 20px;
+
+        @media screen and (max-width: 650px) {
+            border-width: 0px;
+        }
+
+        .wrap {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0px 10px;
+
+            color: @body-color;
+
+            font: 18px 'Open Sans';
+            letter-spacing: 1px;
+            line-height: normal;
+
+            h2 {
+                position: relative;
+                z-index: 9;
+
+                text-transform: uppercase;
+                font-size: 32px;
+                text-align: center;
+                margin-bottom: 50px;
+
+                user-select: none;
+                -webkit-user-select: none;
+            }
+        }
+
+        i.go-to-top {
+            display: block;
+            position: absolute;
+
+            width: 85px;
+            height: 85px;
+
+            padding-bottom: 5px;
+
+            background: url(/img/up_arrow.png) no-repeat;
+
+            right: 60px;
+            bottom: 50px;
+
+            cursor: pointer;
+
+            @media screen and (max-width: 650px) {
+                position: relative;
+
+                right: 0px;
+                bottom: 0px;
+
+                margin: 0 auto;
+                padding: 0px;
+
+                background-position: center;
+            }
+
+            transition: all 0.15s ease-in-out;
+            transform: perspective(500px) translateZ(0px);
+
+            &:hover {
+                transform: perspective(500px) translateZ(70px);
+            }
+        }
+
+        &.curve-after {
+            &:after {
+                content: " ";
+
+                position: absolute;
+                left: 0px;
+                width: 100%;
+                height: 50px;
+                bottom: -25px;
+
+                z-index: 1;
+            }
+        }
+    }
+}
+
+.bg-animated {
+    position: absolute;
+    z-index: 5;
+
+    &.bg1 { right: 5%; top: 0%; }
+    &.bg2 { left: 20%; top: -5%; }
+    &.bg3 { left: 0%; top: 20%; }
+    &.bg4 { left: 10%; top: 50%; }
+    &.bg5 { left: 20%; top: 70%; }
+    &.bg6 { right: 10%; top: 40%; }
+    &.bg7 { right: 5%; top: 0%; }
+    &.bg8 { right: 10%; top: 70%; }
+    &.bg-form-1 { left: 40%; top: -5%; }
+
+    @media screen and (max-width: 650px) {
+        display: none;
+    }
 }
 
 #footer {
@@ -33,7 +143,7 @@ body {
 
     .wrap {
         padding: 20px 0px;
-        font-size: 13px !important;
-        color: @section-FOOTER-color !important;
+        font-size: 13px;
+        color: @section-FOOTER-color;
     }
 }

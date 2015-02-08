@@ -1,9 +1,9 @@
 Options -MultiViews
 
+RewriteEngine On
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)\.(png|less|coffee|css|js) web/$1.$2 [QSA,L]
 
-RewriteEngine On
-#RewriteBase /path/to/app
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ web/index.php [QSA,L]

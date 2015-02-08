@@ -8,11 +8,10 @@ require_once ROOT_DIR.'/vendor/autoload.php';
 $app = new Silex\Application();
 
 $env = getenv('APP_ENV') ?: ENV_PRODUCTION;
-$env = ENV_PRODUCTION;
 
-// if ($env != ENV_PRODUCTION) {
+if ($env != ENV_PRODUCTION) {
     Symfony\Component\Debug\Debug::enable();
-// }
+}
 
 require SRC_DIR.'/app.php';
 require SRC_DIR.'/controllers.php';

@@ -1,3 +1,33 @@
+@import '../sprites/sprites-animation-deus.less';
+
+.deus1,
+.deus2,
+.deus3,
+.deus4,
+.deus5,
+.deus6 {
+  background-color: transparent;
+  background-repeat: no-repeat;
+}
+
+.deus1 {
+    .sprite(@icon-animation-deus-animation-deus1);
+}
+
+.deus2 {
+    .sprite(@icon-animation-deus-animation-deus2);
+}
+
+.deus3,
+.deus4,
+.deus6 {
+    .sprite(@icon-animation-deus-animation-deus3-4-6);
+}
+
+.deus5 {
+    .sprite(@icon-animation-deus-animation-deus5);
+}
+
 /* deus1 */
 @-webkit-keyframes deus1 {
   0% { -webkit-transform:translate(0, 0) scale(1); opacity:1; }
