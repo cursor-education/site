@@ -9,4 +9,8 @@ logs/*
 composer.phar
 
 shared/site/node_modules
+shared/site/src/config/dev.yml
+shared/site/src/config/production.yml
+
+@temp
 cache/

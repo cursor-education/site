@@ -34,7 +34,7 @@
   {% endif %}
 </head>
 {% endspaceless %}
-<body id="page-{{ pageName }}">
+<body id="page-{{ pageName }}" class="{{ pageClass|default('') }}">
   {% block content %}{% endblock %}
 
   {% spaceless %}
@@ -43,10 +43,15 @@
   </div>
   {% endspaceless %}
 
-  {% if app.debug %}
-    <script type="text/coffeescript" src="/js/page-{{ pageName }}.coffee"></script>
-  {% else %}
-    <script type="text/javascript" src="/assets/page-{{ pageName }}.js"></script>
-  {% endif %}
+  {{ _self.js('app') }}
+  {{ _self.js('page-'~pageName) }}
+
+  {% macro js(name) %}
+    {% if app.debug %}
+      <script type="text/coffeescript" src="/js/{{ name }}.coffee"></script>
+    {% else %}
+      <script type="text/javascript" src="/assets/{{ name }}.js"></script>
+    {% endif %}
+  {% endmacro %}
 </body>
 </html>

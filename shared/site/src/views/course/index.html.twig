@@ -1,10 +1,14 @@
 {% extends "layout.html.twig" %}
 
 {% set pageName = 'course' %}
+{% set pageClass = 'course-'~course.style %}
 
 {% block content %}
-    {% include '_header_menu.html.twig' %}
+    {% include 'course/_header_menu.html.twig' %}
     {% include 'course/_header.html.twig' %}
 
-    1
+    {% include 'course/_description.html.twig' %}
+
+    {% include 'course/_form.html.twig' %}
+    {% include 'course/_footer.html.twig' %}
 {% endblock %}

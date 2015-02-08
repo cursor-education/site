@@ -1,9 +1,93 @@
 @import 'colors.less';
+@header-below-bg: black;
+
 @import 'base.less';
 @import 'base-layout.less';
 
 @import './sprites/sprites-icons.less';
 
 body {
-    //
+    &.course-ruby {
+        @s: #B24626;
+
+        #header {
+            &:before,
+            &:after {
+                background-color: @s;
+            }
+
+            background-image: url(http://zahidlilani.com/wp-content/uploads/2013/09/Ruby-on-Rails.jpg);
+            background-size: 30%;
+            background-repeat: repeat;
+        }
+
+        #header-arrow {
+            &:after {
+                border-color: @s;
+            }
+        }
+
+        #course-description {
+            background-color: @s;
+
+            &:after {
+                background-color: @s;
+            }
+        }
+    }
+
+    &.course-php {
+        @s: #7480A8;
+
+        #header {
+            &:before,
+            &:after {
+                background-color: @s;
+            }
+
+            background-image: url(http://phpdes.com/wp-content/uploads/2012/01/10_things_php_developer.jpg);
+            background-size: 30%;
+            background-repeat: repeat;
+        }
+
+        #header-arrow {
+            &:after {
+                border-color: @s;
+            }
+        }
+
+        #course-description {
+            background-color: @s;
+
+            &:after {
+                background-color: @s;
+            }
+        }
+    }
+
+    #course-description {
+        position: relative;
+        z-index: 3;
+
+        &:after {
+            transform: skew(0deg, -1.5deg);
+            -webkit-transform: skew(0deg, -1.5deg);
+
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -1px;
+        }
+    }
+
+    #form {
+        position: relative;
+        z-index: 3;
+        padding-top: 70px;
+    }
+
+    #course-footer {
+        position: relative;
+        z-index: 3;
+        padding-top: 70px;
+
+        background-color: #303842;
+    }
 }
