@@ -2,6 +2,7 @@
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+// landing page
 $app->match('/', function () use ($app) {
     return $app['twig']->render('landing/index.html.twig', array(
         'courses' => $app['cache']->fetch('db.google.courses.data'),
@@ -10,8 +11,16 @@ $app->match('/', function () use ($app) {
 })
 ->bind('landing');
 
-$app->match('/course/{id}', function () use ($app) {
-    var_dump('course');
+// course page
+$app->match('/course/{id}', function (Request $request) use ($app) {
+    $courseId = $request->get('id');
+
+    $courses = $app['cache']->fetch('db.google.courses.data');
+    $course = $courses[$courseId];
+
+    return $app['twig']->render('course/index.html.twig', array(
+        'course' => $course,
+    ));
 })
 ->bind('course');
 
@@ -32,7 +41,14 @@ $app['google-api-fetch'] = $app->protect(function ($key) use ($app) {
 
     for ($i = 1; $i < count($csv); $i++) {
         $row = split("\t", $csv[$i]);
-        $records[] = array_combine($columns, $row);
+        $record = array_combine($columns, $row);
+
+        if (isset($record['id'])) {
+            $records[$record['id']] = $record;
+        }
+        else {
+            $records[] = $record;
+        }
     }
 
     $app['cache']->store('db.google.'.$key.'.data', $records);
@@ -40,12 +56,13 @@ $app['google-api-fetch'] = $app->protect(function ($key) use ($app) {
     return $records;
 });
 
+// update db changes
 $app->match('/admin/update', function () use ($app) {
-    $records = $app['google-api-fetch']('courses');
+    $courses = $app['google-api-fetch']('courses');
     $partners = $app['google-api-fetch']('partners');
     //
 
-    var_dump($records);die;
+    var_dump($courses, $partners);die;
 
     return 'test';
 });

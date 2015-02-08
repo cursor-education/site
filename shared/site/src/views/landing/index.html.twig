@@ -3,9 +3,9 @@
 {% set pageName = 'landing' %}
 
 {% block content %}
-    {% include 'landing/_header_menu.html.twig' %}
-    {% include 'landing/_header.html.twig' %}
+    {% include '_header_menu.html.twig' %}
 
+    {% include 'landing/_header.html.twig' %}
     <div id="header-arrow"></div>
 
     {% include 'landing/_deeper.html.twig' %}
@@ -14,6 +14,4 @@
     {% include 'landing/_form.html.twig' %}
     {% include 'landing/_partners.html.twig' %}
     {% include 'landing/_contacts.html.twig' %}
-
-    {% include 'landing/_footer.html.twig' %}
 {% endblock %}

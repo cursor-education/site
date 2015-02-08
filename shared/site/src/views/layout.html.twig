@@ -39,6 +39,12 @@
 <body id="page-{{ pageName }}">
   {% block content %}{% endblock %}
 
+  {% spaceless %}
+  <div id="footer" class="section">
+    <div class="wrap">Cursor Education &copy; 2014-2015</div>
+  </div>
+  {% endspaceless %}
+
   {% if app.debug %}
     <script type="text/coffeescript" src="/js/page-{{ pageName }}.coffee"></script>
   {% else %}
