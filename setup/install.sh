@@ -27,7 +27,7 @@ if [ ! -f ${TMP_FILE} ]; then
     sudo npm install -g coffee-script
     sudo npm install -g grunt
     sudo npm install -g grunt-cli
-    cd /var/shared/site && sudo npm install && cd /tmp
+    cd /var/shared/site && npm i && cd /tmp
 
     #
     touch ${TMP_FILE}

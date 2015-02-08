@@ -1,10 +1,12 @@
 !.gitignore
 !.keep
-
+!vendor
 .vagrant/
 
 .DS_Store
 
 logs/*
 composer.phar
+
+shared/site/node_modules
 cache/
