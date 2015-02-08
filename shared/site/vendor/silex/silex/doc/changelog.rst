@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.3.0 (2015-XX-XX)
+------------------
+
+* made Silex compatible with Symfony 2.7 (and keep compatibility with Symfony 2.3, 2.5, and 2.6)
+* removed deprecated TwigCoreExtension class (register the new HttpFragmentServiceProvider instead)
+* bumped minimum version of PHP to 5.3.9
+
 1.2.3 (2015-01-20)
 ------------------
 

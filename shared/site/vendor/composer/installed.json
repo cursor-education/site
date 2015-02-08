@@ -366,196 +366,6 @@
         "homepage": "http://symfony.com"
     },
     {
-        "name": "pimple/pimple",
-        "version": "v1.1.1",
-        "version_normalized": "1.1.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/silexphp/Pimple.git",
-            "reference": "2019c145fe393923f3441b23f29bbdfaa5c58c4d"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/silexphp/Pimple/zipball/2019c145fe393923f3441b23f29bbdfaa5c58c4d",
-            "reference": "2019c145fe393923f3441b23f29bbdfaa5c58c4d",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "time": "2013-11-22 08:30:29",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.1.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Pimple": "lib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            }
-        ],
-        "description": "Pimple is a simple Dependency Injection Container for PHP 5.3",
-        "homepage": "http://pimple.sensiolabs.org",
-        "keywords": [
-            "container",
-            "dependency injection"
-        ]
-    },
-    {
-        "name": "silex/silex",
-        "version": "v1.2.3",
-        "version_normalized": "1.2.3.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/silexphp/Silex.git",
-            "reference": "57c98ea0cb47664096094912920951fde1f4631a"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/silexphp/Silex/zipball/57c98ea0cb47664096094912920951fde1f4631a",
-            "reference": "57c98ea0cb47664096094912920951fde1f4631a",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3",
-            "pimple/pimple": "~1.0",
-            "symfony/event-dispatcher": "~2.3,<3.0",
-            "symfony/http-foundation": "~2.3,<3.0",
-            "symfony/http-kernel": "~2.3,<3.0",
-            "symfony/routing": "~2.3,<3.0"
-        },
-        "require-dev": {
-            "doctrine/dbal": "~2.2",
-            "monolog/monolog": "~1.4,>=1.4.1",
-            "swiftmailer/swiftmailer": "5.*",
-            "symfony/browser-kit": "~2.3,<3.0",
-            "symfony/config": "~2.3,<3.0",
-            "symfony/css-selector": "~2.3,<3.0",
-            "symfony/debug": "~2.3,<3.0",
-            "symfony/dom-crawler": "~2.3,<3.0",
-            "symfony/finder": "~2.3,<3.0",
-            "symfony/form": "~2.3,<3.0",
-            "symfony/locale": "~2.3,<3.0",
-            "symfony/monolog-bridge": "~2.3,<3.0",
-            "symfony/options-resolver": "~2.3,<3.0",
-            "symfony/process": "~2.3,<3.0",
-            "symfony/security": "~2.3,<3.0",
-            "symfony/serializer": "~2.3,<3.0",
-            "symfony/translation": "~2.3,<3.0",
-            "symfony/twig-bridge": "~2.3,<3.0",
-            "symfony/validator": "~2.3,<3.0",
-            "twig/twig": ">=1.8.0,<2.0-dev"
-        },
-        "suggest": {
-            "symfony/browser-kit": "~2.3",
-            "symfony/css-selector": "~2.3",
-            "symfony/dom-crawler": "~2.3",
-            "symfony/form": "~2.3"
-        },
-        "time": "2015-01-20 16:45:58",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.2.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Silex": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Igor Wiedler",
-                "email": "igor@wiedler.ch"
-            }
-        ],
-        "description": "The PHP micro-framework based on the Symfony2 Components",
-        "homepage": "http://silex.sensiolabs.org",
-        "keywords": [
-            "microframework"
-        ]
-    },
-    {
-        "name": "igorw/config-service-provider",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/igorw/ConfigServiceProvider.git",
-            "reference": "502cffe49f136443f2059803f2e7192d1ac066cd"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/igorw/ConfigServiceProvider/zipball/502cffe49f136443f2059803f2e7192d1ac066cd",
-            "reference": "502cffe49f136443f2059803f2e7192d1ac066cd",
-            "shasum": ""
-        },
-        "require": {
-            "silex/silex": "~1.0"
-        },
-        "require-dev": {
-            "jamesmoss/toml": "~0.1",
-            "symfony/yaml": "~2.1"
-        },
-        "suggest": {
-            "jamesmoss/toml": "~0.1",
-            "symfony/yaml": "~2.1"
-        },
-        "time": "2014-07-23 21:09:35",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.2-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Igorw\\Silex": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Contributors",
-                "homepage": "https://github.com/igorw/ConfigServiceProvider/contributors"
-            },
-            {
-                "name": "Igor Wiedler",
-                "email": "igor@wiedler.ch"
-            }
-        ],
-        "description": "A config ServiceProvider for Silex with support for php, json and yaml.",
-        "keywords": [
-            "silex"
-        ]
-    },
-    {
         "name": "symfony/yaml",
         "version": "v2.6.4",
         "version_normalized": "2.6.4.0",
@@ -664,6 +474,127 @@
         ]
     },
     {
+        "name": "symfony/security-core",
+        "version": "v2.6.4",
+        "version_normalized": "2.6.4.0",
+        "target-dir": "Symfony/Component/Security/Core",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/security-core.git",
+            "reference": "4603bcc66e20e23f018c67f7f9f3f8146a100c11"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/security-core/zipball/4603bcc66e20e23f018c67f7f9f3f8146a100c11",
+            "reference": "4603bcc66e20e23f018c67f7f9f3f8146a100c11",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "ircmaxell/password-compat": "1.0.*",
+            "psr/log": "~1.0",
+            "symfony/event-dispatcher": "~2.1",
+            "symfony/expression-language": "~2.6",
+            "symfony/http-foundation": "~2.4",
+            "symfony/translation": "~2.0,>=2.0.5",
+            "symfony/validator": "~2.5,>=2.5.5"
+        },
+        "suggest": {
+            "ircmaxell/password-compat": "For using the BCrypt password encoder in PHP <5.5",
+            "symfony/event-dispatcher": "",
+            "symfony/expression-language": "For using the expression voter",
+            "symfony/http-foundation": "",
+            "symfony/validator": "For using the user password constraint"
+        },
+        "time": "2015-01-25 04:39:26",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.6-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Security\\Core\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            },
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Symfony Security Component - Core Library",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "symfony/security-csrf",
+        "version": "v2.6.4",
+        "version_normalized": "2.6.4.0",
+        "target-dir": "Symfony/Component/Security/Csrf",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/security-csrf.git",
+            "reference": "c532081e1c9295b69dac2e3faea87112543504fc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/security-csrf/zipball/c532081e1c9295b69dac2e3faea87112543504fc",
+            "reference": "c532081e1c9295b69dac2e3faea87112543504fc",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "symfony/security-core": "~2.4"
+        },
+        "require-dev": {
+            "symfony/http-foundation": "~2.1"
+        },
+        "suggest": {
+            "symfony/http-foundation": "For using the class SessionTokenStorage."
+        },
+        "time": "2015-01-03 08:01:59",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.6-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Security\\Csrf\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            },
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Symfony Security Component - CSRF Library",
+        "homepage": "http://symfony.com"
+    },
+    {
         "name": "symfony/twig-bridge",
         "version": "v2.6.4",
         "version_normalized": "2.6.4.0",
@@ -743,64 +674,34 @@
         "homepage": "http://symfony.com"
     },
     {
-        "name": "symfony/security",
-        "version": "v2.6.4",
-        "version_normalized": "2.6.4.0",
-        "target-dir": "Symfony/Component/Security",
+        "name": "pimple/pimple",
+        "version": "v1.1.1",
+        "version_normalized": "1.1.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/Security.git",
-            "reference": "109e94008f1a0da86d0abd354860b765d569b3c3"
+            "url": "https://github.com/silexphp/Pimple.git",
+            "reference": "2019c145fe393923f3441b23f29bbdfaa5c58c4d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Security/zipball/109e94008f1a0da86d0abd354860b765d569b3c3",
-            "reference": "109e94008f1a0da86d0abd354860b765d569b3c3",
+            "url": "https://api.github.com/repos/silexphp/Pimple/zipball/2019c145fe393923f3441b23f29bbdfaa5c58c4d",
+            "reference": "2019c145fe393923f3441b23f29bbdfaa5c58c4d",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3.3",
-            "symfony/event-dispatcher": "~2.2",
-            "symfony/http-foundation": "~2.1",
-            "symfony/http-kernel": "~2.4"
+            "php": ">=5.3.0"
         },
-        "replace": {
-            "symfony/security-acl": "self.version",
-            "symfony/security-core": "self.version",
-            "symfony/security-csrf": "self.version",
-            "symfony/security-http": "self.version"
-        },
-        "require-dev": {
-            "doctrine/common": "~2.2",
-            "doctrine/dbal": "~2.2",
-            "ircmaxell/password-compat": "~1.0",
-            "psr/log": "~1.0",
-            "symfony/expression-language": "~2.6",
-            "symfony/intl": "~2.3",
-            "symfony/routing": "~2.2",
-            "symfony/translation": "~2.0,>=2.0.5",
-            "symfony/validator": "~2.5,>=2.5.5"
-        },
-        "suggest": {
-            "doctrine/dbal": "For using the built-in ACL implementation",
-            "ircmaxell/password-compat": "For using the BCrypt password encoder in PHP <5.5",
-            "symfony/class-loader": "For using the ACL generateSql script",
-            "symfony/expression-language": "For using the expression voter",
-            "symfony/finder": "For using the ACL generateSql script",
-            "symfony/routing": "For using the HttpUtils class to create sub-requests, redirect the user, and match URLs",
-            "symfony/validator": "For using the user password constraint"
-        },
-        "time": "2015-01-25 04:39:26",
+        "time": "2013-11-22 08:30:29",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "2.6-dev"
+                "dev-master": "1.1.x-dev"
             }
         },
         "installation-source": "dist",
         "autoload": {
             "psr-0": {
-                "Symfony\\Component\\Security\\": ""
+                "Pimple": "lib/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -809,16 +710,159 @@
         ],
         "authors": [
             {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            },
-            {
                 "name": "Fabien Potencier",
                 "email": "fabien@symfony.com"
             }
         ],
-        "description": "Symfony Security Component",
-        "homepage": "http://symfony.com"
+        "description": "Pimple is a simple Dependency Injection Container for PHP 5.3",
+        "homepage": "http://pimple.sensiolabs.org",
+        "keywords": [
+            "container",
+            "dependency injection"
+        ]
+    },
+    {
+        "name": "silex/silex",
+        "version": "1.3.x-dev",
+        "version_normalized": "1.3.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/silexphp/Silex.git",
+            "reference": "244dbef7aaa889e81518e7bc9130de2d8741b75a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/silexphp/Silex/zipball/244dbef7aaa889e81518e7bc9130de2d8741b75a",
+            "reference": "244dbef7aaa889e81518e7bc9130de2d8741b75a",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9",
+            "pimple/pimple": "~1.0",
+            "symfony/event-dispatcher": "~2.3,<3.0",
+            "symfony/http-foundation": "~2.3,<3.0",
+            "symfony/http-kernel": "~2.3,<3.0",
+            "symfony/routing": "~2.3,<3.0"
+        },
+        "require-dev": {
+            "doctrine/dbal": "~2.2",
+            "monolog/monolog": "~1.4,>=1.4.1",
+            "swiftmailer/swiftmailer": "5.*",
+            "symfony/browser-kit": "~2.3,<3.0",
+            "symfony/config": "~2.3,<3.0",
+            "symfony/css-selector": "~2.3,<3.0",
+            "symfony/debug": "~2.3,<3.0",
+            "symfony/dom-crawler": "~2.3,<3.0",
+            "symfony/finder": "~2.3,<3.0",
+            "symfony/form": "~2.3,<3.0",
+            "symfony/locale": "~2.3,<3.0",
+            "symfony/monolog-bridge": "~2.3,<3.0",
+            "symfony/options-resolver": "~2.3,<3.0",
+            "symfony/process": "~2.3,<3.0",
+            "symfony/security": "~2.3,<3.0",
+            "symfony/serializer": "~2.3,<3.0",
+            "symfony/translation": "~2.3,<3.0",
+            "symfony/twig-bridge": "~2.3,<3.0",
+            "symfony/validator": "~2.3,<3.0",
+            "twig/twig": ">=1.8.0,<2.0-dev"
+        },
+        "suggest": {
+            "symfony/browser-kit": "~2.3",
+            "symfony/css-selector": "~2.3",
+            "symfony/dom-crawler": "~2.3",
+            "symfony/form": "~2.3"
+        },
+        "time": "2015-01-29 18:19:01",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.3.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Silex": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Igor Wiedler",
+                "email": "igor@wiedler.ch"
+            }
+        ],
+        "description": "The PHP micro-framework based on the Symfony2 Components",
+        "homepage": "http://silex.sensiolabs.org",
+        "keywords": [
+            "microframework"
+        ]
+    },
+    {
+        "name": "igorw/config-service-provider",
+        "version": "v1.2.2",
+        "version_normalized": "1.2.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/igorw/ConfigServiceProvider.git",
+            "reference": "092ed2c762bbae331e3f51d4a17f67310bf99a81"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/igorw/ConfigServiceProvider/zipball/092ed2c762bbae331e3f51d4a17f67310bf99a81",
+            "reference": "092ed2c762bbae331e3f51d4a17f67310bf99a81",
+            "shasum": ""
+        },
+        "require": {
+            "silex/silex": "~1.0"
+        },
+        "require-dev": {
+            "jamesmoss/toml": "~0.1",
+            "symfony/yaml": "~2.1"
+        },
+        "suggest": {
+            "jamesmoss/toml": "~0.1",
+            "symfony/yaml": "~2.1"
+        },
+        "time": "2014-07-06 10:59:11",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Igorw\\Silex": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Igor Wiedler",
+                "email": "igor@wiedler.ch",
+                "homepage": "http://wiedler.ch/igor/"
+            },
+            {
+                "name": "Contributors",
+                "homepage": "https://github.com/igorw/ConfigServiceProvider/contributors"
+            }
+        ],
+        "description": "A config ServiceProvider for Silex with support for php, json and yaml.",
+        "keywords": [
+            "silex"
+        ]
     },
     {
         "name": "moust/silex-cache",
@@ -850,7 +894,7 @@
                 "dev-master": "1.0.x-dev"
             }
         },
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
             "psr-0": {
                 "Moust\\Silex": "src/"
