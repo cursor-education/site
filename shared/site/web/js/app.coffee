@@ -206,6 +206,8 @@ window.helpers =
         forms = document.getElementsByClassName 'light-form'
 
         for form in forms
-            form.onsubmit = ->
-                alert(1)
-                return false
+            do (form) ->
+                form.onsubmit = ->
+                    els = form.getElementsByClassName('validate')
+                    console.log els
+                    return false

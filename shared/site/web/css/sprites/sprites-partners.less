@@ -1,0 +1,103 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+@icon-partners-betaplace-lviv-logo-name: icon-partners-betaplace-lviv-logo;
+@icon-partners-betaplace-lviv-logo-x: 0px;
+@icon-partners-betaplace-lviv-logo-y: 324px;
+@icon-partners-betaplace-lviv-logo-offset-x: 0px;
+@icon-partners-betaplace-lviv-logo-offset-y: -324px;
+@icon-partners-betaplace-lviv-logo-width: 81px;
+@icon-partners-betaplace-lviv-logo-height: 101px;
+@icon-partners-betaplace-lviv-logo-total-width: 836px;
+@icon-partners-betaplace-lviv-logo-total-height: 425px;
+@icon-partners-betaplace-lviv-logo-image: '/assets/sprites-partners.png';
+@icon-partners-betaplace-lviv-logo: 0px 324px 0px -324px 81px 101px 836px 425px '/assets/sprites-partners.png' icon-partners-betaplace-lviv-logo;
+@icon-partners-comein-lviv-cafe-name: icon-partners-comein-lviv-cafe;
+@icon-partners-comein-lviv-cafe-x: 81px;
+@icon-partners-comein-lviv-cafe-y: 324px;
+@icon-partners-comein-lviv-cafe-offset-x: -81px;
+@icon-partners-comein-lviv-cafe-offset-y: -324px;
+@icon-partners-comein-lviv-cafe-width: 148px;
+@icon-partners-comein-lviv-cafe-height: 49px;
+@icon-partners-comein-lviv-cafe-total-width: 836px;
+@icon-partners-comein-lviv-cafe-total-height: 425px;
+@icon-partners-comein-lviv-cafe-image: '/assets/sprites-partners.png';
+@icon-partners-comein-lviv-cafe: 81px 324px -81px -324px 148px 49px 836px 425px '/assets/sprites-partners.png' icon-partners-comein-lviv-cafe;
+@icon-partners-lviv-city-adm-name: icon-partners-lviv-city-adm;
+@icon-partners-lviv-city-adm-x: 0px;
+@icon-partners-lviv-city-adm-y: 0px;
+@icon-partners-lviv-city-adm-offset-x: 0px;
+@icon-partners-lviv-city-adm-offset-y: 0px;
+@icon-partners-lviv-city-adm-width: 836px;
+@icon-partners-lviv-city-adm-height: 324px;
+@icon-partners-lviv-city-adm-total-width: 836px;
+@icon-partners-lviv-city-adm-total-height: 425px;
+@icon-partners-lviv-city-adm-image: '/assets/sprites-partners.png';
+@icon-partners-lviv-city-adm: 0px 0px 0px 0px 836px 324px 836px 425px '/assets/sprites-partners.png' icon-partners-lviv-city-adm;
+@spritesheet-width: 836px;
+@spritesheet-height: 425px;
+@spritesheet-image: '/assets/sprites-partners.png';
+@spritesheet-sprites: @icon-partners-betaplace-lviv-logo @icon-partners-comein-lviv-cafe @icon-partners-lviv-city-adm;
+@spritesheet: 836px 425px '/assets/sprites-partners.png' @spritesheet-sprites;
+
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+*/
+.sprite-width(@sprite) {
+  width: extract(@sprite, 5);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 6);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite-image(@sprite) {
+  @sprite-image: extract(@sprite, 9);
+  @sprite-image-bare: ~`"@{sprite-image}".slice(1, -1)`;
+  background-image: url(@sprite-image-bare);
+}
+
+.sprite(@sprite) {
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+.sprites(@spritesheet-sprites);
+*/
+.sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
+  @sprite: extract(@sprites, @i);
+  @sprite-name: extract(@sprite, 10);
+  .@{sprite-name} {
+    .sprite(@sprite);
+  }
+  .sprites(@sprites, @i + 1);
+}
