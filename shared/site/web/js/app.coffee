@@ -202,12 +202,77 @@ window.helpers =
                 bgOffset = offsetY - el.offsetTop
                 el.style.backgroundPositionY = "#{bgOffset}px"
 
+    ajax: (url, data, done) ->
+        getXmlHttp = ->
+            try
+                xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+            catch e
+                try
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                catch E
+                    xmlhttp = false;
+
+            if !xmlhttp and typeof XMLHttpRequest!='undefined'
+                xmlhttp = new XMLHttpRequest()
+
+            return xmlhttp
+
+        xmlhttp = getXmlHttp()
+
+        if data
+            xmlhttp.open 'POST', url, true
+        else
+            xmlhttp.open 'POST', url, true
+
+        xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+
+        xmlhttp.onreadystatechange = ->
+            return if xmlhttp.readyState != 4
+
+            if xmlhttp.status == 200
+                done?(xmlhttp.responseText);
+            else
+                handleError(xmlhttp.statusText)
+
+        xmlhttp.send(data);
+
     initSubmitForm: ->
         forms = document.getElementsByClassName 'light-form'
 
         for form in forms
             do (form) ->
                 form.onsubmit = ->
-                    els = form.getElementsByClassName('validate')
-                    console.log els
+                    disabledClass = 'disabled'
+
+                    if form.classList.contains(disabledClass)
+                        return false
+
+                    form.classList.add(disabledClass);
+
+                    inputs = form.getElementsByTagName('input')
+                    params = []
+
+                    for input in inputs
+                        _name = input.name
+                        _value = input.value
+                        continue unless _name
+
+                        params.push _name + "=" + escape(_value)
+
+                    params = params.join('&')
+
+                    helpers.ajax form.getAttribute('action'), params, (data) =>
+                        if data == 'ok'
+                            message = document.getElementById('message-success').innerText
+                        else
+                            message = document.getElementById('message-failed').innerText
+
+                        alert(message)
+
+                        form.classList.remove(disabledClass);
+
+                        for input in inputs
+                            continue unless input.name
+                            input.value = ''
+
                     return false

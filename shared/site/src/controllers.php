@@ -60,14 +60,41 @@ $app->match('/teacher/{id}', function (Request $request) use ($app) {
 ->bind('teacher');
 
 // @route submit form from landing page
-$app->post('/callme', function () use ($app) {
-    var_dump(111);die;
+$app->post('/callme', function (Request $request) use ($app) {
+    $filename = ROOT_DIR.'/web/'.$app['form.file'];
+
+    $data = array(
+        $request->get('name'),
+        $request->get('phone'),
+    );
+
+    $f = fopen($filename, 'aw');
+    fwrite($f, join("\t", $data)."\n");
+    fclose($f);
+
+    sleep(2);
+
+    return 'ok';
 })
 ->bind('landing-form');
 
 // @route submit form from course page
-$app->post('/callme-course', function () use ($app) {
-    var_dump(222);die;
+$app->post('/callme-course', function (Request $request) use ($app) {
+    $filename = ROOT_DIR.'/web/'.$app['form.file'];
+
+    $data = array(
+        $request->get('course'),
+        $request->get('name'),
+        $request->get('phone'),
+    );
+
+    $f = fopen($filename, 'aw');
+    fwrite($f, join("\t", $data)."\n");
+    fclose($f);
+
+    sleep(2);
+
+    return 'ok';
 })
 ->bind('course-form');
 

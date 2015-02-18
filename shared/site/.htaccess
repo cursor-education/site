@@ -3,7 +3,7 @@ Options -MultiViews
 RewriteEngine On
 
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)\.(png|less|coffee|css|js) web/$1.$2 [QSA,L]
+RewriteRule ^(.*)\.(png|less|coffee|css|js|gif) web/$1.$2 [QSA,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ web/index.php [QSA,L]

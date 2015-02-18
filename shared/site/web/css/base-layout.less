@@ -509,6 +509,32 @@ form.light-form {
         line-height: 25px;
     }
 
+    i.animate {
+        position: absolute;
+        display: none;
+
+        width: 40px;
+        height: 40px;
+
+        background: url(/img/animate285.gif);
+
+        margin-left: -75px;
+        margin-top: 7px;
+    }
+
+    &.disabled {
+        i.animate {
+            display: inline;
+        }
+
+        input[type=submit] {
+            background-color: #EFF2F5;
+            border-color: #EFF2F5;
+            color: #BBB;
+            opacity: 0.3;
+        }
+    }
+
     .row {
         display: inline-block;
         margin-right: 15px;
@@ -544,6 +570,11 @@ form.light-form {
         border: 1px #EEF1F8 solid;
 
         box-shadow: 1px 2px 2px 0 rgba(180, 180, 180, 0.5);
+
+        &:valid {
+            background: #CCF9CC;
+            border-color: #CCF9CC;
+        }
     }
 
     input[type="submit"] {

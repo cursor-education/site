@@ -11,15 +11,20 @@
 
         <div class="row">
           <label for="name">Ім'я:</label>
-          <input id="name" type="text" placeholder="Тарас Шевченко" validate required />
+          <input id="name" name="name" type="text" placeholder="Тарас Шевченко" validate required />
         </div>
 
         <div class="row">
           <label for="phone">Телефон:</label>
-          <input id="phone" type="text" placeholder="093 123 45 67" validate required />
+          <input id="phone" name="phone" type="text" placeholder="093 123 45 67" validate required pattern="^[\d\s\+\)\()\-]+$" />
         </div>
 
         <input type="submit" value="Надіслати" />
+
+        <i class="animate"></i>
+
+        <div id="message-success" class="hidden">Дякуємо за довіру! Скоро з вами зв'яжеться наш менеджер.</div>
+        <div id="message-failed" class="hidden">Щось пішло не так.. Спробуйте ще раз, або зателефонуйте нам.</div>
       </form>
 
     </div>
