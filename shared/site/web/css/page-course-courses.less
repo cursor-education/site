@@ -8,10 +8,17 @@ body#page-course {
                 background-color: @s;
             }
 
-            background-image: url(http://zahidlilani.com/wp-content/uploads/2013/09/Ruby-on-Rails.jpg);
-            background-image: url(http://local.cursor.education/ruby.png);
+            background-image: url(http://intersectdigital.com/blog/wp-content/uploads/2011/02/ruby_code.gif);
             background-size: 30%;
             background-repeat: repeat;
+
+            @media screen and (max-width: 650px) {
+                background-size: 50%;
+            }
+
+            .wrap {
+                background-color: rgba(186, 42, 0, 0.5);
+            }
         }
 
         #header-arrow {
@@ -39,14 +46,327 @@ body#page-course {
                 background-color: @s;
             }
 
-            background-image: url(http://phpdes.com/wp-content/uploads/2012/01/10_things_php_developer.jpg);
-            background-size: 30%;
+            background-image: url(http://www.techcricklets.com/wp-content/uploads/2014/12/Best-Websites-to-Learn-PHP-Programming-Language-online.png);
+            background-size: 40%;
             background-repeat: repeat;
+
+            @media screen and (max-width: 650px) {
+                background-size: 100%;
+            }
+
+            .wrap {
+                background-color: rgba(116, 128, 168, 0.5);
+            }
         }
 
         #header-arrow {
             &:after {
                 border-color: @s;
+                border-top-color: rgba(0, 0, 0, 0);
+            }
+        }
+
+        #course-description {
+            background-color: @s;
+
+            &:after {
+                background-color: @s;
+            }
+        }
+    }
+
+    &.course-java {
+        @s: #C0742D;
+
+        #header {
+            &:before,
+            &:after {
+                background-color: @s;
+            }
+
+            background-image: url(http://www.j-consortium.com/wp-content/uploads/2008/02/732943592.jpg);
+            background-size: 40%;
+            background-repeat: repeat;
+
+            @media screen and (max-width: 650px) {
+                background-size: 100%;
+            }
+
+            .wrap {
+                background-color: rgba(192, 116, 45, 0.6);
+            }
+        }
+
+        #header-arrow {
+            &:after {
+                border-color: @s;
+                border-top-color: rgba(0, 0, 0, 0);
+            }
+        }
+
+        #course-description {
+            background-color: @s;
+
+            &:after {
+                background-color: @s;
+            }
+        }
+    }
+
+    &.course-js {
+        @s: #D7A627;
+
+        #header {
+            &:before,
+            &:after {
+                background-color: @s;
+            }
+
+            background-image: url(https://c1.staticflickr.com/3/2326/2378867408_4cc90791d6.jpg);
+            background-size: 40%;
+            background-repeat: repeat;
+
+            @media screen and (max-width: 650px) {
+                background-size: 100%;
+            }
+
+            .wrap {
+                background-color: fade(@s, 50%);
+            }
+        }
+
+        #header-arrow {
+            &:after {
+                border-color: @s;
+                border-top-color: rgba(0, 0, 0, 0);
+            }
+        }
+
+        #course-description {
+            background-color: @s;
+
+            &:after {
+                background-color: @s;
+            }
+        }
+    }
+
+    &.course-htmlcss {
+        @s: #31A480;
+
+        #header {
+            &:before,
+            &:after {
+                background-color: @s;
+            }
+
+            background-image: url(http://michaelbrant.com/wp-content/uploads/2012/06/photodune-907221-css3-code-m.jpg);
+            background-size: 40%;
+            background-repeat: repeat;
+
+            @media screen and (max-width: 650px) {
+                background-size: 100%;
+            }
+
+            .wrap {
+                background-color: fade(@s, 70%);
+            }
+        }
+
+        #header-arrow {
+            &:after {
+                border-color: @s;
+                border-top-color: rgba(0, 0, 0, 0);
+            }
+        }
+
+        #course-description {
+            background-color: @s;
+
+            &:after {
+                background-color: @s;
+            }
+        }
+    }
+
+    &.course-qa {
+        @s: #00791E;
+
+        #header {
+            &:before,
+            &:after {
+                background-color: @s;
+            }
+
+            background-image: url(http://upload.wikimedia.org/wikipedia/commons/8/8a/H96566k.jpg);
+            background-size: 30%;
+            background-repeat: repeat;
+
+            @media screen and (max-width: 650px) {
+                background-size: 100%;
+            }
+
+            .wrap {
+                background-color: fade(@s, 70%);
+            }
+        }
+
+        #header-arrow {
+            &:after {
+                border-color: @s;
+                border-top-color: rgba(0, 0, 0, 0);
+            }
+        }
+
+        #course-description {
+            background-color: @s;
+
+            &:after {
+                background-color: @s;
+            }
+        }
+    }
+
+    &.course-android {
+        @s: #536E01;
+
+        #header {
+            &:before,
+            &:after {
+                background-color: @s;
+            }
+
+            background-image: url(http://www.computerra.ru/wp-content/uploads/2013/08/Android-Army-1.jpg);
+            background-size: 30%;
+            background-repeat: repeat;
+
+            @media screen and (max-width: 650px) {
+                background-size: 100%;
+            }
+
+            .wrap {
+                background-color: fade(@s, 70%);
+            }
+        }
+
+        #header-arrow {
+            &:after {
+                border-color: @s;
+                border-top-color: rgba(0, 0, 0, 0);
+            }
+        }
+
+        #course-description {
+            background-color: @s;
+
+            &:after {
+                background-color: @s;
+            }
+        }
+    }
+
+    &.course-sql {
+        @s: #FF4D1D;
+
+        #header {
+            &:before,
+            &:after {
+                background-color: @s;
+            }
+
+            background-image: url(http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25108/img/xe_create_pkg_sql.gif);
+            background-size: 30%;
+            background-repeat: repeat;
+
+            @media screen and (max-width: 650px) {
+                background-size: 100%;
+            }
+
+            .wrap {
+                background-color: fade(@s, 70%);
+            }
+        }
+
+        #header-arrow {
+            &:after {
+                border-color: @s;
+                border-top-color: rgba(0, 0, 0, 0);
+            }
+        }
+
+        #course-description {
+            background-color: @s;
+
+            &:after {
+                background-color: @s;
+            }
+        }
+    }
+
+    &.course-security {
+        @s: #000;
+
+        #header {
+            &:before,
+            &:after {
+                background-color: @s;
+            }
+
+            background-image: url(http://assets.nybooks.com/media/events/anonymous_masks_616.jpg);
+            background-size: 30%;
+            background-repeat: repeat;
+
+            @media screen and (max-width: 650px) {
+                background-size: 100%;
+            }
+
+            .wrap {
+                background-color: fade(@s, 70%);
+            }
+        }
+
+        #header-arrow {
+            &:after {
+                border-color: @s;
+                border-top-color: rgba(0, 0, 0, 0);
+            }
+        }
+
+        #course-description {
+            background-color: @s;
+
+            &:after {
+                background-color: @s;
+            }
+        }
+    }
+
+    &.course-english {
+        @s: #A30A10;
+
+        #header {
+            &:before,
+            &:after {
+                background-color: @s;
+            }
+
+            background-image: url(https://blog-static.odesk.com/blog/uploads/2013/01/language.jpg);
+            background-size: 30%;
+            background-repeat: repeat;
+
+            @media screen and (max-width: 650px) {
+                background-size: 100%;
+            }
+
+            .wrap {
+                background-color: fade(@s, 70%);
+            }
+        }
+
+        #header-arrow {
+            &:after {
+                border-color: @s;
+                border-top-color: rgba(0, 0, 0, 0);
             }
         }
 

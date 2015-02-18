@@ -3,11 +3,6 @@
   <div class="wrap clearfix">
 
     <div class="top-line">
-      <div class="item during">
-        <i></i>
-        <span>Тривалість: 12 годин</span>
-      </div>
-
       <div class="item teachers">
         <i></i>
         <span>Лектори:</span>
@@ -23,12 +18,12 @@
 
       <div class="item during">
         <i></i>
-        <span>Тривалість: 12 годин</span>
+        <span>Тривалість: {{ course.duration }}</span>
       </div>
 
       <div class="item during">
         <i></i>
-        <span>Вартість: 3500 грн</span>
+        <span>Вартість: {{ course.price }}</span>
       </div>
     </div>
 

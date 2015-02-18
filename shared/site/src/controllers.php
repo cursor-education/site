@@ -19,10 +19,12 @@ $app['partners.model'] = $app->share(function () use ($app) {
 
 // @route landing page
 $app->match('/', function () use ($app) {
-    return $app['twig']->render('landing/index.html.twig', array(
+    $params = array(
         'courses' => $app['courses.model']->getAll(),
         'partners' => $app['partners.model']->getAll(),
-    ));
+    );
+
+    return $app['twig']->render('landing/index.html.twig', $params);
 })
 ->bind('landing');
 
