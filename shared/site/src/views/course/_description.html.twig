@@ -3,6 +3,7 @@
   <div class="wrap clearfix">
 
     <div class="top-line">
+      {#
       <div class="item teachers">
         <i></i>
         <span>Лектори:</span>
@@ -15,6 +16,7 @@
 
         <a class="tooltip" title="Alex Okajhs" href="{{ path('teacher', {id: 'yura-oliynuk'}) }}"><i class="icon teacher s25 yura-oliynuk"></i></a>
       </div>
+      #}
 
       <div class="item during">
         <i></i>
@@ -27,7 +29,14 @@
       </div>
     </div>
 
-    <div class="desc">{{ course.desc_full }}</div>
+    <div class="desc">
+      {{ course.desc_full }}
+
+      <br />
+      <br />
+
+      Детальна програма курсу буде опублікована згодом (після повного завершення курсу першою групою).
+    </div>
 
   </div>
 </div>

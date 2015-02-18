@@ -55,7 +55,7 @@ body#page-course {
             }
 
             .wrap {
-                background-color: rgba(116, 128, 168, 0.5);
+                background-color: fade(@s, 75%);
             }
         }
 
@@ -131,7 +131,7 @@ body#page-course {
             }
 
             .wrap {
-                background-color: fade(@s, 50%);
+                background-color: fade(@s, 65%);
             }
         }
 
@@ -266,7 +266,7 @@ body#page-course {
     }
 
     &.course-sql {
-        @s: #FF4D1D;
+        @s: #B53615;
 
         #header {
             &:before,
@@ -312,8 +312,8 @@ body#page-course {
                 background-color: @s;
             }
 
-            background-image: url(http://assets.nybooks.com/media/events/anonymous_masks_616.jpg);
-            background-size: 30%;
+            background-image: url(https://www.galaxosoft.com/wp-content/uploads/2015/01/hacker-green-black.gif);
+            background-size: 40%;
             background-repeat: repeat;
 
             @media screen and (max-width: 650px) {
@@ -322,6 +322,12 @@ body#page-course {
 
             .wrap {
                 background-color: fade(@s, 70%);
+            }
+
+            .slogan {
+                span {
+                    background-color: rgba(255, 255, 255, 0.6);
+                }
             }
         }
 
@@ -338,11 +344,19 @@ body#page-course {
             &:after {
                 background-color: @s;
             }
+
+            .top-line .item {
+                background-color: rgba(255, 255, 255, 0.15);
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+            }
         }
     }
 
     &.course-english {
-        @s: #A30A10;
+        @s: #BE484D;
 
         #header {
             &:before,
