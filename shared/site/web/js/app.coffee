@@ -271,6 +271,7 @@ window.helpers =
 
                         form.classList.remove(disabledClass);
 
+                        # clear
                         for input in inputs
                             continue unless input.name
                             input.value = ''
