@@ -6,12 +6,8 @@
 @import './sprites/sprites-icons.less';
 
 body {
-    #deeper { z-index: @zindex-section + @zindex-animated + 5 }
-    #courses { z-index: @zindex-section + @zindex-animated + 4 }
-    #registration-form { z-index: @zindex-section + @zindex-animated + 3 }
-    #partners { z-index: @zindex-section + @zindex-animated + 2 }
-
     #deeper {
+        z-index: @zindex-section + @zindex-animated + 5;
         background: @section-DEEPER-bg;
         margin-top: -5px;
 
@@ -49,7 +45,48 @@ body {
 
             box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -1px;
         }
+
+        #infographic {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto 400px;
+            position: relative;
+            height: 400px;
+            width: 100%;
+            opacity: 0;
+            transition: all 1s ease;
+
+            &.step1 {
+              opacity: 1;
+              background-image: url(/img/infog1.png);
+            }
+
+            &.step2 {
+              opacity: 1;
+              background-image: url(/img/infog2.png);
+            }
+
+            &.step3 {
+              opacity: 1;
+              background-image: url(/img/infog3.png);
+            }
+
+            h1{
+                position: absolute;
+                text-align: center;
+                display: none;
+                width: 100%;
+                bottom: 0;
+                color: #485362;
+                &.active{ display: block; }
+            }
+        }
     }
+    #courses { z-index: @zindex-section + @zindex-animated + 4 }
+    #registration-form { z-index: @zindex-section + @zindex-animated + 3 }
+    #partners { z-index: @zindex-section + @zindex-animated + 2 }
 
     #courses {
         background: @section-COURSES-bg;
