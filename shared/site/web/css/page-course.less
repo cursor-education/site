@@ -10,7 +10,8 @@
 @import './sprites/sprites-icons.less';
 
 body#page-course {
-    #course-description { z-index: @zindex-section + @zindex-animated + 3 }
+    #course-description { z-index: @zindex-section + @zindex-animated + 4 }
+    #course-program { z-index: @zindex-section + @zindex-animated + 3 }
     #form { z-index: @zindex-section + @zindex-animated + 2 }
     #course-footer { z-index: @zindex-section + @zindex-animated + 1 }
 
@@ -66,6 +67,72 @@ body#page-course {
         }
     }
 
+    #course-program {
+        background: @section-COURSE-PROGRAM-bg;
+        padding-top: 70px;
+        padding-bottom: 30px;
+
+        .wrap h2 {
+            color: @section-COURSE-PROGRAM-h2;
+        }
+
+        &.curve-after:after {
+            background: @section-COURSE-PROGRAM-bg;
+
+            transform: skew(0deg, 1.5deg);
+            -webkit-transform: skew(0deg, 1.5deg);
+
+            box-shadow: @section-COURSE-PROGRAM-bg 0px 3px 2px -2px;
+        }
+
+        .row {
+            .item {
+                margin-bottom: 20px;
+
+                .num,
+                .desc {
+                    display: inline-block;
+                    vertical-align: top;
+                }
+
+                .num {
+                    background: #434B56;
+                    color: #DEE9F7;
+                    
+                    padding: 10px;
+                    border-radius: 30px;
+                    height: 18px;
+                    
+                    text-align: center;
+                    vertical-align: middle;
+                    
+                    font: 15px verdana;
+                    font-weight: bold;
+                    
+                    margin-right: 10px;
+                }
+
+                .desc {
+                    width: 90%;
+                    color: #434B56;
+
+                    .title {
+                        font-weight: bold;
+                    }
+
+                    .childs {
+                        margin-top: 5px;
+
+                        span {
+                            display: block;
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     #form {
         @s: #D2DBE7;
 
@@ -95,6 +162,58 @@ body#page-course {
         // padding-top: 70px;
         min-height: 50px !important;
 
+        padding-top: 70px;
+        padding-bottom: 30px;
+
         background-color: #303842;
+
+        .list {
+            text-align: center;
+
+            .item,
+            .plus {
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            .item {
+                background: #38414C;
+                width: 150px;
+                padding: 10px;
+            }
+
+            .plus {
+                font-size: 40px;
+                margin: 0px 10px;
+                margin-top: 80px;
+            }
+
+            i {
+                display: block;
+                width: 128px;
+                height: 128px;
+                margin: 0 auto;
+                margin-bottom: 10px;
+
+                background-position: center;
+                background-repeat: no-repeat;
+
+                &.books {
+                    background-image: url(https://cdn3.iconfinder.com/data/icons/beos/Library.png);
+                }
+
+                &.certificate {
+                    background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698653-icon-137-document-certificate-128.png);
+                }
+
+                &.support {
+                    background-image: url(https://cdn3.iconfinder.com/data/icons/10con/512/chat_conversation-128.png);
+                }
+
+                &.help {
+                    background-image: url(https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Money-Increase-128.png);
+                }
+            }
+        }
     }
 }

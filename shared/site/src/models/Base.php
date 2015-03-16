@@ -55,6 +55,26 @@ abstract class Base {
     }
 
     /**
+     * find all records by value of column-name
+     *
+     * @param string $columnName
+     * @param string $value
+     * @return array|null
+     */
+    final public function findAllBy($columnName, $value) {
+        $results = array();
+        $records = $this->getAll();
+
+        foreach ($records as $record) {
+            if ($record[$columnName] == $value) {
+                $results[] = $record;
+            }
+        }
+
+        return $results;
+    }
+
+    /**
      * update table records from google-spreadsheets
      *
      * @return array
@@ -64,6 +84,10 @@ abstract class Base {
             $this->app['db.google.'.$this->tableName.'.key'],
             $this->app['db.google.'.$this->tableName.'.gid']
         );
+
+        // if ($this->tableName == 'coursePlan') {
+        //     var_dump($this->app['db.google.'.$this->tableName.'.gid']);
+        // }
 
         $this->cache->store($this->cacheRecordsKey, $records);
 

@@ -1,0 +1,28 @@
+{% spaceless %}
+<div id="course-program" class="curve-after section">
+  <div class="wrap clearfix">
+
+    <h2>Програма курсу</h2>
+
+    <div class="row">
+      {% for plan in coursePlan %}
+        <div class="item clearfix">
+            <div class="num">{{ plan.num }}</div>
+
+            <div class="desc">
+                <div class="title">{{ plan.title }}</div>
+
+                <div class="childs">
+                  {% for subitem in plan.subitems %}
+                    <span>{{ subitem }}</span>
+                  {% endfor %}
+                </div>
+            </div>
+
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+{% endspaceless %}
