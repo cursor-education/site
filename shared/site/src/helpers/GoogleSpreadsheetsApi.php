@@ -19,13 +19,13 @@ class GoogleSpreadsheetsApi {
         );
 
         $csv = trim(file_get_contents($url));
-        $csv = split("\n", $csv);
+        $csv = explode("\n", $csv);
 
         $records = array();
-        $columns = split("\t", $csv[0]);
+        $columns = explode("\t", $csv[0]);
 
         for ($i = 1; $i < count($csv); $i++) {
-            $row = split("\t", $csv[$i]);
+            $row = explode("\t", $csv[$i]);
             $record = array_combine($columns, $row);
 
             if (isset($record['id'])) {
