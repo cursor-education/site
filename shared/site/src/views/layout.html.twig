@@ -7,11 +7,11 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>{% block title %}{% endblock %}</title>
+  <title>{% block title %}{{ title|default('') }}{% endblock %}</title>
 
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="keywords" content="{{ meta_keywords|default('') }}" />
+  <meta name="description" content="{{ meta_description|default('') }}" />
+  <meta name="author" content="{{ meta_author|default('') }}" />
 
   <meta name="robots" content="all" />
   <meta name="revisit-after" content="2 days" />

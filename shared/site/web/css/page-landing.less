@@ -6,8 +6,13 @@
 @import './sprites/sprites-icons.less';
 
 body {
+    #deeper { z-index: @zindex-section + @zindex-animated + 6 }
+    #courses { z-index: @zindex-section + @zindex-animated + 5 }
+    #registration-form { z-index: @zindex-section + @zindex-animated + 4 }
+    #students-companies { z-index: @zindex-section + @zindex-animated + 3 }
+    #partners { z-index: @zindex-section + @zindex-animated + 2 }
+
     #deeper {
-        z-index: @zindex-section + @zindex-animated + 5;
         background: @section-DEEPER-bg;
         margin-top: -5px;
 
@@ -35,6 +40,12 @@ body {
         .wrap {
             color: @section-DEEPER-color;
             line-height: 1.4em;
+
+            span {
+                display: block;
+                font: 18px 'Exo 2', Verdana;
+                line-height: 1.4em;
+            }
         }
 
         &.curve-after:after {
@@ -45,48 +56,7 @@ body {
 
             box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -1px;
         }
-
-        #infographic {
-            margin-top: 20px;
-            margin-bottom: 20px;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: auto 400px;
-            position: relative;
-            height: 400px;
-            width: 100%;
-            opacity: 0;
-            transition: all 1s ease;
-
-            &.step1 {
-              opacity: 1;
-              background-image: url(/img/infog1.png);
-            }
-
-            &.step2 {
-              opacity: 1;
-              background-image: url(/img/infog2.png);
-            }
-
-            &.step3 {
-              opacity: 1;
-              background-image: url(/img/infog3.png);
-            }
-
-            h1{
-                position: absolute;
-                text-align: center;
-                display: none;
-                width: 100%;
-                bottom: 0;
-                color: #485362;
-                &.active{ display: block; }
-            }
-        }
     }
-    #courses { z-index: @zindex-section + @zindex-animated + 4 }
-    #registration-form { z-index: @zindex-section + @zindex-animated + 3 }
-    #partners { z-index: @zindex-section + @zindex-animated + 2 }
 
     #courses {
         background: @section-COURSES-bg;
@@ -415,6 +385,16 @@ body {
 
         background: @section-REG_FORM-bg;
 
+        form.light-form {
+            margin-top: 50px;
+        }
+
+        .wrap {
+            b.highlight {
+                color: #FACF3B;
+            }
+        }
+
         &.curve-after:after {
             background: @section-REG_FORM-bg;
 
@@ -425,14 +405,30 @@ body {
         }
     }
 
+    #students-companies {
+        background: @section-STUDENTSCOMPANIES-bg;
+        padding-top: 70px;
+
+        .wrap h2 {
+            color: @section-STUDENTSCOMPANIES-h2;
+        }
+
+        &.curve-after:after {
+            background: @section-STUDENTSCOMPANIES-bg;
+
+            transform: skew(0deg, -1.5deg);
+            -webkit-transform: skew(0deg, -1.5deg);
+
+            box-shadow: @section-STUDENTSCOMPANIES-bg 0px 3px 2px -2px;
+        }
+    }
+
     #partners {
         background: @section-PARTNERS-bg;
         padding-top: 70px;
 
-        .wrap {
-            h2 {
-                color: @section-PARTNERS-h2;
-            }
+        .wrap h2 {
+            color: @section-PARTNERS-h2;
         }
 
         &.curve-after:after {
@@ -443,7 +439,10 @@ body {
 
             box-shadow: @section-PARTNERS-bg 0px 3px 2px -2px;
         }
+    }
 
+    #students-companies,
+    #partners {
         text-align: center;
 
         div.list {

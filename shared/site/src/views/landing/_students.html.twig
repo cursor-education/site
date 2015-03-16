@@ -1,0 +1,17 @@
+{% spaceless %}
+  <div id="students-companies" class="section curve-after">
+    <div class="wrap">
+
+      <h2>Наші студенти працюють в</h2>
+
+      <div class="list clearfix">
+        {% for studentsCompany in studentsCompanies %}
+        <div class="t">
+          <a href="{{ studentsCompany.link }}" target="_blank" title="{{ studentsCompany.title }}"><img src="{{ studentsCompany.image }}" /></a>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+{% endspaceless %}

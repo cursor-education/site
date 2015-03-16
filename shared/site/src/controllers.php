@@ -6,6 +6,8 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 use app\models\Course as CourseModel;
 use app\models\Partner as PartnersModel;
+use app\models\StudentsCompanies as StudentsCompaniesModel;
+use app\models\Pages as PagesModel;
 
 // @service for Courses model
 $app['courses.model'] = $app->share(function () use ($app) {
@@ -17,11 +19,28 @@ $app['partners.model'] = $app->share(function () use ($app) {
     return new PartnersModel($app);
 });
 
+// @service for StudentsCompanies model
+$app['studentsCompanies.model'] = $app->share(function () use ($app) {
+    return new StudentsCompaniesModel($app);
+});
+
+// @service for StudentsCompanies model
+$app['pages.model'] = $app->share(function () use ($app) {
+    return new PagesModel($app);
+});
+
 // @route landing page
 $app->match('/', function () use ($app) {
+    $page = $app['pages.model']->findBy('page', 'landing');
+
     $params = array(
         'courses' => $app['courses.model']->getAll(),
         'partners' => $app['partners.model']->getAll(),
+        'studentsCompanies' => $app['studentsCompanies.model']->getAll(),
+        'title' => $page['title'],
+        'meta_keywords' => $page['meta keywords'],
+        'meta_description' => $page['meta description'],
+        'meta_author' => $page['meta author'],
     );
 
     return $app['twig']->render('landing/index.html.twig', $params);
@@ -40,8 +59,14 @@ $app->match('/course/{id}', function (Request $request) use ($app) {
         $app->abort(404, $errorMessage);
     }
 
+    $page = $app['pages.model']->findBy('page', 'course '.$courseId);
+
     return $app['twig']->render('course/index.html.twig', array(
         'course' => $course,
+        'title' => $page['title'],
+        'meta_keywords' => $page['meta keywords'],
+        'meta_description' => $page['meta description'],
+        'meta_author' => $page['meta author'],
     ));
 })
 ->bind('course');
@@ -107,6 +132,12 @@ $app->match('/admin/update', function () use ($app) {
 
     $partners = $app['partners.model']->update();
     echo sprintf('%s = %d<br>', 'partners', count($partners));
+
+    $studentsCompanies = $app['studentsCompanies.model']->update();
+    echo sprintf('%s = %d<br>', 'studentsCompanies', count($studentsCompanies));
+
+    $pages = $app['pages.model']->update();
+    echo sprintf('%s = %d<br>', 'pages', count($pages));
 
     return '';
 });

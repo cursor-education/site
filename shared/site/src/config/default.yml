@@ -12,3 +12,9 @@ db.google.courses.gid: null
 
 db.google.partners.key: null
 db.google.partners.gid: null
+
+db.google.studentsCompanies.key: null
+db.google.studentsCompanies.gid: null
+
+db.google.pages.key: null
+db.google.pages.gid: null
