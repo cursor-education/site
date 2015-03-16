@@ -86,49 +86,92 @@ body#page-course {
         }
 
         .row {
+            text-align: center;
+
             .item {
-                margin-bottom: 20px;
+                text-align: left;
 
-                .num,
-                .desc {
+                margin-bottom: 10px;
+                margin-right: 10px;
+
+                padding: 10px;
+
+                display: inline-block;
+                background: rgba(255, 255, 255, 0.2);
+                vertical-align: top;
+
+                max-width: 400px;
+
+                // .num-title {
+                //     // background: red;
+
+                //     .num,
+                //     .title {
+                //         display: inline-block;
+                //     }
+                // }
+
+                .title {
                     display: inline-block;
-                    vertical-align: top;
-                }
-
-                .num {
-                    background: #434B56;
-                    color: #DEE9F7;
-                    
-                    padding: 10px;
-                    border-radius: 30px;
-                    height: 18px;
-                    
-                    text-align: center;
-                    vertical-align: middle;
-                    
-                    font: 15px verdana;
+                    color: #434B56;
                     font-weight: bold;
-                    
-                    margin-right: 10px;
+
+                    span {
+                        display: block;
+                    }
+        
+                    .num {
+                        float: left;
+
+                        background: #434B56;
+                        color: #DEE9F7;
+                        
+                        padding: 10px;
+                        border-radius: 30px;
+                        
+                        height: 18px;
+                        min-width: 15px;
+                        
+                        text-align: center;
+                        vertical-align: middle;
+                        
+                        font: 15px verdana;
+                        font-weight: bold;
+                        
+                        margin-right: 10px;
+                    }
                 }
 
-                .desc {
-                    width: 90%;
+
+                .childs {
                     color: #434B56;
 
-                    .title {
-                        font-weight: bold;
-                    }
+                    margin-top: 10px;
+                    margin-left: 45px;
 
-                    .childs {
-                        margin-top: 5px;
-
-                        span {
-                            display: block;
-                            font-size: 15px;
-                        }
+                    span {
+                        display: block;
+                        font-size: 15px;
                     }
                 }
+
+                // .desc {
+                //     width: 90%;
+                //     color: #434B56;
+
+                //     .title {
+                //         font-weight: bold;
+                //     }
+
+                //     .childs {
+                //         margin-top: 5px;
+
+                //         span {
+                //             display: block;
+                //             font-size: 15px;
+                //         }
+                //     }
+                // }
             }
         }
     }

@@ -6,18 +6,19 @@
 
     <div class="row">
       {% for plan in coursePlan %}
-        <div class="item clearfix">
-            <div class="num">{{ plan.num }}</div>
-
-            <div class="desc">
-                <div class="title">{{ plan.title }}</div>
-
-                <div class="childs">
-                  {% for subitem in plan.subitems %}
-                    <span>{{ subitem }}</span>
-                  {% endfor %}
-                </div>
+        <div class="item">
+            <div class="title">
+                <div class="num">{{ plan.num }}</div>
+                <span>{{ plan.title }}</span>
             </div>
+
+            {% if plan.subitems %}
+            <div class="childs">
+              {% for subitem in plan.subitems %}
+                <span>{{ subitem }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
 
         </div>
       {% endfor %}
