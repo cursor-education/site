@@ -38,6 +38,11 @@ body#page-course {
                 transition: all .4s ease;
 
                 @media screen and (max-width: 650px) {
+                    display: table;
+
+                    width: 90%;
+
+                    margin: 0 auto;
                     margin-bottom: 5px;
                 }
 
@@ -102,22 +107,34 @@ body#page-course {
 
                 max-width: 400px;
 
-                // .num-title {
-                //     // background: red;
+                transition: all .4s ease;
+                cursor: default;
 
-                //     .num,
-                //     .title {
-                //         display: inline-block;
-                //     }
-                // }
+                @media screen and (max-width: 650px) {
+                    display: block;
+
+                    width: 90%;
+
+                    margin: 0 auto;
+                    margin-bottom: 10px;
+                }
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.4);
+                }
 
                 .title {
                     display: inline-block;
                     color: #434B56;
                     font-weight: bold;
+                    width: 100%;
 
                     span {
                         display: block;
+
+                        vertical-align: middle;
+                        height: 38px;
+                        display: table-cell;
                     }
         
                     .num {
@@ -139,6 +156,9 @@ body#page-course {
                         font-weight: bold;
                         
                         margin-right: 10px;
+
+                        user-select: none;
+                        -webkit-user-select: none;
                     }
                 }
 
@@ -146,12 +166,14 @@ body#page-course {
                 .childs {
                     color: #434B56;
 
-                    margin-top: 10px;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
                     margin-left: 45px;
 
                     span {
                         display: block;
                         font-size: 15px;
+                        margin-right: 5px;
                     }
                 }
 
@@ -223,6 +245,10 @@ body#page-course {
                 background: #38414C;
                 width: 150px;
                 padding: 10px;
+
+                @media screen and (max-width: 650px) {
+                    margin-bottom: 20px;
+                }
 
                 span {
                     font-size: 14px;
