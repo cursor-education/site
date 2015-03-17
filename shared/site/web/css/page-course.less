@@ -223,6 +223,19 @@ body#page-course {
                 background: #38414C;
                 width: 150px;
                 padding: 10px;
+
+                span {
+                    font-size: 14px;
+
+                    user-select: none;
+                    -webkit-user-select: none;
+                }
+
+                &:hover {
+                    i {
+                        opacity: 0.8;
+                    }
+                }
             }
 
             .plus {
@@ -241,20 +254,23 @@ body#page-course {
                 background-position: center;
                 background-repeat: no-repeat;
 
+                transition: all .4s ease;
+                opacity: 0.4;
+
                 &.books {
-                    background-image: url(https://cdn3.iconfinder.com/data/icons/beos/Library.png);
+                    background-image: url(/img/bonuses/manuals.png);
                 }
 
                 &.certificate {
-                    background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698653-icon-137-document-certificate-128.png);
+                    background-image: url(/img/bonuses/certificate.png);
                 }
 
                 &.support {
-                    background-image: url(https://cdn3.iconfinder.com/data/icons/10con/512/chat_conversation-128.png);
+                    background-image: url(/img/bonuses/support.png);
                 }
 
                 &.help {
-                    background-image: url(https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Money-Increase-128.png);
+                    background-image: url(/img/bonuses/award.png);
                 }
             }
         }
