@@ -5,6 +5,7 @@ app =
         helpers.initScrollToTopEls()
         helpers.initSubmitForm()
         # app.initGallery()
+        helpers.initAbTesting()
 
     initScrollHook: ->
         window.onscroll = -> helpers.scrollHook()

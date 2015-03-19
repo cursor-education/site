@@ -277,3 +277,22 @@ window.helpers =
                             input.value = ''
 
                     return false
+
+    initAbTesting: ->
+        return if location.hash?.indexOf('#ab-') == -1
+        testId = location.hash.match(/#ab-(.+?)$/)?[1]
+
+        tests =
+            'landing1': ->
+                slogan = 'Вчитися ніколи не пізно.<br>Ми навчаємо.'
+
+                sloganEl = document.getElementsByClassName('slogan')[0].getElementsByTagName('span')[0]
+                sloganEl.innerHTML = slogan
+
+            'landing2': ->
+                slogan = 'Навчайся разом з нами.<br>Львівська школа програмування.'
+
+                sloganEl = document.getElementsByClassName('slogan')[0].getElementsByTagName('span')[0]
+                sloganEl.innerHTML = slogan
+
+        tests[testId]?()
