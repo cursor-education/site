@@ -9,7 +9,9 @@
 
     {% include 'course/_description.html.twig' %}
 
-    {% include 'course/_technologies.html.twig' %}
+    {% if course.technologies %}
+      {% include 'course/_technologies.html.twig' %}
+    {% endif %}
 
     {% if coursePlan %}
       {% include 'course/_program.html.twig' %}

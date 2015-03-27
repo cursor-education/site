@@ -528,13 +528,19 @@ form.light-form {
         position: absolute;
         display: none;
 
-        width: 40px;
-        height: 40px;
+        width: 110px;
+        height: 20px;
 
-        background: url(/img/animate285.gif);
+        margin-left: -115px;
+        margin-top: 17px;
 
-        margin-left: -75px;
-        margin-top: 7px;
+        &.animate-course {
+            background: url(/img/animate-course.gif);
+        }
+
+        &.animate-landing {
+            background: url(/img/animate-landing.gif);
+        }
     }
 
     &.disabled {
@@ -543,10 +549,8 @@ form.light-form {
         }
 
         input[type=submit] {
-            background-color: #EFF2F5;
-            border-color: #EFF2F5;
-            color: #BBB;
-            opacity: 0.3;
+            visibility: hidden;
+            opacity: 0;
         }
     }
 

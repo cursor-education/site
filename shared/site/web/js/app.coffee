@@ -273,7 +273,9 @@ window.helpers =
 
         for form in forms
             do (form) ->
-                form.onsubmit = ->
+                form.onsubmit = (e) ->
+                    e.preventDefault()
+
                     disabledClass = 'disabled'
 
                     if form.classList.contains(disabledClass)
