@@ -75,14 +75,40 @@ abstract class Base {
     }
 
     /**
+     *
+     */
+    public function getGoogleDbKey() {
+        $value = $this->app['config.model']->getByKey($this->tableName . '.key');
+        
+        if (empty($value)) {
+            $value = $this->app['db.google.' . $this->tableName . '.key'];
+        }
+
+        return $value;
+    }
+
+    /**
+     *
+     */
+    public function getGoogleDbGid() {
+        $value = $this->app['config.model']->getByKey($this->tableName . '.gid');
+
+        if (empty($value)) {
+            $value = $this->app['db.google.' . $this->tableName . '.gid'];
+        }
+
+        return $value;
+    }
+
+    /**
      * update table records from google-spreadsheets
      *
      * @return array
      */
     final public function update() {
         $records = GoogleSpreadsheetsApi::fetch(
-            $this->app['db.google.'.$this->tableName.'.key'],
-            $this->app['db.google.'.$this->tableName.'.gid']
+            $this->getGoogleDbKey(),
+            $this->getGoogleDbGid()
         );
 
         foreach ($records as &$record) {

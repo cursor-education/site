@@ -4,12 +4,20 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+use app\models\Config as ConfigModel;
+
 use app\models\Course as CourseModel;
 use app\models\Technologies as TechnologiesModel;
 use app\models\CoursePlan as CoursePlanModel;
 use app\models\Partner as PartnersModel;
 use app\models\StudentsCompanies as StudentsCompaniesModel;
 use app\models\Pages as PagesModel;
+use app\models\Teachers as TeachersModel;
+
+// @service for Config model
+$app['config.model'] = $app->share(function () use ($app) {
+    return new ConfigModel($app);
+});
 
 // @service for Courses model
 $app['courses.model'] = $app->share(function () use ($app) {
@@ -142,6 +150,9 @@ $app->post('/callme-course', function (Request $request) use ($app) {
 // @route update db changes
 $app->match('/admin/update', function () use ($app) {
     echo time().'<br>';
+
+    $config = $app['config.model']->update();
+    echo sprintf('%s = %d<br>', 'config', count($config));
 
     $courses = $app['courses.model']->update();
     echo sprintf('%s = %d<br>', 'courses', count($courses));
