@@ -1,0 +1,20 @@
+{% spaceless %}
+<div id="course-technologies" class="curve-after section">
+  <div class="wrap clearfix">
+
+    <h2>Технології, які ви освоїте</h2>
+
+    <div class="list">
+      {% for technology in course.technologies %}
+        <div class="row">
+            <div class="icon-row">
+                <i class="icon tech-{{ technology.id }} tooltip" alt="{{ technology.title }}" data-tooltip="{{ technology.desc }}"></i>
+            </div>
+            <span>{{ technology.title }}</span>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+{% endspaceless %}

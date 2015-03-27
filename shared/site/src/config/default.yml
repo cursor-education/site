@@ -10,6 +10,9 @@ admin.password: null
 db.google.courses.key: null
 db.google.courses.gid: null
 
+db.google.technologies.key: null
+db.google.technologies.gid: null
+
 db.google.coursesPlan.key: null
 db.google.coursesPlan.gid: null
 
@@ -21,3 +24,6 @@ db.google.studentsCompanies.gid: null
 
 db.google.pages.key: null
 db.google.pages.gid: null
+
+db.google.teachers.key: null
+db.google.teachers.gid: null

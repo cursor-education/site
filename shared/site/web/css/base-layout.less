@@ -133,6 +133,19 @@ body {
             // height: 50px;
         }
 
+        &.visible-section {
+            transition: all 1s ease-in-out;
+
+            &.visible-section-courses {
+                background: rgba(61, 36, 36, 0.8);
+            }
+
+            &.visible-section-registration-form {
+                background: rgba(43, 88, 92, 0.85);
+                box-shadow: rgba(43, 88, 92, 0.29) 0px 0px 3px 1px;
+            }
+        }
+
         #logo {
             i.icon-big {
                 margin-top: -100px;
@@ -387,7 +400,8 @@ body {
             }
         }
 
-        span {
+        span,
+        h1 {
             display: inline-block;
             padding: 20px 30px;
 

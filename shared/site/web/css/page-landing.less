@@ -6,8 +6,9 @@
 @import './sprites/sprites-icons.less';
 
 body {
-    #deeper { z-index: @zindex-section + @zindex-animated + 6 }
-    #courses { z-index: @zindex-section + @zindex-animated + 5 }
+    #deeper { z-index: @zindex-section + @zindex-animated + 7 }
+    #courses { z-index: @zindex-section + @zindex-animated + 6 }
+    #teachers { z-index: @zindex-section + @zindex-animated + 5 }
     #registration-form { z-index: @zindex-section + @zindex-animated + 4 }
     #students-companies { z-index: @zindex-section + @zindex-animated + 3 }
     #partners { z-index: @zindex-section + @zindex-animated + 2 }
@@ -250,7 +251,6 @@ body {
         }
     }
 
-    /*
     #teachers {
         background: @section-TEACHERS-bg;
         padding-top: 70px;
@@ -305,7 +305,7 @@ body {
                     font-weight: bold;
                 }
 
-                .status {
+                .position {
                     font-size: 15px;
                     margin-top: 5px;
                 }
@@ -315,6 +315,9 @@ body {
 
                     margin: 0 auto;
                     margin-top: 20px;
+
+                    max-width: 190px;
+                    max-height: 190px;
 
                     border-radius: 50%;
 
@@ -329,6 +332,9 @@ body {
                     // @media screen and (max-width: 650px) {
                     //     width: 90%;
                     // }
+
+                    user-select: none;
+                    -webkit-user-select: none;
 
                     margin: 0 auto;
                     margin-top: 20px;
@@ -377,10 +383,9 @@ body {
             transform: skew(0deg, -1.5deg);
             -webkit-transform: skew(0deg, -1.5deg);
 
-            // box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 3px -2px;
+            box-shadow: @section-TEACHERS-bg 0px 5px 3px -2px;
         }
     }
-    */
 
     #registration-form {
         padding-top: 100px;

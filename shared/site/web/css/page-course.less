@@ -10,14 +10,19 @@
 @import './sprites/sprites-icons.less';
 
 body#page-course {
-    #course-description { z-index: @zindex-section + @zindex-animated + 4 }
+    #header-menu {
+        &.visible-section-course-footer {
+            background: rgba(63, 75, 94, 0.85);
+        }
+    }
+
+    #course-description { z-index: @zindex-section + @zindex-animated + 5 }
+    #course-technologies { z-index: @zindex-section + @zindex-animated + 4 }
     #course-program { z-index: @zindex-section + @zindex-animated + 3 }
     #form { z-index: @zindex-section + @zindex-animated + 2 }
     #course-footer { z-index: @zindex-section + @zindex-animated + 1 }
 
     #course-description {
-        color: blue;
-
         @media screen and (max-width: 650px) {
             margin-top: -15px;
         }
@@ -60,6 +65,22 @@ body#page-course {
                     i.icon {
                         margin-left: 5px;
                     }
+                }
+            }
+        }
+
+        ul.links {
+            margin-left: 25px;
+            margin-top: 2px;
+
+            a {
+                font: 14px verdana;
+                text-decoration: none;
+                color: rgba(255, 255, 255, 0.6);
+
+                &:hover {
+                    text-decoration: underline;
+                    color: rgba(255, 255, 255, 0.8);
                 }
             }
         }
@@ -194,6 +215,130 @@ body#page-course {
                 //         }
                 //     }
                 // }
+            }
+        }
+    }
+
+    #course-technologies {
+        background: @section-COURSE-TECHNOLOGIES-bg;
+        padding-top: 70px;
+        padding-bottom: 30px;
+
+        .wrap h2 {
+            color: @section-COURSE-TECHNOLOGIES-h2;
+        }
+
+        &.curve-after:after {
+            background: @section-COURSE-TECHNOLOGIES-bg;
+
+            transform: skew(0deg, 1.5deg);
+            -webkit-transform: skew(0deg, 1.5deg);
+
+            box-shadow: @section-COURSE-TECHNOLOGIES-bg 0px 3px 2px -2px;
+        }
+
+        .list {
+            text-align: center;
+
+            .row {
+                display: inline-block;
+
+                margin-right: 20px;
+                margin-bottom: 30px;
+
+                span {
+                    color: #4E6284;
+                }
+
+                &:hover {
+                    .icon-row {
+                        background-color: rgba(255, 255, 255, 0.5);
+                    }
+
+                    i.icon {
+                        transform: perspective(500px) translateZ(20px);
+                    }
+                }
+
+                .icon-row {
+                    background: rgba(255, 255, 255, 0.2);
+                    border-radius: 50%;
+
+                    padding: 20px;
+                    margin-bottom: 5px;
+                    
+                    transition: all .4s ease;
+                }
+
+                i.icon {
+                    display: block;
+
+                    width: 100px;
+                    height: 100px;
+                    
+                    background-repeat: no-repeat;
+                    background-size: 80px;
+                    background-position: center;
+
+                    transition: all .1s ease;
+                    transform: perspective(500px) translateZ(0px);
+
+                    &.tech-ruby {
+                        background-image: url(/img/technologies/ruby.png);
+                    }
+
+                    &.tech-rails {
+                        background-image: url(/img/technologies/ruby-on-rails.png);
+                    }
+
+                    &.tech-js {
+                        background-image: url(/img/technologies/js.png);
+                    }
+
+                    &.tech-html5 {
+                        background-image: url(/img/technologies/html5.png);
+                        background-size: 65px;
+                    }
+
+                    &.tech-css3 {
+                        background-image: url(/img/technologies/css3.png);
+                        background-size: 65px;
+                    }
+
+                    &.tech-sql {
+                        background-image: url(/img/technologies/db.png);
+                    }
+
+                    &.tech-mysql {
+                        background-image: url(/img/technologies/mysql.png);
+                        background-size: 100px;
+                    }
+
+                    &.tech-heroku {
+                        background-image: url(/img/technologies/heroku.png);
+                    }
+
+                    &.tech-git {
+                        background-image: url(/img/technologies/git.png);
+                    }
+
+                    &.tech-ubuntu {
+                        background-image: url(/img/technologies/ubuntu.png);
+                    }
+
+                    &.tech-vagrant {
+                        background-image: url(/img/technologies/vagrant.png);
+                    }
+
+                    &.tech-unix {
+                        background-image: url(/img/technologies/unix.png);
+                    }
+
+                    &.tech-capistrano {
+                        background-image: url(/img/technologies/capistrano.png);
+                        background-size: 90px;
+                    }
+                }
             }
         }
     }

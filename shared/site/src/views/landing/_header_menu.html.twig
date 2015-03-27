@@ -1,5 +1,5 @@
 {% spaceless %}
-  <div id="header-menu" class="animated" data-animate-from="150" data-animate-effect="fadeInDown">
+  <div id="header-menu" class="animated" data-animate-from="150">
     <div class="wrap">
 
       <a href="javascript:;" id="logo">
@@ -13,7 +13,7 @@
 
         <li><a href="{{ link|default('') }}#courses" class="go-to-top" data-top="courses">Курси</a></li>
 
-        {# <li><a href="#teachers" class="hidden go-to-top" data-top="teachers">Викладачі</a></li> #}
+        <li><a href="{{ link|default('') }}#teachers" class="go-to-top" data-top="teachers">Викладачі</a></li>
 
         <li><a href="{{ link|default('') }}#partners" class="go-to-top" data-top="partners">Партнери</a></li>
 

@@ -85,13 +85,22 @@ abstract class Base {
             $this->app['db.google.'.$this->tableName.'.gid']
         );
 
-        // if ($this->tableName == 'coursePlan') {
-        //     var_dump($this->app['db.google.'.$this->tableName.'.gid']);
-        // }
+        foreach ($records as &$record) {
+            $record = $this->formatRecord($record);
+        }
 
         $this->cache->store($this->cacheRecordsKey, $records);
 
         return $records;
     }
 
+    /**
+     * custom format each record
+     * 
+     * @param array $record
+     * @return array $record
+     */
+    public function formatRecord($record) {
+        return $record;
+    }
 }

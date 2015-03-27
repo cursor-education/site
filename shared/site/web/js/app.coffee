@@ -60,7 +60,7 @@ window.helpers =
 
         #
         show = ->
-            tip = @getAttribute('title')
+            tip = @getAttribute('data-tooltip')
             return unless tip
 
             document.getElementById('tooltip').innerHTML = tip
@@ -123,6 +123,7 @@ window.helpers =
     scrollHook: ->
         helpers.scrollHookHeader()
         helpers.scrollHookMenu()
+        helpers.scrollHookSections();
 
     scrollHookHeader: ->
         scroll = document.body.scrollTop
@@ -136,14 +137,11 @@ window.helpers =
             fromElOffset = Math.max(headerMenuEl.getAttribute('data-animate-from'), 100)
 
         className = 'open'
-        classNameAnimate = headerMenuEl.getAttribute('data-animate-effect')
 
         if scroll >= (fromElOffset - 50)
             headerMenuEl.classList.add(className)
-            # headerMenuEl.classList.add(classNameAnimate)
         else
             headerMenuEl.classList.remove(className)
-            # headerMenuEl.classList.remove(classNameAnimate)
 
     scrollHookMenuReset: ->
         classSelected = 'selected'
@@ -152,6 +150,40 @@ window.helpers =
 
         for selectedEl in selectedEls
             selectedEl.classList.remove(classSelected)
+
+    scrollHookSections: ->
+        scroll = document.body.scrollTop
+
+        headerMenuEl = document.getElementById('header-menu')
+        sectionsEls = document.getElementsByClassName('section')
+
+        headerMenuElHeight = headerMenuEl.offsetHeight
+
+        for i in [sectionsEls.length - 1..0] by -1
+            sectionEl = sectionsEls[i]
+            sectionElHeight = sectionEl.offsetTop
+
+            if scroll + headerMenuElHeight > sectionElHeight
+                _attrName = 'data-section-last'
+                _attrValue = sectionEl.id
+                _classValuePrefix = "visible-section"
+
+                unless headerMenuEl.classList.contains _classValuePrefix
+                    headerMenuEl.classList.add _classValuePrefix
+
+                if headerMenuEl.hasAttribute(_attrName, _attrValue)
+                    _oldAttrValue = headerMenuEl.getAttribute(_attrName, _attrValue)
+                    
+                    if _oldAttrValue != _attrValue
+                        headerMenuEl.classList.remove _classValuePrefix + "-" + _oldAttrValue
+                        headerMenuEl.setAttribute _attrName, _attrValue
+                        headerMenuEl.classList.add _classValuePrefix + "-" + _attrValue
+
+                else
+                    headerMenuEl.setAttribute _attrName, _attrValue
+                    headerMenuEl.classList.add _classValuePrefix + "-" + _attrValue
+
+                break
 
     scrollHookMenu: ->
         scroll = document.body.scrollTop

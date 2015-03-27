@@ -5,6 +5,7 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 use app\models\Course as CourseModel;
+use app\models\Technologies as TechnologiesModel;
 use app\models\CoursePlan as CoursePlanModel;
 use app\models\Partner as PartnersModel;
 use app\models\StudentsCompanies as StudentsCompaniesModel;
@@ -13,6 +14,11 @@ use app\models\Pages as PagesModel;
 // @service for Courses model
 $app['courses.model'] = $app->share(function () use ($app) {
     return new CourseModel($app);
+});
+
+// @service for Technologies model
+$app['technologies.model'] = $app->share(function () use ($app) {
+    return new TechnologiesModel($app);
 });
 
 // @service for Courses model
@@ -30,7 +36,7 @@ $app['studentsCompanies.model'] = $app->share(function () use ($app) {
     return new StudentsCompaniesModel($app);
 });
 
-// @service for StudentsCompanies model
+// @service for Pages model
 $app['pages.model'] = $app->share(function () use ($app) {
     return new PagesModel($app);
 });
@@ -67,6 +73,8 @@ $app->match('/course/{id}', function (Request $request) use ($app) {
 
     $page = $app['pages.model']->findBy('page', 'course '.$courseId);
     $coursePlan = $app['coursesPlan.model']->formatCoursePlan($courseId);
+
+    $course = $app['courses.model']->mapTechnologies($course, $app['technologies.model']->getAll());
 
     return $app['twig']->render('course/index.html.twig', array(
         'course' => $course,
@@ -137,6 +145,9 @@ $app->match('/admin/update', function () use ($app) {
 
     $courses = $app['courses.model']->update();
     echo sprintf('%s = %d<br>', 'courses', count($courses));
+
+    $technologies = $app['technologies.model']->update();
+    echo sprintf('%s = %d<br>', 'technologies', count($technologies));
 
     $coursesPlan = $app['coursesPlan.model']->update();
     echo sprintf('%s = %d<br>', 'courses-plan', count($coursesPlan));
