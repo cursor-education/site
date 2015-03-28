@@ -90,8 +90,8 @@ body#page-course {
                 background-color: @s;
             }
 
-            background-image: url(/img/courses/java/bg1.jpg);
-            background-size: 40%;
+            background-image: url(/img/courses/java/course-header-bg1.png);
+            background-size: 30%;
             background-repeat: repeat;
 
             @media screen and (max-width: 650px) {
@@ -132,8 +132,8 @@ body#page-course {
                 background-color: @s;
             }
 
-            background-image: url(/img/courses/js/bg-js1.jpg);
-            background-size: 40%;
+            background-image: url(/img/courses/js/course-header-bg1.png);
+            background-size: 30%;
             background-repeat: repeat;
 
             @media screen and (max-width: 650px) {
@@ -258,9 +258,10 @@ body#page-course {
                 background-color: @s;
             }
 
-            background-image: url(/img/courses/android/bg1.jpg);
+            background-image: url(/img/courses/android/course-header-bg1.jpg);
             background-size: 30%;
             background-repeat: repeat;
+            background-position: -50px -90px;
 
             @media screen and (max-width: 650px) {
                 background-size: 100%;
@@ -292,7 +293,8 @@ body#page-course {
     }
 
     &.course-sql {
-        @s: #B53615;
+        @s: #803702;
+        // 
 
         #header {
             &:before,
@@ -300,7 +302,7 @@ body#page-course {
                 background-color: @s;
             }
 
-            background-image: url(/img/courses/sql/bg-sql1.gif);
+            background-image: url(/img/courses/sql/course-header-bg1.jpg);
             background-size: 30%;
             background-repeat: repeat;
 
@@ -312,7 +314,7 @@ body#page-course {
                 background-color: fade(@s, 70%);
 
                 .slogan h1 {
-                    color: #B53615;
+                    color: @s;
                 }
             }
         }
@@ -334,7 +336,7 @@ body#page-course {
     }
 
     &.course-security {
-        @s: #000;
+        @s: #012001;
 
         #header {
             &:before,

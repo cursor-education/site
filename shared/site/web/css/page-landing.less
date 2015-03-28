@@ -277,19 +277,24 @@ body {
 
                 padding: 25px;
 
-                // @media screen and (max-width: 650px) {
-                //     display: block;
-                //     width: 100%;
+                a {
+                    text-decoration: none;
+                    color: @section-TEACHERS-color;
+                }
 
-                //     margin: 0;
-                //     margin-bottom: 10px;
+                @media screen and (max-width: 650px) {
+                    display: block;
+                    width: 100%;
 
-                //     padding: 0;
-                //     padding-bottom: 15px;
-                //     padding-top: 10px;
+                    margin: 0;
+                    margin-bottom: 10px;
 
-                //     border-bottom: 4px rgba(0, 0, 0, 0.03) solid;
-                // }
+                    padding: 0;
+                    padding-bottom: 15px;
+                    padding-top: 10px;
+
+                    border-bottom: 4px rgba(0, 0, 0, 0.03) solid;
+                }
 
                 transition: all .4s ease;
 
@@ -398,6 +403,8 @@ body {
         }
 
         .wrap {
+            width: 1000px;
+
             b.highlight {
                 color: #FACF3B;
             }

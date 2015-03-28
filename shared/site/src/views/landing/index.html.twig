@@ -9,7 +9,10 @@
     {% include 'landing/_deeper.html.twig' %}
 
     {% include 'landing/_courses.html.twig' %}
+
+    {% if enable_teachers %}
     {% include 'landing/_teachers.html.twig' %}
+    {% endif %}
 
     {% include 'landing/_form.html.twig' %}
 

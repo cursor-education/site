@@ -49,18 +49,27 @@ $app['pages.model'] = $app->share(function () use ($app) {
     return new PagesModel($app);
 });
 
+// @service for Teachers model
+$app['teachers.model'] = $app->share(function () use ($app) {
+    return new TeachersModel($app);
+});
+
 // @route landing page
 $app->match('/', function () use ($app) {
     $page = $app['pages.model']->findBy('page', 'landing');
 
+    $enabledTechers = $app['config.model']->getByKey('enable.teachers') !== 'no';
+
     $params = array(
         'courses' => $app['courses.model']->getAll(),
         'partners' => $app['partners.model']->getAll(),
+        'teachers' => $app['teachers.model']->getAll(),
         'studentsCompanies' => $app['studentsCompanies.model']->getAll(),
         'title' => $page['title'],
         'meta_keywords' => $page['meta keywords'],
         'meta_description' => $page['meta description'],
         'meta_author' => $page['meta author'],
+        'enable_teachers' => $enabledTechers,
     );
 
     return $app['twig']->render('landing/index.html.twig', $params);
@@ -97,13 +106,30 @@ $app->match('/course/{id}', function (Request $request) use ($app) {
 
 // @route teacher profile page
 $app->match('/teacher/{id}', function (Request $request) use ($app) {
-    $lectureId = $request->get('id');
+    $enabledTechers = $app['config.model']->getByKey('enable.teachers') !== 'no';
+
+    if (!$enabledTechers) {
+        return $app->redirect('/');
+    }
+
+    $teacherId = $request->get('id');
+
+    $page = $app['pages.model']->findBy('page', 'teacher');
+    $pageTeacher = $app['pages.model']->findBy('page', 'teacher '.$teacherId);
+
+    $teacher = $app['teachers.model']->findBy('id', $teacherId);
+
+    // foreach ($page as $pageKey => $pageValue) {
+    //     foreach ($teacher as $key => $value) {
+    //         $page[$pageKey] = str_replace(':teacher-'.$key, $value, $pageValue);
+    //     }
+    // }
+
+    var_dump($page, $teacher);die;
+    var_dump($teacher);die;
 
     return $app['twig']->render('teacher/index.html.twig', array(
-        'teacher' => array(
-            'id' => $lectureId,
-            'name' => 'Max XZ'
-        ),
+        'teacher' => $teacher,
     ));
 })
 ->bind('teacher');
@@ -171,6 +197,9 @@ $app->match('/admin/update', function () use ($app) {
 
     $pages = $app['pages.model']->update();
     echo sprintf('%s = %d<br>', 'pages', count($pages));
+
+    $teachers = $app['teachers.model']->update();
+    echo sprintf('%s = %d<br>', 'teachers', count($teachers));    
 
     return '';
 });

@@ -1,80 +1,36 @@
 {% spaceless %}
-  <div id="teachers" class="hidden section curve-after">
-    <div class="wrap">
+<div id="teachers" class="section curve-after">
+  <div class="wrap">
 
-      <h2>Викладачі</h2>
+    <h2>Викладачі</h2>
 
-      <div class="row clearfix">
+    <div class="row clearfix">
 
+      {% for teacher in teachers %}
         <div class="t">
-          <div class="name">Roman Rodomansky</div>
-          <div class="status">Web Software Developer</div>
-          <img class="photo" src="/img/teachers/roman-rodomansky.jpg" />
-          <div class="desc">5+ років досвіду, викладач курсів по UX/UI та PHP, активість чогосьтам, винахідник блютуса</div>
+          <a href="{{ path('teacher', {id: teacher.id}) }}">
+            <div class="name">{{ teacher.name }}</div>
+            <div class="position">{{ teacher.position }}</div>
+            <img class="photo" src="{{ teacher.image }}" />
+          </a>
 
+          <div class="desc">{{ teacher.desc }}</div>
+
+          {#
           <div class="social">
             <a href=""><i class="linkedin"></i></a>
             <a href=""><i class="facebook"></i></a>
             <a href=""><i class="vkontakte"></i></a>
             <a href=""><i class="github"></i></a>
           </div>
+          #}
         </div>
-
-        <div class="t">
-          <div class="name">Andrew Yasynyshyn</div>
-          <div class="status">Web Software Developer</div>
-          <img class="photo" src="/img/teachers/andrew-yasynyshyn.png" />
-          <div class="desc">5+ років досвіду, викладач курсів по UX/UI та PHP, активість чогосьтам, винахідник блютуса</div>
-
-          <div class="social">
-            <a href=""><i class="linkedin"></i></a>
-            <a href=""><i class="facebook"></i></a>
-          </div>
-        </div>
-
-        <div class="t">
-          <div class="name">Roman Romanadsky</div>
-          <div class="status">Web Software Developer</div>
-          <img class="photo" src="/img/teachers/roman-rodomansky-2.png" />
-          <div class="desc">5+ років досвіду, викладач курсів по UX/UI та PHP, активість чогосьтам, винахідник блютуса</div>
-
-          <div class="social">
-            <a href=""><i class="facebook"></i></a>
-          </div>
-        </div>
-
-        <div class="t">
-          <div class="name">Adam Herasov</div>
-          <div class="status">Web Software Developer</div>
-          <img class="photo" src="/img/teachers/max-xz-1.png" />
-          <div class="desc">5+ років досвіду, викладач курсів по UX/UI та PHP, активість чогосьтам, винахідник блютуса</div>
-
-          <div class="social">
-            <a href=""><i class="linkedin"></i></a>
-            <a href=""><i class="facebook"></i></a>
-            <a href=""><i class="vkontakte"></i></a>
-            <a href=""><i class="github"></i></a>
-          </div>
-        </div>
-
-        <div class="t">
-          <div class="name">John Malkevich</div>
-          <div class="status">Web Software Developer</div>
-          <img class="photo" src="/img/teachers/yura-kamcha-1.png" />
-          <div class="desc">5+ років досвіду, викладач курсів по UX/UI та PHP, активість чогосьтам, винахідник блютуса</div>
-
-          <div class="social">
-            <a href=""><i class="linkedin"></i></a>
-            <a href=""><i class="facebook"></i></a>
-            <a href=""><i class="vkontakte"></i></a>
-            <a href=""><i class="github"></i></a>
-          </div>
-        </div>
-
-      </div>
-
-      <i class="go-to-top"></i>
+      {% endfor %}
 
     </div>
+
+    <i class="go-to-top"></i>
+
   </div>
+</div>
 {% endspaceless %}
