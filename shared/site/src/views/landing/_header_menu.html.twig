@@ -2,7 +2,7 @@
   <div id="header-menu" class="animated" data-animate-from="150">
     <div class="wrap">
 
-      <a href="javascript:;" id="logo">
+      <a href="{% if pageName == 'landing' %}javascript:;{% else %}/{% endif %}" id="logo">
         <i class="icon-big animated flip"></i>
         <i class="icon-small animated flip"></i>
         <span>CURSOR education</span>
