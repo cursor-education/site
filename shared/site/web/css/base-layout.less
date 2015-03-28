@@ -265,7 +265,7 @@ body {
             list-style: initial;
             width: 75%;
             margin-top: 0px;
-            margin-left: 70px;
+            margin-left: 80px;
 
             li {
                 a {
@@ -308,8 +308,16 @@ body {
 #header {
     // @src: http://cdn2.hubspot.net/hub/53/file-2185775137-jpg/assets/blog.hubspot.com/images/banners/marketing-banner-125.jpg
     background: url(/img/header-bg.png) no-repeat;
+    background-size: 115%;
+    background-position: right 0px;
 
-    background-size: 104%;
+    @media screen and (max-width: 1150px) {
+        background-size: 130%;
+    }
+
+    @media screen and (max-width: 1000px) {
+        background-size: cover;
+    }
 
     user-select: none;
     -webkit-user-select: none;
@@ -326,7 +334,6 @@ body {
 
     @media screen and (max-width: 650px) {
         background-size: cover;
-        background-position: center;
     }
 
     &:before {
@@ -389,7 +396,7 @@ body {
         margin-top: 1px;
 
         @media screen and (max-width: 650px) {
-            margin-top: 40px;
+            margin-top: 80px;
 
             span {
                 display: block !important;

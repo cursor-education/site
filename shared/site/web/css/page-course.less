@@ -69,18 +69,21 @@ body#page-course {
             }
         }
 
-        ul.links {
+        ul {
             margin-left: 25px;
-            margin-top: 2px;
+            margin-top: 3px;
+            font-size: 16px;
 
-            a {
-                font: 14px verdana;
-                text-decoration: none;
-                color: rgba(255, 255, 255, 0.6);
+            &.links {
+                a {
+                    font: 14px verdana;
+                    text-decoration: none;
+                    color: rgba(255, 255, 255, 0.6);
 
-                &:hover {
-                    text-decoration: underline;
-                    color: rgba(255, 255, 255, 0.8);
+                    &:hover {
+                        text-decoration: underline;
+                        color: rgba(255, 255, 255, 0.8);
+                    }
                 }
             }
         }
@@ -282,70 +285,8 @@ body#page-course {
 
                     transition: all .1s ease;
                     transform: perspective(500px) translateZ(0px);
-
-                    // techs
-
-                    &.tech-php {
-                        background-image: url(/img/technologies/php.png);
-                        background-size: 109px;
-                    }
-
-                    &.tech-ruby {
-                        background-image: url(/img/technologies/ruby.png);
-                    }
-
-                    &.tech-rails {
-                        background-image: url(/img/technologies/ruby-on-rails.png);
-                    }
-
-                    &.tech-js {
-                        background-image: url(/img/technologies/js.png);
-                    }
-
-                    &.tech-html5 {
-                        background-image: url(/img/technologies/html5.png);
-                        background-size: 65px;
-                    }
-
-                    &.tech-css3 {
-                        background-image: url(/img/technologies/css3.png);
-                        background-size: 65px;
-                    }
-
-                    &.tech-sql {
-                        background-image: url(/img/technologies/db.png);
-                    }
-
-                    &.tech-mysql {
-                        background-image: url(/img/technologies/mysql.png);
-                        background-size: 100px;
-                    }
-
-                    &.tech-heroku {
-                        background-image: url(/img/technologies/heroku.png);
-                    }
-
-                    &.tech-git {
-                        background-image: url(/img/technologies/git.png);
-                    }
-
-                    &.tech-ubuntu {
-                        background-image: url(/img/technologies/ubuntu.png);
-                    }
-
-                    &.tech-vagrant {
-                        background-image: url(/img/technologies/vagrant.png);
-                    }
-
-                    &.tech-unix {
-                        background-image: url(/img/technologies/unix.png);
-                    }
-
-                    &.tech-capistrano {
-                        background-image: url(/img/technologies/capistrano.png);
-                        background-size: 90px;
-                    }
                 }
+                @import 'page-course-techs.less';
             }
         }
     }
