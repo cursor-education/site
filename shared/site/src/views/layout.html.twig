@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-{% if app.environment == 'production' %}
-{% include '_ascii.html.twig' %}
-{% endif %}
+{% if app.environment == 'production' %}{% include '_ascii.html.twig' %}{% endif %}
 {% spaceless %}
 <head>
   {% if app.environment == 'production' %}
