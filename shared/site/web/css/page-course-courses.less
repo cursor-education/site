@@ -123,6 +123,49 @@ body#page-course {
         }
     }
 
+    &.course-dotnet {
+        @s: #005E89;
+        @s2: #0B73A3;
+
+        #header {
+            &:before,
+            &:after {
+                background-color: @s2;
+            }
+
+            background-image: url(/img/courses/dotnet/course-header-bg1.jpg);
+            background-size: 30%;
+            background-repeat: repeat;
+
+            @media screen and (max-width: 650px) {
+                background-size: 100%;
+            }
+
+            .wrap {
+                background-color: fade(@s, 65%);
+
+                .slogan h1 {
+                    color: @s2;
+                }
+            }
+        }
+
+        #header-arrow {
+            &:after {
+                border-color: @s2;
+                border-top-color: rgba(0, 0, 0, 0);
+            }
+        }
+
+        #course-description {
+            background-color: @s2;
+
+            &:after {
+                background-color: @s2;
+            }
+        }
+    }
+
     &.course-js {
         @s: #D7A627;
 
