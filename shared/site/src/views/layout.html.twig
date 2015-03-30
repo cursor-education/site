@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
+{% if app.environment == 'production' %}
+{% include '_ascii.html.twig' %}
+{% endif %}
 {% spaceless %}
 <head>
+  {% if app.environment == 'production' %}
   {% include 'widget_googleanalytics_ab.html.twig' %}
+  {% endif %}
 
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -46,6 +51,7 @@
   </div>
   {% endspaceless %}
 
+  {% spaceless %}
   {{ _self.js('app') }}
   {{ _self.js('page-'~pageName) }}
 
@@ -56,7 +62,10 @@
       <script type="text/javascript" src="/assets/{{ name }}.js"></script>
     {% endif %}
   {% endmacro %}
+  {% endspaceless %}
 
+  {% if app.environment == 'production' %}
   {% include 'widget_googleanalytics.html.twig' %}
+  {% endif %}
 </body>
 </html>
