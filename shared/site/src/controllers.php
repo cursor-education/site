@@ -174,34 +174,43 @@ $app->post('/callme-course', function (Request $request) use ($app) {
 ->bind('course-form');
 
 // @route update db changes
-$app->match('/admin/update', function () use ($app) {
-    echo time().'<br>';
+$app->match('/admin/update/', function (Request $request) use ($app) {
+    $list = array(
+        'all',
+        'config',
+        'courses',
+        'technologies',
+        'coursesPlan',
+        'partners',
+        'studentsCompanies',
+        'pages',
+        'teachers'
+    );
 
-    $config = $app['config.model']->update();
-    echo sprintf('%s = %d<br>', 'config', count($config));
+    $updateWhat = $request->get('what');
 
-    $courses = $app['courses.model']->update();
-    echo sprintf('%s = %d<br>', 'courses', count($courses));
+    if (in_array($updateWhat, $list)) {
+        $updateKeys = array();
 
-    $technologies = $app['technologies.model']->update();
-    echo sprintf('%s = %d<br>', 'technologies', count($technologies));
+        if ($updateWhat == 'all') {
+            $updateKeys = $list;
+            unset($updateKeys[0]);
+        }
+        else {
+            $updateKeys = array($updateWhat);
+        }
 
-    $coursesPlan = $app['coursesPlan.model']->update();
-    echo sprintf('%s = %d<br>', 'courses-plan', count($coursesPlan));
+        echo time().'<br>';
 
-    $partners = $app['partners.model']->update();
-    echo sprintf('%s = %d<br>', 'partners', count($partners));
+        foreach ($updateKeys as $updateKey) {
+            $result = $app[$updateKey.'.model']->update();
+            echo sprintf('%s = %d<br>', $updateKey, count($result));
+        }
+    }
 
-    $studentsCompanies = $app['studentsCompanies.model']->update();
-    echo sprintf('%s = %d<br>', 'studentsCompanies', count($studentsCompanies));
-
-    $pages = $app['pages.model']->update();
-    echo sprintf('%s = %d<br>', 'pages', count($pages));
-
-    $teachers = $app['teachers.model']->update();
-    echo sprintf('%s = %d<br>', 'teachers', count($teachers));    
-
-    return '';
+    return $app['twig']->render('admin/update.html.twig', array(
+        'list' => $list,
+    ));
 });
 
 //

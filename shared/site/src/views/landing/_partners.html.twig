@@ -6,9 +6,13 @@
 
       <div class="list clearfix">
         {% for partner in partners %}
-        <div class="t">
-          <a href="{{ partner.link }}" target="_blank" title="{{ partner.title }}"><img src="{{ partner.image }}" /></a>
-        </div>
+          {% if not partner.link %}
+            <div class="t-br"></div>
+          {% else %}
+            <div class="t">
+              <a href="{{ partner.link }}" target="_blank" title="{{ partner.title }}"><img src="{{ partner.image }}" /></a>
+            </div>
+          {% endif %}
         {% endfor %}
       </div>
 

@@ -127,6 +127,12 @@ abstract class Base {
      * @return array $record
      */
     public function formatRecord($record) {
+        foreach ($record as $key => $value) {
+            if ($value == '-') {
+                $record[$key] = null;
+            }
+        }
+
         return $record;
     }
 }
