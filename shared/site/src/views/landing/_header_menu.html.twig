@@ -13,7 +13,9 @@
 
         <li><a href="{{ link|default('') }}#courses" class="go-to-top" data-top="courses">Курси</a></li>
 
+        {% if enable_teachers %}
         <li><a href="{{ link|default('') }}#teachers" class="go-to-top" data-top="teachers">Викладачі</a></li>
+        {% endif %}
 
         <li><a href="{{ link|default('') }}#partners" class="go-to-top" data-top="partners">Партнери</a></li>
 
