@@ -11,6 +11,10 @@ class GoogleSpreadsheetsApi {
      * @return array
      */
     static public function fetch($key, $gid) {
+        if (!$key || !$gid) {
+            throw new \Exception(sprintf("No key [%s] or gid [%s] provided.", $key, $gid));
+        }
+
         $url = sprintf(
             'https://docs.google.com/spreadsheets/d/%s/export?gid=%s&format=%s',
             $key,

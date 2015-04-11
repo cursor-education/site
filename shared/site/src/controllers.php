@@ -204,9 +204,9 @@ $app->match('/admin/update/', function (Request $request) use ($app) {
 
 //
 $app->error(function (\Exception $e, $code) use ($app) {
-    // if ($app['debug']) {
-    //     return;
-    // }
+    if ($app['debug']) {
+        return;
+    }
 
     return $app['twig']->render('error/index.html.twig', array(
         'code' => $code,

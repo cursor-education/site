@@ -46,7 +46,9 @@ abstract class Base {
         $records = $this->getAll();
 
         foreach ($records as $record) {
-            if ($record[$columnName] == $value) {
+            if (!empty($record[$columnName])
+             && $record[$columnName] == $value)
+            {
                 return $record;
             }
         }
@@ -66,7 +68,9 @@ abstract class Base {
         $records = $this->getAll();
 
         foreach ($records as $record) {
-            if ($record[$columnName] == $value) {
+            if (!empty($record[$columnName])
+             && $record[$columnName] == $value)
+            {
                 $results[] = $record;
             }
         }
