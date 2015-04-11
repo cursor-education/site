@@ -1,0 +1,21 @@
+{% spaceless %}
+<div id="teacher-information" class="curve-after section">
+  <div class="wrap clearfix">
+
+    <div id="info">
+
+      <div id="photo">
+        <img src="{{ teacher.image }}" />
+      </div>
+
+      <h1>{{ teacher.name }}</h1>
+      <h3>{{ teacher.position }}</h3>
+
+      <div class="desc">
+       {{ teacher.full_desc }}
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endspaceless %}

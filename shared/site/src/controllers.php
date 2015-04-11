@@ -115,18 +115,7 @@ $app->match('/teacher/{id}', function (Request $request) use ($app) {
     $teacherId = $request->get('id');
 
     $page = $app['pages.model']->findBy('page', 'teacher');
-    $pageTeacher = $app['pages.model']->findBy('page', 'teacher '.$teacherId);
-
     $teacher = $app['teachers.model']->findBy('id', $teacherId);
-
-    // foreach ($page as $pageKey => $pageValue) {
-    //     foreach ($teacher as $key => $value) {
-    //         $page[$pageKey] = str_replace(':teacher-'.$key, $value, $pageValue);
-    //     }
-    // }
-
-    var_dump($page, $teacher);die;
-    var_dump($teacher);die;
 
     return $app['twig']->render('teacher/index.html.twig', array(
         'teacher' => $teacher,
