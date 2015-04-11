@@ -93,6 +93,8 @@ $app->match('/course/{id}', function (Request $request) use ($app) {
 
     $course = $app['courses.model']->mapTechnologies($course, $app['technologies.model']->getAll());
 
+    $enabledTechers = $app['config.model']->getByKey('enable.teachers') !== 'no';
+
     return $app['twig']->render('course/index.html.twig', array(
         'course' => $course,
         'title' => $page['title'],
@@ -100,6 +102,7 @@ $app->match('/course/{id}', function (Request $request) use ($app) {
         'meta_keywords' => $page['meta keywords'],
         'meta_description' => $page['meta description'],
         'meta_author' => $page['meta author'],
+        'enable_teachers' => $enabledTechers,
     ));
 })
 ->bind('course');
