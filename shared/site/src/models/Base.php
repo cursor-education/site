@@ -119,6 +119,8 @@ abstract class Base {
             $record = $this->formatRecord($record);
         }
 
+        $records = array_filter($records);
+
         $this->cache->store($this->cacheRecordsKey, $records);
 
         return $records;

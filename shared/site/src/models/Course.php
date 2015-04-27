@@ -27,6 +27,12 @@ class Course extends \app\models\Base {
      *
      */
     public function formatRecord($record) {
+        if (empty($record['active'])
+         || $record['active'] != '1')
+        {
+            return null;
+        }
+
         $record = parent::formatRecord($record);
 
         $record['technologies'] = explode(",", $record['technologies']);
