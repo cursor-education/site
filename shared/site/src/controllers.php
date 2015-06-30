@@ -4,61 +4,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-use app\models\Config as ConfigModel;
-
-use app\models\Course as CourseModel;
-use app\models\Technologies as TechnologiesModel;
-use app\models\CoursePlan as CoursePlanModel;
-use app\models\Partner as PartnersModel;
-use app\models\StudentsCompanies as StudentsCompaniesModel;
-use app\models\Pages as PagesModel;
-use app\models\Teachers as TeachersModel;
-
-// @service for Config model
-$app['config.model'] = $app->share(function () use ($app) {
-    return new ConfigModel($app);
-});
-
-// @service for Courses model
-$app['courses.model'] = $app->share(function () use ($app) {
-    return new CourseModel($app);
-});
-
-// @service for Technologies model
-$app['technologies.model'] = $app->share(function () use ($app) {
-    return new TechnologiesModel($app);
-});
-
-// @service for Courses model
-$app['coursesPlan.model'] = $app->share(function () use ($app) {
-    return new CoursePlanModel($app);
-});
-
-// @service for Partners model
-$app['partners.model'] = $app->share(function () use ($app) {
-    return new PartnersModel($app);
-});
-
-// @service for StudentsCompanies model
-$app['studentsCompanies.model'] = $app->share(function () use ($app) {
-    return new StudentsCompaniesModel($app);
-});
-
-// @service for Pages model
-$app['pages.model'] = $app->share(function () use ($app) {
-    return new PagesModel($app);
-});
-
-// @service for Teachers model
-$app['teachers.model'] = $app->share(function () use ($app) {
-    return new TeachersModel($app);
-});
-
 // @route landing page
 $app->match('/', function () use ($app) {
     $page = $app['pages.model']->findBy('page', 'landing');
-
-    $enabledTechers = $app['config.model']->getByKey('enable.teachers') !== 'no';
 
     $params = array(
         'courses' => $app['courses.model']->getAll(),
@@ -69,7 +17,6 @@ $app->match('/', function () use ($app) {
         'meta_keywords' => $page['meta keywords'],
         'meta_description' => $page['meta description'],
         'meta_author' => $page['meta author'],
-        'enable_teachers' => $enabledTechers,
     );
 
     return $app['twig']->render('landing/index.html.twig', $params);
@@ -93,8 +40,6 @@ $app->match('/course/{id}', function (Request $request) use ($app) {
 
     $course = $app['courses.model']->mapTechnologies($course, $app['technologies.model']->getAll());
 
-    $enabledTechers = $app['config.model']->getByKey('enable.teachers') !== 'no';
-
     return $app['twig']->render('course/index.html.twig', array(
         'course' => $course,
         'title' => $page['title'],
@@ -102,19 +47,12 @@ $app->match('/course/{id}', function (Request $request) use ($app) {
         'meta_keywords' => $page['meta keywords'],
         'meta_description' => $page['meta description'],
         'meta_author' => $page['meta author'],
-        'enable_teachers' => $enabledTechers,
     ));
 })
 ->bind('course');
 
 // @route teacher profile page
 $app->match('/teacher/{id}', function (Request $request) use ($app) {
-    $enabledTechers = $app['config.model']->getByKey('enable.teachers') !== 'no';
-
-    if (!$enabledTechers) {
-        return $app->redirect('/');
-    }
-
     $teacherId = $request->get('id');
 
     $page = $app['pages.model']->findBy('page', 'teacher');

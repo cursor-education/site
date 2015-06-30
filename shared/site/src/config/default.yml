@@ -2,6 +2,8 @@ environment: default
 debug: false
 twig.options.cache: false
 
+cache.enabled: true
+
 form.file: registration-form.txt
 
 admin.username: null

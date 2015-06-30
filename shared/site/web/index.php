@@ -14,6 +14,7 @@ if ($env != ENV_PRODUCTION) {
 }
 
 require SRC_DIR.'/app.php';
+require SRC_DIR.'/services.php';
 require SRC_DIR.'/controllers.php';
 
 if ($env == ENV_PRODUCTION) {
