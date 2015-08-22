@@ -3,29 +3,28 @@
   <div class="wrap clearfix">
 
     <div class="top-line">
-      {#
       <div class="item teachers">
-        <i></i>
-        <span>Лектори:</span>
+        <i class="icon"></i>
+        <span class="label">Викладачі:</span>
 
-        <a class="tooltip" title="Alex Yasha" href="{{ path('teacher', {id: 'alex-yasha'}) }}"><i class="icon teacher s25 alex-yasha"></i></a>
-
-        <a class="tooltip" title="Max Yasha" href="{{ path('teacher', {id: 'max-xz'}) }}"><i class="icon teacher s25 max-xz"></i></a>
-
-        <a class="tooltip" title="Roman Ar" href="{{ path('teacher', {id: 'roman-rodomansky2'}) }}"><i class="icon teacher s25 roman-rodomansky2"></i></a>
-
-        <a class="tooltip" title="Alex Okajhs" href="{{ path('teacher', {id: 'yura-oliynuk'}) }}"><i class="icon teacher s25 yura-oliynuk"></i></a>
-      </div>
-      #}
-
-      <div class="item during">
-        <i></i>
-        <span>Тривалість: {{ course.duration }}</span>
+        <span class="teachers-list">
+          {% for teacher in course.teachers %}
+            {# <a class="tooltip" title="{{ teacher.name }}" href="{{ path('teacher', {id: teacher.id}) }}"> #}
+            <a class="tooltip" title="{{ teacher.name }}" href="javascript:;">
+              <img src="{{ teacher.photo }}"/>
+            </a>
+          {% endfor %}
+        </span>
       </div>
 
       <div class="item during">
-        <i></i>
-        <span>Вартість: {{ course.price }}</span>
+        <i class="icon"></i>
+        <span class="label">Тривалість: <span class="highlight">{{ course.duration }}</span></span>
+      </div>
+
+      <div class="item price">
+        <i class="icon"></i>
+        <span class="label">Вартість: <span class="highlight">{{ course.price }}</span></span>
       </div>
     </div>
 

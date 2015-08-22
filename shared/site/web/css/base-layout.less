@@ -2,6 +2,11 @@
 @import 'modules/animate.less';
 @import 'modules/tooltip.less';
 
+html,
+body {
+    height: 100%;
+}
+
 body {
     background: @body-bg;
     overflow-x: hidden;
@@ -137,11 +142,11 @@ body {
             transition: all 0.6s ease-in-out;
 
             &.visible-section-courses {
-                background: rgba(71, 8, 8, 0.8);
+                background: rgba(8, 71, 50, 0.8);
             }
 
             &.visible-section-registration-form {
-                background: rgba(103, 81, 7, 0.85);
+                background: rgba(79, 93, 113, 0.8);
                 box-shadow: rgba(43, 88, 92, 0.29) 0px 0px 3px 1px;
             }
         }
@@ -307,9 +312,14 @@ body {
 
 #header {
     // @src: http://cdn2.hubspot.net/hub/53/file-2185775137-jpg/assets/blog.hubspot.com/images/banners/marketing-banner-125.jpg
-    background: url(/img/header-bg.png) no-repeat;
-    background-size: 115%;
-    background-position: right 0px;
+    // background: url(/img/header-bg.png) no-repeat;
+    // background-size: 115%;
+    // background-position: right 0px;
+
+    // @src: https://yalantis.com/media/content/ckeditor/2014/11/Katy-2.jpg
+    background-image: url(https://yalantis.com/media/content/ckeditor/2014/11/Katy-2.jpg);
+    background-size: 100%;
+    background-position: center -190px;
 
     @media screen and (max-width: 1150px) {
         background-size: 130%;
@@ -618,6 +628,8 @@ form.light-form {
         border: 2px solid #FFC400;
         border-radius: 4px;
 
+        box-shadow: 0 2px #A2882F;
+
         transition: all 0.3s ease;
 
         @media screen and (max-width: 650px) {
@@ -631,15 +643,30 @@ form.light-form {
         }
 
         &:active {
-            background: white;
-            border-color: #2D343E;
+            background: #FFF;
+            border-color: #FFF;
             color: #2D343E;
+            transform: translateY(2px);
         }
+    }
+}
+
+@footer-height: 50px;
+
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -@footer-height;
+
+    &:after {
+        content: "";
+        display: block;
+        height: @footer-height;
     }
 }
 
 #footer {
     width: 100%;
+    height: @footer-height;
 
     background-color: @section-FOOTER-bg;
 
@@ -669,7 +696,7 @@ form.light-form {
     }
 
     .wrap {
-        padding: 20px 0px;
+        padding: 16px 0px 0px 0px;
         font-size: 13px;
         color: @section-FOOTER-color;
     }

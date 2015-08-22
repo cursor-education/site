@@ -8,26 +8,41 @@
 
       {% for teacher in teachers %}
         <div class="t">
-          <a href="{{ path('teacher', {id: teacher.id}) }}">
+          {# <a href="{{ path('teacher', {id: teacher.id}) }}"> #}
+          <a href="javascript:;">
             <div class="name">{{ teacher.name }}</div>
             <div class="position">{{ teacher.position }}</div>
-            <img class="photo" src="{{ teacher.image }}" />
+
+            <div class="courses">
+              {% for course in teacher.courses %}
+                <i class="course course-{{ course }}" ></i>
+              {% endfor %}
+            </div>
+            
+            <img class="photo" src="{{ teacher.photo }}" />
           </a>
 
-          <div class="desc">{{ teacher.short_desc }}</div>
+          {% if teacher.desc_short|default('') %}
+          <div class="desc">{{ teacher.desc_short|default('') }}</div>
+          {% endif %}
 
-          {#
-          <div class="social">
-            <a href=""><i class="linkedin"></i></a>
-            <a href=""><i class="facebook"></i></a>
-            <a href=""><i class="vkontakte"></i></a>
-            <a href=""><i class="github"></i></a>
+          {% if teacher.links %}
+          <div class="links">
+            {% for link in teacher.links %}
+              <a href="{{ link.url }}" class="tooltip" data-tooltip="{{ link.type }}" target="_blank"><i class="{{ link.type }}"></i></a>
+            {% endfor %}
           </div>
-          #}
+          {% endif %}
         </div>
       {% endfor %}
 
     </div>
+
+    {#
+    <form class="light-form" id="add-teacher">
+      <input type="submit" value="Приєднатися до команди викладачів!">
+    </form>
+    #}
 
     <i class="go-to-top"></i>
 

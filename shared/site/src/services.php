@@ -8,6 +8,9 @@ use app\models\Partner as PartnersModel;
 use app\models\StudentsCompanies as StudentsCompaniesModel;
 use app\models\Pages as PagesModel;
 use app\models\Teachers as TeachersModel;
+use app\models\TeachersCourses as TeachersCoursesModel;
+use app\models\TeachersLinks as TeachersLinksModel;
+use app\models\Redirects as RedirectsModel;
 
 // @service for Config model
 $app['config.model'] = $app->share(function () use ($app) {
@@ -47,4 +50,19 @@ $app['pages.model'] = $app->share(function () use ($app) {
 // @service for Teachers model
 $app['teachers.model'] = $app->share(function () use ($app) {
     return new TeachersModel($app);
+});
+
+// @service for TeachersCourses model
+$app['teachersCourses.model'] = $app->share(function () use ($app) {
+    return new TeachersCoursesModel($app);
+});
+
+// @service for TeachersLinks model
+$app['teachersLinks.model'] = $app->share(function () use ($app) {
+    return new TeachersLinksModel($app);
+});
+
+// @service for Redirects model
+$app['redirects.model'] = $app->share(function () use ($app) {
+    return new RedirectsModel($app);
 });

@@ -1,2 +1,2 @@
-/* 2015-04-04 17:04:16 */
-var app;app={init:function(){return app.initScrollHook(),helpers.initTooltip()},initScrollHook:function(){return window.onscroll=function(){return helpers.scrollHook()},window.onscroll()}},app.init();
+/* 2015-08-22 11:08:59 */
+var app;app={init:function(){return app.initScrollHook(),helpers.initTooltip(),app.initPageBackground()},initScrollHook:function(){return window.onscroll=function(){return helpers.scrollHook()},window.onscroll()},initPageBackground:function(){var a;return a=document.getElementsByTagName("body")[0],a.style.backgroundImage="url("+teacher.background_image+")"}},app.init();

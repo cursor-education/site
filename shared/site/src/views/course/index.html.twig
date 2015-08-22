@@ -1,7 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% set pageName = 'course' %}
-{% set pageClass = 'course-'~course.style %}
+{% set pageClass = 'course-'~course.group %}
 
 {% block content %}
     {% include 'landing/_header_menu.html.twig' with { link: '/' } %}

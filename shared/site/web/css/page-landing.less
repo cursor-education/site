@@ -284,11 +284,14 @@ body {
                 padding: 25px;
 
                 a {
+                    display: block;
                     text-decoration: none;
                     color: @section-TEACHERS-color;
                 }
 
                 @media screen and (max-width: 650px) {
+                    .clearfix;
+
                     display: block;
                     width: 100%;
 
@@ -300,6 +303,14 @@ body {
                     padding-top: 10px;
 
                     border-bottom: 4px rgba(0, 0, 0, 0.03) solid;
+
+                    img.photo {
+                        float: left;
+                    }
+
+                    .desc {
+                        width: auto !important;
+                    }
                 }
 
                 transition: all .4s ease;
@@ -318,14 +329,74 @@ body {
 
                 .position {
                     font-size: 15px;
+                    margin-top: 1px;
+                }
+
+                .courses {
                     margin-top: 5px;
+
+                    i.course {
+                        display: inline-block;
+                        vertical-align: top;
+                        
+                        @size: 25px;
+                        width: @size;
+                        height: @size;
+                        background-size: @size;
+
+                        background-repeat: no-repeat;
+
+                        border-radius: 3px;
+
+                        margin-right: 3px;
+                        margin-bottom: 5px;
+
+                        &:before {
+                            display: block;
+                            font-size: 10px;
+                            font-style: normal;
+                        }
+
+                        &:hover {
+                            transition: all .5s ease;
+                            transform: rotate(360deg);
+                        }
+
+                        &.course-ruby {
+                            background-image: url(/img/icons/course-ruby-small.png);
+                        }
+
+                        &.course-js {
+                            background-image: url(/img/icons/course-js-small.png);
+                        }
+
+                        &.course-htmlcss {
+                            background-image: url(/img/icons/course-html-small.png);
+                        }
+
+                        &.course-php {
+                            background-image: url(/img/icons/course-php-small.png);
+                        }
+
+                        &.course-qa {
+                            background-image: url(/img/icons/course-qa-small.png);
+                        }
+
+                        &.course-sql {
+                            background-image: url(/img/icons/course-db-small.png);
+                        }
+
+                        &.course-java {
+                            background-image: url(/img/icons/course-java-small.png);
+                        }
+                    }
                 }
 
                 img.photo {
                     display: block;
 
                     margin: 0 auto;
-                    margin-top: 20px;
+                    margin-top: 10px;
 
                     max-width: 190px;
                     max-height: 190px;
@@ -350,40 +421,94 @@ body {
                     margin: 0 auto;
                     margin-top: 20px;
 
-                    font-size: 15px;
+                    font-size: 14px;
                     text-align: center;
                     word-break: break-word;
                 }
 
-                .social {
+                .links {
                     margin-top: 10px;
 
                     a {
                         display: inline-block;
                     }
 
+                    &:hover {
+                        i {
+                            opacity: 0.5;
+                        }
+                    }
+
                     i {
                         display: inline-block;
-                        width: 16px;
-                        height: 16px;
-                        background-size: 16px;
+
+                        @size: 15px;
+                        width: @size;
+                        height: @size;
+                        background-size: @size;
+
+                        margin-right: 4px;
+
+                        transition: all 0.15s ease-in-out;
+
+                        opacity: 0.5;
+
+                        &:hover {
+                            opacity: 1;
+                            transform: translate(0px, -2px);
+                        }
 
                         &.linkedin {
-                            background-image: url(/img/linkedin-16.png);
+                            background-image: url(/img/icons/linkedin2-32.png);
                         }
 
                         &.facebook {
-                            background-image: url(/img/facebook-16.png);
+                            background-image: url(/img/icons/facebook2-32.png);
+                        }
+
+                        &.twitter {
+                            background-image: url(/img/icons/twitter2-24.png);
+                        }
+
+                        &.instagram {
+                            background-image: url(/img/icons/instagram2-32.png);
+                        }
+
+                        &.skype {
+                            background-image: url(/img/icons/skype2-32.png);
                         }
 
                         &.vkontakte {
-                            background-image: url(/img/vkontakte-16.png);
+                            background-image: url(/img/icons/vk2-32.png);
                         }
 
                         &.github {
-                            background-image: url(/img/github-16.png);
+                            background-image: url(/img/icons/github2-32.png);
                         }
                     }
+                }
+            }
+        }
+
+        #add-teacher {
+            // text-align: center;
+            input[type="submit"] {
+                font-size: 17px;
+                
+                background: #D4D7E2;
+                border-color: #D4D7E2;
+
+                box-shadow: 0 2px #27496d;
+
+                &:hover {
+                      // box-shadow: inset 0 0 0 1px #27496d,0 5px 15px #193047;
+
+                }
+
+                &:active {
+  box-shadow: 0 5px #27496d;
+  transform: translateY(5px);
+
                 }
             }
         }

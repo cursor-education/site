@@ -11,7 +11,7 @@ class GoogleSpreadsheetsApi {
      * @return array
      */
     static public function fetch($key, $gid) {
-        if (!$key || !$gid) {
+        if (!isset($key) || !isset($gid)) {
             throw new \Exception(sprintf("No key [%s] or gid [%s] provided.", $key, $gid));
         }
 
@@ -22,14 +22,23 @@ class GoogleSpreadsheetsApi {
             'tsv'
         );
 
-        $csv = trim(file_get_contents($url));
-        $csv = explode("\n", $csv);
+        $page = trim(file_get_contents($url));
+
+        if (strpos($page, '<!DOCTYPE html>') === 0) {
+            throw new \Exception(sprintf("The spreadsheet is private (key [%s], gid [%s] provided).", $key, $gid));
+        }
+
+        $csv = explode("\n", $page);
 
         $records = array();
+        
         $columns = explode("\t", $csv[0]);
+        $columns = array_map('trim', $columns);
 
         for ($i = 1; $i < count($csv); $i++) {
             $row = explode("\t", $csv[$i]);
+            $row = array_map('trim', $row);
+
             $record = array_combine($columns, $row);
 
             if (isset($record['id'])) {

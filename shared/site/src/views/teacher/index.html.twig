@@ -4,8 +4,16 @@
 {% set pageClass = 'teacher-'~teacher.id %}
 
 {% block content %}
-    {% include 'landing/_header_menu.html.twig' with { link: '/' } %}
-    {% include 'teacher/_header.html.twig' %}
+  <div class="bg-wrap"></div>
 
-    {% include 'teacher/_description.html.twig' %}    
+  {% include 'landing/_header_menu.html.twig' with { link: '/' } %}
+  {% include 'teacher/_header.html.twig' %}
+
+  <script type="text/javascript">
+  var teacher = {
+    background_image: "{{ teacher.background_image }}"
+  };
+  </script>
+
+  {% include 'teacher/_description.html.twig' %}    
 {% endblock %}

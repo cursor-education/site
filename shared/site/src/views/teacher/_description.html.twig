@@ -2,18 +2,21 @@
 <div id="teacher-information" class="curve-after section">
   <div class="wrap clearfix">
 
-    <div id="info">
-
+    <div id="general-info">
       <div id="photo">
-        <img src="{{ teacher.image }}" />
+        <img src="{{ teacher.photo }}" />
       </div>
 
-      <h1>{{ teacher.name }}</h1>
-      <h3>{{ teacher.position }}</h3>
+      <h1 class="name">{{ teacher.name }}</h1>
+      <h3 class="position">{{ teacher.position }}</h3>
 
-      <div class="desc">
-       {{ teacher.full_desc }}
+      <div id="short-desc">
+       {{ teacher.desc_short|default('') }}
       </div>
+    </div>
+
+    <div id="full-desc">
+      {{ teacher.desc_full|default('')|raw }}
     </div>
 
   </div>

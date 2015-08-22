@@ -40,7 +40,9 @@
 </head>
 {% endspaceless %}
 <body id="page-{{ pageName }}" class="{{ pageClass|default('') }}">
-  {% block content %}{% endblock %}
+  <div class="wrapper">
+    {% block content %}{% endblock %}
+  </div>
 
   {% spaceless %}
   <div id="footer" class="section">

@@ -4,6 +4,7 @@ app =
         app.initScrollHook()
         helpers.initTooltip()
         helpers.initSubmitForm()
+        helpers.initTooltip()
 
     initScrollHook: ->
         window.onscroll = -> helpers.scrollHook()

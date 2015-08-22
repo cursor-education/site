@@ -1,8 +1,21 @@
 <?php
+use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
+// 
+$app->before(function (Request $request, Application $app) {
+    $url = $request->getUri();
+    $redirects = $app['redirects.model']->getAll();
+
+    foreach ($redirects as $redirect) {
+        if (strpos($url, $redirect['search']) !== false) {
+            return $app->redirect($redirect['redirect_to'], $redirect['code']);
+        }
+    }
+}, Application::EARLY_EVENT);
 
 // @route landing page
 $app->match('/', function () use ($app) {
@@ -18,6 +31,11 @@ $app->match('/', function () use ($app) {
         'meta_description' => $page['meta description'],
         'meta_author' => $page['meta author'],
     );
+
+    if (isset($_GET['debug']) && $app['debug']) {
+        var_dump($params);
+        die;
+    }
 
     return $app['twig']->render('landing/index.html.twig', $params);
 })
@@ -39,6 +57,7 @@ $app->match('/course/{id}', function (Request $request) use ($app) {
     $coursePlan = $app['coursesPlan.model']->formatCoursePlan($courseId);
 
     $course = $app['courses.model']->mapTechnologies($course, $app['technologies.model']->getAll());
+    $course['teachers'] = $app['teachers.model']->filterByCourseGroup($course['group']);
 
     return $app['twig']->render('course/index.html.twig', array(
         'course' => $course,
@@ -53,13 +72,42 @@ $app->match('/course/{id}', function (Request $request) use ($app) {
 
 // @route teacher profile page
 $app->match('/teacher/{id}', function (Request $request) use ($app) {
+    // @temporary
+    return $app->redirect('/#teachers');
+
     $teacherId = $request->get('id');
 
-    $page = $app['pages.model']->findBy('page', 'teacher');
     $teacher = $app['teachers.model']->findBy('id', $teacherId);
+
+    if (!$teacher) {
+        return $app->redirect('/');
+    }
+
+    $page = $app['pages.model']->findBy('page', 'teacher '.$teacherId);
+    
+    // set default values for meta
+    $page = array_merge(array(
+        'title' => $teacher['name'] . ' | CURSOR.education',
+
+        'meta keywords' => join(', ', array(
+            $teacher['name'],
+            $teacher['position'],
+        )),
+
+        'meta description' => join('. ', array(
+            $teacher['name'],
+            $teacher['desc_short'],
+        )),
+
+        'meta author' => $teacher['name'],
+    ), (array) $page);
 
     return $app['twig']->render('teacher/index.html.twig', array(
         'teacher' => $teacher,
+        'title' => $page['title'],
+        'meta_keywords' => $page['meta keywords'],
+        'meta_description' => $page['meta description'],
+        'meta_author' => $page['meta author'],
     ));
 })
 ->bind('teacher');
@@ -69,12 +117,14 @@ $app->post('/callme', function (Request $request) use ($app) {
     $filename = ROOT_DIR.'/web/'.$app['form.file'];
 
     $data = array(
+        date('Y-m-d H:i:s'),
+        'landing',
         $request->get('name'),
         $request->get('phone'),
     );
 
     $f = fopen($filename, 'aw');
-    fwrite($f, join("\t", $data)."\n");
+    fwrite($f, join("\t\t", $data)."\n");
     fclose($f);
 
     sleep(2);
@@ -88,13 +138,14 @@ $app->post('/callme-course', function (Request $request) use ($app) {
     $filename = ROOT_DIR.'/web/'.$app['form.file'];
 
     $data = array(
+        date('Y-m-d H:i:s'),
         $request->get('course'),
         $request->get('name'),
         $request->get('phone'),
     );
 
     $f = fopen($filename, 'aw');
-    fwrite($f, join("\t", $data)."\n");
+    fwrite($f, join("\t\t", $data)."\n");
     fclose($f);
 
     sleep(2);
@@ -102,6 +153,21 @@ $app->post('/callme-course', function (Request $request) use ($app) {
     return 'ok';
 })
 ->bind('course-form');
+
+// @route teacher profile page
+$app->match('/teacher/update/{secret}', function (Request $request) use ($app) {
+    $teacherSecret = $request->get('secret');
+
+    $app['teachers.model']->update();
+    $teacher = $app['teachers.model']->findBy('update_secret', $teacherSecret);
+
+    if (empty($teacher['id'])) {
+        var_dump('404');die;
+    }
+
+    $teacherUrl = $app['url_generator']->generate('teacher', array('id' => $teacher['id']));
+    return $app->redirect($teacherUrl);
+});
 
 // @route update db changes
 $app->match('/admin/update/', function (Request $request) use ($app) {
@@ -114,7 +180,10 @@ $app->match('/admin/update/', function (Request $request) use ($app) {
         'partners',
         'studentsCompanies',
         'pages',
-        'teachers'
+        'teachers',
+        'teachersCourses',
+        'teachersLinks',
+        'redirects',
     );
 
     $updateWhat = $request->get('what');

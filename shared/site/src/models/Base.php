@@ -133,6 +133,12 @@ abstract class Base {
      * @return array $record
      */
     public function formatRecord($record) {
+        if (isset($record['active'])
+         && $record['active'] != '1')
+        {
+            return null;
+        }
+
         foreach ($record as $key => $value) {
             if ($value == '-') {
                 $record[$key] = null;
