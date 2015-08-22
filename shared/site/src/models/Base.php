@@ -36,6 +36,23 @@ abstract class Base {
     }
 
     /**
+     *
+     */
+    final public function setRecords($records) {
+        $this->cache->store($this->cacheRecordsKey, $records);
+    }
+
+    /**
+     *
+     */
+    final public function setByKey($key, $record) {
+        $records = $this->getAll();
+        $records[$key] = $record;
+
+        $this->setRecords($records);
+    }
+
+    /**
      * find record by value of column-name
      *
      * @param string $columnName
@@ -109,7 +126,7 @@ abstract class Base {
      *
      * @return array
      */
-    final public function update() {
+    public function update() {
         $records = GoogleSpreadsheetsApi::fetch(
             $this->getGoogleDbKey(),
             $this->getGoogleDbGid()
@@ -121,7 +138,7 @@ abstract class Base {
 
         $records = array_filter($records);
 
-        $this->cache->store($this->cacheRecordsKey, $records);
+        $this->setRecords($records);
 
         return $records;
     }

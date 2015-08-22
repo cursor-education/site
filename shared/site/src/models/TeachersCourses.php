@@ -17,4 +17,21 @@ class TeachersCourses extends \app\models\Base {
             return $v['course'];
         }, $courses);
     }
+
+    /**
+     *
+     */
+    public function update() {
+        $records = parent::update();
+        
+        $teachers = $this->app['teachers.model']->getAll();
+
+        foreach ($teachers as &$teacher) {
+            $teacher['courses'] = $this->getTeacherCourses($teacher['id']);
+        }
+
+        $this->app['teachers.model']->setRecords($teachers);
+
+        return $records;
+    }
 }

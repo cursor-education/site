@@ -21,7 +21,7 @@ class Teachers extends \app\models\Base {
         $record['courses'] = $this->app['teachersCourses.model']->getTeacherCourses($record['id']);
         $record['links'] = $this->app['teachersLinks.model']->getTeacherLinks($record['id']);
 
-        if (is_array($info = $this->formatInformation($record))) {
+        if (is_array($info = $this->updatePersonalInformation($record))) {
             $record = array_merge($record, $info);
         }
 
@@ -31,7 +31,7 @@ class Teachers extends \app\models\Base {
     /**
      *
      */
-    private function formatInformation($record) {
+    public function updatePersonalInformation($record) {
         if (empty($record['info_key'])) {
             return null;
         }
@@ -48,28 +48,15 @@ class Teachers extends \app\models\Base {
         }
 
         $info = $infoRecords[1];
+        $info = parent::formatRecord($info);
 
-        $result = array(
-            'desc_short' => null,
-            'desc_full' => null,
-            'photo' => null,
-            'background_image' => null,
-            'update_secret' => null,
+        return array(
+            'desc_short' => $info['short_description'],
+            'desc_full' => $info['full_description'],
+            'photo' => $info['photo_url'],
+            'background_image' => $info['background_image_url'],
+            'update_secret' => $info['secret'],
         );
-
-        if ($info['version'] == 1) {
-            $result['desc_short'] = $info['short_description'];
-            $result['desc_full'] = $info['full_description'];
-
-            $result['update_secret'] = $info['secret'];
-
-            // $result['photo'] = ImageFormatter::prepare($info['photo_url']);
-            $result['photo'] = $info['photo_url'];
-            // $result['background_image'] = ImageFormatter::prepare($info['background_image_url']);
-            $result['background_image'] = $info['background_image_url'];
-        }
-
-        return $result;
     }
 
     /**

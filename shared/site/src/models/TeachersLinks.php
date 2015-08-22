@@ -28,4 +28,21 @@ class TeachersLinks extends \app\models\Base {
 
         return $links;
     }
+
+    /**
+     *
+     */
+    public function update() {
+        $records = parent::update();
+
+        $teachers = $this->app['teachers.model']->getAll();
+
+        foreach ($teachers as &$teacher) {
+            $teacher['links'] = $this->getTeacherLinks($teacher['id']);
+        }
+
+        $this->app['teachers.model']->setRecords($teachers);
+
+        return $records;
+    }
 }

@@ -72,10 +72,10 @@ $app->match('/course/{id}', function (Request $request) use ($app) {
 
 // @route teacher profile page
 $app->match('/teacher/{id}', function (Request $request) use ($app) {
-    // @temporary
-    return $app->redirect('/#teachers');
-
     $teacherId = $request->get('id');
+
+    // @temporary
+    return $app->redirect('/#'.$teacherId);
 
     $teacher = $app['teachers.model']->findBy('id', $teacherId);
 
@@ -158,12 +158,14 @@ $app->post('/callme-course', function (Request $request) use ($app) {
 $app->match('/teacher/update/{secret}', function (Request $request) use ($app) {
     $teacherSecret = $request->get('secret');
 
-    $app['teachers.model']->update();
     $teacher = $app['teachers.model']->findBy('update_secret', $teacherSecret);
+    $teacher = $app['teachers.model']->formatRecord($teacher);
 
     if (empty($teacher['id'])) {
         var_dump('404');die;
     }
+
+    $app['teachers.model']->setByKey($teacher['id'], $teacher);
 
     $teacherUrl = $app['url_generator']->generate('teacher', array('id' => $teacher['id']));
     return $app->redirect($teacherUrl);

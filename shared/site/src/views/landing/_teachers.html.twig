@@ -7,7 +7,7 @@
     <div class="row clearfix">
 
       {% for teacher in teachers %}
-        <div class="t">
+        <div id="{{ teacher.id }}" class="t">
           {# <a href="{{ path('teacher', {id: teacher.id}) }}"> #}
           <a href="javascript:;">
             <div class="name">{{ teacher.name }}</div>
