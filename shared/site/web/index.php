@@ -4,6 +4,8 @@ define('SRC_DIR', ROOT_DIR.'/src');
 
 define('ENV_PRODUCTION', 'production');
 
+date_default_timezone_set('Europe/Kiev');
+
 require_once ROOT_DIR.'/vendor/autoload.php';
 $app = new Silex\Application();
 

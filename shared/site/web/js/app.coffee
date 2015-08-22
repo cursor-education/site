@@ -54,6 +54,10 @@ window.helpers =
                 document.body.appendChild tooltipEl
 
             for el in getElements()
+                if el.hasAttribute('title')
+                    el.setAttribute 'data-tooltip', el.getAttribute('title')
+                    el.removeAttribute 'title'
+
                 el.addEventListener 'mouseenter', show
                 el.addEventListener 'mouseleave', hide
                 el.addEventListener 'mousemove', setTooltipPos
@@ -291,7 +295,7 @@ window.helpers =
                         _value = input.value
                         continue unless _name
 
-                        params.push _name + "=" + escape(_value)
+                        params.push _name + "=" + encodeURIComponent(_value)
 
                     params = params.join('&')
 
