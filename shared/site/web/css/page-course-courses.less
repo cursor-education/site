@@ -8,7 +8,7 @@ body#page-course {
                 background-color: @s;
             }
 
-            background-image: url(/img/courses/ruby/course-header-bg-1.gif);
+            background-image: url(/img/courses/ruby-headerbg1.gif);
             background-size: 17%;
             background-repeat: repeat;
             background-position: -20px 15px;
@@ -51,7 +51,7 @@ body#page-course {
                 background-color: @s;
             }
 
-            background-image: url(/img/courses/php/bg1.png);
+            background-image: url(/img/courses/php-headerbg1.png);
             background-size: 40%;
             background-repeat: repeat;
 
@@ -90,7 +90,7 @@ body#page-course {
                 background-color: @s;
             }
 
-            background-image: url(/img/courses/java/course-header-bg1.png);
+            background-image: url(/img/courses/java-headerbg1.png);
             background-size: 30%;
             background-repeat: repeat;
 
@@ -133,7 +133,7 @@ body#page-course {
                 background-color: @s2;
             }
 
-            background-image: url(/img/courses/dotnet/course-header-bg1.jpg);
+            background-image: url(/img/courses/dotnet-headerbg1.jpg);
             background-size: 30%;
             background-repeat: repeat;
 
@@ -175,7 +175,7 @@ body#page-course {
                 background-color: @s;
             }
 
-            background-image: url(/img/courses/js/course-header-bg1.png);
+            background-image: url(/img/courses/js-headerbg1.png);
             background-size: 30%;
             background-repeat: repeat;
 
@@ -217,7 +217,7 @@ body#page-course {
                 background-color: @s;
             }
 
-            background-image: url(/img/courses/htmlcss/bg-htmlcss1.jpg);
+            background-image: url(/img/courses/htmlcss-bghtmlcss1.jpg);
             background-size: 40%;
             background-repeat: repeat;
 
@@ -259,7 +259,7 @@ body#page-course {
                 background-color: @s;
             }
 
-            background-image: url(/img/courses/qa/bg-qa1.jpg);
+            background-image: url(/img/courses/qa-headerbg1.jpg);
             background-size: 30%;
             background-repeat: repeat;
 
@@ -301,7 +301,7 @@ body#page-course {
                 background-color: @s;
             }
 
-            background-image: url(/img/courses/android/course-header-bg1.jpg);
+            background-image: url(/img/courses/android-headerbg1.jpg);
             background-size: 30%;
             background-repeat: repeat;
             background-position: -50px -90px;
@@ -345,7 +345,7 @@ body#page-course {
                 background-color: @s;
             }
 
-            background-image: url(/img/courses/sql/course-header-bg1.jpg);
+            background-image: url(/img/courses/sql-headerbg1.jpg);
             background-size: 30%;
             background-repeat: repeat;
 
@@ -387,7 +387,7 @@ body#page-course {
                 background-color: @s;
             }
 
-            background-image: url(/img/courses/security/bg-security1.gif);
+            background-image: url(/img/courses/security-bgheader-1.gif);
             background-size: 40%;
             background-repeat: repeat;
 
@@ -439,7 +439,7 @@ body#page-course {
                 background-color: @s;
             }
 
-            background-image: url(/img/courses/english/bg-english1.jpg);
+            background-image: url(/img/courses/english-bgheader1.jpg);
             background-size: 30%;
             background-repeat: repeat;
 
@@ -452,6 +452,49 @@ body#page-course {
 
                 .slogan h1 {
                     color: #931C21;
+                }
+            }
+        }
+
+        #header-arrow {
+            &:after {
+                border-color: @s;
+                border-top-color: rgba(0, 0, 0, 0);
+            }
+        }
+
+        #course-description {
+            background-color: @s;
+
+            &:after {
+                background-color: @s;
+            }
+        }
+    }
+
+    &.course-devops {
+        @s: #4B80A5;
+
+        #header {
+            &:before,
+            &:after {
+                background-color: @s;
+            }
+
+            background-image: url(/img/courses/devops-headerbg1.png);
+            background-size: 40%;
+            background-repeat: repeat;
+            background-position: 0px;
+
+            @media screen and (max-width: 650px) {
+                background-size: 100%;
+            }
+
+            .wrap {
+                background-color: fade(@s, 80%);
+
+                .slogan h1 {
+                    color: #2C5B7B;
                 }
             }
         }
