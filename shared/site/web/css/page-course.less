@@ -142,6 +142,12 @@ body#page-course {
             }
         }
 
+        .desc {
+            a {
+                color: rgba(255, 255, 255, 0.6);
+            }
+        }
+
         ul {
             margin-left: 25px;
             margin-top: 3px;
@@ -385,21 +391,30 @@ body#page-course {
         &.curve-after:after {
             background: @s;
 
-            transform: skew(0deg, 1.5deg);
-            -webkit-transform: skew(0deg, 1.5deg);
+            transform: skew(0deg, -1.5deg);
+            -webkit-transform: skew(0deg, -1.5deg);
 
             box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -1px;
         }
     }
 
-    #course-footer {
-        // padding-top: 70px;
+    #course-bonuses {
         min-height: 50px !important;
 
         padding-top: 70px;
-        padding-bottom: 30px;
+        padding-bottom: 20px;
 
-        background-color: #303842;
+        @s: #3F4854;
+        background: @s;
+
+        &.curve-after:after {
+            background: @s;
+
+            transform: skew(0deg, 1.5deg);
+            -webkit-transform: skew(0deg, 1.5deg);
+
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -1px;
+        }
 
         .list {
             text-align: center;
@@ -411,7 +426,7 @@ body#page-course {
             }
 
             .item {
-                background: #38414C;
+                // background: #38414C;
                 width: 150px;
                 padding: 10px;
 
@@ -469,5 +484,9 @@ body#page-course {
                 }
             }
         }
+    }
+
+    #contacts {
+        padding-top: 60px;
     }
 }

@@ -103,6 +103,98 @@ body {
     }
 }
 
+.section#contacts {
+    background: @section-CONTACTS-bg;
+    padding-top: 90px;
+    padding-bottom: 30px;
+    min-height: 40px;
+
+    .wrap {
+        color: @section-CONTACTS-color;
+        font-size: 15px;
+
+        .column {
+            display: inline-block;
+            vertical-align: top;
+
+            @media screen and (max-width: 650px) {
+                margin-left: 10px;
+            }
+
+            &.column-padding {
+                margin-left: 50px;
+
+                @media screen and (max-width: 650px) {
+                    margin-left: 10px;
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        .t {
+            position: relative;
+            margin-bottom: 7px;
+            text-align: left;
+
+            a {
+                color: @section-CONTACTS-color;
+                text-decoration: none;
+
+                i.icon {
+                    position: absolute;
+                    left: 0;
+                    top: 3px;
+                }
+
+                i.desc {
+                    margin-left: 2px;
+
+                    font-style: normal;
+                    font-size: 13px;
+
+                    color: #A5AEC3;
+                }
+
+                span {
+                    padding-bottom: 1px;
+                    margin-left: 22px;
+                    border-bottom: 1px #4E5B6F solid;
+
+                    transition: border-bottom-color 0.15s ease-in-out;
+                }
+
+                &:hover {
+                    span {
+                        border-bottom-color: @section-CONTACTS-color;
+                    }
+                }
+
+                &:active {
+                    &, i.desc {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        i.icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+
+            background-repeat: no-repeat;
+
+            &.skype { .sprite(@icon-icons-skype-16); }
+            &.linkedin { .sprite(@icon-icons-linkedin-16); }
+            &.email { .sprite(@icon-icons-mail-16); }
+            &.viber { .sprite(@icon-icons-viber-16); }
+            &.phone { .sprite(@icon-icons-whatsapp-16); }
+            &.vkontakte { .sprite(@icon-icons-vkontakte-16); }
+            &.facebook { .sprite(@icon-icons-facebook-16); }
+        }
+    }
+}
+
 #header-menu {
     position: fixed;
     left: 0; top: 0;
