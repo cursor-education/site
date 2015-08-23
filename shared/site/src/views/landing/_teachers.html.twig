@@ -8,8 +8,7 @@
 
       {% for teacher in teachers %}
         <div id="{{ teacher.id }}" class="t">
-          {# <a href="{{ path('teacher', {id: teacher.id}) }}"> #}
-          <a href="javascript:;">
+          <a href="{{ path('teacher', {id: teacher.id}) }}">
             <div class="name">{{ teacher.name }}</div>
             <div class="position">{{ teacher.position }}</div>
 

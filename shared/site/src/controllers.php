@@ -73,10 +73,6 @@ $app->match('/course/{id}', function (Request $request) use ($app) {
 // @route teacher profile page
 $app->match('/teacher/{id}', function (Request $request) use ($app) {
     $teacherId = $request->get('id');
-
-    // @temporary
-    return $app->redirect('/#'.$teacherId);
-
     $teacher = $app['teachers.model']->findBy('id', $teacherId);
 
     if (!$teacher) {
@@ -92,6 +88,7 @@ $app->match('/teacher/{id}', function (Request $request) use ($app) {
         'meta keywords' => join(', ', array(
             $teacher['name'],
             $teacher['position'],
+            join(', ', $teacher['courses'])
         )),
 
         'meta description' => join('. ', array(
@@ -101,6 +98,11 @@ $app->match('/teacher/{id}', function (Request $request) use ($app) {
 
         'meta author' => $teacher['name'],
     ), (array) $page);
+
+    if (isset($_GET['debug']) && $app['debug']) {
+        var_dump($page, $teacher);
+        die;
+    }
 
     return $app['twig']->render('teacher/index.html.twig', array(
         'teacher' => $teacher,

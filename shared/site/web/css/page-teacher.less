@@ -6,7 +6,7 @@
 @import 'teachers.less';
 
 body#page-teacher {
-  background: green;
+  background: #647488;
 
   background-position: center center;
   background-size: cover;
@@ -19,39 +19,28 @@ body#page-teacher {
   }
 
   #teacher-information {
-    padding-top: 135px;
+    padding-top: 100px;
+    text-align: center;
 
     .wrap {
-      // display: table;
       width: 100%;
+      padding: 0;
 
-      @media screen and (max-width: 650px) {
-        display: block;
-        width: auto;
-      }
-    }
-
-    #general-info {
-      min-width: 200px;
-      max-width: 300px;
-      padding: 15px 20px;
-      color: #374419;
-      text-align: center;
-    }
-
-    #full-desc {
-      padding: 10px;
-      padding-left: 20px;
-      font-size: 15px;
-      width: 60%;
+      // @media screen and (max-width: 650px) {
+      //   display: block;
+      //   width: auto;
+      // }
     }
 
     #general-info,
     #full-desc {
       // display: table-cell;
-      display: inline-block;
-      vertical-align: top;
-      background: rgba(153, 169, 192, 0.72);
+      // display: inline-block;
+      // vertical-align: top;
+
+      // background: rgba(255, 255, 255, 0.15);
+      // background: red;
+      margin: 0 auto;
 
       @media screen and (max-width: 650px) {
         display: block;
@@ -59,32 +48,131 @@ body#page-teacher {
       }
     }
 
-    #photo {
-      margin-right: 10px;
+    #general-info {
+      min-width: 200px;
+      max-width: 300px;
 
-      img {
-        border-radius: 50%;
-        max-width: 200px;
+      // padding: 15px 20px;
+      // margin-bottom: 20px;
+
+      // color: #374419;
+      // text-align: center;
+    }
+
+    #full-desc {
+      background: rgba(255, 255, 255, 0.25);
+
+      padding: 10px;
+      padding-left: 20px;
+
+      padding-top: 80px;
+      margin-top: -80px;
+
+      font-size: 15px;
+      // width: 60%;
+
+      text-align: left;
+
+      a {
+        color: #D3D9E8;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
 
-    .name,
-    .position,
-    #short-desc {
-      color: white;
+    #photo {
+      margin-right: 10px;
+      border-radius: 50%;
+      
+      max-width: 250px;
+
+      margin-top: 20px;
     }
 
-    .name {
+    #name,
+    #position {
+      color: #D3D9E8;
+    }
+
+    #name {
       font-size: 25px;
     }
 
-    .position {
+    #position {
       font-size: 18px;
     }
 
-    #short-desc {
-      font-size: 15px;
+    #social-links {
       margin-top: 10px;
+      margin-bottom: 50px;
+      background: rgba(255, 255, 255, 0.15);
+      text-align: left;
+      font-size: 15px;
+
+      padding: 10px;
+      padding-bottom: 5px;
+
+      div {
+        margin-bottom: 2px;
+
+        a, span {
+          display: inline-block;
+          vertical-align: top;
+        }
+
+        a {
+          color: #D3D9E8;
+          text-decoration: none;
+
+          &:hover span {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      i {
+        display: inline-block;
+
+        @size: 20px;
+        width: @size;
+        height: @size;
+        background-size: @size;
+
+        margin-right: 4px;
+
+        opacity: 0.9;
+
+        &.linkedin {
+            background-image: url(/img/icons/linkedin2-32.png);
+        }
+
+        &.facebook {
+            background-image: url(/img/icons/facebook2-32.png);
+        }
+
+        &.twitter {
+            background-image: url(/img/icons/twitter2-24.png);
+        }
+
+        &.instagram {
+            background-image: url(/img/icons/instagram2-32.png);
+        }
+
+        &.skype {
+            background-image: url(/img/icons/skype2-32.png);
+        }
+
+        &.vkontakte {
+            background-image: url(/img/icons/vk2-32.png);
+        }
+
+        &.github {
+            background-image: url(/img/icons/github2-32.png);
+        }
+      }
     }
   }
 
@@ -100,43 +188,48 @@ body#page-teacher {
     background-color: rgba(20, 22, 23, 0.4);
   }
 
-  &.teacher-yevhen_lysyakov {
-    // #header-menu #menu a {
-    //   // background: blue;
-    // }
-
-    #teacher-information {
-      #general-info,
-      #full-desc {
-        background: rgba(41, 69, 55, 0.52);
-      }
-    }
+  #contacts {
+    padding-top: 30px;
+    border-top: 2px #56606F solid;
   }
 
-  &.teacher-roman_rodomansky {
+  // &.teacher-yevhen-lysyakov {
+  //   // #header-menu #menu a {
+  //   //   // background: blue;
+  //   // }
 
-    #teacher-information {
-      #general-info,
-      #full-desc {
-        background: rgba(203, 203, 203, 0.15);
-      }
-    }
+  //   #teacher-information {
+  //     #general-info,
+  //     #full-desc {
+  //       background: rgba(41, 69, 55, 0.52);
+  //     }
+  //   }
+  // }
 
-    #header-menu #menu a {
-      // background: rgba(51, 159, 160, 0.67);
-    }
-  }
+  // &.teacher-roman-rodomansky {
 
-  &.teacher-yura_oliynyk {
-    .bg-wrap {
-      background-color: rgba(0, 0, 0, 0.6);
-    }
+  //   #teacher-information {
+  //     #general-info,
+  //     #full-desc {
+  //       background: rgba(203, 203, 203, 0.20);
+  //     }
+  //   }
 
-    #teacher-information {
-      #general-info,
-      #full-desc {
-        background: rgba(40, 1, 2, 0.45);
-      }
-    }
-  }
+  //   #header-menu #menu a {
+  //     // background: rgba(51, 159, 160, 0.67);
+  //   }
+  // }
+
+  // &.teacher-yura-oliynyk {
+  //   .bg-wrap {
+  //     background-color: rgba(0, 0, 0, 0.6);
+  //   }
+
+  //   #teacher-information {
+  //     #general-info,
+  //     #full-desc {
+  //       background: rgba(40, 1, 2, 0.45);
+  //     }
+  //   }
+  // }
 }

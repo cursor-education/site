@@ -12,7 +12,8 @@ app =
     initPageBackground: ->
         $body = document.getElementsByTagName('body')[0]
 
-        $body.style.backgroundImage = 'url(' + teacher.background_image + ')'
+        if teacher.background_image
+            $body.style.backgroundImage = 'url(' + teacher.background_image + ')'
 
 #
 app.init()

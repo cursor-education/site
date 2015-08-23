@@ -2,22 +2,31 @@
 <div id="teacher-information" class="curve-after section">
   <div class="wrap clearfix">
 
-    <div id="general-info">
-      <div id="photo">
-        <img src="{{ teacher.photo }}" />
-      </div>
-
-      <h1 class="name">{{ teacher.name }}</h1>
-      <h3 class="position">{{ teacher.position }}</h3>
-
-      <div id="short-desc">
-       {{ teacher.desc_short|default('') }}
-      </div>
+    <div id="general-info" class="animated flipInX hinge">
+      <h1 id="name">{{ teacher.name }}</h1>
+      <h3 id="position">{{ teacher.position }}</h3>
+      <img id="photo" src="{{ teacher.photo }}" />
     </div>
 
+    {% if teacher.desc_full or teacher.desc_short %}
     <div id="full-desc">
-      {{ teacher.desc_full|default('')|raw }}
+      {{ teacher.desc_full|default(teacher.desc_short)|raw }}
     </div>
+    {% endif %}
+
+    {% if teacher.links %}
+      <div id="social-links">
+        {% for link in teacher.links %}
+          <div>
+            <a href="{{ link.url }}" target="_blank">
+              <i class="{{ link.type }}"></i>
+              <span>{{ link.url }}</span>
+            </a>
+          </div>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
 
   </div>
 </div>

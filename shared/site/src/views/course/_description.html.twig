@@ -9,8 +9,7 @@
 
         <span class="teachers-list">
           {% for teacher in course.teachers %}
-            {# <a class="tooltip" title="{{ teacher.name }}" href="{{ path('teacher', {id: teacher.id}) }}"> #}
-            <a class="tooltip" title="{{ teacher.name }}" href="javascript:;">
+            <a class="tooltip" title="{{ teacher.name }}" href="{{ path('teacher', {id: teacher.id}) }}">
               <img src="{{ teacher.photo }}"/>
             </a>
           {% endfor %}

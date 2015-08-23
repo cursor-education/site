@@ -50,13 +50,16 @@ class Teachers extends \app\models\Base {
         $info = $infoRecords[1];
         $info = parent::formatRecord($info);
 
-        return array(
+        $result = array(
             'desc_short' => $info['short_description'],
             'desc_full' => $info['full_description'],
             'photo' => $info['photo_url'],
             'background_image' => $info['background_image_url'],
             'update_secret' => $info['secret'],
         );
+        $result['desc_full'] = str_replace('\n', '<br>', $result['desc_full']);
+
+        return $result;
     }
 
     /**
