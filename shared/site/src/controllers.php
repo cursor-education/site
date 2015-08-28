@@ -96,7 +96,6 @@ $app->match('/teacher/{id}', function (Request $request) use ($app) {
         )),
 
         'meta description' => join('. ', array(
-            $teacher['name'],
             $teacher['desc_short'],
         )),
 
