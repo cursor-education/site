@@ -6,8 +6,6 @@ twig.options.cache: false
 
 cache.enabled: true
 
-form.file: registration-form.txt
-
 admin.username: null
 admin.password: null
 

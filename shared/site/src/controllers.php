@@ -119,7 +119,7 @@ $app->match('/teacher/{id}', function (Request $request) use ($app) {
 
 // @route submit form from landing page
 $app->post('/callme', function (Request $request) use ($app) {
-    $filename = ROOT_DIR.'/web/'.$app['form.file'];
+    $filename = ROOT_DIR.'/web/'.$app['config.model']->getByKey('reg-form.file');
 
     $data = array(
         date('Y-m-d H:i:s'),
@@ -140,7 +140,7 @@ $app->post('/callme', function (Request $request) use ($app) {
 
 // @route submit form from course page
 $app->post('/callme-course', function (Request $request) use ($app) {
-    $filename = ROOT_DIR.'/web/'.$app['form.file'];
+    $filename = ROOT_DIR.'/web/'.$app['config.model']->getByKey('reg-form.file');
 
     $data = array(
         date('Y-m-d H:i:s'),
