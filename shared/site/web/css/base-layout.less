@@ -419,8 +419,17 @@ body {
         background-size: 130%;
     }
 
-    @media screen and (max-width: 1000px) {
-        background-size: cover;
+    @media screen and (max-width: 800px) {
+        background-size: 140%;
+    }
+
+    // @media screen and (max-width: 680px) {
+    //     background-size: 150%;
+    // }
+
+    @media screen and (max-width: 680px) {
+        background-size: 200%;
+        background-position: left center;
     }
 
     user-select: none;
@@ -435,10 +444,6 @@ body {
     padding: 0px;
 
     z-index: @zindex-header;
-
-    @media screen and (max-width: 650px) {
-        background-size: cover;
-    }
 
     &:before {
         left: -30px;
@@ -500,7 +505,7 @@ body {
         margin-top: 1px;
 
         @media screen and (max-width: 650px) {
-            margin-top: 80px;
+            margin-top: 45px;
 
             span {
                 display: block !important;
