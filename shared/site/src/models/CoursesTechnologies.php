@@ -14,7 +14,7 @@ class CoursesTechnologies extends \app\models\Base {
         $app = $this->app;
         $technologies = $this->findAllBy('course', $courseId);
         
-        return array_map(function ($v) {
+        return array_map(function ($v) use ($app) {
             $technologyId = $v['technology'];
             return $app['technologies.model']->findBy('id', $technologyId);
         }, $technologies);
