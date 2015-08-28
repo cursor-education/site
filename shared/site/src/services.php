@@ -4,6 +4,7 @@ use app\models\Config as ConfigModel;
 use app\models\Course as CourseModel;
 use app\models\Technologies as TechnologiesModel;
 use app\models\CoursePlan as CoursePlanModel;
+use app\models\CoursesTechnologies as CoursesTechnologiesModel;
 use app\models\Partner as PartnersModel;
 use app\models\StudentsCompanies as StudentsCompaniesModel;
 use app\models\Pages as PagesModel;
@@ -20,6 +21,10 @@ $app['config.model'] = $app->share(function () use ($app) {
 // @service for Courses model
 $app['courses.model'] = $app->share(function () use ($app) {
     return new CourseModel($app);
+});
+
+$app['coursesTechnologies.model'] = $app->share(function () use ($app) {
+    return new CoursesTechnologiesModel($app);
 });
 
 // @service for Technologies model

@@ -56,8 +56,12 @@ $app->match('/course/{id}', function (Request $request) use ($app) {
     $page = $app['pages.model']->findBy('page', 'course '.$courseId);
     $coursePlan = $app['coursesPlan.model']->formatCoursePlan($courseId);
 
-    $course = $app['courses.model']->mapTechnologies($course, $app['technologies.model']->getAll());
     $course['teachers'] = $app['teachers.model']->filterByCourseGroup($course['group']);
+
+    if (isset($_GET['debug']) && $app['debug']) {
+        var_dump($course);
+        die;
+    }
 
     return $app['twig']->render('course/index.html.twig', array(
         'course' => $course,
@@ -179,6 +183,7 @@ $app->match('/admin/update/', function (Request $request) use ($app) {
         'all',
         'config',
         'courses',
+        'coursesTechnologies',
         'technologies',
         'coursesPlan',
         'partners',
