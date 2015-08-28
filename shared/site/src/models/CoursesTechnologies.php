@@ -11,11 +11,12 @@ class CoursesTechnologies extends \app\models\Base {
      *
      */
     public function getCourseTechnologies($courseId) {
+        $app = $this->app;
         $technologies = $this->findAllBy('course', $courseId);
         
         return array_map(function ($v) {
             $technologyId = $v['technology'];
-            return $this->app['technologies.model']->findBy('id', $technologyId);
+            return $app['technologies.model']->findBy('id', $technologyId);
         }, $technologies);
     }
 
