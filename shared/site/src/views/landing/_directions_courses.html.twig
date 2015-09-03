@@ -1,0 +1,21 @@
+{% for course in courses %}
+
+<div class="t course-{{ course.group }}">
+  <div class="title">
+    <div class="name">{{ course.title }}</div>
+  </div>
+
+  <div class="time">
+    <span>Початок:</span>&nbsp;<b class="tooltip" data-tooltip="{{ course.start }}">{{ course.start }}</b>
+  </div>
+
+  <div class="image">
+    <img src="{{ course.image }}" title="{{ course.title }}" />
+  </div>
+
+  <div class="desc">{{ course.desc }}</div>
+
+  <a href="{{ path('course', {id: course.id}) }}" class="more">Детальніше<span>&rarr;</span></a>
+</div>
+
+{% endfor %}

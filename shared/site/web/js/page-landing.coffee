@@ -7,10 +7,34 @@ app =
         # app.initGallery()
         helpers.initAbTesting()
         helpers.initTooltip()
+        app.initChoosingOfDirection();
 
     initScrollHook: ->
         window.onscroll = -> helpers.scrollHook()
         window.onscroll()
+
+    initChoosingOfDirection: ->
+        links = document.getElementsByClassName('directions-types')[0].getElementsByTagName('h2')
+        $directionsLists = document.getElementsByClassName('direction-list')[0].getElementsByClassName('rows')
+        
+        if links.length > 1
+            for link in links
+                do (link) ->
+                    link.onclick = (e) ->
+                        e.preventDefault();
+
+                        for activeLink in links
+                            activeLink.classList.remove('active')
+
+                        link.classList.add('active')
+
+                        direction = link.getAttribute('data-direction')
+
+                        for $directionList in $directionsLists
+                            $directionList.classList.add('hidden')
+
+                        $directionList = document.getElementById('direction-' + direction + '-list')
+                        $directionList.classList.remove('hidden');
 
     # initGallery: ->
     #     for el in document.getElementsByClassName('gallery')

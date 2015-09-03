@@ -9,9 +9,8 @@ body {
     -webkit-overflow-scrolling: touch;
     
     #deeper { z-index: @zindex-section + @zindex-animated + 8 }
-    #courses { z-index: @zindex-section + @zindex-animated + 7 }
+    #directions { z-index: @zindex-section + @zindex-animated + 7 }
     #teachers { z-index: @zindex-section + @zindex-animated + 6 }
-    #workshops { z-index: @zindex-section + @zindex-animated + 5 }
     #registration-form { z-index: @zindex-section + @zindex-animated + 4 }
     #students-companies { z-index: @zindex-section + @zindex-animated + 3 }
     #partners { z-index: @zindex-section + @zindex-animated + 2 }
@@ -69,7 +68,7 @@ body {
         }
     }
 
-    #courses {
+    #directions {
         background: @section-COURSES-bg;
         padding-top: 70px;
         padding-bottom: 50px;
@@ -91,7 +90,51 @@ body {
             box-shadow: @section-COURSES-bg 0px 3px 2px -2px;
         }
 
-        .row {
+        .directions-types {
+            text-align: center;
+
+            h2 {
+                display: inline-block;
+                cursor: pointer;
+
+                transition: all .3s ease-in-out;
+
+                opacity: 0.8;
+
+                padding: 8px 0px;
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                &.active {
+                    border-bottom: none;
+                    opacity: 1;
+                    background-color: #FFF;
+                    
+                    padding-right: 22px;
+                    padding-left: 22px;
+                }
+            }
+
+            .delimiter {
+                opacity: 0.5;
+                font-size: 30px;
+                margin: 0px 10px;
+            }
+        }
+
+        .direction-list {
+            .rows {
+                transition: all .3s ease-in-out;
+            }
+
+            .hidden {
+                display: none;
+            }
+        }
+
+        .rows {
             text-align: center;
 
             @media screen and (max-width: 650px) {
@@ -528,195 +571,6 @@ body {
             -webkit-transform: skew(0deg, -1.5deg);
 
             box-shadow: @section-TEACHERS-bg 0px 5px 3px -2px;
-        }
-    }
-
-    #workshops {
-        background: @section-WORKSHOPS-bg;
-        padding-top: 70px;
-        padding-bottom: 50px;
-
-        .wrap {
-            color: @section-WORKSHOPS-color;
-
-            h2 {
-                color: @section-WORKSHOPS-h2;
-            }
-        }
-
-        &.curve-after:after {
-            background: @section-WORKSHOPS-bg;
-
-            transform: skew(0deg, 1.5deg);
-            -webkit-transform: skew(0deg, 1.5deg);
-
-            box-shadow: @section-WORKSHOPS-bg 0px 3px 2px -2px;
-        }
-
-        .row {
-            // text-align: center;
-
-            // @media screen and (max-width: 650px) {
-            //     margin-bottom: 20px;
-            // }
-
-            // &:hover {
-            //     .t {
-            //         opacity: 0.4;
-            //     }
-
-            //     @media screen and (max-width: 650px) {
-            //         .t {
-            //             opacity: 1;
-            //         }
-            //     }
-            // }
-
-            // .t {
-            //     &:hover {
-            //         opacity: 1;
-            //     }
-
-            //     position: relative;
-            //     z-index: @zindex-section + @zindex-animated + 1;
-
-            //     display: inline-block;
-            //     vertical-align: top;
-
-            //     margin-right: 20px;
-            //     margin-bottom: 20px;
-
-            //     width: 30%;
-
-            //     background: @course-bg;
-            //     border-radius: 3px;
-            //     box-shadow: 0 1px 1px rgba(0,0,0,0.3);
-
-            //     @media screen and (max-width: 650px) {
-            //         display: block;
-            //         width: 100%;
-
-            //         margin-bottom: 10px;
-            //         padding-bottom: 15px;
-            //     }
-
-            //     transition: all .4s ease;
-
-            //     &:hover {
-            //         background: @course-hover-bg;
-
-            //         .image img {
-            //             transform: perspective(500px) translateZ(30px);
-            //         }
-            //     }
-
-            //     .title {
-            //         position: relative;
-
-            //         &:before {
-            //             content: '';
-
-            //             position: absolute;
-            //             left: 0;
-            //             top: 0;
-
-            //             background-position: center;
-            //             background-repeat: no-repeat;
-            //             background-size: cover;
-
-            //             width: 100%;
-            //             height: 100%;
-
-            //             opacity: 0.35;
-
-            //             z-index: 2;
-            //         }
-
-            //         &:after {
-            //             content: '';
-            //             background-color: black;
-
-            //             height: 100%;
-            //             width: 100%;
-
-            //             position: absolute;
-            //             left: 0;
-            //             top: 0;
-
-            //             z-index: 1;
-
-            //             border-top-left-radius: 3px;
-            //             border-top-right-radius: 3px;
-            //         }
-            //     }
-
-            //     .name {
-            //         position: relative;
-
-            //         padding: 20px 20px;
-            //         margin-bottom: 5px;
-            //         font-weight: 400;
-            //         z-index: 3;
-
-            //         color: white;
-            //     }
-
-            //     .time {
-            //         font-size: 15px;
-            //         margin-bottom: 20px;
-            //     }
-
-            //     .image img {
-            //         max-width: 180px;
-            //         max-height: 180px;
-            //         min-height: 100px;
-
-            //         margin: 0 auto;
-
-            //         transform: perspective(500px) translateZ(0px);
-            //         transition: all .15s ease;
-            //     }
-
-            //     .desc {
-            //         margin: 0 auto;
-            //         margin-top: 15px;
-            //         margin-bottom: 15px;
-
-            //         padding: 5px 10px 5px 10px;
-
-            //         font-size: 13px;
-            //         text-align: center;
-            //         word-break: break-word;
-            //     }
-
-            //     .more {
-            //         display: inline-block;
-
-            //         color: @course-more-color;
-            //         background: @course-more-bg;
-
-            //         font-size: 15px;
-            //         text-decoration: none;
-
-            //         margin-bottom: 10px;
-            //         padding: 10px 20px;
-
-            //         cursor: pointer;
-
-            //         transition: all 0.25s ease-in-out;
-
-            //         span {
-            //             display: inline-block;
-            //             margin-left: 5px;
-            //         }
-
-            //         &:hover {
-            //             background: @course-more-hover-bg;
-            //             color: @course-more-hover-color;
-            //             border-color: @course-more-hover-border;
-            //         }
-            //     }
-            // }
         }
     }
 

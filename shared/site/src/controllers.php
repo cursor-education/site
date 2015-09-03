@@ -23,6 +23,7 @@ $app->match('/', function () use ($app) {
 
     $params = array(
         'courses' => $app['courses.model']->getAll(),
+        'workshops' => array(),
         'partners' => $app['partners.model']->getAll(),
         'teachers' => $app['teachers.model']->getAll(),
         'studentsCompanies' => $app['studentsCompanies.model']->getAll(),
