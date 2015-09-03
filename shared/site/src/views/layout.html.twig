@@ -29,7 +29,7 @@
   {% if app.debug %}
     <link rel="stylesheet/less" type="text/css" href="/css/page-{{ pageName }}.less">
   {% else %}
-    <link rel="stylesheet" type="text/css" href="/assets/page-{{ pageName }}.css">
+    <link rel="stylesheet" type="text/css" href="/assets/page-{{ pageName }}.css?v={{ app.version }}">
   {% endif %}
 
   <link href='http://fonts.googleapis.com/css?family=Exo+2|Open+Sans:300,400,600,700,regular&subset=latin,cyrillic' rel='stylesheet' type='text/css' media='all' />
@@ -59,7 +59,7 @@
     {% if app.debug %}
       <script type="text/coffeescript" src="/js/{{ name }}.coffee"></script>
     {% else %}
-      <script type="text/javascript" src="/assets/{{ name }}.js"></script>
+      <script type="text/javascript" src="/assets/{{ name }}.js?v={{ app.version }}"></script>
     {% endif %}
   {% endmacro %}
   {% endspaceless %}

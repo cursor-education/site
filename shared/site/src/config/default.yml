@@ -1,4 +1,4 @@
-version: '0.12-teachers-personal-page'
+version: '0.13-workshops'
 
 environment: default
 debug: false
