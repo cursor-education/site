@@ -10,10 +10,9 @@ app =
         window.onscroll()
 
     initPageBackground: ->
-        $body = document.getElementsByTagName('body')[0]
-
         if teacher.background_image
-            $body.style.backgroundImage = 'url(' + teacher.background_image + ')'
+            $el = document.getElementById('bg-image')
+            $el.style.backgroundImage = 'url(' + teacher.background_image + ')'
 
 #
 app.init()

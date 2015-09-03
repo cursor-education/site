@@ -8,10 +8,12 @@
       <img id="photo" src="{{ teacher.photo }}" />
     </div>
 
-    {% if teacher.desc_full or teacher.desc_short %}
-    <div id="full-desc">
-      {{ teacher.desc_full|default(teacher.desc_short)|raw }}
-    </div>
+    {% if teacher.desc_short %}
+      {% if teacher.desc_full %}
+        <div id="full-desc">{{ teacher.desc_full|raw }}</div>
+      {% else %}
+        <div id="short-desc">{{ teacher.desc_short|raw }}</div>
+      {% endif %}
     {% endif %}
 
     {% if teacher.links %}
@@ -19,8 +21,7 @@
         {% for link in teacher.links %}
           <div>
             <a href="{{ link.url }}" target="_blank">
-              <i class="{{ link.type }}"></i>
-              <span>{{ link.url }}</span>
+              <i class="icon icon48 {{ link.type }}48 filter-white"></i>
             </a>
           </div>
         {% endfor %}

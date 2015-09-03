@@ -8,9 +8,6 @@
 body#page-teacher {
   background: #647488;
 
-  background-position: center center;
-  background-size: cover;
-
   #page-background {
     position: absolute;
     z-index: -1;
@@ -19,6 +16,7 @@ body#page-teacher {
   }
 
   #teacher-information {
+    z-index: @zindex-section - @zindex-header - 1;
     padding-top: 100px;
     text-align: center;
 
@@ -29,21 +27,11 @@ body#page-teacher {
     .wrap {
       width: 100%;
       padding: 0;
-
-      // @media screen and (max-width: 650px) {
-      //   display: block;
-      //   width: auto;
-      // }
     }
 
     #general-info,
-    #full-desc {
-      // display: table-cell;
-      // display: inline-block;
-      // vertical-align: top;
-
-      // background: rgba(255, 255, 255, 0.15);
-      // background: red;
+    #full-desc,
+    #short-desc {
       margin: 0 auto;
 
       @media screen and (max-width: 650px) {
@@ -54,37 +42,7 @@ body#page-teacher {
 
     #general-info {
       min-width: 200px;
-      max-width: 300px;
-
-      // padding: 15px 20px;
-      // margin-bottom: 20px;
-
-      // color: #374419;
-      // text-align: center;
-    }
-
-    #full-desc {
-      background: rgba(255, 255, 255, 0.25);
-
-      padding: 10px;
-      padding-left: 20px;
-
-      padding-top: 80px;
-      margin-top: -80px;
-
-      font-size: 15px;
-      // width: 60%;
-
-      text-align: left;
-
-      a {
-        color: #D3D9E8;
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
+      max-width: 400px;
     }
 
     #photo {
@@ -98,146 +56,138 @@ body#page-teacher {
 
     #name,
     #position {
-      color: #D3D9E8;
+      color: rgba(255, 255, 255, 0.8);
     }
 
     #name {
-      font-size: 25px;
+      font-size: 35px;
     }
 
     #position {
-      font-size: 18px;
+      font-size: 20px;
+    }
+
+    #short-desc,
+    #full-desc {
+      font-size: 15px;
+    }
+
+    #short-desc {
+      color: rgba(255, 255, 255, 0.8);
+      margin-top: 10px;
+    }
+
+    #full-desc {
+      background: rgba(0, 0, 0, 0.3);
+
+      padding: 10px;
+      padding-left: 20px;
+
+      padding-top: 80px;
+      margin-top: -80px;
+
+      text-align: left;
+
+      a {
+        color: #D3D9E8;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
 
     #social-links {
-      margin-top: 10px;
+      margin-top: 30px;
       margin-bottom: 50px;
-      background: rgba(255, 255, 255, 0.15);
-      text-align: left;
-      font-size: 15px;
 
-      padding: 10px;
-      padding-bottom: 5px;
-
-      @media screen and (max-width: 650px) {
-        margin-bottom: 0px;
-      }
+      text-align: center;
 
       div {
-        margin-bottom: 2px;
-
-        a, span {
-          display: inline-block;
-          vertical-align: top;
-        }
+        display: inline-block;
+        margin-right: 2px;
 
         a {
+          vertical-align: top;
+
           color: #D3D9E8;
           text-decoration: none;
-
-          &:hover span {
-            text-decoration: underline;
-          }
         }
       }
 
-      i {
+      i.icon.icon48 {
         display: inline-block;
 
-        @size: 20px;
+        @size: 40px;
         width: @size;
         height: @size;
         background-size: @size;
 
         margin-right: 4px;
 
-        opacity: 0.9;
+        opacity: 0.95;
 
-        &.linkedin {
-            background-image: url(/img/icons/linkedin2-32.png);
+        &.filter-white {
+          -webkit-filter: invert(1);
         }
 
-        &.facebook {
-            background-image: url(/img/icons/facebook2-32.png);
+        &.linkedin48 {
+          background-image: url(https://cdn1.iconfinder.com/data/icons/capsocial/500/linkedin2-48.png);
         }
 
-        &.twitter {
-            background-image: url(/img/icons/twitter2-24.png);
+        &.facebook48 {
+            background-image: url(https://cdn1.iconfinder.com/data/icons/capsocial/500/facebook-48.png);
         }
 
-        &.instagram {
-            background-image: url(/img/icons/instagram2-32.png);
+        &.twitter48 {
+            background-image: url(https://cdn1.iconfinder.com/data/icons/capsocial/500/twitter-48.png);
         }
 
-        &.skype {
-            background-image: url(/img/icons/skype2-32.png);
+        &.instagram48 {
+            background-image: url(https://cdn1.iconfinder.com/data/icons/capsocial/500/707752-instagram-48.png);
         }
 
-        &.vkontakte {
-            background-image: url(/img/icons/vk2-32.png);
+        &.skype48 {
+            background-image: url(https://cdn1.iconfinder.com/data/icons/capsocial/500/skype-48.png);
         }
 
-        &.github {
-            background-image: url(/img/icons/github2-32.png);
+        &.vkontakte48 {
+            background-image: url(https://cdn1.iconfinder.com/data/icons/capsocial/500/vk-48.png);
+        }
+
+        &.github48 {
+            background-image: url(https://cdn1.iconfinder.com/data/icons/capsocial/500/github-48.png);
         }
       }
     }
   }
 
   .bg-wrap {
-    display: block;
-    
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    #bg-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: @zindex-section - @zindex-header - 5;
+      
+      background-position: center center;
+      background-size: cover;
+    }
 
-    background-color: rgba(20, 22, 23, 0.4);
+    #bg-shadow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: @zindex-section - @zindex-header - 4;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
   }
 
-  #contacts {
-    padding-top: 30px;
-    border-top: 2px #56606F solid;
+  #footer {
+    z-index: @zindex-section;
   }
-
-  // &.teacher-yevhen-lysyakov {
-  //   // #header-menu #menu a {
-  //   //   // background: blue;
-  //   // }
-
-  //   #teacher-information {
-  //     #general-info,
-  //     #full-desc {
-  //       background: rgba(41, 69, 55, 0.52);
-  //     }
-  //   }
-  // }
-
-  // &.teacher-roman-rodomansky {
-
-  //   #teacher-information {
-  //     #general-info,
-  //     #full-desc {
-  //       background: rgba(203, 203, 203, 0.20);
-  //     }
-  //   }
-
-  //   #header-menu #menu a {
-  //     // background: rgba(51, 159, 160, 0.67);
-  //   }
-  // }
-
-  // &.teacher-yura-oliynyk {
-  //   .bg-wrap {
-  //     background-color: rgba(0, 0, 0, 0.6);
-  //   }
-
-  //   #teacher-information {
-  //     #general-info,
-  //     #full-desc {
-  //       background: rgba(40, 1, 2, 0.45);
-  //     }
-  //   }
-  // }
 }
