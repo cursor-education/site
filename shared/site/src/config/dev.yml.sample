@@ -1,0 +1,10 @@
+environment: dev
+debug: true
+
+cache.enabled: false
+
+admin.username: admin
+admin.password: adminadmin
+
+db.google.config.key: '...'
+db.google.config.gid: '0'
