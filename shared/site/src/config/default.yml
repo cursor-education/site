@@ -1,4 +1,4 @@
-version: '0.13-workshops'
+version: '0.13-city-in-header'
 
 environment: default
 debug: false
