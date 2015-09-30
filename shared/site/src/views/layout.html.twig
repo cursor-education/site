@@ -36,6 +36,8 @@
 
   {% if app.debug %}
     <script data-env="development" src="/vendor/less.min.js"></script>
+    <script type="text/javascript">less.watch()</script>
+
     <script src="http://cdnjs.cloudflare.com/ajax/libs/coffee-script/1.7.1/coffee-script.min.js"></script>
   {% endif %}
 </head>

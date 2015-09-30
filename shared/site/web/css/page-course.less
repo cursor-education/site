@@ -143,8 +143,35 @@ body#page-course {
         }
 
         .desc {
+            font-size: 16px;
+
             a {
-                color: rgba(255, 255, 255, 0.6);
+                color: rgba(255, 255, 255, 0.87);
+                background: rgba(255, 255, 255, 0.13);
+                padding: 3px;
+                text-decoration: none;
+
+                transition: all .4s ease;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.18);
+                    text-decoration: underline;
+                }
+            }
+
+            .code-screenshot {
+                &.on-right-top {
+                    width: 700px;
+                    position: absolute;
+                    z-index: -1;
+                    left: 65%;
+                    opacity: 0.2;
+                    margin-top: 10px;
+
+                    @media screen and (max-width: 650px) {
+                        left: 20%;
+                    }
+                }
             }
         }
 
@@ -159,6 +186,7 @@ body#page-course {
                 a {
                     font: 14px verdana;
                     text-decoration: none;
+                    background: transparent;
                     color: rgba(255, 255, 255, 0.6);
                     word-break: break-all;
 
@@ -333,6 +361,7 @@ body#page-course {
 
                 span {
                     color: #4E6284;
+                    font-size: 15px;
                 }
 
                 &:hover {
@@ -358,16 +387,22 @@ body#page-course {
                 i.icon {
                     display: block;
 
-                    width: 100px;
-                    height: 100px;
+                    @size: 70px;
+                    width: @size;
+                    height: @size;
                     
                     background-repeat: no-repeat;
-                    background-size: 80px;
+                    background-size: 100%;
                     background-position: center;
 
                     transition: all .1s ease;
                     transform: perspective(500px) translateZ(0px);
+
+                    &.tech-composer {
+                        background-size: 75%;
+                    }
                 }
+
                 @import 'page-course-techs.less';
             }
         }
