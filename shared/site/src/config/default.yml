@@ -1,4 +1,4 @@
-version: '0.13-city-in-header'
+version: '0.14-course-page'
 
 environment: default
 debug: false
