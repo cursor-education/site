@@ -23,7 +23,7 @@ $app->match('/', function () use ($app) {
 
     $params = array(
         'courses' => $app['courses.model']->getAll(),
-        'workshops' => array(),
+        'workshops' => $app['workshops.model']->getAll(),
         'partners' => $app['partners.model']->getAll(),
         'teachers' => $app['teachers.model']->getAll(),
         'studentsCompanies' => $app['studentsCompanies.model']->getAll(),
@@ -74,6 +74,50 @@ $app->match('/course/{id}', function (Request $request) use ($app) {
     ));
 })
 ->bind('course');
+
+// @route workshop page
+$app->match('/workshop/{id}', function (Request $request) use ($app) {
+    $workshopId = $request->get('id');
+    $workshop = $app['workshops.model']->findBy('id', $workshopId);
+
+    if (!$workshop) {
+        $normalizedId = str_replace('-', ' ', $workshopId);
+        $errorMessage = sprintf('requested workshop with name "%s" has been not found', $normalizedId);
+
+        $app->abort(404, $errorMessage);
+    }
+
+    $page = $app['pages.model']->findBy('page', 'workshop '.$workshopId);
+
+    if (!$page['title'])
+        $page['title'] = $workshop['title'] . ' | CURSOR.education';
+
+    if (!$page['meta keywords'])
+        $page['meta keywords'] = join(', ', array(
+            $workshop['title'],
+            $workshop['desc'],
+        ));
+
+    if (!$page['meta description'])
+        $page['meta description'] = $workshop['desc'];
+
+    if (!$page['meta author'])
+        $page['meta author'] = $workshop['title'];
+
+    if (isset($_GET['debug']) && $app['debug']) {
+        var_dump($course);
+        die;
+    }
+
+    return $app['twig']->render('workshop/index.html.twig', array(
+        'workshop' => $workshop,
+        'title' => $page['title'],
+        'meta_keywords' => $page['meta keywords'],
+        'meta_description' => $page['meta description'],
+        'meta_author' => $page['meta author'],
+    ));
+})
+->bind('workshop');
 
 // @route teacher profile page
 $app->match('/teacher/{id}', function (Request $request) use ($app) {
@@ -160,6 +204,27 @@ $app->post('/callme-course', function (Request $request) use ($app) {
 })
 ->bind('course-form');
 
+// @route submit form from workshop page
+$app->post('/callme-workshop', function (Request $request) use ($app) {
+    $filename = ROOT_DIR.'/web/'.$app['config.model']->getByKey('reg-form.file');
+
+    $data = array(
+        date('Y-m-d H:i:s'),
+        $request->get('workshop'),
+        $request->get('name'),
+        $request->get('phone'),
+    );
+
+    $f = fopen($filename, 'aw');
+    fwrite($f, join("\t\t", $data)."\n");
+    fclose($f);
+
+    sleep(2);
+
+    return 'ok';
+})
+->bind('workshop-form');
+
 // @route teacher profile page
 $app->match('/teacher/update/{secret}', function (Request $request) use ($app) {
     $teacherSecret = $request->get('secret');
@@ -182,6 +247,7 @@ $app->match('/admin/update/', function (Request $request) use ($app) {
     $list = array(
         'all',
         'config',
+        'workshops',
         'courses',
         'coursesTechnologies',
         'technologies',

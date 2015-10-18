@@ -2,6 +2,7 @@
 use app\models\Config as ConfigModel;
 
 use app\models\Course as CourseModel;
+use app\models\Workshop as WorkshopModel;
 use app\models\Technologies as TechnologiesModel;
 use app\models\CoursePlan as CoursePlanModel;
 use app\models\CoursesTechnologies as CoursesTechnologiesModel;
@@ -16,6 +17,11 @@ use app\models\Redirects as RedirectsModel;
 // @service for Config model
 $app['config.model'] = $app->share(function () use ($app) {
     return new ConfigModel($app);
+});
+
+// @service for Workshops model
+$app['workshops.model'] = $app->share(function () use ($app) {
+    return new WorkshopModel($app);
 });
 
 // @service for Courses model

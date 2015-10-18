@@ -1,0 +1,39 @@
+{% spaceless %}
+<div id="workshop-description" class="curve-after section">
+  <div class="wrap clearfix">
+
+    <div class="top-line">
+      {#
+      <div class="item teachers">
+        <i class="icon"></i>
+        <span class="label">Викладачі:</span>
+
+        <span class="teachers-list">
+          {% for teacher in workshop.teachers %}
+            <a class="tooltip" title="{{ teacher.name }}" href="{{ path('teacher', {id: teacher.id}) }}">
+              <img src="{{ teacher.photo }}"/>
+            </a>
+          {% endfor %}
+        </span>
+      </div>
+      #}
+
+      <div class="item during">
+        {# <i class="icon"></i> #}
+        <span class="label">Тривалість: <span class="highlight">{{ workshop.duration }}</span></span>
+      </div>
+
+      <div class="item price">
+        {# <i class="icon"></i> #}
+        <span class="label">Вартість: <span class="highlight">{{ workshop.price }}</span></span>
+      </div>
+    </div>
+
+    <div class="desc">
+      {{ workshop.desc_full|raw }}
+      <br/>
+    </div>
+
+  </div>
+</div>
+{% endspaceless %}

@@ -1,4 +1,4 @@
-version: '0.16-refactoring-and-added-web-ui-course'
+version: '0.17-added-workshops'
 
 environment: default
 debug: false
