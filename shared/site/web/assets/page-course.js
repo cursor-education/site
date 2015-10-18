@@ -1,2 +1,2 @@
-/* 2015-10-04 13:10:16 */
+/* 2015-10-18 11:10:34 */
 var app;app={init:function(){return app.initScrollHook(),helpers.initTooltip(),helpers.initSubmitForm(),helpers.initTooltip()},initScrollHook:function(){return window.onscroll=function(){return helpers.scrollHook()},window.onscroll()}},app.init();

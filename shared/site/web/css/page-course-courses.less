@@ -208,6 +208,48 @@ body#page-course {
         }
     }
 
+    &.course-webui {
+        @s: #189AC1;
+
+        #header {
+            &:before,
+            &:after {
+                background-color: @s;
+            }
+
+            background-image: url(/img/courses/webui-headerbg1.jpeg);
+            background-size: 30%;
+            background-repeat: repeat;
+
+            @media screen and (max-width: 650px) {
+                background-size: 100%;
+            }
+
+            .wrap {
+                background-color: fade(@s, 65%);
+
+                .slogan h1 {
+                    color: #186982;
+                }
+            }
+        }
+
+        #header-arrow {
+            &:after {
+                border-color: @s;
+                border-top-color: rgba(0, 0, 0, 0);
+            }
+        }
+
+        #course-description {
+            background-color: @s;
+
+            &:after {
+                background-color: @s;
+            }
+        }
+    }
+
     &.course-htmlcss {
         @s: #31A480;
 

@@ -5,7 +5,17 @@
 @import 'base-layout.less';
 @import 'page-course-courses.less';
 
-@import 'teachers.less';
+@import './sprites/sprites-teachers.less';
+
+i.icon {
+    display: inline-block;
+
+    &.s25 {
+        width: 25px;
+        height: 25px;
+        border-radius: 2px;
+    }
+}
 
 @import './sprites/sprites-icons.less';
 
@@ -384,26 +394,31 @@ body#page-course {
                     transition: all .4s ease;
                 }
 
-                i.icon {
+                .icon-wrap {
                     display: block;
 
                     @size: 70px;
                     width: @size;
                     height: @size;
-                    
-                    background-repeat: no-repeat;
-                    background-size: 100%;
-                    background-position: center;
 
                     transition: all .1s ease;
                     transform: perspective(500px) translateZ(0px);
 
-                    &.tech-composer {
-                        background-size: 75%;
-                    }
+                    @import 'page-course-techs.less';
                 }
 
-                @import 'page-course-techs.less';
+                // i.icon {
+
+                //     // background-repeat: no-repeat;
+                //     // background-size: 100%;
+                //     // background-position: center;
+
+
+                //     // &.tech-composer {
+                //     //     background-size: 75%;
+                //     // }
+                // }
+
             }
         }
     }
@@ -486,7 +501,7 @@ body#page-course {
             .plus {
                 font-size: 40px;
                 margin: 0px 10px;
-                margin-top: 80px;
+                margin-top: 60px;
             }
 
             i {
@@ -504,6 +519,10 @@ body#page-course {
 
                 &.books {
                     background-image: url(/img/bonuses/manuals.png);
+                }
+
+                &.mentor {
+                    background-image: url(/img/bonuses/mentor.png);
                 }
 
                 &.certificate {

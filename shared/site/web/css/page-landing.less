@@ -7,7 +7,7 @@
 
 body {
     -webkit-overflow-scrolling: touch;
-    
+
     #deeper { z-index: @zindex-section + @zindex-animated + 8 }
     #directions { z-index: @zindex-section + @zindex-animated + 7 }
     #teachers { z-index: @zindex-section + @zindex-animated + 6 }
@@ -23,20 +23,12 @@ body {
             display: inline-block;
             float: left;
 
-            background: url(/img/collegesuccess.png);
-            background-size: 300px;
+            .sprite(@icon-icons-collegesuccess-300px);
             background-repeat: no-repeat;
-
-            height: 300px;
-            width: 330px;
 
             margin-right: 20px;
 
             @media screen and (max-width: 650px) {
-                background-size: 200px;
-                width: 200px;
-                height: 190px;
-
                 display: block;
                 float: none;
                 margin: 0 auto;
@@ -385,7 +377,6 @@ body {
                         @size: 25px;
                         width: @size;
                         height: @size;
-                        background-size: @size;
 
                         background-repeat: no-repeat;
 
@@ -406,39 +397,39 @@ body {
                         }
 
                         &.course-ruby {
-                            background-image: url(/img/icons/course-ruby-small.png);
+                            .sprite(@icon-icons-course-ruby-25px);
                         }
 
-                        &.course-js {
-                            background-image: url(/img/icons/course-js-small.png);
+                        &.course-webui {
+                            .sprite(@icon-icons-course-js-25px);
                         }
 
                         &.course-htmlcss {
-                            background-image: url(/img/icons/course-html-small.png);
+                            .sprite(@icon-icons-course-html-25px);
                         }
 
                         &.course-php {
-                            background-image: url(/img/icons/course-php-small.png);
+                            .sprite(@icon-icons-course-php-25px);
                         }
 
                         &.course-qa {
-                            background-image: url(/img/icons/course-qa-small.png);
+                            .sprite(@icon-icons-course-qa-25px);
                         }
 
                         &.course-sql {
-                            background-image: url(/img/icons/course-db-small.png);
+                            .sprite(@icon-icons-course-sql-25px);
                         }
 
                         &.course-java {
-                            background-image: url(/img/icons/course-java-small.png);
+                            .sprite(@icon-icons-course-java-25px);
                         }
 
                         &.course-devops {
-                            background-image: url(/img/icons/course-devops-small.png);
+                            .sprite(@icon-icons-course-devops-25px);
                         }
 
                         &.course-security {
-                            background-image: url(/img/icons/course-secutity-small.png);
+                            .sprite(@icon-icons-course-secutity-25px);
                         }
                     }
                 }

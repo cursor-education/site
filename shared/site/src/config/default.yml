@@ -1,4 +1,4 @@
-version: '0.15-github-on-landing'
+version: '0.16-refactoring-and-added-web-ui-course'
 
 environment: default
 debug: false

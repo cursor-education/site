@@ -7,10 +7,14 @@
     <div class="list">
       {% for technology in course.technologies %}
         <div class="row">
-            <div class="icon-row">
-                <i class="icon tech-{{ technology.id }} tooltip" alt="{{ technology.title }}" data-tooltip="{{ technology.desc }}"></i>
-            </div>
-            <span>{{ technology.title }}</span>
+          <div class="icon-row">
+            
+            <span class="icon-wrap tooltip" alt="{{ technology.title }}" data-tooltip="{{ technology.desc }}">
+              <i class="icon tech-{{ technology.id }}"></i>
+            </span>
+
+          </div>
+          <span>{{ technology.title }}</span>
         </div>
       {% endfor %}
     </div>
