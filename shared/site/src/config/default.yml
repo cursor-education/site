@@ -1,4 +1,4 @@
-version: '0.18-updated-workshops'
+version: '0.19-added-docker-workshop'
 
 environment: default
 debug: false

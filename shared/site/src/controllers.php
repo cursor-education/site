@@ -87,21 +87,21 @@ $app->match('/workshop/{id}', function (Request $request) use ($app) {
         $app->abort(404, $errorMessage);
     }
 
-    $page = $app['pages.model']->findBy('page', 'workshop '.$workshopId);
+    $page = (array) $app['pages.model']->findBy('page', 'workshop '.$workshopId);
 
-    if (!$page['title'])
+    if (empty($page['title']))
         $page['title'] = $workshop['title'] . ' | CURSOR.education';
 
-    if (!$page['meta keywords'])
+    if (empty($page['meta keywords']))
         $page['meta keywords'] = join(', ', array(
             $workshop['title'],
             $workshop['desc'],
         ));
 
-    if (!$page['meta description'])
+    if (empty($page['meta description']))
         $page['meta description'] = $workshop['desc'];
 
-    if (!$page['meta author'])
+    if (empty($page['meta author']))
         $page['meta author'] = $workshop['title'];
 
     if (isset($_GET['debug']) && $app['debug']) {
