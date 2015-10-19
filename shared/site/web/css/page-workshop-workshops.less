@@ -1,6 +1,6 @@
 body#page-workshop {
-    &.workshop-angular-js-becoma-a-ninja {
-        @s: #D84013;
+    &.workshop-vagrant-workshop {
+        @s: #2490cc;
 
         #header {
             &:before,
@@ -8,23 +8,20 @@ body#page-workshop {
                 background-color: @s;
             }
 
-            // background-image: url(/img/courses/ruby-headerbg1.gif);
-            background-image: url(https://bitcalm.com/media/2015/4/4/angular_0_ukId1ZP.jpg);
+            background-image: url(/img/workshops/vagrant-workshop-bg.png);
             background-size: 30%;
-            // background-size: 100%;
             background-repeat: repeat;
-            background-position: 0px 0px;
-            // background-position: 0px 0px;
+            background-position: 0px -120px;
 
             @media screen and (max-width: 650px) {
                 background-size: 50%;
             }
 
             .wrap {
-                background-color: rgba(186, 42, 0, 0.5);
+                background-color: rgba(17, 127, 165, 0.58);
 
                 .slogan h1 {
-                    color: #6F3026;
+                    color: #106988;
                 }
             }
         }
@@ -69,6 +66,52 @@ body#page-workshop {
 
                 .slogan h1 {
                     color: #106988;
+                }
+            }
+        }
+
+        #header-arrow {
+            &:after {
+                border-color: @s;
+                border-top-color: rgba(0, 0, 0, 0);
+            }
+        }
+
+        #workshop-description {
+            background-color: @s;
+
+            &:after {
+                background-color: @s;
+            }
+        }
+    }
+
+    &.workshop-angular-js-becoma-a-ninja {
+        @s: #D84013;
+
+        #header {
+            &:before,
+            &:after {
+                background-color: @s;
+            }
+
+            // background-image: url(/img/courses/ruby-headerbg1.gif);
+            background-image: url(https://bitcalm.com/media/2015/4/4/angular_0_ukId1ZP.jpg);
+            background-size: 30%;
+            // background-size: 100%;
+            background-repeat: repeat;
+            background-position: 0px 0px;
+            // background-position: 0px 0px;
+
+            @media screen and (max-width: 650px) {
+                background-size: 50%;
+            }
+
+            .wrap {
+                background-color: rgba(186, 42, 0, 0.5);
+
+                .slogan h1 {
+                    color: #6F3026;
                 }
             }
         }

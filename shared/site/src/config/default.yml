@@ -1,4 +1,4 @@
-version: '0.19-added-docker-workshop'
+version: '0.20-added-vagrant-workshop'
 
 environment: default
 debug: false
