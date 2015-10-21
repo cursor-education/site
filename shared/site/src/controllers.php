@@ -42,6 +42,27 @@ $app->match('/', function () use ($app) {
 })
 ->bind('landing');
 
+// @route promo page
+$app->match('/promo/{id}', function (Request $request) use ($app) {
+    $promoId = $request->get('id');
+
+    $page = (array) $app['pages.model']->findAndMerge('page', array(
+        'landing',
+        'promo',
+        'promo '.$promoId,
+    ), array(
+        'meta author' => 'ss',
+    ));
+
+    return $app['twig']->render('promo/'.$promoId.'/index.html.twig', array(
+        'title' => $page['title'],
+        'meta_keywords' => $page['meta keywords'],
+        'meta_description' => $page['meta description'],
+        'meta_author' => $page['meta author'],
+    ));
+})
+->bind('promo');
+
 // @route course page
 $app->match('/course/{id}', function (Request $request) use ($app) {
     $courseId = $request->get('id');
@@ -87,22 +108,19 @@ $app->match('/workshop/{id}', function (Request $request) use ($app) {
         $app->abort(404, $errorMessage);
     }
 
-    $page = (array) $app['pages.model']->findBy('page', 'workshop '.$workshopId);
-
-    if (empty($page['title']))
-        $page['title'] = $workshop['title'] . ' | CURSOR.education';
-
-    if (empty($page['meta keywords']))
-        $page['meta keywords'] = join(', ', array(
+    $page = $app['pages.model']->findAndMerge('page', array(
+        'landing',
+        'workshop',
+        'workshop '.$workshopId,
+    ), array(
+        'title' => $workshop['title'] . ' | CURSOR.education',
+        'meta keywords' => join(', ', array(
             $workshop['title'],
             $workshop['desc'],
-        ));
-
-    if (empty($page['meta description']))
-        $page['meta description'] = $workshop['desc'];
-
-    if (empty($page['meta author']))
-        $page['meta author'] = $workshop['title'];
+        )),
+        'meta description' => $workshop['desc'],
+        'meta author' => $workshop['title'],
+    ));
 
     if (isset($_GET['debug']) && $app['debug']) {
         var_dump($course);
@@ -128,24 +146,23 @@ $app->match('/teacher/{id}', function (Request $request) use ($app) {
         return $app->redirect('/');
     }
 
-    $page = $app['pages.model']->findBy('page', 'teacher '.$teacherId);
-    
     // set default values for meta
-    $page = array_merge(array(
+    $page = $app['pages.model']->findAndMerge('page', array(
+        'landing',
+        'teacher',
+        'teacher '.$teacherId,
+    ), array(
         'title' => $teacher['name'] . ' | CURSOR.education',
-
         'meta keywords' => join(', ', array(
             $teacher['name'],
             $teacher['position'],
             join(', ', $teacher['courses'])
         )),
-
         'meta description' => join('. ', array(
             $teacher['desc_short'],
         )),
-
         'meta author' => $teacher['name'],
-    ), (array) $page);
+    ));
 
     if (isset($_GET['debug']) && $app['debug']) {
         var_dump($page, $teacher);
