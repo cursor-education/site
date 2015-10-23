@@ -87,15 +87,23 @@ body {
         .directions-types {
             text-align: center;
 
+            @media screen and (max-width: 650px) {
+                margin-bottom: 30px;
+            }
+
             h2 {
                 display: inline-block;
                 cursor: pointer;
+                text-decoration: underline;
+
+                opacity: 0.8;
+                padding: 8px 0px;
 
                 transition: all .3s ease-in-out;
 
-                opacity: 0.8;
-
-                padding: 8px 0px;
+                @media screen and (max-width: 650px) {
+                    margin: 0;
+                }
 
                 &:hover {
                     opacity: 1;
@@ -104,10 +112,12 @@ body {
                 &.active {
                     border-bottom: none;
                     opacity: 1;
-                    background-color: #FFF;
+                    background-color: rgba(250, 207, 59, 0.7);
                     
                     padding-right: 22px;
                     padding-left: 22px;
+
+                    text-decoration: none;
                 }
             }
 
