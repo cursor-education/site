@@ -1,4 +1,4 @@
-version: '0.20-added-vagrant-workshop'
+version: '.50-added Makefile'
 
 environment: default
 debug: false
