@@ -14,7 +14,7 @@ class Pages extends \app\models\Base {
         $page = array();
 
         foreach ($values as $value) {
-            $metas = $this->findBy($key, $value);
+            $metas = (array) $this->findBy($key, $value);
             
             foreach ($metas as $metaKey => $metaValue) {
                 if ($metaValue) {
