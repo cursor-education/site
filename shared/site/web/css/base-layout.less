@@ -414,6 +414,7 @@ body {
     // background-position: right 0px;
 
     // @src: https://yalantis.com/media/content/ckeditor/2014/11/Katy-2.jpg
+    background-color: #01134C;
     background-image: url(https://yalantis.com/media/content/ckeditor/2014/11/Katy-2.jpg);
     background-size: 100%;
     background-position: center -190px;
@@ -443,36 +444,6 @@ body {
     padding: 0px;
 
     z-index: @zindex-header;
-
-    &:before {
-        left: -30px;
-        height: 60px;
-        width: 50%;
-
-        @media screen and (max-width: 650px) {
-            left: -29px;
-        }
-    }
-
-    &:after {
-        right: -30px;
-        height: 60px;
-        width: 50%;
-
-        @media screen and (max-width: 650px) {
-            right: -29px;
-        }
-    }
-
-    &:before,
-    &:after {
-        content: "";
-
-        position: absolute;
-        bottom: 0;
-
-        background-color: @header-below-bg;
-    }
 
     .wrap {
         margin: 0 auto;
@@ -509,6 +480,10 @@ body {
                 word-wrap: break-word;
                 word-break: break-word;
             }
+        }
+
+        span {
+            box-shadow: 5px 5px 5px rgba(43, 32, 0, 0.42);
         }
 
         span,
@@ -579,22 +554,24 @@ body {
     position: relative;
     z-index: @zindex-header-arrow;
 
-    &:after {
-        content: "";
+    background: #FACF3B;
 
-        position: absolute;
-        top: -60px;
-        left: 50%;
-        height: 0;
-        width: 0;
+    height: 50px;
+    margin-top: -40px;
+    margin-bottom: -20px;
 
-        margin-left: -30px;
+    padding-bottom: 20px;
 
-        border: solid transparent;
-        border-width: 30px;
+    transform: skew(0deg, -1.5deg);
 
-        border-color: @header-below-bg;
-        border-top-color: transparent;
+    &:before {
+        content: '';
+        display: block;
+
+        box-shadow: 0 -8px 7px rgba(0, 0, 0, 0.37);
+
+        width: 100%;
+        height: 30px;
     }
 }
 
