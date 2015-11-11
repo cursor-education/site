@@ -112,7 +112,7 @@ body {
                 &.active {
                     border-bottom: none;
                     opacity: 1;
-                    background-color: rgba(250, 207, 59, 0.7);
+                    background-color: rgba(255, 255, 255, 0.7);
                     
                     padding-right: 22px;
                     padding-left: 22px;
@@ -496,10 +496,10 @@ body {
                     i {
                         display: inline-block;
 
-                        @size: 15px;
+                        @size: 16px;
                         width: @size;
                         height: @size;
-                        background-size: @size;
+                        // background-size: @size;
 
                         margin-right: 4px;
 
@@ -513,31 +513,27 @@ body {
                         }
 
                         &.linkedin {
-                            background-image: url(/img/icons/linkedin2-32.png);
+                            .sprite(@icon-icons-linkedin-mono-16);
                         }
 
                         &.facebook {
-                            background-image: url(/img/icons/facebook2-32.png);
-                        }
-
-                        &.twitter {
-                            background-image: url(/img/icons/twitter2-24.png);
+                            .sprite(@icon-icons-facebook-mono-16);
                         }
 
                         &.instagram {
-                            background-image: url(/img/icons/instagram2-32.png);
+                            .sprite(@icon-icons-instagram-mono-16);
                         }
 
                         &.skype {
-                            background-image: url(/img/icons/skype2-32.png);
+                            .sprite(@icon-icons-skype-mono-16);
                         }
 
                         &.vkontakte {
-                            background-image: url(/img/icons/vk2-32.png);
+                            .sprite(@icon-icons-vk-mono-16);
                         }
 
                         &.github {
-                            background-image: url(/img/icons/github2-32.png);
+                            .sprite(@icon-icons-github-mono-16);
                         }
                     }
                 }
