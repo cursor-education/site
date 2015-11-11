@@ -55,6 +55,7 @@ $app->match('/promo/{id}', function (Request $request) use ($app) {
     ));
 
     return $app['twig']->render('promo/'.$promoId.'/index.html.twig', array(
+        'promoId' => $promoId,
         'title' => $page['title'],
         'meta_keywords' => $page['meta keywords'],
         'meta_description' => $page['meta description'],
