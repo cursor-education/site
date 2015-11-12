@@ -1,2 +1,2 @@
-/* 2015-11-11 22:11:11 */
+/* 2015-11-12 21:11:49 */
 var app;app={init:function(){return app.initScrollHook(),helpers.initTooltip(),app.initPageBackground()},initScrollHook:function(){return window.onscroll=function(){return helpers.scrollHook()},window.onscroll()},initPageBackground:function(){var a;return teacher.background_image?(a=document.getElementById("bg-image"),a.style.backgroundImage="url("+teacher.background_image+")"):void 0}},app.init();
