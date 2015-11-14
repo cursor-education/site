@@ -114,7 +114,7 @@ $app->match('/workshop/{id}', function (Request $request) use ($app) {
         'workshop',
         'workshop '.$workshopId,
     ), array(
-        'title' => $workshop['title'] . ' | CURSOR.education',
+        'title' => $workshop['title'] . ' | CURSOR Education',
         'meta keywords' => join(', ', array(
             $workshop['title'],
             $workshop['desc'],
@@ -153,7 +153,7 @@ $app->match('/teacher/{id}', function (Request $request) use ($app) {
         'teacher',
         'teacher '.$teacherId,
     ), array(
-        'title' => $teacher['name'] . ' | CURSOR.education',
+        'title' => $teacher['name'] . ' | CURSOR Education',
         'meta keywords' => join(', ', array(
             $teacher['name'],
             $teacher['position'],
@@ -164,6 +164,8 @@ $app->match('/teacher/{id}', function (Request $request) use ($app) {
         )),
         'meta author' => $teacher['name'],
     ));
+
+    $page['title'] = str_replace(':teacher-name', $teacher['name'], $page['title']);
 
     if (isset($_GET['debug']) && $app['debug']) {
         var_dump($page, $teacher);
