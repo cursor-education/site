@@ -5,6 +5,7 @@
 @import 'base-layout.less';
 @import 'page-course-courses.less';
 
+@import './sprites/sprites-icons.less';
 @import './sprites/sprites-teachers.less';
 
 i.icon {
@@ -108,7 +109,7 @@ body#page-course {
                     height: auto;
 
                     i.icon {
-                        background-image: url(/img/icons/salesman-20.png);
+                        .sprite(@icon-icons-salesman-20px);
                     }
 
                     .label,
@@ -146,13 +147,13 @@ body#page-course {
 
                 &.during {
                     i.icon {
-                        background-image: url(/img/icons/chart-20.png);
+                        .sprite(@icon-icons-chart-20px);
                     }
                 }
 
                 &.price {
                     i.icon {
-                        background-image: url(/img/icons/bag-cash-20.png);
+                        .sprite(@icon-icons-bag-cash-20px);
                     }
                 }
             }
@@ -199,6 +200,10 @@ body#page-course {
             font-size: 15px;
 
             &.links {
+                li {
+                    margin-bottom: 3px;
+                }
+
                 a {
                     font: 14px verdana;
                     text-decoration: none;
@@ -209,6 +214,7 @@ body#page-course {
                     &:hover {
                         text-decoration: underline;
                         color: rgba(255, 255, 255, 0.8);
+                        background: none;
                     }
                 }
             }
@@ -240,6 +246,17 @@ body#page-course {
             box-shadow: @section-COURSE-PROGRAM-bg 0px 3px 2px -2px;
         }
 
+        h4 {
+            text-align: center;
+
+            margin-top: -@section-h2-margin-bottom;
+            margin-bottom: @section-h2-margin-bottom;
+
+            color: @section-COURSE-PROGRAM-h2;
+
+            opacity: 0.8;
+        }
+
         .row {
             text-align: center;
 
@@ -259,6 +276,8 @@ body#page-course {
 
                 transition: all .4s ease;
                 cursor: default;
+
+                box-shadow: 1px 1px 2px rgba(43,32,0,0.1);
 
                 @media screen and (max-width: 650px) {
                     display: block;
@@ -312,7 +331,6 @@ body#page-course {
                     }
                 }
 
-
                 .childs {
                     color: #434B56;
 
@@ -320,8 +338,12 @@ body#page-course {
                     margin-bottom: 5px;
                     margin-left: 45px;
 
+                    list-style: circle;
+
                     span {
-                        display: block;
+                        display: list-item;
+
+                        // display: block;
                         font-size: 15px;
                         margin-right: 5px;
                     }
@@ -391,6 +413,8 @@ body#page-course {
                 }
 
                 .icon-row {
+                    display: table;
+
                     background: rgba(255, 255, 255, 0.2);
                     border-radius: 50%;
 
@@ -401,7 +425,8 @@ body#page-course {
                 }
 
                 .icon-wrap {
-                    display: block;
+                    display: table-cell;
+                    vertical-align: middle;
 
                     @size: 70px;
                     width: @size;
