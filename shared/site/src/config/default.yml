@@ -1,4 +1,4 @@
-version: '1.60-updated-static--'
+version: '1.70-updated-static--'
 
 environment: default
 debug: false
