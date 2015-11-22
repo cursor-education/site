@@ -9,7 +9,7 @@
       {% for plan in coursePlan %}
         <div class="item">
             <div class="title">
-                <div class="num">{{ plan.num }}</div>
+                <div class="num">{{ loop.index }}</div>
                 <span>{{ plan.title }}</span>
             </div>
 
