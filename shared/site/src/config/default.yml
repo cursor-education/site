@@ -1,4 +1,4 @@
-version: '1.70-updated-static--'
+version: '1.80-added-QA-responsible-person-contacts--'
 
 environment: default
 debug: false
