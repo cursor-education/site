@@ -190,6 +190,7 @@ $app->post('/callme', function (Request $request) use ($app) {
         date('Y-m-d H:i:s'),
         'landing',
         $request->get('name'),
+        $request->get('email'),
         $request->get('phone'),
     );
 
@@ -211,6 +212,7 @@ $app->post('/callme-course', function (Request $request) use ($app) {
         date('Y-m-d H:i:s'),
         $request->get('course'),
         $request->get('name'),
+        $request->get('email'),
         $request->get('phone'),
     );
 
@@ -232,6 +234,7 @@ $app->post('/callme-workshop', function (Request $request) use ($app) {
         date('Y-m-d H:i:s'),
         $request->get('workshop'),
         $request->get('name'),
+        $request->get('email'),
         $request->get('phone'),
     );
 
