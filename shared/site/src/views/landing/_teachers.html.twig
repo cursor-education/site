@@ -14,7 +14,7 @@
 
             <div class="courses">
               {% for course in teacher.courses %}
-                <i class="course course-{{ course }}" ></i>
+                <i class="course course-{{ course }}" title="{{ course|upper }}"></i>
               {% endfor %}
             </div>
             
