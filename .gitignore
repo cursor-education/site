@@ -12,5 +12,8 @@ shared/site/node_modules
 shared/site/src/config/dev.yml
 shared/site/src/config/production.yml
 
+# registration form file
+shared/site/web/*.txt
+
 @temp
 cache/
