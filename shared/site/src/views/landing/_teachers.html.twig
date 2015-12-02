@@ -8,14 +8,16 @@
 
       {% for teacher in teachers %}
         <div id="{{ teacher.id }}" class="t">
-          <a href="{{ path('teacher', {id: teacher.id}) }}">
-            <div class="name">{{ teacher.name }}</div>
-            <div class="position">{{ teacher.position }}</div>
+          <a class="teacher-link" href="{{ path('teacher', {id: teacher.id}) }}">
+            <div class="info">
+              <div class="name">{{ teacher.name }}</div>
+              <div class="position">{{ teacher.position }}</div>
 
-            <div class="courses">
-              {% for course in teacher.courses %}
-                <i class="course course-{{ course }}" title="{{ course|upper }}"></i>
-              {% endfor %}
+              <div class="courses">
+                {% for course in teacher.courses %}
+                  <i class="course course-{{ course }}" title="{{ course|upper }}"></i>
+                {% endfor %}
+              </div>
             </div>
             
             <img class="photo" src="{{ teacher.photo }}" />

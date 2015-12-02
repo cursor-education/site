@@ -49,7 +49,7 @@ body {
 
             b {
                 color: black;
-                
+
                 font: 17px 'Open Sans';
                 font-weight: bold;
             }
@@ -334,33 +334,12 @@ body {
 
                 padding: 25px;
 
-                a {
+                a.teacher-link {
                     display: block;
                     text-decoration: none;
                     color: @section-TEACHERS-color;
-                }
 
-                @media screen and (max-width: 650px) {
-                    .clearfix;
-
-                    display: block;
-                    width: 100%;
-
-                    margin: 0;
-                    margin-bottom: 10px;
-
-                    padding: 0;
-                    padding-bottom: 15px;
-                    padding-top: 10px;
-
-                    .desc {
-                        width: auto !important;
-                    }
-
-                    .name {
-                        background: #A4B0D6;
-                        padding: 10px 5px;
-                    }
+                    transition: all .15s ease;
                 }
 
                 transition: all .4s ease;
@@ -538,6 +517,60 @@ body {
                         &.github {
                             .sprite(@icon-icons-github-mono-16);
                         }
+                    }
+                }
+
+                @media screen and (max-width: 650px) {
+                    .clearfix;
+
+                    display: block;
+                    width: 100%;
+
+                    margin: 0;
+                    margin-bottom: 10px;
+
+                    padding: 0;
+
+                    &:hover {
+                        background: #7C89B1;
+
+                        a.teacher-link {
+                            background: #59658A;
+                        }
+                    }
+
+                    a.teacher-link {
+                        background: #A4B0D6;
+                        padding: 10px;
+                    }
+
+                    .info {
+                        display: inline-block;
+                        vertical-align: top;
+                        margin-right: 10px;
+                    }
+
+                    .name {
+                        padding: 10px 5px;
+                    }
+
+                    img.photo {
+                        width: 100px;
+                        display: inline-block;
+                        margin: 0;
+                        padding: 0;
+                        vertical-align: top;
+                    }
+
+                    .desc {
+                        width: auto;
+                        margin-top: 5px;
+                        padding-left: 5px;
+                        padding-right: 5px;
+                    }
+
+                    .list {
+                        margin-top: 5px;
                     }
                 }
             }
