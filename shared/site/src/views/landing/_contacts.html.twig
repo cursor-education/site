@@ -80,8 +80,36 @@
         
         var ukMarker = new google.maps.Marker({
           position: ukLatlng,
-          map: ukMap
+          map: ukMap,
+          title: "CURSOR Education"
         });
+        
+        new google.maps.Polyline({
+          path: [
+            {lat: 49.84848696, lng: 24.0202345},
+            {lat: 49.84845583, lng: 24.02080715},
+            {lat: 49.84883632, lng: 24.02088225},
+            {lat: 49.84880865, lng: 24.02122155}
+          ],
+          geodesic: true,
+          strokeColor: '#0000FF',
+          strokeOpacity: 1.0,
+          strokeWeight: 3
+        }).setMap(ukMap);
+
+        new google.maps.Polyline({
+          path: [
+            {lat: 49.84980656, lng: 24.02444959},
+            {lat: 49.84822234, lng: 24.0243423},
+            {lat: 49.84831574, lng: 24.02152061},
+            {lat: 49.84878098, lng: 24.02158767},
+            {lat: 49.84880778, lng: 24.02132615}
+          ],
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 3
+        }).setMap(ukMap);
       </script>
 
     </div>
