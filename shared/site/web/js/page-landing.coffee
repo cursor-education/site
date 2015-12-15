@@ -1,6 +1,7 @@
 #
 app =
     init: ->
+        helpers.initMap()
         app.initScrollHook()
         helpers.initScrollToTopEls()
         helpers.initSubmitForm()
