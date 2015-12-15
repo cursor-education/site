@@ -2,34 +2,47 @@
 <div id="course-description" class="curve-after section">
   <div class="wrap clearfix">
 
-    <div class="top-line">
-      <div class="item teachers">
-        <i class="icon"></i>
-        <span class="label">Викладачі:</span>
-
-        <span class="teachers-list">
-          {% for teacher in course.teachers %}
-            <a class="tooltip" title="{{ teacher.name }}" href="{{ path('teacher', {id: teacher.id}) }}">
-              <img src="{{ teacher.photo }}"/>
-            </a>
-          {% endfor %}
-        </span>
-      </div>
-
-      <div class="item during">
-        <i class="icon"></i>
-        <span class="label">Тривалість: <span class="highlight">{{ course.duration }}</span></span>
-      </div>
-
-      <div class="item price">
-        <i class="icon"></i>
-        <span class="label">Вартість: <span class="highlight">{{ course.price }}</span></span>
-      </div>
-    </div>
-
     <div class="desc">
       {{ course.desc_full|raw }}
       <br/>
+    </div>
+
+    <div class="general-information">
+      {% if course.teachers %}
+        <div class="item teachers">
+          <div class="label">Викладачі:</div>
+
+          <div class="value">
+            <span class="teachers-list">
+              {% for teacher in course.teachers %}
+                <a class="tooltip" title="{{ teacher.name }}" href="{{ path('teacher', {id: teacher.id}) }}">
+                  <img src="{{ teacher.photo }}"/>
+                </a>
+              {% endfor %}
+            </span>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="item during">
+        <div class="label">Тривалість:</div>
+        <div class="value">{{ course.duration }}</div>
+      </div>
+
+      <div class="item start">
+        <div class="label">Наступний набір:</div>
+        <div class="value">{{ course.start }}</div>
+      </div>
+
+      <div class="item sticked available-seats">
+        <div class="label">Вільних місць:</div>
+        <div class="value">{{ course.seats }}</div>
+      </div>
+
+      <div class="item price">
+        <div class="label">Вартість:</div>
+        <div class="value">{{ course.price }}</div>
+      </div>
     </div>
 
   </div>

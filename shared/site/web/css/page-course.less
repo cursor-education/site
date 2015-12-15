@@ -43,20 +43,35 @@ body#page-course {
             margin-top: -15px;
         }
 
-        .top-line {
-            margin-bottom: 15px;
+        .general-information,
+        .desc {
+            display: table-cell;
+            vertical-align: top;
+
+            @media screen and (max-width: 650px) {
+                display: block;
+
+                // &.desc {
+                //     float: right;
+                // }
+            }
+        }
+
+        .general-information {
+            width: 20%;
 
             .item {
                 display: inline-block;
                 background: rgba(0, 0, 0, 0.1);
 
-                height: 25px;
+                // width: 100%;
+
                 vertical-align: top;
 
+                margin-bottom: 7px;
                 padding: 8px 10px;
-                margin-right: 5px;
 
-                box-shadow: 1px 1px 2px rgba(43, 32, 0, 0.42);
+                box-shadow: 1px 1px 2px rgba(43, 32, 0, 0.3);
 
                 transition: all .4s ease;
 
@@ -72,46 +87,33 @@ body#page-course {
                 &:hover {
                     cursor: default;
                     background: rgba(0, 0, 0, 0.25);
-
-                    i.icon {
-                        opacity: 1 !important;
-                    }
                 }
 
-                i.icon,
-                span.label {
+                .label {
                     display: inline-block;
                     vertical-align: middle;
-                }
-                
-                i.icon {
-                    background-repeat: no-repeat;
-                    width: 20px;
-                    height: 20px;
-
-                    margin-right: 4px;
-
-                    opacity: 0.4;
-
-                    transition: all .4s ease;
+                    font-size: 15px;
+                    opacity: 0.8;
                 }
 
-                span.label {
+                .value {
                     font-size: 16px;
+                }
 
-                    .highlight {
-                        // color: white;
+                &.sticked {
+                    .item,
+                    .value {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    
+                    .value {
+                        margin-left: 4px;
                     }
                 }
 
                 &.teachers {
-                    @teacher-icon-size: 25px;
-
-                    height: auto;
-
-                    i.icon {
-                        .sprite(@icon-icons-salesman-20px);
-                    }
+                    @teacher-icon-size: 40px;
 
                     .label,
                     .teachers-list {
@@ -121,16 +123,15 @@ body#page-course {
                     }
 
                     .label {
-                        margin-top: 1px;
-                        margin-right: 5px;
+                        opacity: 1;
                     }
 
                     .teachers-list {
-                        height: @teacher-icon-size;
+                        min-height: @teacher-icon-size;
 
                         a {
                             display: inline-block;
-                            margin-right: 3px;
+                            margin-right: 4px;
                             height: @teacher-icon-size;
 
                             &:last-child {
@@ -147,21 +148,18 @@ body#page-course {
                 }
 
                 &.during {
-                    i.icon {
-                        .sprite(@icon-icons-chart-20px);
-                    }
+                    // 
                 }
 
                 &.price {
-                    i.icon {
-                        .sprite(@icon-icons-bag-cash-20px);
-                    }
+                    //
                 }
             }
         }
 
         .desc {
             font-size: 16px;
+            line-height: 25px;
 
             a {
                 color: rgba(255, 255, 255, 0.87);
@@ -201,6 +199,9 @@ body#page-course {
             font-size: 15px;
 
             &.links {
+                line-height: 20px;
+                margin-top: 5px;
+
                 li {
                     margin-bottom: 3px;
                 }
