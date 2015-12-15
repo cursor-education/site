@@ -44,6 +44,51 @@ body#page-course {
         }
     }
 
+    &.course-uiux {
+        @s: #05A9A9;
+
+        #header {
+            &:before,
+            &:after {
+                background-color: @s;
+            }
+
+            background-image: url(/img/courses/uiux-headerbg1.png);
+            background-size: 35%;
+            background-repeat: repeat;
+            background-position: -20px 15px;
+
+            @media screen and (max-width: 650px) {
+                background-size: 100%;
+            }
+
+            .wrap {
+                background-color: rgba(11, 138, 138, 0.62);
+
+                .slogan h1 {
+                    color: #046161;
+                }
+            }
+        }
+
+        #header-arrow {
+            background-color: @s;
+
+            &:after {
+                border-color: @s;
+                border-top-color: rgba(0, 0, 0, 0);
+            }
+        }
+
+        #course-description {
+            background-color: @s;
+
+            &:after {
+                background-color: @s;
+            }
+        }
+    }
+
     &.course-php {
         @s: #7480A8;
 
