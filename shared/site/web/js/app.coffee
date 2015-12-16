@@ -48,6 +48,13 @@ window.helpers =
           zoom: 16
           scrollwheel: false
           mapTypeId: google.maps.MapTypeId.ROADMAP
+          styles: [
+            stylers: [
+              { hue: "#303842" }
+              { saturation: -70 }
+              { gamma: 1 }
+            ]
+          ]
         )
 
         ukMarker = new google.maps.Marker(
@@ -64,9 +71,9 @@ window.helpers =
             {lat: 49.84880865, lng: 24.02122155}
           ]
           geodesic: true
-          strokeColor: '#0000FF'
+          strokeColor: '#303842'
           strokeOpacity: 1.0
-          strokeWeight: 3
+          strokeWeight: 5
         }).setMap(ukMap)
 
         new google.maps.Polyline({
@@ -78,9 +85,9 @@ window.helpers =
             {lat: 49.84880778, lng: 24.02132615}
           ]
           geodesic: true
-          strokeColor: '#FF0000'
+          strokeColor: '#CAA320'
           strokeOpacity: 1.0
-          strokeWeight: 3
+          strokeWeight: 5
         }).setMap(ukMap)
 
     initTooltip: () ->
