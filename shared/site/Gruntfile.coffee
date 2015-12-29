@@ -27,7 +27,7 @@ module.exports = (grunt) ->
                     dest:      "#{serverDir}/assets/sprites-#{spriteName}.png"
                     destCss:   "#{serverDir}/css/sprites/sprites-#{spriteName}.less"
                     # cssFormat: 'less'
-                    imgPath:   "/assets/sprites-#{spriteName}.png"
+                    imgPath:   "/assets/sprites-#{spriteName}.png?<%= grunt.template.today('yyyymmddHHmmss') %>"
                     cssVarMap: (sprite) =>
                         sprite.name = "icon-#{spriteName}-#{sprite.name}";
                         return;
