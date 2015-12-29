@@ -50,26 +50,25 @@ body#page-course {
 
             @media screen and (max-width: 650px) {
                 display: block;
-
-                // &.desc {
-                //     float: right;
-                // }
             }
         }
 
         .general-information {
             width: 20%;
 
+            @media screen and (max-width: 650px) {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
             .item {
                 display: inline-block;
                 background: rgba(0, 0, 0, 0.1);
 
-                // width: 100%;
-
                 vertical-align: top;
 
                 margin-bottom: 7px;
-                padding: 8px 10px;
+                padding: 10px 15px;
 
                 box-shadow: 1px 1px 2px rgba(43, 32, 0, 0.3);
 
@@ -82,6 +81,26 @@ body#page-course {
 
                     margin: 0 auto;
                     margin-bottom: 5px;
+
+                    padding: 5px 10px;
+
+                    .item,
+                    .value {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    
+                    .value {
+                        margin-left: 4px;
+                        margin-top: 2px;
+                    }
+
+                    &.teachers {
+                        .item,
+                        .value {
+                            display: block;
+                        }
+                    }
                 }
 
                 &:hover {
@@ -160,6 +179,17 @@ body#page-course {
         .desc {
             font-size: 16px;
             line-height: 25px;
+            padding-left: 30px;
+
+            @media screen and (max-width: 650px) {
+                padding-left: 0;
+            }
+
+            b {
+                background: rgba(255, 255, 255, 0.18);
+                padding: 1px 3px;
+                font-weight: normal;
+            }
 
             a {
                 color: rgba(255, 255, 255, 0.87);
@@ -204,6 +234,10 @@ body#page-course {
 
                 li {
                     margin-bottom: 3px;
+                }
+
+                b {
+                    background: transparent;
                 }
 
                 a {
