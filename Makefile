@@ -1,10 +1,10 @@
 CONFIG = shared/site/src/config/default.yml
 
 VERSION = $$(cat ${CONFIG} | grep version | grep -iEo '([0-9\.]+)' | head -1)
-COMMENT = $$(git log --oneline --pretty=%B -1 | perl -pe 's/[^\w.-]+/-/g')
+COMMENT = $$(git log --oneline --pretty=%B -1 | perl -pe 's/[^\w.-]+//g')
 
-VERSION_NEW = ${VERSION}
-VERSION_NEW=`echo ${VERSION} + 0.1 | bc`
+VERSION_MINOR_NEW = `echo ${VERSION} + 0.01 | bc`
+VERSION_MAJOR_NEW = `echo ${VERSION} + 1.0 | bc`
 
 up:
 	vagrant up
@@ -12,12 +12,16 @@ up:
 ssh:
 	vagrant ssh
 
-release:
-	@echo ${VERSION}
-	@echo ${VERSION_NEW}
-	
-	cat ${CONFIG} | sed -e "s/version.*/version: '${VERSION_NEW}-${COMMENT}'/g" > ${CONFIG}
+release-major:
+	@echo release ${VERSION_MAJOR_NEW}
+	cat ${CONFIG} | sed -e "s/version.*/version: '${VERSION_MAJOR_NEW}-${COMMENT}'/g" > ${CONFIG}
 	git add ${CONFIG}
-	git commit -m "release ${VERSION_NEW}" ${CONFIG}
+	git commit -m "release ${VERSION_MINOR_NEW}" ${CONFIG}
+
+release-minor:
+	@echo release ${VERSION_MINOR_NEW}
+	cat ${CONFIG} | sed -e "s/version.*/version: '${VERSION_MINOR_NEW}-${COMMENT}'/g" > ${CONFIG}
+	git add ${CONFIG}
+	git commit -m "release ${VERSION_MINOR_NEW}" ${CONFIG}
 
 .PHONY: up ssh
