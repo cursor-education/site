@@ -176,6 +176,11 @@ body {
                     span {
                         border-bottom-color: @section-CONTACTS-color;
                     }
+
+                    i.icon {
+                        filter: none;
+                        -webkit-filter: none;
+                    }
                 }
 
                 &:active {
@@ -193,11 +198,21 @@ body {
 
             background-repeat: no-repeat;
 
+            &.email,
+            &.linkedin,
+            &.github,
+            &.vkontakte,
+            &.facebook {
+                filter: grayscale(80%);
+                -webkit-filter: grayscale(90%);
+            }
+
             &.linkedin { .sprite(@icon-icons-linkedin-16px); }
             &.github { .sprite(@icon-icons-github-16px); }
             &.email { .sprite(@icon-icons-mail-16px); }
             &.phone { .sprite(@icon-icons-whatsapp-16px); }
             &.vkontakte { .sprite(@icon-icons-vkontakte-16px); }
+            &.facebook { .sprite(@icon-icons-facebook-16px); }
         }
     }
 
@@ -212,12 +227,12 @@ body {
         }
 
         &:before {
-            box-shadow: rgba(0, 0, 0, 0.29) 0px 3px 3px 4px;
+            box-shadow: rgba(0, 0, 0, 0.29) 0px 0px 3px 3px;
             z-index: 9999;
         }
 
         &:after {
-            box-shadow: rgba(0, 0, 0, 0.29) 0px -3px 3px 2px;
+            box-shadow: rgba(0, 0, 0, 0.29) 0px 0px 3px 3px;
             bottom: 0;
             margin-bottom: 0px;
         }
