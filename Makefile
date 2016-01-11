@@ -24,4 +24,8 @@ release-minor:
 	git add ${CONFIG}
 	git commit -m "release ${VERSION_MINOR_NEW}" ${CONFIG}
 
+release-static:
+	git add shared/site/web/assets/*
+	git commit -m "regenerated assets" shared/site/web/assets/*
+
 .PHONY: up ssh
