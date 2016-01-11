@@ -1,4 +1,4 @@
-version: '2.91-updatedmakefile'
+version: '2.92-regeneratedassets'
 
 environment: default
 debug: false
