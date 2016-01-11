@@ -12,7 +12,8 @@ body {
     #deeper { z-index: @zindex-section + @zindex-animated + 8 }
     #directions { z-index: @zindex-section + @zindex-animated + 7 }
     #teachers { z-index: @zindex-section + @zindex-animated + 6 }
-    #registration-form { z-index: @zindex-section + @zindex-animated + 4 }
+    #registration-form { z-index: @zindex-section + @zindex-animated + 5 }
+    #tools-for-students { z-index: @zindex-section + @zindex-animated + 4 }
     #students-companies { z-index: @zindex-section + @zindex-animated + 3 }
     #partners { z-index: @zindex-section + @zindex-animated + 2 }
 
@@ -656,6 +657,41 @@ body {
         }
     }
 
+    #tools-for-students {
+        background: @section-STUDENTSCOMPANIES-bg;
+        padding-top: 70px;
+        padding-bottom: 25px;
+
+        .wrap h2 {
+            color: @section-STUDENTSCOMPANIES-h2;
+        }
+
+        &.curve-after:after {
+            background: @section-STUDENTSCOMPANIES-bg;
+
+            transform: skew(0deg, -1.5deg);
+            -webkit-transform: skew(0deg, -1.5deg);
+
+            box-shadow: @section-STUDENTSCOMPANIES-bg 0px 3px 2px -2px;
+        }
+
+        .list {
+            .t {
+                max-width: 250px;
+
+                a {
+                    text-decoration: none;
+                    color: @section-STUDENTSCOMPANIES-h2;
+                    font-size: 14px;
+                }
+
+                img {
+                    max-width: 200px !important;
+                }
+            }
+        }
+    }
+
     #partners {
         background: @section-PARTNERS-bg;
         padding-top: 70px;
@@ -675,6 +711,7 @@ body {
     }
 
     #students-companies,
+    #tools-for-students,
     #partners {
         text-align: center;
 
