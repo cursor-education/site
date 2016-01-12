@@ -5,31 +5,22 @@
 
 ## Setup
 
-> ### on local environment
+> ### on local
 >
-> install vagrant dependencies
->
->     $ vagrant plugin install vagrant-hostmanager
->
->
-> initialize vagrant virtual box
->
->     $ vagrant destroy --force   # to reset vagrant image
->     $ vagrant up                # to setup virtual machine
->     $ vagrant ssh               # to enter inside of vm
->
->
-> initialize app dependencies
->
->     vm$ cd /vagrant/shared/site/
->     vm$ curl -sS https://getcomposer.org/installer | php
->     vm$ php composer.phar clearcache
->     vm$ php composer.phar install
->     vm$ grunt
->
->
-> and navigate to http://local.cursor.education/
->
->
+> ```bash
+> $ boot2docker up
+> $ make PORT=1234
+> $ open http://{site-address}:1234/
+> ```
+> 
+> ### on stage:
+> ```bash
+> $ curl -sSL https://get.docker.com/ | sh
+> $ docker -v
+> $ sudo service docker restart
+> $ git clone https://github.com/itspoma/cursor-education-site site/
+> $ cd site/ && make PORT=1234
+> $ open http://{site-address}:1234/
+> ```
 
 []()

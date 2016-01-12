@@ -1,31 +1,35 @@
-CONFIG = shared/site/src/config/default.yml
+IMAGE_NAME = cursor-education/site
+CONTAINER_NAME = cursor-education-site
 
-VERSION = $$(cat ${CONFIG} | grep version | grep -iEo '([0-9\.]+)' | head -1)
-COMMENT = $$(git log --oneline --pretty=%B -1 | perl -pe 's/[^\w.-]+//g')
+HOME = /shared
+PORT = 8080
 
-VERSION_MINOR_NEW = `echo ${VERSION} + 0.01 | bc`
-VERSION_MAJOR_NEW = `echo ${VERSION} + 1.0 | bc`
+.PHONY: all
 
-up:
-	vagrant up
+all: clean build run
+
+clean: remove-image remove-container
+
+remove-image:
+	docker rmi -f ${IMAGE_NAME} 2>/dev/null || true
+	docker images | grep ${IMAGE_NAME} || true
+
+remove-container:
+	docker rm -f ${CONTAINER_NAME} 2>/dev/null || true
+	docker ps -a
+
+build: stop
+	docker build -t ${IMAGE_NAME} .
+
+stop:
+	docker stop -f ${CONTAINER_NAME} 2>/dev/null || true
+
+run: stop
+	docker run --name=${CONTAINER_NAME} \
+		-p ${PORT}:8080 \
+		-v $$PWD:${HOME} \
+		-ti -d \
+		${IMAGE_NAME}
 
 ssh:
-	vagrant ssh
-
-release-major:
-	@echo release ${VERSION_MAJOR_NEW}
-	cat ${CONFIG} | sed -e "s/version.*/version: '${VERSION_MAJOR_NEW}-${COMMENT}'/g" > ${CONFIG}
-	git add ${CONFIG}
-	git commit -m "release ${VERSION_MINOR_NEW}" ${CONFIG}
-
-release-minor:
-	@echo release ${VERSION_MINOR_NEW}
-	cat ${CONFIG} | sed -e "s/version.*/version: '${VERSION_MINOR_NEW}-${COMMENT}'/g" > ${CONFIG}
-	git add ${CONFIG}
-	git commit -m "release ${VERSION_MINOR_NEW}" ${CONFIG}
-
-release-static:
-	git add shared/site/web/assets/*
-	git commit -m "regenerated assets" shared/site/web/assets/*
-
-.PHONY: up ssh
+	docker exec -ti ${CONTAINER_NAME} bash

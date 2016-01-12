@@ -1,21 +1,22 @@
+!.dockerignore
 !.gitignore
 !.keep
 !vendor
-.vagrant/
 
 .DS_Store
 
 logs/*
 composer.phar
 
-shared/site/node_modules
-shared/site/src/config/dev.yml
-shared/site/src/config/production.yml
+site/node_modules
 
-shared/site/web/css/sprites/*.less
+site/src/config/dev.yml
+site/src/config/production.yml
+
+site/web/css/sprites/*.less
 
 # registration form file
-shared/site/web/*.txt
+site/web/*.txt
 
 @temp
 cache/
