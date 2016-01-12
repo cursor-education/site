@@ -1,8 +1,11 @@
 FROM centos:6
 MAINTAINER itspoma <itspoma@gmail.com>
 
+ENV APP_ENV dev
+
 RUN yum clean all \
- && yum install -y git curl mc \
+ && yum install -y git curl mc bc \
+ && yum install -y gcc-c++ make \
  && yum install -y tar \
  && yum install -y epel-release
 
@@ -16,7 +19,8 @@ RUN echo "" >> /etc/php.ini \
  && sed 's/;date.timezone.*/date.timezone = Europe\/Kiev/' -i /etc/php.ini \
  && sed 's/^display_errors.*/display_errors = On/' -i /etc/php.ini \
  && sed 's/;error_log.*/error_log = \/shared\/logs\/php_errors.log/' -i /etc/php.ini \
- && sed 's/^display_startup_errors.*/display_startup_errors = On/' -i /etc/php.ini
+ && sed 's/^display_startup_errors.*/display_startup_errors = On/' -i /etc/php.ini \
+ && sed 's/^variables_order.*/variables_order = "EGPCS"/' -i /etc/php.ini
 
 
 # apache2
@@ -32,7 +36,9 @@ ADD ./environment/httpd/*.conf /etc/httpd/conf.d/
 
 
 # nodejs
-RUN yum -y install nodejs npm
+RUN curl --silent --location https://rpm.nodesource.com/setup | bash - \
+ && yum install -y nodejs \
+ && npm -g install npm@latest
 
 # install nodejs & npm & dependencies
 RUN npm install -g inherits \

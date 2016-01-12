@@ -1,8 +1,9 @@
 IMAGE_NAME = cursor-education/site
 CONTAINER_NAME = cursor-education-site
 
-HOME = /shared
-PORT = 8080
+APP_HOME = /shared
+APP_PORT = 80
+APP_ENV = production
 
 .PHONY: all
 
@@ -18,18 +19,34 @@ remove-container:
 	docker rm -f ${CONTAINER_NAME} 2>/dev/null || true
 	docker ps -a
 
-build: stop
+build: stop remove-container
 	docker build -t ${IMAGE_NAME} .
 
-stop:
-	docker stop -f ${CONTAINER_NAME} 2>/dev/null || true
+stop: remove-container
 
 run: stop
 	docker run --name=${CONTAINER_NAME} \
-		-p ${PORT}:8080 \
-		-v $$PWD:${HOME} \
+		-p ${APP_PORT}:8080 \
+		-v $$PWD:${APP_HOME} \
+		-e APP_ENV="${APP_ENV}" \
 		-ti -d \
 		${IMAGE_NAME}
 
+run-dev: run-dev-vars run
+run-dev-vars:
+	$(eval APP_PORT = 8080)
+	$(eval APP_ENV = dev)
+
 ssh:
 	docker exec -ti ${CONTAINER_NAME} bash
+
+release: release-static release-minor
+
+release-minor:
+	docker exec -ti ${CONTAINER_NAME} /bin/sh -c 'SEMVER=minor bash environment/release-project.sh'
+
+release-major:
+	docker exec -ti ${CONTAINER_NAME} /bin/sh -c 'SEMVER=major bash environment/release-project.sh'
+
+release-static:
+	docker exec -ti ${CONTAINER_NAME} /bin/sh -c 'SEMVER=major bash environment/release-static.sh'
