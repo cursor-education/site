@@ -1,0 +1,13 @@
+version: '2.93-c7e67d2-release2.93'
+
+environment: default
+debug: false
+twig.options.cache: false
+
+cache.enabled: true
+
+admin.username: null
+admin.password: null
+
+db.google.config.key: null
+db.google.config.gid: null
