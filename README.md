@@ -9,7 +9,7 @@
 >
 > ```bash
 > $ boot2docker up
-> $ make APP_PORT=8080 APP_ENV=dev
+> $ make set-dev all
 > $ open http://{site-address}:8080/
 > ```
 > 

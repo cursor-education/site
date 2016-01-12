@@ -9,6 +9,10 @@ APP_ENV = production
 
 all: clean build run
 
+set-dev:
+	$(eval APP_PORT = 8080)
+	$(eval APP_ENV = dev)
+
 clean: remove-image remove-container
 
 remove-image:
@@ -32,10 +36,7 @@ run: stop
 		-ti -d \
 		${IMAGE_NAME}
 
-run-dev: run-dev-vars run
-run-dev-vars:
-	$(eval APP_PORT = 8080)
-	$(eval APP_ENV = dev)
+run-dev: set-dev run
 
 ssh:
 	docker exec -ti ${CONTAINER_NAME} bash
