@@ -22,7 +22,14 @@ class GoogleSpreadsheetsApi {
             'tsv'
         );
 
-        $page = trim(file_get_contents($url));
+        $fetchContextOptions = array(
+            "ssl" => array(
+                "verify_peer" => false,
+                "verify_peer_name" => false,
+            ),
+        );
+
+        $page = trim(file_get_contents($url, false, stream_context_create($fetchContextOptions)));
 
         if (strpos($page, '<!DOCTYPE html>') === 0) {
             throw new \Exception(sprintf("The spreadsheet is private (key [%s], gid [%s] provided).", $key, $gid));
