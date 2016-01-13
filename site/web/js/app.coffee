@@ -41,9 +41,12 @@ window.helpers =
             done()
 
     initMap: () ->
+        mapEl = document.getElementById("lviv_office_map")
+        return unless mapEl
+
         ukLatlng = new google.maps.LatLng(49.848817, 24.021466)
 
-        ukMap = new google.maps.Map(document.getElementById("lviv_office_map"),
+        ukMap = new google.maps.Map(mapEl,
           center: ukLatlng
           zoom: 16
           scrollwheel: false
