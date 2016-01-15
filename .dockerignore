@@ -1,2 +1,2 @@
-logs/
-site/
+logs/*
+site/*

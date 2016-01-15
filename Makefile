@@ -1,38 +1,45 @@
 IMAGE_NAME = cursor-education/site
 CONTAINER_NAME = cursor-education-site
 
-APP_HOME = /shared
-APP_PORT = 80
-APP_ENV = production
+HOME = /shared
+PORT = 80
+ENV = production
 
 .PHONY: all
 
-all: clean build run
+all: up clean build run
+
+up:
+	git pull --force
 
 set-dev:
-	$(eval APP_PORT = 8080)
-	$(eval APP_ENV = dev)
+	$(eval PORT = 8080)
+	$(eval ENV = dev)
 
-clean: remove-image remove-container
+clean: clean-image clean-container
 
-remove-image:
+clean-all: clean
+	docker rm -f $$(docker ps -a -q) || true
+	docker ps -a
+
+clean-image:
 	docker rmi -f ${IMAGE_NAME} 2>/dev/null || true
 	docker images | grep ${IMAGE_NAME} || true
 
-remove-container:
+clean-container:
 	docker rm -f ${CONTAINER_NAME} 2>/dev/null || true
 	docker ps -a
 
-build: stop remove-container
+build: stop clean-container
 	docker build -t ${IMAGE_NAME} .
 
-stop: remove-container
+stop: clean-container
 
 run: stop
 	docker run --name=${CONTAINER_NAME} \
-		-p ${APP_PORT}:8080 \
-		-v $$PWD:${APP_HOME} \
-		-e APP_ENV="${APP_ENV}" \
+		-p ${PORT}:8080 \
+		-v $$PWD:${HOME} \
+		-e APP_ENV="${ENV}" \
 		-ti -d \
 		${IMAGE_NAME}
 
