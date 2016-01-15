@@ -5,25 +5,27 @@
 {% else %}
   {% for workshop in workshops %}
     <div class="t workshop workshop-{{ workshop.id }}">
-      <div class="title">
-        <div class="name">{{ workshop.title }}</div>
+      <div class="t-wrap">
+        <a class="title" href="{{ path('workshop', {id: workshop.id}) }}">
+          <div class="name">{{ workshop.title }}</div>
+        </a>
+
+        <div class="time">
+          <span>Дата:</span>&nbsp;<b class="tooltip" data-tooltip="{{ workshop.start }}">{{ workshop.start }}</b>
+          <br/>
+          <span>Тривалість:</span>&nbsp;<b>{{ workshop.duration }}</b>
+          <br/>
+          <span>Вартість:</span>&nbsp;<b>{{ workshop.price }}</b>
+        </div>
+
+        <a class="image" href="{{ path('workshop', {id: workshop.id}) }}">
+          <img src="{{ workshop.image }}" title="{{ workshop.title }}" />
+        </a>
+
+        <div class="desc">{{ workshop.desc }}</div>
+
+        <a href="{{ path('workshop', {id: workshop.id}) }}" class="more">Детальніше<span>&rarr;</span></a>
       </div>
-
-      <div class="time">
-        <span>Дата:</span>&nbsp;<b class="tooltip" data-tooltip="{{ workshop.start }}">{{ workshop.start }}</b>
-        <br/>
-        <span>Тривалість:</span>&nbsp;<b>{{ workshop.duration }}</b>
-        <br/>
-        <span>Вартість:</span>&nbsp;<b>{{ workshop.price }}</b>
-      </div>
-
-      <div class="image">
-        <img src="{{ workshop.image }}" title="{{ workshop.title }}" />
-      </div>
-
-      <div class="desc">{{ workshop.desc }}</div>
-
-      <a href="{{ path('workshop', {id: workshop.id}) }}" class="more">Детальніше<span>&rarr;</span></a>
     </div>
   {% endfor %}
 {% endif %}

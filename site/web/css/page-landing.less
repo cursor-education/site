@@ -172,14 +172,7 @@ body {
                 display: inline-block;
                 vertical-align: top;
 
-                margin-right: 20px;
-                margin-bottom: 20px;
-
-                width: 30%;
-
-                background: @course-bg;
-                border-radius: 3px;
-                box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+                width: 33%;
 
                 @media screen and (max-width: 650px) {
                     display: block;
@@ -192,15 +185,28 @@ body {
                 transition: all .4s ease;
 
                 &:hover {
-                    background: @course-hover-bg;
+                    .t-wrap {
+                        background: @course-hover-bg;
+                    }
 
                     .image img {
                         transform: perspective(500px) translateZ(30px);
                     }
                 }
 
+                .t-wrap {
+                    background: @course-bg;
+                    border-radius: 3px;
+                    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+
+                    margin: 10px;
+                    margin-bottom: 20px;
+                }
+
                 .title {
                     position: relative;
+                    display: block;
+                    text-decoration: none;
 
                     &:before {
                         content: '';
@@ -255,15 +261,19 @@ body {
                     margin-bottom: 20px;
                 }
 
-                .image img {
-                    max-width: 180px;
-                    max-height: 180px;
-                    min-height: 100px;
+                .image {
+                    display: block;
 
-                    margin: 0 auto;
+                    img {
+                        max-width: 180px;
+                        max-height: 180px;
+                        min-height: 100px;
 
-                    transform: perspective(500px) translateZ(0px);
-                    transition: all .15s ease;
+                        margin: 0 auto;
+
+                        transform: perspective(500px) translateZ(0px);
+                        transition: all .15s ease;
+                    }
                 }
 
                 .desc {
