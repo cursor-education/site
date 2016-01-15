@@ -38,7 +38,7 @@ window.helpers =
 
         scrollToX e, from, to, 0, 1/duration, 20, easeOutCuaic, ->
             window.scrollToWorking = false
-            done()
+            done?()
 
     initMap: () ->
         mapEl = document.getElementById("lviv_office_map")

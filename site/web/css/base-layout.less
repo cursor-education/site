@@ -493,7 +493,7 @@ body {
 
     .wrap {
         margin: 0 auto;
-        padding: 115px 50px 130px 50px;
+        padding: 95px 50px 100px 50px;
         background-color: @header-bg;
 
         max-width: none;
@@ -517,7 +517,7 @@ body {
         margin-top: 1px;
 
         @media screen and (max-width: 650px) {
-            margin-top: 85px;
+            margin-top: 65px;
 
             span {
                 display: block !important;
@@ -551,47 +551,52 @@ body {
         }
     }
 
-    // #learn-more-button {
-    //     display: none;
-    //     margin-top: 25px;
-    //     text-align: center;
+    .signup-button {
+        position: relative;
+        z-index: @zindex-slogan;
 
-    //     .button {
-    //         display: inline-block;
+        margin-top: 50px;
 
-    //         font-family: "Open Sans";
-    //         font-weight: 700;
-    //         font-size: 15px;
-    //         text-transform: uppercase;
-    //         text-align: center;
-    //         letter-spacing: 2px;
-    //         text-decoration: none;
+        text-align: center;
 
-    //         color: @header-learnmore-color;
-    //         background: @header-learnmore-bg;
-    //         border: 2px @header-learnmore-border solid;
+        .button {
+            display: inline-block;
 
-    //         width: 260px;
+            font-family: "Open Sans";
+            font-weight: 700;
+            font-size: 15px;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 2px;
+            text-decoration: none;
 
-    //         margin: 0 auto;
-    //         padding: 10px;
+            color: @header-learnmore-color;
+            background: @header-learnmore-bg;
+            border-radius: 4px;
 
-    //         cursor: pointer;
+            box-shadow: #4e545e 0px 0px 10px 1px;
 
-    //         transition: all 0.25s ease-in-out;
+            width: 230px;
 
-    //         &:hover {
-    //             background: @header-learnmore-hover-bg;
-    //             color: @header-learnmore-hover-color;
-    //             border-color: @header-learnmore-hover-bg;
-    //         }
+            margin: 0 auto;
+            padding: 13px;
 
-    //         &:active {
-    //             transform: translateY(2px);
-    //             -webkit-transform: translateY(2px);
-    //         }
-    //     }
-    // }
+            cursor: pointer;
+
+            transition: all 0.25s ease-in-out;
+
+            &:hover {
+                background: @header-learnmore-hover-bg;
+                color: @header-learnmore-hover-color;
+                border-color: @header-learnmore-hover-bg;
+            }
+
+            &:active {
+                transform: translateY(2px);
+                -webkit-transform: translateY(2px);
+            }
+        }
+    }
 }
 
 #header-arrow {
