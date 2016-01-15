@@ -24,3 +24,24 @@
 > ```
 
 []()
+
+## Configure forwarding multiple docker containers on same port
+
+```bash
+$ cat /etc/httpd/conf.d/docker.conf
+NameVirtualHost *:80
+
+<VirtualHost *:80>
+    ServerName site.cursor.education
+    ProxyPass / http://localhost:8080/
+    ProxyPassReverse / http://localhost:8080/
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerName mantisbt.cursor.education
+    ProxyPass / http://localhost:1234/
+    ProxyPassReverse / http://localhost:1234/
+</VirtualHost>
+```
+
+[]()
