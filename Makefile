@@ -57,4 +57,4 @@ release-major:
 	docker exec -ti ${CONTAINER_NAME} /bin/sh -c 'SEMVER=major bash environment/release-project.sh'
 
 release-static:
-	docker exec -ti ${CONTAINER_NAME} /bin/sh -c 'SEMVER=major bash environment/release-static.sh'
+	docker exec -ti ${CONTAINER_NAME} /bin/sh -c 'bash environment/release-static.sh'
