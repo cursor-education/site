@@ -13,6 +13,12 @@ use app\models\Teachers as TeachersModel;
 use app\models\TeachersCourses as TeachersCoursesModel;
 use app\models\TeachersLinks as TeachersLinksModel;
 use app\models\Redirects as RedirectsModel;
+use app\helpers\HostService as HostService;
+
+// 
+$app['host.service'] = $app->share(function () use ($app) {
+    return new HostService($app);
+});
 
 // @service for Config model
 $app['config.model'] = $app->share(function () use ($app) {

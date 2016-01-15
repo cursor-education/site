@@ -19,7 +19,18 @@ $app->before(function (Request $request, Application $app) {
 
 // @route landing page
 $app->match('/', function () use ($app) {
-    $page = $app['pages.model']->findBy('page', 'landing');
+    $host = $app['host.service']->parse();
+    
+    if ($host) {
+        $page = (array) $app['pages.model']->findAndMerge('page', array(
+            'landing',
+            'promo',
+            'promo '.$host->key,
+        ));
+    }
+    else {
+        $page = $app['pages.model']->findBy('page', 'landing');
+    }
 
     $params = array(
         'courses' => $app['courses.model']->getAll(),
@@ -31,38 +42,24 @@ $app->match('/', function () use ($app) {
         'meta_keywords' => $page['meta keywords'],
         'meta_description' => $page['meta description'],
         'meta_author' => $page['meta author'],
+        'promo_key' => $host ? $host->key : null,
     );
 
+    if ($host) {
+        $template = 'promo/'.$host->key.'/index.html.twig';
+    }
+    else {
+        $template = 'landing/index.html.twig';
+    }
+    
     if (isset($_GET['debug']) && $app['debug']) {
-        var_dump($params);
+        var_dump($template, $params);
         die;
     }
 
-    return $app['twig']->render('landing/index.html.twig', $params);
+    return $app['twig']->render($template, $params);
 })
 ->bind('landing');
-
-// @route promo page
-$app->match('/promo/{id}', function (Request $request) use ($app) {
-    $promoId = $request->get('id');
-
-    $page = (array) $app['pages.model']->findAndMerge('page', array(
-        'landing',
-        'promo',
-        'promo '.$promoId,
-    ), array(
-        'meta author' => 'ss',
-    ));
-
-    return $app['twig']->render('promo/'.$promoId.'/index.html.twig', array(
-        'promoId' => $promoId,
-        'title' => $page['title'],
-        'meta_keywords' => $page['meta keywords'],
-        'meta_description' => $page['meta description'],
-        'meta_author' => $page['meta author'],
-    ));
-})
-->bind('promo');
 
 // @route course page
 $app->match('/course/{id}', function (Request $request) use ($app) {
