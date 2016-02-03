@@ -8,6 +8,7 @@ ENV = production
 .PHONY: all
 
 all: up clean build run
+all-dev: clean build run-dev
 
 up:
 	git pull --force
@@ -40,8 +41,7 @@ run: stop
 		-p ${PORT}:8080 \
 		-v $$PWD:${HOME} \
 		-e APP_ENV="${ENV}" \
-		-ti -d \
-		${IMAGE_NAME}
+		-ti -d ${IMAGE_NAME}
 
 run-dev: set-dev run
 
@@ -58,3 +58,6 @@ release-major:
 
 release-static:
 	docker exec -ti ${CONTAINER_NAME} /bin/sh -c 'bash environment/release-static.sh'
+
+build-static:
+	docker exec -ti ${CONTAINER_NAME} /bin/sh -c 'bash environment/build-static.sh'
