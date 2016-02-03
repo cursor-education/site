@@ -7,6 +7,17 @@ ENV = production
 
 .PHONY: all
 
+help:
+	@echo " all \t\t\t to run all on production (port 80)"
+	@echo " all-dev \t\t to run all on development (port 8080)"
+	@echo " clean \t\t\t to clean project-related containers & images"
+	@echo " clean-all \t\t to clean all Docker containers & images"
+	@echo " release-minor \t\t to increment minor (0.x) version of release & commit"
+	@echo " release-major \t\t to increment major (x.0) version of release & commit"
+	@echo " release-static \t to build static & commit"
+	@echo " release \t\t to release static & minor version release"
+	@echo " build-static \t\t to build static"
+
 all: up clean build run
 all-dev: clean build run-dev
 
