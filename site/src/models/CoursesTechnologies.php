@@ -16,7 +16,13 @@ class CoursesTechnologies extends \app\models\Base {
         
         return array_map(function ($v) use ($app) {
             $technologyId = $v['technology'];
-            return $app['technologies.model']->findBy('id', $technologyId);
+            $technology = $app['technologies.model']->findBy('id', $technologyId);
+
+            if (!$technology) {
+                var_dump($technologyId);
+            }
+
+            return $technology;
         }, $technologies);
     }
 
