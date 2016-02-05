@@ -213,6 +213,19 @@ $app->match('/teacher/update/{secret}', function (Request $request) use ($app) {
 });
 
 // @route update db changes
+$app->match('/admin/test-email/', function (Request $request) use ($app) {
+    $email = $this->app['email.service']->newEmail();
+    $email->subject = 'test';
+
+    $email->to = array();
+    $email->to['itspoma@gmail.com'] = 'test';
+
+    $email->body = 'testing';
+
+    var_dump($this->app['email.service']->send($email));
+});
+
+// @route update db changes
 $app->match('/admin/update/', function (Request $request) use ($app) {
     $list = array(
         'all',
