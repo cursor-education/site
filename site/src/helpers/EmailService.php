@@ -19,7 +19,7 @@ class EmailService {
      */
     public function __construct(\Silex\Application $app) {
         $this->app = $app;
-        $this->debug = $_GET['debug'] == $this->app['config.model']->getByKey('debug.secret');
+        $this->debug = $_REQUEST['debug'] == $this->app['config.model']->getByKey('debug.secret');
 
         $this->configureMailer();
     }

@@ -7,6 +7,8 @@ class SmsEntity {
 }
 
 class SmsService {
+    //
+    private $debug = false;
 
     /**
      *
@@ -14,6 +16,7 @@ class SmsService {
      */
     public function __construct(\Silex\Application $app) {
         $this->app = $app;
+        $this->debug = $_REQUEST['debug'] == $this->app['config.model']->getByKey('debug.secret');
     }
 
     /**
@@ -52,13 +55,23 @@ class SmsService {
         );
         $result = $client->Auth($auth);
 
+        if ($this->debug) {
+            var_dump('sms.auth', $result);
+        }
+
         $sms = array(
             'sender' => 'CURSOR',
             'destination' => $this->formatMobileNumber($message->to),
             'text' => $message->text,
         );
+        if ($this->debug) {
+            var_dump('sms.send.sms', $sms);
+        }
 
         $result = $client->SendSMS($sms);
+        if ($this->debug) {
+            var_dump('sms.send.result', $sms);
+        }
 
         try {
             if (count($result->SendSMSResult->ResultArray) != 2) {
