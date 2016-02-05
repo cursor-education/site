@@ -55,10 +55,29 @@ class OrderService {
 
     // 
     public function addPostAction(OrderEntity $order) {
-        $this->notifyCustomerByEmail($order);
-        $this->notifyCustomerBySms($order);
-        $this->notifySupportByEmail($order);
-        $this->notifySupportBySms($order);
+        if ($this->debug) {
+            var_dump('addPostAction', $order);
+        }
+
+        $ok = $this->notifyCustomerByEmail($order);
+        if ($this->debug) {
+            var_dump('notifyCustomerByEmail', $ok);
+        }
+
+        $ok = $this->notifyCustomerBySms($order);
+        if ($this->debug) {
+            var_dump('notifyCustomerBySms', $ok);
+        }
+
+        $ok = $this->notifySupportByEmail($order);
+        if ($this->debug) {
+            var_dump('notifySupportByEmail', $ok);
+        }
+
+        $ok = $this->notifySupportBySms($order);
+        if ($this->debug) {
+            var_dump('notifySupportBySms', $ok);
+        }
     }
 
     // 
