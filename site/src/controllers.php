@@ -214,7 +214,7 @@ $app->match('/teacher/update/{secret}', function (Request $request) use ($app) {
 
 // @route update db changes
 $app->match('/admin/test-email/', function (Request $request) use ($app) {
-    $email = $this->app['email.service']->newEmail();
+    $email = $app['email.service']->newEmail();
     $email->subject = 'test';
 
     $email->to = array();
@@ -222,7 +222,7 @@ $app->match('/admin/test-email/', function (Request $request) use ($app) {
 
     $email->body = 'testing';
 
-    var_dump($this->app['email.service']->send($email));
+    var_dump($app['email.service']->send($email));
 });
 
 // @route update db changes
