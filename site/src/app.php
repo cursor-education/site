@@ -26,4 +26,11 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => array(SRC_DIR . '/views')
 ));
 
+$app->register(new Silex\Provider\SwiftmailerServiceProvider(), array(
+    'swiftmailer.use_spool' => false,
+    'swiftmailer.options' => array(
+        'transport' => 'smtp',
+    )
+));
+
 return $app;

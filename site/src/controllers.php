@@ -20,7 +20,7 @@ $app->before(function (Request $request, Application $app) {
 // @route landing page
 $app->match('/', function () use ($app) {
     $host = $app['host.service']->parse();
-    
+
     if ($host) {
         $page = (array) $app['pages.model']->findAndMerge('page', array(
             'landing',
@@ -181,69 +181,19 @@ $app->match('/teacher/{id}', function (Request $request) use ($app) {
 
 // @route submit form from landing page
 $app->post('/callme', function (Request $request) use ($app) {
-    $filename = ROOT_DIR.'/web/'.$app['config.model']->getByKey('reg-form.file');
+    $order = $app['order.service']->newOrder();
+    $order->source = $request->get('source', 'unknown');
+    $order->name = $request->get('name');
+    $order->email = $request->get('email');
+    $order->phone = $request->get('phone');
 
-    $data = array(
-        date('Y-m-d H:i:s'),
-        'landing',
-        $request->get('name'),
-        $request->get('email'),
-        $request->get('phone'),
-    );
-
-    $f = fopen($filename, 'aw');
-    fwrite($f, join("\t\t", $data)."\n");
-    fclose($f);
+    $app['order.service']->add($order);
 
     sleep(2);
 
     return 'ok';
 })
-->bind('landing-form');
-
-// @route submit form from course page
-$app->post('/callme-course', function (Request $request) use ($app) {
-    $filename = ROOT_DIR.'/web/'.$app['config.model']->getByKey('reg-form.file');
-
-    $data = array(
-        date('Y-m-d H:i:s'),
-        $request->get('course'),
-        $request->get('name'),
-        $request->get('email'),
-        $request->get('phone'),
-    );
-
-    $f = fopen($filename, 'aw');
-    fwrite($f, join("\t\t", $data)."\n");
-    fclose($f);
-
-    sleep(2);
-
-    return 'ok';
-})
-->bind('course-form');
-
-// @route submit form from workshop page
-$app->post('/callme-workshop', function (Request $request) use ($app) {
-    $filename = ROOT_DIR.'/web/'.$app['config.model']->getByKey('reg-form.file');
-
-    $data = array(
-        date('Y-m-d H:i:s'),
-        $request->get('workshop'),
-        $request->get('name'),
-        $request->get('email'),
-        $request->get('phone'),
-    );
-
-    $f = fopen($filename, 'aw');
-    fwrite($f, join("\t\t", $data)."\n");
-    fclose($f);
-
-    sleep(2);
-
-    return 'ok';
-})
-->bind('workshop-form');
+->bind('order-form');
 
 // @route teacher profile page
 $app->match('/teacher/update/{secret}', function (Request $request) use ($app) {

@@ -26,12 +26,14 @@
 
       Задля підвищення мотивації для навчання, ми <b class="highlight">повертаємо кошти у розмірі 100% кращим студентам</b>&nbsp;<font size="2">(кожному третьому)</font> у групах, а також <b class="highlight">найкращому студенту &mdash; гарантуємо допомогу в працевлаштуванні</b>!
 
-      <form class="light-form" method="post" action="{{ path('landing-form') }}">
+      <form class="light-form" method="post" action="{{ path('order-form') }}">
         <h3>
           Якщо у Вас з'явилося бажання навчитися новому та покращити свої знання,<br/>
           або зацікавив любий із курсів,<br/>
           залиште свої контактні дані нижче, і ми вам перетелефонуємо.
         </h3>
+
+        <input type="hidden" name="source" value="landing" />
 
         <br/>
 

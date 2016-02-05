@@ -2,10 +2,10 @@
   <div id="form" class="section curve-after">
     <div class="wrap">
 
-    <form class="light-form" method="post" action="{{ path('workshop-form') }}">
+    <form class="light-form" method="post" action="{{ path('order-form') }}">
       <h3>Якщо вас зацікавив воркшоп "<b>{{ workshop.title }}</b>", -<br/>залиште свої контактні дані у формі нижче, і ми вам перетелефонуємо.</h3>
 
-      <input type="hidden" name="workshop" value="{{ workshop.id }}" />
+      <input type="hidden" name="source" value="workshop-{{ course.id }}" />
 
       <div class="rows">
         <div class="row">

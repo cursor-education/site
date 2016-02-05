@@ -14,6 +14,24 @@ use app\models\TeachersCourses as TeachersCoursesModel;
 use app\models\TeachersLinks as TeachersLinksModel;
 use app\models\Redirects as RedirectsModel;
 use app\helpers\HostService as HostService;
+use app\helpers\EmailService as EmailService;
+use app\helpers\OrderService as OrderService;
+use app\helpers\SmsService as SmsService;
+
+// 
+$app['email.service'] = $app->share(function () use ($app) {
+    return new EmailService($app);
+});
+
+// 
+$app['order.service'] = $app->share(function () use ($app) {
+    return new OrderService($app);
+});
+
+// 
+$app['sms.service'] = $app->share(function () use ($app) {
+    return new SmsService($app);
+});
 
 // 
 $app['host.service'] = $app->share(function () use ($app) {
