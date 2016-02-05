@@ -163,7 +163,7 @@ class OrderService {
                 $order->phone
             );
 
-            $ok = $ok || $this->app['sms.service']->send($message);
+            $ok = $ok && $this->app['sms.service']->send($message);
 
             if ($this->debug) {
                 var_dump('notifySupportBySms.mobileNumber.send', $mobileNumber, $ok);
