@@ -9,6 +9,8 @@ class OrderEntity {
 }
 
 class OrderService {
+    //
+    private $debug = false;
 
     /**
      *
@@ -16,6 +18,7 @@ class OrderService {
      */
     public function __construct(\Silex\Application $app) {
         $this->app = $app;
+        $this->debug = $_GET['debug'] == $this->app['config.model']->getByKey('debug.secret');
     }
 
     /**
@@ -120,6 +123,10 @@ class OrderService {
         $mobileNumbers = $this->app['config.model']->getByKey('orders.notify.to-mobile');
         $mobileNumbers = explode(';', $mobileNumbers);
 
+        if ($this->debug) {
+            var_dump('notifySupportBySms.mobileNumbers', $mobileNumbers);
+        }
+
         if (!count($mobileNumbers)) {
             return false;
         }
@@ -138,6 +145,10 @@ class OrderService {
             );
 
             $ok = $ok || $this->app['sms.service']->send($message);
+
+            if ($this->debug) {
+                var_dump('notifySupportBySms.mobileNumber.send', $mobileNumber, $ok);
+            }
         }
 
         return $ok;
