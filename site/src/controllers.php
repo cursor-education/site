@@ -214,6 +214,8 @@ $app->match('/teacher/update/{secret}', function (Request $request) use ($app) {
 
 // @route update db changes
 $app->match('/admin/test-email/', function (Request $request) use ($app) {
+    $_REQUEST['debug'] = $app['config.model']->getByKey('debug.secret');
+
     $email = $app['email.service']->newEmail();
     $email->subject = 'test';
 

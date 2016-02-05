@@ -109,5 +109,9 @@ class EmailService {
 
         $password = $this->app['config.model']->getByKey('email.robot.password');
         $this->app['mailer']->getTransport()->setPassword($password);
+
+        if ($this->debug) {
+            var_dump('configureMailer', $host, $port, $encryption, $authMode, $username, $password);
+        }
     }
 }
