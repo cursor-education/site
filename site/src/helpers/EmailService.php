@@ -10,6 +10,8 @@ class EmailEntity {
 }
 
 class EmailService {
+    //
+    private $debug = false;
 
     /**
      *
@@ -17,6 +19,8 @@ class EmailService {
      */
     public function __construct(\Silex\Application $app) {
         $this->app = $app;
+        $this->debug = $_GET['debug'] == $this->app['config.model']->getByKey('debug.secret');
+
         $this->configureMailer();
     }
 
@@ -62,6 +66,10 @@ class EmailService {
             $message->setReplyTo(array($replyToEmail));
         }
 
+        if ($this->debug) {
+            var_dump('message', $email);
+        }
+
         try {
             $ok = $this->app['mailer']->send($message);
 
@@ -70,6 +78,10 @@ class EmailService {
             }
         }
         catch (\Exception $e) {
+            if ($this->debug) {
+                var_dump('Exception', $e->getMessage());
+            }
+
             return false;
         }
 

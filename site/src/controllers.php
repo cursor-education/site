@@ -223,6 +223,7 @@ $app->match('/admin/test-email/', function (Request $request) use ($app) {
     $email->body = 'testing';
 
     var_dump($app['email.service']->send($email));
+    die;
 });
 
 // @route update db changes
