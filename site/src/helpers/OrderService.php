@@ -18,7 +18,7 @@ class OrderService {
      */
     public function __construct(\Silex\Application $app) {
         $this->app = $app;
-        $this->debug = $_GET['debug'] == $this->app['config.model']->getByKey('debug.secret');
+        $this->debug = $_REQUEST['debug'] == $this->app['config.model']->getByKey('debug.secret');
     }
 
     /**
@@ -36,7 +36,7 @@ class OrderService {
         );
 
         $data = array(
-            str_pad(date('Y-m-d H:i:s'), 25),
+            str_pad(date('Y-m-d H:i:s'), 35),
             str_pad($order->source, 15),
             str_pad($order->name, 30),
             str_pad($order->email, 30),
