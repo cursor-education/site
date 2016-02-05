@@ -12,7 +12,7 @@ RUN yum clean all \
 
 # php 5.4
 RUN rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm \
- && yum install -y php54w php54w-pdo php54w-mysql php54w-intl
+ && yum install -y php54w php54w-pdo php54w-mysql php54w-intl php54w-soap
 
 # configure the php.ini
 RUN echo "" >> /etc/php.ini \

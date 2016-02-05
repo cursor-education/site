@@ -5,7 +5,8 @@
         "symfony/yaml": "~2.6",
         "symfony/twig-bridge": "~2.6",
         "igorw/config-service-provider": "~1.2",
-        "moust/silex-cache": "1.0.*@dev"
+        "moust/silex-cache": "1.0.*@dev",
+        "swiftmailer/swiftmailer": "^5.4"
     },
     "autoload": {
         "psr-4": {
