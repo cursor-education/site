@@ -9,8 +9,8 @@
   {% endif %}
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="{{ titleOg|title|default('') }}" />
-  <meta property="og:description" content="{{ descriptionOg|meta_description|default('') }}" />
+  <meta property="og:title" content="{{ title|default('') }}" />
+  <meta property="og:description" content="{{ meta_description|default('') }}" />
   <meta property="og:image" content="{{ imageOg|default('/img/logo-big.png') }}" />
 
   <meta charset="utf-8">
