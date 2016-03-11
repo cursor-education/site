@@ -229,6 +229,14 @@ $app->match('/admin/test-email/', function (Request $request) use ($app) {
 });
 
 // @route update db changes
+$app->match('/admin/test-trello/', function (Request $request) use ($app) {
+    $apiKey = $app['config.model']->getByKey('trello.api.key');
+    
+    var_dump($apiKey);
+    die;
+});
+
+// @route update db changes
 $app->match('/admin/update/', function (Request $request) use ($app) {
     $list = array(
         'all',
