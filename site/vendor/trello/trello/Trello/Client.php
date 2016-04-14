@@ -310,7 +310,7 @@ class Client {
             CURLOPT_URL => $url,
             CURLOPT_HTTPHEADER => $headers,
             CURLOPT_SSL_VERIFYPEER => false,
-            CURLOPT_FOLLOWLOCATION => true
+            // CURLOPT_FOLLOWLOCATION => true
         );
 
         if ($method === 'GET'){
