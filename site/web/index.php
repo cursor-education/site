@@ -2,6 +2,7 @@
 define('ROOT_DIR', __DIR__.'/..');
 define('SRC_DIR', ROOT_DIR.'/src');
 
+define('ENV_DEVELOPMENT', 'development');
 define('ENV_PRODUCTION', 'production');
 
 date_default_timezone_set('Europe/Kiev');

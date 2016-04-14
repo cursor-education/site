@@ -1,6 +1,4 @@
 <?php
-use app\models\Config as ConfigModel;
-
 use app\models\Course as CourseModel;
 use app\models\Workshop as WorkshopModel;
 use app\models\Technologies as TechnologiesModel;
@@ -13,40 +11,35 @@ use app\models\Teachers as TeachersModel;
 use app\models\TeachersCourses as TeachersCoursesModel;
 use app\models\TeachersLinks as TeachersLinksModel;
 use app\models\Redirects as RedirectsModel;
-use app\helpers\HostService as HostService;
-use app\helpers\EmailService as EmailService;
-use app\helpers\OrderService as OrderService;
-use app\helpers\SmsService as SmsService;
-use app\services\TrelloService as TrelloService;
 
 //
 $app['email.service'] = $app->share(function () use ($app) {
-    return new EmailService($app);
+    return new app\services\EmailService($app);
 });
 
 //
 $app['order.service'] = $app->share(function () use ($app) {
-    return new OrderService($app);
+    return new app\services\OrderService($app);
 });
 
 //
 $app['sms.service'] = $app->share(function () use ($app) {
-    return new SmsService($app);
+    return new app\services\SmsService($app);
 });
 
 //
 $app['trello.service'] = $app->share(function () use ($app) {
-    return new TrelloService($app);
+    return new app\services\TrelloService($app);
 });
 
 //
 $app['host.service'] = $app->share(function () use ($app) {
-    return new HostService($app);
+    return new app\services\HostService($app);
 });
 
 // @service for Config model
 $app['config.model'] = $app->share(function () use ($app) {
-    return new ConfigModel($app);
+    return new app\models\Config($app);
 });
 
 // @service for Workshops model
