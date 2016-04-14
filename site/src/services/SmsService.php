@@ -1,5 +1,5 @@
 <?php
-namespace app\helpers;
+namespace app\services;
 
 class SmsEntity {
     public $to;
@@ -49,7 +49,7 @@ class SmsService {
     public function send(SmsEntity $message) {
         $client = new \SoapClient('http://turbosms.in.ua/api/wsdl.html');
 
-        $auth = array( 
+        $auth = array(
             'login' => $this->app['config.model']->getByKey('sms.login'),
             'password' => $this->app['config.model']->getByKey('sms.password'),
         );

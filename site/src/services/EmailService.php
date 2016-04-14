@@ -1,5 +1,5 @@
 <?php
-namespace app\helpers;
+namespace app\services;
 
 class EmailEntity {
     public $subject;

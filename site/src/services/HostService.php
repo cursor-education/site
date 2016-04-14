@@ -1,13 +1,13 @@
 <?php
-namespace app\helpers;
+namespace app\services;
 
 class HostEntity {
     public $key;
 }
 
 class HostService {
-    
-    // 
+
+    //
     public function parse() {
         $host = null;
 

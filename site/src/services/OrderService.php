@@ -1,5 +1,5 @@
 <?php
-namespace app\helpers;
+namespace app\services;
 
 class OrderEntity {
     public $source;
@@ -55,7 +55,7 @@ class OrderService {
         $this->addPostAction($order);
     }
 
-    // 
+    //
     public function addPostAction(OrderEntity $order) {
         if ($this->debug) {
             var_dump('addPostAction', $order);
@@ -84,7 +84,7 @@ class OrderService {
         $this->addToTrello($order);
     }
 
-    // 
+    //
     private function notifyCustomerBySms(OrderEntity $order) {
         $message = $this->app['sms.service']->newMessage();
 
@@ -94,7 +94,7 @@ class OrderService {
         return $this->app['sms.service']->send($message);
     }
 
-    // 
+    //
     private function notifyCustomerByEmail(OrderEntity $order) {
         $email = $this->app['email.service']->newEmail();
 
@@ -119,7 +119,7 @@ class OrderService {
         return $this->app['email.service']->send($email);
     }
 
-    // 
+    //
     private function notifySupportByEmail(OrderEntity $order) {
         $email = $this->app['email.service']->newEmail();
 
@@ -141,7 +141,7 @@ class OrderService {
         return $this->app['email.service']->send($email);
     }
 
-    // 
+    //
     private function notifySupportBySms(OrderEntity $order) {
         $mobileNumbers = $this->app['config.model']->getByKey('orders.notify.to-mobile');
         $mobileNumbers = explode(';', $mobileNumbers);
@@ -158,7 +158,7 @@ class OrderService {
 
         foreach ($mobileNumbers as $mobileNumber) {
             $message = $this->app['sms.service']->newMessage();
-            
+
             $message->to = $mobileNumber;
             $message->text = sprintf(
                 "NEW ORDER! %s\n%s %s",
