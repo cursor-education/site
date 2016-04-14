@@ -35,6 +35,8 @@ class OrderService {
             $this->app['config.model']->getByKey('reg-form.file')
         );
 
+        $order->phone = str_replace(' ', '', $order->phone);
+
         $data = array(
             str_pad(date('Y-m-d H:i:s'), 35),
             str_pad($order->source, 15),
@@ -78,6 +80,8 @@ class OrderService {
         if ($this->debug) {
             var_dump('notifySupportBySms', $ok);
         }
+
+        $this->addToTrello($order);
     }
 
     // 
@@ -169,6 +173,21 @@ class OrderService {
                 var_dump('notifySupportBySms.mobileNumber.send', $mobileNumber, $ok);
             }
         }
+
+        return $ok;
+    }
+
+    //
+    public function addToTrello(OrderEntity $order) {
+        $card = $this->app['trello.service']->newCard();
+        $card->title = $order->name . ' ' . $order->phone;
+        $card->name = $order->name;
+        $card->phone = $order->phone;
+        $card->email = $order->email;
+        $card->boardId = $this->app['config.model']->getByKey('trello.board.orders.id');
+        $card->listId = $this->app['config.model']->getByKey('trello.board.orders.list.id');
+
+        $ok = $this->app['trello.service']->addCard($card);
 
         return $ok;
     }

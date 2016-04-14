@@ -212,7 +212,7 @@ $app->match('/teacher/update/{secret}', function (Request $request) use ($app) {
     return $app->redirect($teacherUrl);
 });
 
-// @route update db changes
+// @route to test email sending
 $app->match('/admin/test-email/', function (Request $request) use ($app) {
     $_REQUEST['debug'] = $app['config.model']->getByKey('debug.secret');
 
@@ -228,11 +228,18 @@ $app->match('/admin/test-email/', function (Request $request) use ($app) {
     die;
 });
 
-// @route update db changes
+// @route test trello service
 $app->match('/admin/test-trello/', function (Request $request) use ($app) {
-    $apiKey = $app['config.model']->getByKey('trello.api.key');
-    
-    var_dump($apiKey);
+    $_REQUEST['debug'] = $app['config.model']->getByKey('debug.secret');
+
+    $order = $app['order.service']->newOrder();
+    $order->source = 'landing';
+    $order->name = 'Jozephinee';
+    $order->email = 'joze@gmail.com';
+    $order->phone = '355059929';
+
+    $ok = $app['order.service']->addToTrello($order);
+    var_dump('add-to-trello', $ok);
     die;
 });
 

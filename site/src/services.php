@@ -17,23 +17,29 @@ use app\helpers\HostService as HostService;
 use app\helpers\EmailService as EmailService;
 use app\helpers\OrderService as OrderService;
 use app\helpers\SmsService as SmsService;
+use app\services\TrelloService as TrelloService;
 
-// 
+//
 $app['email.service'] = $app->share(function () use ($app) {
     return new EmailService($app);
 });
 
-// 
+//
 $app['order.service'] = $app->share(function () use ($app) {
     return new OrderService($app);
 });
 
-// 
+//
 $app['sms.service'] = $app->share(function () use ($app) {
     return new SmsService($app);
 });
 
-// 
+//
+$app['trello.service'] = $app->share(function () use ($app) {
+    return new TrelloService($app);
+});
+
+//
 $app['host.service'] = $app->share(function () use ($app) {
     return new HostService($app);
 });
