@@ -4,11 +4,6 @@
 {% if app.environment == 'production' %}{% include '_ascii.html.twig' %}{% endif %}
 {% spaceless %}
 <head>
-  {% if app.environment == 'production' %}
-  {#{% include 'widget_googleanalytics_ab.html.twig' %}#}
-  {% include 'widget_googletagmanager.html.twig' %}
-  {% endif %}
-
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{{ title|default('') }}" />
   <meta property="og:description" content="{{ meta_description|default('') }}" />
@@ -49,6 +44,11 @@
 </head>
 {% endspaceless %}
 <body id="page-{{ pageName }}" class="{{ pageClass|default('') }}">
+  {% if app.environment == 'production' %}
+  {#{% include 'widget_googleanalytics_ab.html.twig' %}#}
+  {% include 'widget_googletagmanager.html.twig' %}
+  {% endif %}
+
   <div class="wrapper">
     {% block content %}{% endblock %}
   </div>
