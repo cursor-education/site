@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
 
-  <script src="bundle.js"></script>
+{{ 1 + 5 }}
+  <%= htmlWebpackPlugin.options.files %>
+
+  <div>x</div>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+
+  <!-- <script src="bundle.js"></script> -->
+  <!-- <script src="/dist/scripts/main.js"></script> -->
 </body>
 </html>
