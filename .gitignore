@@ -1,22 +1,4 @@
-!.dockerignore
-!.gitignore
-!.keep
-!vendor
+dest/
 
-.DS_Store
-
-logs/*
-composer.phar
-
-site/node_modules
-
-site/src/config/dev.yml
-site/src/config/production.yml
-
-site/web/css/sprites/*.less
-
-# registration form file
-site/web/*.txt
-
-@temp
-cache/
+node_modules/
+npm-debug.log

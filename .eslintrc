@@ -1,0 +1,47 @@
+{
+  "env": {
+    "browser": false,
+    "node": false
+  },
+  "globals": {
+    "angular"
+  },
+  "plugins": [
+    "nodeca"
+  ],
+  "rules": {
+    "strict": "warn",
+    "comma-dangle": "error",
+    "camelcase": "warn",
+    "no-console": "warn",
+    "no-debugger": "error",
+    "no-alert": "warn",
+    "no-caller": "warn",
+    "no-eval": "error",
+    "no-shadow": "warn",
+    "no-redeclare": "error",
+    "no-extra-bind": "error",
+    "no-empty": "warn",
+    "no-use-before-define": "warn",
+    "no-inner-declarations": "error",
+    "no-loop-func": "error",
+    "no-delete-var": "warn",
+    "no-label-var": "warn",
+    "no-undefined": "warn",
+    "no-unused-vars": "warn",
+    "no-trailing-spaces": "error",
+    "curly": "warn",
+    "yoda": "error",
+    "indent": ["error", 2],
+    "nodeca/indent": ["error", "spaces", 2],
+    "eol-last": "error",
+    "consistent-return": "warn",
+    "space-before-function-paren": ["error", "always"],
+    "keyword-spacing": "warn",
+    "key-spacing": "warn",
+    "padded-blocks": "off",
+    "block-scoped-var": "error",
+    "max-len": ["warn", 80],
+    "max-depth": ["warn", 3],
+  }
+}
