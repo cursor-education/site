@@ -1,5 +1,5 @@
 let common = require("./common");
 
-// import 'styles/pages/landing.scss';
+import 'styles/pages/page-landing.scss';
 
 console.log('landing.js');

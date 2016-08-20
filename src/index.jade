@@ -1,0 +1,24 @@
+doctype html
+html(lang="en" ng-app="app")
+  head
+    meta(charset="UTF-8")
+    title= pageTitle
+  body
+    .topbar topbar
+    header.navbar navbar
+    #content(role="main")
+      section.swatch-black-yellow
+        .container 1
+      section.swatch-yellow-black
+        .decor-top
+          svg.decor(height="100%" preserveAspectRatio="none" version="1.1" viewBox="0 0 100 100" width="100%" xmlns="http://www.w3.org/2000/svg")
+            path(d="M0 100 L100 0 L100 100" stroke-width="0")
+        .container 2
+      section.swatch-black-yellow
+        .container 3
+      section.swatch-yellow-black
+        .container 4
+      section.swatch-black-yellow
+        .container 5
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js")

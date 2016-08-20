@@ -18,16 +18,25 @@ let config = {
   entry: (() => {
     let entries = {};
 
-    if (IS_DEVELOPMENT) {
-      entries['dev'] = 'webpack-dev-server/client?http://0.0.0.0:8080';
-      entries['dev-hot'] = 'webpack/hot/only-dev-server';
-    }
-
     require('glob')
       .sync('./scripts/pages/page-*.js', { cwd:'./src' })
-      .forEach((x) => entries[path.basename(x, '.js')] = x);
+      .forEach((x) => {
+        let fileKey = path.basename(x, '.js');
 
-    return entries;
+        entries[fileKey] = entries[fileKey] || {};
+
+        // prepend webpack's hot-reload deps
+        if (IS_DEVELOPMENT) {
+          entries[fileKey] = [
+            'webpack-dev-server/client?http://0.0.0.0:8080',
+            'webpack/hot/only-dev-server',
+          ];
+        }
+
+        entries[fileKey].push(x)
+      })
+
+    return entries
   })(),
 
   //
@@ -67,11 +76,11 @@ let config = {
     new HtmlWebpackPlugin({
       title: 'test 123',
       inject: !false,
-      template: './index.html'
+      template: './index.jade'
     }),
     new webpack.HotModuleReplacementPlugin(),
     // new CopyWebpackPlugin([
-    //   { from: 'index.html' }
+    //   { from: 'index.jade' }
     // ]),
     new webpack.DefinePlugin({
       '__DEV__': true,
@@ -108,13 +117,19 @@ let config = {
       // { test: /\.svg/, loader: 'file?name=/img/[hash].[ext]?' },
       // { test: /\.(png|jpg|woff|woff2|eot|ttf|otf)/, loader: 'url-loader' },
       { test: /\.json$/, loader: 'json' },
+      { test: /\.jade$/, loader: 'jade?pretty=true' },
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style', 'css!sass!postcss')
       },
     ]
   },
-  postcss: function () {
+  // jade: () => {
+  //   return {
+  //     pretty: true
+  //   }
+  // },
+  postcss: () => {
     return {
       defaults: [autoprefixer],
       cleaner: [autoprefixer({ browsers: [] })]
