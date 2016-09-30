@@ -202,7 +202,8 @@ body {
             &.linkedin,
             &.github,
             &.vkontakte,
-            &.facebook {
+            &.facebook,
+            &.instagram {
                 filter: grayscale(80%);
                 -webkit-filter: grayscale(90%);
             }
@@ -213,10 +214,27 @@ body {
             &.phone { .sprite(@icon-icons-whatsapp-16px); }
             &.vkontakte { .sprite(@icon-icons-vkontakte-16px); }
             &.facebook { .sprite(@icon-icons-facebook-16px); }
+            &.instagram { .sprite(@icon-icons-instagram-16px); }
+        }
+    }
+
+    #map-wrap {
+        .column {
+            width: 100%;
+        }
+
+        @media screen and (max-width: 650px) {
+            .column {
+                margin-left: 0px;
+            }
         }
     }
 
     #lviv_office_map {
+        width: 100%;
+        height: 300px;
+        margin-top: 10px;
+
         &:before,
         &:after {
             content: '';
@@ -739,6 +757,7 @@ form.light-form {
 
         @media screen and (max-width: 650px) {
             margin-bottom: 15px;
+            width: 100%;
 
             label {
                 display: block;
