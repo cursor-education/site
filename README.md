@@ -1,6 +1,8 @@
 # cursor.education / environment
 **version 0.1**
 
+[![Deployment status from DeployBot](https://cursor-education.deploybot.com/badge/02267417970612/18475.svg)](http://deploybot.com)
+
 -----------------------------------------------
 
 ## Setup
