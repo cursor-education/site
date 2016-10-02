@@ -1,4 +1,4 @@
-version: '2.99-840c046-regeneratedassets'
+version: '3.00-33c134c-regeneratedassets'
 
 environment: default
 debug: false
